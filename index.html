@@ -5,20 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rakoto Digital Solutions | Masoivoho Ara-kiditaly</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght=600;700&family=Poppins:wght=300;400;500;600&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script src="https://alwingulla.com/act/files/tag.min.js?z=8848496" data-cfasync="false" async></script>
 
     <style>
-        /* CSS Reset fototra */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         html {
-            scroll-behavior: smooth; /* Mahatonga ilay fidinana ho malemy tsara */
+            scroll-behavior: smooth;
         }
         body {
             font-family: 'Poppins', sans-serif;
@@ -27,8 +25,6 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
-
-        /* Style ho an'ny entête (Header) */
         header {
             background: #ffffff;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
@@ -69,8 +65,6 @@
         nav a:hover {
             color: #ff5722 !important;
         }
-
-        /* Dropdown ho an'ny Tolotra */
         .dropdown {
             position: relative;
             display: inline-block;
@@ -105,7 +99,6 @@
             display: block;
             font-size: 14px;
             font-weight: 500;
-            transition: background 0.2s;
         }
         .dropdown-content a:hover {
             background-color: #f8fafc;
@@ -114,8 +107,6 @@
         .dropdown:hover .dropdown-content {
             display: block !important;
         }
-
-        /* Dropdown ho an'ny Teny */
         .lang-dropdown {
             position: relative;
             display: inline-block;
@@ -160,8 +151,6 @@
         .lang-dropdown:hover .lang-content {
             display: block !important;
         }
-
-        /* Hero Section */
         .hero {
             background: linear-gradient(rgba(30, 60, 114, 0.85), rgba(42, 82, 152, 0.85)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop') no-repeat center center/cover;
             color: #fff;
@@ -194,8 +183,6 @@
         .hero-btn:hover {
             transform: translateY(-2px);
         }
-
-        /* Card Section */
         .services-section {
             max-width: 1200px;
             margin: 80px auto 40px auto;
@@ -231,7 +218,6 @@
         }
         .card.orange { border-top-color: #ff5722; }
         .card.green { border-top-color: #2ec4b6; }
-        
         .card h3 {
             font-family: 'Montserrat', sans-serif;
             font-size: 20px;
@@ -249,8 +235,6 @@
             font-weight: 600;
             font-size: 14px;
         }
-
-        /* SECTION DETAILS */
         .details-section {
             max-width: 1200px;
             margin: 100px auto 60px auto;
@@ -290,7 +274,6 @@
         .details-btn:hover {
             background-color: #ff5722;
         }
-        
         .details-images {
             flex: 1;
             min-width: 320px;
@@ -323,8 +306,6 @@
             z-index: 2;
             border: 5px solid #ffffff;
         }
-
-        /* SECTION VOTOATY FANAMPINY (HIKAROKA) */
         .votoaty-fanampiny {
             background-color: #f1f5f9;
             padding: 80px 20px;
@@ -347,7 +328,7 @@
             margin: 0 auto 50px auto;
             font-size: 16px;
         }
-        .Grid-tombontsoa {
+        .grid-tombontsoa {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
@@ -376,8 +357,6 @@
             font-size: 14px;
             line-height: 1.6;
         }
-
-        /* SECTION BLOG */
         .blog-section {
             max-width: 1200px;
             margin: 100px auto;
@@ -407,150 +386,3 @@
         }
         .blog-featured-content h3 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 22px;
-            color: #1e3c72;
-            margin-bottom: 12px;
-            line-height: 1.4;
-        }
-        .blog-featured-content p {
-            color: #64748b;
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
-        .blog-meta {
-            font-size: 12px;
-            color: #94a3b8;
-            font-weight: 500;
-        }
-        .blog-list {
-            flex: 1;
-            min-width: 320px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        .blog-item {
-            display: flex;
-            gap: 20px;
-            background: #ffffff;
-            padding: 15px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            align-items: center;
-            transition: transform 0.2s;
-        }
-        .blog-item:hover {
-            transform: translateX(5px);
-        }
-        .blog-item img {
-            width: 90px;
-            height: 90px;
-            object-fit: cover;
-            border-radius: 8px;
-            flex-shrink: 0;
-        }
-        .blog-item-text h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 15px;
-            color: #1e3c72;
-            margin-bottom: 6px;
-            line-height: 1.4;
-        }
-
-        /* SECTION SHARE */
-        .share-section {
-            max-width: 1200px;
-            margin: 60px auto 0 auto;
-            padding: 20px;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        .share-section p {
-            font-size: 15px;
-            color: #475569;
-            margin-bottom: 15px;
-            font-weight: 500;
-        }
-        .share-buttons {
-            display: flex;
-            gap: 12px;
-        }
-        .share-btn {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 18px;
-            transition: transform 0.2s, opacity 0.2s;
-        }
-        .share-btn:hover {
-            transform: scale(1.1);
-            opacity: 0.9;
-        }
-        .btn-fb { background-color: #1877f2; }
-        .btn-wa { background-color: #25d366; }
-        .btn-x { background-color: #000000; }
-        .btn-in { background-color: #0a66c2; }
-        .btn-mail { background-color: #94a3b8; }
-
-        /* FOOTER */
-        footer {
-            background-color: #111827;
-            color: #9ca3af;
-            padding: 60px 20px 30px 20px;
-            font-size: 14px;
-        }
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            justify-content: space-between;
-        }
-        .footer-col {
-            flex: 1;
-            min-width: 250px;
-        }
-        .footer-col h3 {
-            color: #ffffff;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
-        .footer-col h3 span {
-            color: #ff5722;
-        }
-        .footer-col p {
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-        .footer-social-icons {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-        .footer-social-icons a {
-            color: #ffffff;
-            font-size: 18px;
-            transition: color 0.2s;
-        }
-        .footer-social-icons a:hover {
-            color: #ff5722;
-        }
-        .footer-col ul {
-            list-style: none;
-        }
-        .footer-col ul li {
-            margin-bottom: 12px;
-        }
-        .footer-col ul li a {
-            color: #9ca3af;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .footer-col ul li a:hover {
-            color: #ffffff
