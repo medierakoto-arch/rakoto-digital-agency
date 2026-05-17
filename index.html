@@ -22,7 +22,7 @@
             line-height: 1.6;
         }
         
-        /* ENTETE (HEADER) NOHAVAOZINA */
+        /* ENTETE (HEADER) */
         header {
             background: #ffffff;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
@@ -120,7 +120,12 @@
             font-family: 'Montserrat', sans-serif;
             font-size: 32px;
             color: #1e3c72;
+            margin-bottom: 15px;
+        }
+        .services-section .subtitle {
+            color: #64748b;
             margin-bottom: 50px;
+            font-size: 16px;
         }
         .services-grid {
             display: grid;
@@ -134,6 +139,7 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
             transition: transform 0.3s, border-top 0.3s;
             border-top: 5px solid transparent;
+            cursor: pointer; /* Manondro fa azo cliquena */
         }
         .service-card:nth-child(1) { border-top-color: #3b82f6; }
         .service-card:nth-child(2) { border-top-color: #ff5722; }
@@ -141,6 +147,7 @@
         
         .service-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
         }
         .service-card i {
             font-size: 40px;
@@ -159,6 +166,90 @@
         .service-card p {
             font-size: 14px;
             color: #64748b;
+            margin-bottom: 15px;
+        }
+        .more-link {
+            font-size: 13px;
+            color: #1e3c72;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+        .service-card:hover .more-link {
+            color: #ff5722;
+        }
+
+        /* REGULATION POP-UP (MODAL WINDOW) */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 2000; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(15, 23, 42, 0.6); /* Loko maizina ao aoriana */
+            backdrop-filter: blur(4px);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .modal.show {
+            display: flex;
+            opacity: 1;
+        }
+        .modal-content {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            position: relative;
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+            text-align: left;
+        }
+        .modal.show .modal-content {
+            transform: translateY(0);
+        }
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: #94a3b8;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .close-modal:hover {
+            color: #ff5722;
+        }
+        .modal-icon {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+        .modal-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            color: #1e3c72;
+            margin-bottom: 15px;
+        }
+        .modal-body {
+            font-size: 15px;
+            color: #475569;
+            line-height: 1.7;
+        }
+        .modal-body ul {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+        .modal-body ul li {
+            margin-bottom: 8px;
         }
 
         /* WHY CHOOSE US INTRO SECTION */
@@ -266,7 +357,7 @@
             line-height: 1.4;
         }
 
-        /* PIEDS (FOOTER) NOHAVAOZINA MATIHANINA */
+        /* PIEDS (FOOTER) */
         footer {
             background-color: #0f172a;
             color: #94a3b8;
@@ -323,133 +414,4 @@
             justify-content: center;
             border-radius: 50%;
             text-decoration: none;
-            transition: background 0.3s;
-        }
-        .footer-socials a:hover {
-            background: #ff5722;
-        }
-        .footer-bottom {
-            text-align: center;
-            font-size: 13px;
-            color: #64748b;
-        }
-        .footer-bottom a {
-            color: #ff5722;
-            text-decoration: none;
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="header-container">
-            <a href="index.html" class="logo">Rakoto<span>Digital</span></a>
-            <nav>
-                <a href="index.html" class="active">Fandraisana</a>
-                <a href="#tolotra">Tolotra</a>
-                <a href="choisir.html">Nahoana no hifidy anay?</a>
-                <a href="blog-abonnements.html">Blog</a>
-            </nav>
-        </div>
-    </header>
-
-    <section class="hero">
-        <h1>Miarahaba anao ao amin'ny Rakoto Digital Solutions</h1>
-        <p>Manampy anao amin'ny fampivoarana ny fandraharahana ara-kiditaly sy ny dokambarotra mifanaraka amin'ny teknolojia vaovao.</p>
-        <a href="#tolotra" class="btn-hero">Jereo ny Tolotra</a>
-    </section>
-
-    <section class="services-section" id="tolotra">
-        <h2>Ny Tolotra Omenay</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <i class="fas fa-bullhorn"></i>
-                <h3>Digital Marketing</h3>
-                <p>Fitantanana pejy Facebook sy Instagram, dokambarotra lasy lasibatra (Ads), ary fitadiavana mpanjifa.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-palette"></i>
-                <h3>Graphic Design</h3>
-                <p>Famoronana Logo, afisy dokambarotra, ary etikety vokatra matihanina manaitra ny maso.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-code"></i>
-                <h3>Web Development</h3>
-                <p>Famoronana tranonkala maoderina, haingana, ary mifanaraka amin'ny finday rehetra.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="why-choose-us">
-        <div class="why-container">
-            <h2 style="font-family: 'Montserrat', sans-serif; font-size: 28px; color: #1e3c72; margin-bottom: 20px;">Nahoana no hifidy ny Rakoto Digital?</h2>
-            <p>Miaraka amin'ny Rakoto Digital, mahazo vahaolana ara-kiditaly feno sy natao manokana ho an'ny orinasanao ianao. Ny fahaizantsika ara-teknika, ny paikady maty paika, ary ny fikarohana ny fahombiazana no miaraka mifarimbona mba hampisondrotana ny marikao ho eny amin'ny tampon'ny tontolo nomerika.</p>
-            <a href="choisir.html" class="btn-more">Hikaroka bebe kokoa</a>
-        </div>
-    </section>
-
-    <section class="blog-section">
-        <div class="blog-container">
-            
-            <div class="blog-main">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="PME growth">
-                <div class="blog-main-content">
-                    <div class="blog-meta">17/05/2026 &bull; Rakoto Digital</div>
-                    <h3><a href="blog-abonnements.html">Nahoana no mampitombo haingana ny fidiram-bolan'ny PME ny fampiasana fitaovana nomerika raikitra?</a></h3>
-                    <p>Ny tontolo ara-kiditaly dia manolotra fahafahana tsy manam-petra ho an'ny orinasa madinika sy salany... <a href="blog-abonnements.html" style="color: #ff5722; text-decoration: none; font-weight: 600;">Hamaky ny tohiny...</a></p>
-                </div>
-            </div>
-
-            <div class="blog-sidebar">
-                <div class="sidebar-card">
-                    <img src="https://images.unsplash.com/photo-1434626881859-194d67b2b86f?q=80&w=150&auto=format&fit=crop" alt="Budget">
-                    <div class="sidebar-text">
-                        <h4>Tetibola kely, vokatra lehibe: Ny tsiambaratelon'ny marketing mahomby</h4>
-                        <div class="blog-meta">15/05/2026</div>
-                    </div>
-                </div>
-                <div class="sidebar-card">
-                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=150&auto=format&fit=crop" alt="Social Media">
-                    <div class="sidebar-text">
-                        <h4>Fomba fitantanana Facebook sy Instagram nefa tsy mandany andro manontolo</h4>
-                        <div class="blog-meta">13/05/2026</div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-col">
-                <h3>Rakoto Digital</h3>
-                <p>Créez votre site web avec Rakoto Digital, votre agence de solutions numériques sur mesure.</p>
-                <div class="footer-socials">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h3>Rohy Ilaina</h3>
-                <ul>
-                    <li><a href="index.html">Fandraisana</a></li>
-                    <li><a href="#tolotra">Nos Services</a></li>
-                    <li><a href="choisir.html">Choisir Rakoto Digital?</a></li>
-                    <li><a href="blog-abonnements.html">Blog</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>Mifandraisa Aminay</h3>
-                <p><i class="fas fa-envelope" style="margin-right: 10px;"></i> christian.rakoto.pro@gmail.com</p>
-                <p><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> Madagascar</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>Copyright &copy; 2026. <a href="index.html">Rakoto Digital Solutions</a>. Tous droits réservés.</p>
-        </div>
-    </footer>
-
-</body>
-</html>
+            transition: background 0.3
