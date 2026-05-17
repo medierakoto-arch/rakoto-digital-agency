@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="mg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nahoana no hifidy ny Rakoto Digital? | Masoivoho Ara-kiditaly</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght=600;700&family=Poppins:wght=300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://alwingulla.com/act/files/tag.min.js?z=8848496" data-cfasync="false" async></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.8;
+        }
+        header {
+            background: #ffffff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e3c72;
+            text-decoration: none;
+        }
+        .logo span {
+            color: #ff5722;
+        }
+        nav a {
+            text-decoration: none;
+            color: #334155;
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ff5722;
+        }
+        
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* SECTION 1: L'ACTEUR DIGITAL */
+        .intro-grid {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-bottom: 80px;
+        }
+        .intro-text {
+            flex: 1;
+            min-width: 320px;
+        }
+        .intro-text h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            color: #1e3c72;
+            line-height: 1.3;
+            margin-bottom: 25px;
+        }
+        .intro-text p {
+            color: #475569;
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        .intro-image {
+            flex: 1;
+            min-width: 320px;
+            position: relative;
+        }
+        .intro-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        .image-overlay-card {
+            position: absolute;
+            bottom: -20px;
+            right: 20px;
+            background: #111827;
+            color: #ffffff;
+            padding: 15px 25px;
+            border-radius: 6px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            border-left: 4px solid #ff5722;
+        }
+
+        /* SECTION 2: EXPERTISE COMPLÈTE & ENGAGEMENT */
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            color: #1e3c72;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #ff5722;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        .content-box {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            margin-bottom: 40px;
+        }
+        .content-box p {
+            margin-bottom: 20px;
+            font-size: 15px;
+            text-align: justify;
+        }
+
+        /* SECTION 3: OFFRES CLAIRES & LIST */
+        .styled-list {
+            list-style: none;
+            margin: 25px 0;
+        }
+        .styled-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-size: 15px;
+            color: #475569;
+        }
+        .styled-list li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: #ff5722;
+            font-size: 18px;
+            top: -2px;
+        }
+
+        /* SECTION 4: TÉMOIGNAGES */
+        .testimonial-box {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            position: relative;
+            margin: 60px 0;
+        }
+        .testimonial-box i {
+            font-size: 40px;
+            color: rgba(255, 87, 34, 0.3);
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .testimonial-text {
+            font-style: italic;
+            font-size: 16px;
+            position: relative;
+            z-index: 2;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        .testimonial-author {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            color: #ff5722;
+        }
+
+        /* SECTION 5: FAQ ACCORDION */
+        .faq-section {
+            margin: 60px 0;
+        }
+        .faq-item {
+            background: #ffffff;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+        .faq-question {
+            padding: 20px;
+            font-weight: 600;
+            color: #1e3c72;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+        }
+        .faq-question:hover {
+            background: #f8fafc;
+        }
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: #64748b;
+            font-size: 14px;
+            background: #fafafa;
+        }
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 200px;
+            border-top: 1px solid #e2e8f0;
+        }
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+            color: #ff5722;
+        }
+
+        /* CALL TO ACTION BOTTOM */
+        .cta-bottom {
+            text-align: center;
+            background: #ffffff;
+            padding: 50px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-top: 60px;
+            border-top: 5px solid #ff5722;
+        }
+        .cta-bottom h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            color: #1e3c72;
+            margin-bottom: 25px;
+        }
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: #ff5722;
+            color: #ffffff;
+            padding: 14px 30px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(255, 87, 34, 0.3);
+            transition: transform 0.2s;
+        }
+        .btn-secondary {
+            background: #1e3c72;
+            color: #ffffff;
+            padding: 14px 30px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: transform 0.2s;
+        }
+        .btn-primary:hover, .btn-secondary:hover {
+            transform: translateY(-2px);
+        }
+
+        /* BACK TO TOP BUTTON */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #ff5722;
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 99;
+            transition: background 0.3s;
+        }
+        .scroll-top:hover {
+            background: #1e3c72;
+        }
+
+        footer {
+            background-color: #111827;
+            color: #9ca3af;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 14px;
+            margin-top: 80px;
+        }
+        footer a {
+            color: #ff5722;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .intro-grid { flex-direction: column; gap: 30px; }
+            .intro-text h1 { font-size: 28px; }
+            .content-box { padding: 25px; }
+            .cta-buttons { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">Rakoto<span>Digital</span></a>
+            <nav>
+                <a href="index.html"><i class="fas fa-home"></i> Fandraisana</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-container">
+        
+        <section class="intro-grid">
+            <div class="intro-text">
+                <h1>Masoivoho ara-kiditaly matanjaka sy azo itokisana</h1>
+                <p>Ny **Rakoto Digital** dia tsy masoivoho tsotra tahaka ny hafa. Izahay dia mpiara-miasa manana traikefa feno natokana hampisondrotana ny fandraharahanao an-tserasera ary miasa ho an'ny fahombiazanao manontolo.</p>
+                <p>Amin'ny alalan'ny fahaiza-manao ara-teknika avo lenta, paikady maty paika, ary famoronana sary miavaka, dia manolotra vahaolana feno izahay mba hitondrana ny marikao ho eny amin'ny tampon'ny tontolo nomerika.</p>
+            </div>
+            <div class="intro-image">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop" alt="Ekipa Rakoto Digital">
+                <div class="image-overlay-card">Ny masoivoho itokisanao</div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Fahaiza-manao Feno: Miainga amin'ny Paikady ka hatramin'ny Fampiharana</h2>
+            <div class="content-box">
+                <p>Ao amin'ny **Rakoto Digital**, manarona ny tontolo ara-kiditaly rehetra izahay: famoronana tranonkala, SEO, fitantanana tambajotra sosialy, famoronana sary ary etikety, ary ny fanaovana dokambarotra mandeha ho azy. Tsy toy ny mpanao asa tena (freelance) mitoka-monina, izahay dia manambatra fahaizana marolafy mba hahatonga ny tetikasanao hiforona sy hitondra vokatra azo tsapain-tanana.</p>
+                
+                <h3 style="color: #1e3c72; margin: 25px 0 10px 0; font-family: 'Montserrat', sans-serif; font-size: 18px;">Vahaolana mifanaraka tsara amin'ny zava-misy iainanao</h3>
+                <p>Fantatray tsara ny olana ara-bola, ny filàna fampifanarahana, ary ny fitakiana eo an-toerana. Tsy manolotra vahaolana dika mitovy avy any ivelany izahay, fa miara-mamorona paikady miaraka aminao mifanaraka tsara amin'ny mpanjifa kendrenao sy ny tanjonao.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Tolotra mazava sy mangarahara</h2>
+            <div class="content-box">
+                <p>Ao amin'ny Rakoto Digital, tsy misy sarany miafina, tsy misy teny sarotra tsy azo takarina. Ny tolotra (packages) omenay dia natao hitondra ny tombony ambony indrindra ho anao miaraka amin'ny fahitana mazava tsara ny asa ho tontosaina. Manolotra endrika tolotra maromaro izahay:</p>
+                
+                <ul class="styled-list">
+                    <li><strong>Packs isam-bolana:</strong> Ho an'ny tranonkala, fitantanana pejy, na fampiarahana azy roa.</li>
+                    <li><strong>Asa tonga dia vita (Ponctuelles):</strong> Famoronana Logo, etikety vokatra (Honey, Coconut oil), ary afisy dokambarotra.</li>
+                    <li><strong>Fampianarana sy Fanohanana:</strong> Paikady maty paika ahafahanao mifehy ny fitaovanao sy mampitombo mpanjifa.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="testimonial-box">
+            <i class="fas fa-quote-left"></i>
+            <p class="testimonial-text">"Nanova tanteraka ny fahitana ny asako tany an-tserasera ny Rakoto Digital! Ny fahaizany mamorona tranonkala sy ny sary madio dia nampitombo avo roa heny ny fahatokisan'ny mpanjifa anay. Manoro hevitra azy ireo tanteraka aho ho an'izay te-hivoatra amin'ny tontolo nomerika."</p>
+            <div class="testimonial-author">— Mpanjifa afo-po, Mpandraharaha</div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Raha fintinina, nahoana no hifidy ny Rakoto Digital?</h2>
+            <div class="content-box">
+                <ul class="styled-list">
+                    <li><strong>Fahatokisana sy Lenta ambony:</strong> Asa madio, manaraka ny fenitra ary matatika.</li>
+                    <li><strong>Ekipa manana traikefa:</strong> Mpamorona sy mpahay marketing vonona hanampy anao.</li>
+                    <li><strong>Vahaolana eo an-toerana:</strong> Mifanaraka tsara amin'ny tsenan'i Madagasikara sy ny fahefa-mividy.</li>
+                    <li><strong>Tanjona mazava:</strong> Fampitomboana ny fidiram-bolanao sy ny fahafantarana ny marikao.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2 class="section-title">Valin'ny fanontaniana fanaon'ny olona (FAQ)</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Manolotra fanadihadiana (Audit) maimaim-poana ve ianareo alohan'ny hanombohana? <span class="faq-icon">+</span></div>
+                <div class="faq-answer">Eny tokoa! Halalininay maimaim-poana ny pejy na ny tetikasanao ankehitriny mba hanoloranay vahaolana mifanaraka aminao alohan'ny hanaovana sonia fifanarahana.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Ahoana no iantohanareo ny kalitao sy ny vokatra azo? <span class="faq-icon">+</span></div>
+                <div class="faq-answer">Manaraka akaiky ny fivoaran'ny dokambarotra sy ny fitsidihan'ny olona ny tranonkala izahay isan-kerinandro, ary mandefa tatitra mazava any aminao mba hitarafana ny fahombiazana.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Ahoana no fomba hifandraisana aminareo hanombohana tetikasa? <span class="faq-icon">+</span></div>
+                <div class="faq-answer">Azonao atao ny mandefa mailaka mivantana amin'ny christian.rakoto.pro@gmail.com na manindry ny bokotra WhatsApp eto ambany hiresahana mivantana aminay.</div>
+            </div>
+        </section>
+
+        <section class="cta-bottom">
+            <h2>Ovay ho fitaovana fampidiram-bola ny orinasanao manomboka androany!</h2>
+            <div class="cta-buttons">
+                <a href="mailto:christian.rakoto.pro@gmail.com" class="btn-primary">Hiresaka amin'ny Mailaka</a>
+                <a href="https://wa.me/261379412593" target="_blank" class="btn-secondary"><i class="fab fa-whatsapp"></i> Handefa WhatsApp</a>
+            </div>
+        </section>
+
+    </main>
+
+    <a href="#" class="scroll-top"><i class="fas fa-chevron-up"></i></a>
+
+    <footer>
+        <p>Copyright &copy; 2026. <a href="index.html">Rakoto Digital Solutions</a>. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
