@@ -79,10 +79,11 @@ body {
 }
 
 .hero-section {
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    background: linear-gradient(rgba(30, 60, 114, 0.8), rgba(42, 82, 152, 0.8)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200') no-repeat center center/cover;
     color: #fff;
-    padding: 100px 0;
+    padding: 120px 0;
     text-align: center;
+}
 }
 
 .hero-section h1 {
