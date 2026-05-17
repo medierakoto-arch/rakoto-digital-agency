@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="mg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing | Rakoto Digital Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght=700&family=Poppins:wght=300;400;600&display=swap" rel="stylesheet">
+    
+    <script src="https://pl29456587.effectivecpmnetwork.com/2f/a8/6c/2fa86c529e3130ffd14b6752f9b2d2e.js"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo"><a href="index.html" style="text-decoration: none; color: #111;">Rakoto<span>Digital</span></a></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Fandraisana</a></li>
+                <li><a href="index.html#services">Tolotra</a></li>
+                <li><a href="index.html#about">Momba anay</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container" style="padding: 60px 0; max-width: 800px;">
+        <h1 style="font-family: 'Montserrat', sans-serif; font-size: 36px; color: #1e3c72; margin-bottom: 20px;">Digital Marketing</h1>
+        
+        <img src="https://images.unsplash.com/photo-1533750516457-a7f992034fec?q=80&w=800" alt="Digital Marketing" style="width: 100%; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+        
+        <h3 style="font-size: 22px; margin-bottom: 15px;">Inona no tombony ho an'ny fandraharahana vaovao?</h3>
+        <p style="font-size: 16px; color: #555; margin-bottom: 20px; line-height: 1.8;">
+            Ny Digital Marketing dia fitaovana mahery vaika mampiasa ny Facebook Ads, Google Ads, ary SEO mba hitadiavana mpanjifa liana amin'ny vokatrao. Manampy anao izahay hamorona dokambarotra matihanina sy mahasarika mba hampitomboana ny varotrao ao anatin'ny fotoana fohy.
+        </p>
+
+        <h3 style="font-size: 22px; margin-bottom: 15px;">Ny asa ataonay:</h3>
+        <ul style="font-size: 16px; color: #555; margin-left: 20px; margin-bottom: 30px; line-height: 2;">
+            <li>Fandinihana ny tsena sy ny mpifaninana (Market Research)</li>
+            <li>Famoronana sy fitantanana ny Facebook Ads matihanina</li>
+            <li>Fanatsarana ny SEO mba ho hita voalohany ao amin'ny Google ny orinasanao</li>
+        </ul>
+
+        <a href="index.html#contact" class="cta-btn" style="text-align: center;">Miresaha amin'ny Consultant</a>
+    </div>
+
+    <script src="https://alwingulla.com/act/files/tag.min.js?z=8848496" data-cfasync="false" async></script>
+
+</body>
+</html>
