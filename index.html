@@ -3,60 +3,351 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rakoto Digital Solutions | Professional Agency</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <script src="https://pl29456587.effectivecpmnetwork.com/2f/a8/6c/2fa86c529e3130ffd14b6752f9b2d2e.js"></script>
+    <title>Rakoto Digital Solutions | Masoivoho Ara-kiditaly</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script src="https://alwingulla.com/act/files/tag.min.js?z=8848496" data-cfasync="false" async></script>
+
+    <style>
+        /* CSS Reset fototra */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        /* Style ho an'ny entête (Header) */
+        header {
+            background: #ffffff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e3c72;
+            letter-spacing: -0.5px;
+        }
+        .logo span {
+            color: #ff5722;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #334155;
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ff5722 !important;
+        }
+
+        /* Dropdown ho an'ny Tolotra */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-btn {
+            text-decoration: none;
+            color: #334155;
+            font-weight: 600;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ffffff;
+            min-width: 220px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            border-radius: 8px;
+            padding: 10px 0;
+            margin-top: 10px;
+            border-top: 3px solid #ff5722;
+        }
+        .dropdown-content a {
+            color: #334155;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        .dropdown-content a:hover {
+            background-color: #f8fafc;
+            color: #ff5722 !important;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block !important;
+        }
+
+        /* Dropdown ho an'ny Teny (Languages) */
+        .lang-dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 10px;
+        }
+        .lang-btn {
+            background: #f1f5f9;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            color: #334155;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .lang-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            background-color: #ffffff;
+            min-width: 110px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 6px;
+            padding: 5px 0;
+            margin-top: 5px;
+        }
+        .lang-content a {
+            color: #334155;
+            padding: 8px 15px;
+            text-decoration: none;
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .lang-content a:hover {
+            background-color: #f1f5f9;
+        }
+        .lang-dropdown:hover .lang-content {
+            display: block !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(30, 60, 114, 0.85), rgba(42, 82, 152, 0.85)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop') no-repeat center center/cover;
+            color: #fff;
+            padding: 120px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 17px;
+            max-width: 750px;
+            margin: 0 auto 30px auto;
+            opacity: 0.9;
+        }
+        .hero-btn {
+            background-color: #ff5722;
+            color: #fff;
+            padding: 14px 30px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 6px;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(255, 87, 34, 0.4);
+            transition: transform 0.2s;
+        }
+        .hero-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Card Section */
+        .services-section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .services-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            color: #1e3c72;
+            margin-bottom: 50px;
+        }
+        .services-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        .card {
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            flex: 1;
+            min-width: 280px;
+            max-width: 360px;
+            text-align: left;
+            border-top: 4px solid #1e3c72;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card.orange { border-top-color: #ff5722; }
+        .card.green { border-top-color: #2ec4b6; }
+        
+        .card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            color: #1e3c72;
+            margin-bottom: 15px;
+        }
+        .card p {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+        .card a {
+            color: #ff5722;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* Section À propos */
+        .about-section {
+            background-color: #ffffff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .about-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .about-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            color: #1e3c72;
+            margin-bottom: 20px;
+        }
+        .about-section p {
+            color: #64748b;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e3c72;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo"><a href="index.html" style="text-decoration: none; color: #111;">Rakoto<span>Digital</span></a></div>
-            <ul class="nav-links">
-                <li><a href="index.html">Fandraisana</a></li>
-                <li><a href="#services">Tolotra</a></li>
-            </ul>
-        </div>
-    </nav>
+    <header>
+        <div class="header-container">
+            <div class="logo">Rakoto<span>Digital</span></div>
+            <nav>
+                <a href="index.html">Fandraisana</a>
 
-    <section class="hero-section">
-        <div class="container">
-            <h1>Miarahaba anao ao amin'ny Rakoto Digital Solutions</h1>
-            <p>Manampy anao amin'ny fampivoarana ny fandraharahana ara-kiditaly sy ny dokambarotra mifanaraka amin'ny teknolojia vaovao.</p>
-            <a href="#services" class="cta-btn">Jereo ny Tolotra</a>
+                <div class="dropdown">
+                    <span class="dropdown-btn">Nos Services ▼</span>
+                    <div class="dropdown-content">
+                        <a href="marketing.html">Digital Marketing</a>
+                        <a href="design.html">Graphic Design</a>
+                        <a href="web.html">Web Development</a>
+                    </div>
+                </div>
+
+                <a href="#a-propos">À propos de nous</a>
+                <a href="mailto:christian.rakoto.pro@gmail.com">Contact</a>
+
+                <div class="lang-dropdown">
+                    <button class="lang-btn">🇲🇬 MG ▼</button>
+                    <div class="lang-content">
+                        <a href="fr/index.html">🇫🇷 FR</a>
+                        <a href="en/index.html">🇺🇸 EN</a>
+                    </div>
+                </div>
+            </nav>
         </div>
+    </header>
+
+    <section class="hero">
+        <h1>Miarahaba anao ao amin'ny Rakoto Digital Solutions</h1>
+        <p>Manampy anao amin'ny fampivoarana ny fandraharahana ara-kiditaly sy ny dokambarotra mifanaraka amin'ny teknolojia vaovao.</p>
+        <a href="#tolotra" class="hero-btn">Jereo ny Tolotra</a>
     </section>
 
-    <section id="services" style="padding: 60px 0; background: #f8fafc;">
-        <div class="container">
-            <h2 style="text-align: center; font-family: 'Montserrat', sans-serif; font-size: 32px; color: #1e3c72; margin-bottom: 40px;">Ny Tolotra Omenay</h2>
+    <section class="services-section" id="tolotra">
+        <h2>Ny Tolotra Omenay</h2>
+        <div class="services-container">
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto;">
-                
-                <div style="background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); cursor: pointer; border-top: 5px solid #2979ff;" onclick="window.location.href='marketing.html'">
-                    <h3 style="font-family: 'Montserrat', sans-serif; color: #1e3c72; margin-bottom: 15px;">Digital Marketing</h3>
-                    <p style="color: #555; font-size: 14px; line-height: 1.6;">Fampiroboroboana ny fandraharahana sy fitarihana mpanjifa ao amin'ny tambajotra sosialy. (Jereo ny pitsopitsony)</p>
-                </div>
-                
-                <div style="background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); cursor: pointer; border-top: 5px solid #ff5722;" onclick="window.location.href='design.html'">
-                    <h3 style="font-family: 'Montserrat', sans-serif; color: #1e3c72; margin-bottom: 15px;">Graphic Design</h3>
-                    <p style="color: #555; font-size: 14px; line-height: 1.6;">Famoronana sary famantarana (Logo), afisy ary marika ho an'ny vokatrao. (Jereo ny pitsopitsony)</p>
-                </div>
-                
-                <div style="background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); cursor: pointer; border-top: 5px solid #00c853;" onclick="window.location.href='web.html'">
-                    <h3 style="font-family: 'Montserrat', sans-serif; color: #1e3c72; margin-bottom: 15px;">Web Development</h3>
-                    <p style="color: #555; font-size: 14px; line-height: 1.6;">Famoronana tranonkala matihanina sy fampiantranoana azy amin'ny fitaovana arifomba. (Jereo ny pitsopitsony)</p>
-                </div>
-
+            <div class="card">
+                <h3>Digital Marketing</h3>
+                <p>Fampiroboroboana ny fandraharahana sy fitarihana mpanjifa ao amin'ny tambajotra sosialy amin'ny alalan'ny Facebook Ads sy Copywriting mandresy lahatra.</p>
+                <a href="marketing.html">Jereo ny pitsopitsony →</a>
             </div>
+
+            <div class="card orange">
+                <h3>Graphic Design</h3>
+                <p>Famoronana Logo tokana, tsotra, ary mora tsaroan'ny olona nefa mitondra ny herin'ny orinasanao, miaraka amin'ny etikety (labels) sy afisy.</p>
+                <a href="design.html">Jereo ny pitsopitsony →</a>
+            </div>
+
+            <div class="card green">
+                <h3>Web Development</h3>
+                <p>Famoronana tranonkala matihanina sy fampiantranoana azy amin'ny fitaovana arifomba mba hisokafany haingana sy hahitana anao ao amin'ny Google.</p>
+                <a href="web.html">Jereo ny pitsopitsony →</a>
+            </div>
+
         </div>
     </section>
 
-    <footer style="text-align: center; padding: 40px; background: #fff; color: #666; font-size: 14px;">
-        <p>&copy; 2026 Rakoto Digital Solutions. All rights reserved.</p>
+    <section class="about-section" id="a-propos">
+        <div class="about-container">
+            <h2>À propos de nous</h2>
+            <p>Rakoto Digital Solutions dia masoivoho mpamorona tranonkala sy mpanao Digital Marketing eto Madagasikara. Manampy ireo mpandraharaha sy orinasa kely izahay mba hivelatra sy hahazo mpanjifa amin'ny alalan'ny tontolo ara-kiditaly.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Rakoto Digital Solutions. Zo rehetra voatokana.</p>
     </footer>
 
-    <script src="https://alwingulla.com/act/files/tag.min.js?z=8848496" data-cfasync="false" async></script>
 </body>
 </html>
