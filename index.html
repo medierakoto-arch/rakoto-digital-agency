@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nahoana no mampitombo ny fidiram-bola ny fitaovana nomerika raikitra? | Rakoto Digital</title>
+    <title>Rakoto Digital Solutions | Masoivoho Ara-kiditaly</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght=600;700&family=Poppins:wght=300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -19,7 +19,7 @@
             font-family: 'Poppins', sans-serif;
             background-color: #f8fafc;
             color: #334155;
-            line-height: 1.8;
+            line-height: 1.6;
         }
         header {
             background: #ffffff;
@@ -51,82 +51,217 @@
             color: #334155;
             font-weight: 600;
             font-size: 15px;
+            margin-left: 20px;
             transition: color 0.3s;
         }
         nav a:hover {
             color: #ff5722;
         }
-        .article-container {
-            max-width: 800px;
-            margin: 60px auto;
-            padding: 0 20px;
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            overflow: hidden;
-        }
-        .article-img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-        }
-        .article-content {
-            padding: 40px;
-        }
-        .article-meta {
-            font-size: 13px;
-            color: #94a3b8;
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
-        h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 32px;
-            color: #1e3c72;
-            line-height: 1.4;
-            margin-bottom: 25px;
-        }
-        h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 22px;
-            color: #1e3c72;
-            margin: 35px 0 15px 0;
-        }
-        p {
-            font-size: 16px;
-            color: #475569;
-            margin-bottom: 20px;
-            text-align: justify;
-        }
-        .highlight-box {
-            background-color: #f1f5f9;
-            border-left: 4px solid #ff5722;
-            padding: 20px;
-            margin: 30px 0;
-            border-radius: 0 8px 8px 0;
-            font-style: italic;
-        }
-        .btn-back {
-            display: inline-block;
-            margin-top: 30px;
-            background-color: #1e3c72;
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(30, 60, 114, 0.85), rgba(42, 82, 152, 0.85)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
             color: #ffffff;
-            padding: 12px 25px;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+        .btn-hero {
+            display: inline-block;
+            background-color: #ff5722;
+            color: #ffffff;
+            padding: 14px 30px;
             text-decoration: none;
             font-weight: 600;
             border-radius: 6px;
-            transition: background 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 87, 34, 0.4);
+            transition: transform 0.2s;
         }
-        .btn-back:hover {
+        .btn-hero:hover {
+            transform: translateY(-2px);
+        }
+
+        /* SERVICES SECTION */
+        .services-section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .services-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            color: #1e3c72;
+            margin-bottom: 50px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s, border-top 0.3s;
+            border-top: 5px solid transparent;
+        }
+        .service-card:nth-child(1) { border-top-color: #3b82f6; }
+        .service-card:nth-child(2) { border-top-color: #ff5722; }
+        .service-card:nth-child(3) { border-top-color: #10b981; }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        .service-card i {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        .service-card:nth-child(1) i { color: #3b82f6; }
+        .service-card:nth-child(2) i { color: #ff5722; }
+        .service-card:nth-child(3) i { color: #10b981; }
+
+        .service-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            color: #1e3c72;
+            margin-bottom: 15px;
+        }
+        .service-card p {
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        /* WHY CHOOSE US INTRO SECTION */
+        .why-choose-us {
+            background: #ffffff;
+            padding: 80px 20px;
+        }
+        .why-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .why-container p {
+            font-size: 16px;
+            color: #475569;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+        .btn-more {
+            display: inline-block;
+            background-color: #1e3c72;
+            color: #ffffff;
+            padding: 12px 28px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        .btn-more:hover {
             background-color: #ff5722;
         }
+
+        /* BLOG/ACTUALITÉ SECTION */
+        .blog-section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+        .blog-container {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .blog-main {
+            flex: 2;
+            min-width: 320px;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        .blog-main img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+        .blog-main-content {
+            padding: 30px;
+        }
+        .blog-main h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            color: #1e3c72;
+            margin-bottom: 15px;
+        }
+        .blog-main h3 a {
+            color: #1e3c72;
+            text-decoration: none;
+        }
+        .blog-main h3 a:hover {
+            color: #ff5722;
+        }
+        .blog-meta {
+            font-size: 12px;
+            color: #94a3b8;
+            margin-bottom: 15px;
+        }
+
+        .blog-sidebar {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .sidebar-card {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .sidebar-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .sidebar-text h4 {
+            font-size: 14px;
+            color: #1e3c72;
+            margin-bottom: 5px;
+            line-height: 1.4;
+        }
+
         footer {
             background-color: #111827;
             color: #9ca3af;
             padding: 40px 20px;
             text-align: center;
             font-size: 14px;
-            margin-top: 100px;
         }
         footer a {
             color: #ff5722;
@@ -140,39 +275,79 @@
         <div class="header-container">
             <a href="index.html" class="logo">Rakoto<span>Digital</span></a>
             <nav>
-                <a href="index.html"><i class="fas fa-arrow-left"></i> Hiverina amin'ny Fandraisana</a>
+                <a href="index.html">Fandraisana</a>
+                <a href="#tolotra">Tolotra</a>
+                <a href="choisir.html">Nahoana no hifidy anay?</a>
             </nav>
         </div>
     </header>
 
-    <main class="article-container">
-        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop" alt="Abonnements digitaux" class="article-img">
-        
-        <div class="article-content">
-            <div class="article-meta">Navoaka tamin'ny: 17/05/2026 &bull; Mpanoratra: Rakoto Digital</div>
-            
-            <h1>Nahoana no mampitombo haingana ny fidiram-bolan'ny PME ny fampiasana fitaovana nomerika raikitra?</h1>
-            
-            <p>Ny tontolo ara-kiditaly dia manolotra fahafahana tsy manam-petra ho an'ny orinasa madinika sy salany (PME) mba hifaninana amin'ireo orinasa lehibe. Ny fampiasana paikady nomerika maty paika sy fitaovana raikitra no tsiambaratelo lehibe indrindra mampitombo ny fidiram-bola ao anatin'ny fotoana fohy.</p>
-            
-            <h2>1. Fahafahana manatratra mpanjifa maro kokoa</h2>
-            <p>Raha miankina amin'ny tsena eo an-toerana fotsiny ny fivarotana mahazatra, ny fananana tranonkala matihanina sy pejy Facebook mavitrika kosa dia mamela anao ho hita manerana ny nosy na manerana izao tontolo izao mihitsy. Ny dokambarotra lasy lasibatra (Facebook Ads) dia manampy anao hisafidy mpanjifa tena mila ny vokatrao.</p>
+    <section class="hero">
+        <h1>Miarahaba anao ao amin'ny Rakoto Digital Solutions</h1>
+        <p>Manampy anao amin'ny fampivoarana ny fandraharahana ara-kiditaly sy ny dokambarotra mifanaraka amin'ny teknolojia vaovao.</p>
+        <a href="#tolotra" class="btn-hero">Jereo ny Tolotra</a>
+    </section>
 
-            <div class="highlight-box">
-                "Ny fampiasam-bola amin'ny tontolo nomerika dia tsy fandaniam-bola fa fitaovana mampiditra tombony avo heny raha toa ka misy fanaraha-maso akaiky sy paikady maty paika."
+    <section class="services-section" id="tolotra">
+        <h2>Ny Tolotra Omenay</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-bullhorn"></i>
+                <h3>Digital Marketing</h3>
+                <p>Fitantanana pejy Facebook sy Instagram, dokambarotra lasy lasibatra (Ads), ary fitadiavana mpanjifa.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-palette"></i>
+                <h3>Graphic Design</h3>
+                <p>Famoronana Logo, afisy dokambarotra, ary etikety vokatra matihanina manaitra ny maso.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-code"></i>
+                <h3>Web Development</h3>
+                <p>Famoronana tranonkala maoderina, haingana, ary mifanaraka amin'ny finday rehetra.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose-us">
+        <div class="why-container">
+            <h2 style="font-family: 'Montserrat', sans-serif; font-size: 28px; color: #1e3c72; margin-bottom: 20px;">Nahoana no hifidy ny Rakoto Digital?</h2>
+            <p>Miaraka amin'ny Rakoto Digital, mahazo vahaolana ara-kiditaly feno sy natao manokana ho an'ny orinasanao ianao. Ny fahaizantsika ara-teknika, ny paikady maty paika, ary ny fikarohana ny fahombiazana no miaraka mifarimbona mba hampisondrotana ny marikao ho eny amin'ny tampon'ny tontolo nomerika.</p>
+            <a href="choisir.html" class="btn-more">Hikaroka bebe kokoa</a>
+        </div>
+    </section>
+
+    <section class="blog-section">
+        <div class="blog-container">
+            
+            <div class="blog-main">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="PME growth">
+                <div class="blog-main-content">
+                    <div class="blog-meta">17/05/2026 &bull; Rakoto Digital</div>
+                    <h3><a href="blog-abonnements.html">Nahoana no mampitombo haingana ny fidiram-bolan'ny PME ny fampiasana fitaovana nomerika raikitra?</a></h3>
+                    <p>Ny tontolo ara-kiditaly dia manolotra fahafahana tsy manam-petra ho an'ny orinasa madinika sy salany... <a href="blog-abonnements.html" style="color: #ff5722; text-decoration: none; font-weight: 600;">Hamaky ny tohiny...</a></p>
+                </div>
             </div>
 
-            <h2>2. Fitsitsiana fotoana sy tetibola amin'ny Marketing</h2>
-            <p>Ny fitaovana nomerika dia mamela anao hanao dokambarotra mifanaraka amin'ny tetibola kely anananao nefa mitondra vokatra lehibe. Azonao jerena avy hatrany hoe olona firy no liana, firy no nividy, ary inona no tokony hatsaraina. Izany dia miaro anao amin'ny fandaniam-bola amin'ny doka tsy mitondra mpanjifa.</p>
+            <div class="blog-sidebar">
+                <div class="sidebar-card">
+                    <img src="https://images.unsplash.com/photo-1434626881859-194d67b2b86f?q=80&w=150&auto=format&fit=crop" alt="Budget">
+                    <div class="sidebar-text">
+                        <h4>Tetibola kely, vokatra lehibe: Ny tsiambaratelon'ny marketing mahomby</h4>
+                        <div class="blog-meta">15/05/2026</div>
+                    </div>
+                </div>
+                <div class="sidebar-card">
+                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=150&auto=format&fit=crop" alt="Social Media">
+                    <div class="sidebar-text">
+                        <h4>Fomba fitantanana Facebook sy Instagram nefa tsy mandany andro manontolo</h4>
+                        <div class="blog-meta">13/05/2026</div>
+                    </div>
+                </div>
+            </div>
 
-            <h2>3. Fananganana fahatokisana (Marika matanjaka)</h2>
-            <p>Ny mpanjifa ankehitriny dia mikaroka ao amin'ny Google foana alohan'ny hividianany zavatra. Raha manana tranonkala milamina tsara sy sary (design) madio ary afisy manaitra ny orinasanao, tonga dia matoky azy avy hatrany ny olona ary vonona ny hividy amin'ny vidiny mendrika.</p>
-
-            <p>Raha vonona ny hampitombo ny fidiram-bolanao koa ianao, ny ekipan'ny Rakoto Digital dia vonona hifanome tanana aminao amin'ny famoronana ireo fitaovana nomerika rehetra ilainao.</p>
-
-            <a href="index.html" class="btn-back">Hiverina amin'ny Fandraisana</a>
         </div>
-    </main>
+    </section>
 
     <footer>
         <p>Copyright &copy; 2026. <a href="index.html">Rakoto Digital Solutions</a>. Tous droits réservés.</p>
