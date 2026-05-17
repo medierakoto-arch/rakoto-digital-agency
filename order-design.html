@@ -6,87 +6,97 @@
     <title>Hanafatra Tolotra Graphic Design | Rakoto Digital Solutions</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    
     <script src="https://pl29456587.effectivecpmnetwork.com/2f/a8/6c/2fa86c529e3130ffd14b6752f9b2d2e.js"></script>
-    
     <style>
-        body { font-family: 'Poppins', sans-serif; background-color: #f8fafc; color: #333; margin: 0; }
-        .form-container { max-width: 600px; margin: 60px auto; background: #fff; padding: 40px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 6px solid #ff5722; }
-        h2 { font-family: 'Montserrat', sans-serif; color: #1e3c72; font-size: 26px; margin-bottom: 10px; text-align: center; }
-        p.subtitle { text-align: center; color: #666; font-size: 14px; margin-bottom: 30px; }
-        .form-group { margin-bottom: 22px; }
-        label { display: block; font-weight: 600; margin-bottom: 8px; color: #4a5568; font-size: 14px; }
-        input[type="text"], input[type="email"], select, textarea { width: 100%; padding: 12px 15px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 15px; box-sizing: border-box; font-family: inherit; transition: all 0.3s; }
+        body { font-family: 'Poppins', sans-serif; background-color: #f8fafc; color: #333; margin: 0; padding: 0; }
+        .container-box { max-width: 900px; margin: 50px auto; background: #fff; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.06); overflow: hidden; display: flex; flex-wrap: wrap; }
+        .info-side { flex: 1; background: linear-gradient(135deg, #ff5722 0%, #e64a19 100%); color: #fff; padding: 40px; min-width: 300px; }
+        .form-side { flex: 1.2; padding: 40px; min-width: 300px; border-top: 6px solid #ff5722; }
+        .info-side h2 { font-family: 'Montserrat', sans-serif; font-size: 24px; color: #fff; margin-bottom: 20px; }
+        .info-side p { font-size: 14px; line-height: 1.6; color: #fdf2f0; }
+        .steps { margin-top: 30px; }
+        .step-item { display: flex; margin-bottom: 15px; font-size: 14px; }
+        .step-number { background: #1e3c72; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px; flex-shrink: 0; }
+        .form-side h3 { font-family: 'Montserrat', sans-serif; color: #1e3c72; margin-top: 0; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 13px; color: #4a5568; }
+        input, select, textarea { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; box-sizing: border-box; font-family: inherit; }
         input:focus, select:focus, textarea:focus { border-color: #ff5722; outline: none; box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.15); }
-        .submit-btn { width: 100%; background: #ff5722; color: #fff; border: none; padding: 14px; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: background 0.3s; margin-top: 10px; }
-        .submit-btn:hover { background: #e64a19; }
-        .back-link { display: block; text-align: center; margin-top: 20px; color: #666; text-decoration: none; font-size: 14px; }
-        .back-link:hover { color: #ff5722; }
+        .btn-submit { width: 100%; background: #ff5722; color: #fff; border: none; padding: 14px; border-radius: 8px; font-size: 15px; font-weight: bold; cursor: pointer; text-transform: uppercase; transition: 0.3s; }
+        .btn-submit:hover { background: #e64a19; }
+        .back-home { display: block; text-align: center; margin-top: 20px; color: #666; text-decoration: none; font-size: 13px; }
     </style>
 </head>
 <body>
 
-    <div class="form-container">
-        <h2>Fandaharam-potoana sy Kaomandy</h2>
-        <p class="subtitle">Fenoy ireto pitsopitsony ireto mba hanombohana ny asa famoronana avy hatrany.</p>
+    <div class="container-box">
+        <div class="info-side">
+            <h2>Omeo endrika tsy manam-paharoa ny marikao!</h2>
+            <p>Ny sary matihanina sy madio no fitaovana voalohany misintona ny mason'ny mpanjifa ary mampitombo ny varotra ao anatin'ny segondra vitsy.</p>
+            
+            <div class="steps">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div><strong>Identité & Logo:</strong> Famoronana logo miavaka tsara, madio nefa mora tadidin'ny olona.</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div><strong>Etikety sy Fonosana:</strong> Famoronana marika ho an'ny vokatrao (tantely, menaka, sns.) hahazaka fifaninanana eny an-tsena.</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div><strong>Afisy Fampiroboroboana:</strong> Afisy Facebook matanjaka na pirinty A4 hampisongadinana ny tolotrao.</div>
+                </div>
+            </div>
+        </div>
         
-        <form id="designForm" onsubmit="sendOrder(event)">
-            <div class="form-group">
-                <label for="name">Anaranao na Orinasanao *</label>
-                <input type="text" id="name" required placeholder="Ohatra: Big Bazar">
-            </div>
-
-            <div class="form-group">
-                <label for="email">Adiresy Email *</label>
-                <input type="email" id="idEmail" required placeholder="ohatra@gmail.com">
-            </div>
-
-            <div class="form-group">
-                <label for="service">Inona ilay tolotra ilainao? *</label>
-                <select id="service" required>
-                    <option value="">-- Safidio eto --</option>
-                    <option value="Logo unique">Identity & Logo</option>
-                    <option value="Etikety sy Fonosana">Etikety sy Fonosana (Labels)</option>
-                    <option value="Afisy Fampiroboroboana">Afisy Fampiroboroboana (A4 / Facebook)</option>
-                    <option value="Pack complet">Tolotra feno (Pack Complet)</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="details">Inona ny pitsopitsony momba ilay asa? (Loko tiana, soratra hapetraka...) *</label>
-                <textarea id="details" rows="5" required placeholder="Soraty eto daholo ny hevitrao rehetra..."></textarea>
-            </div>
-
-            <button type="submit" class="submit-btn">Handefa ny kaomandy</button>
-        </form>
-        
-        <a href="design.html" class="back-link">&larr; Hiverina amin'ny pejy teo aloha</a>
+        <div class="form-side">
+            <h3>Hanafatra Graphic Design</h3>
+            <p style="color: #666; font-size: 13px; margin-bottom: 25px;">Fenoy ireto pitsopitsony ireto hanombohana ny famoronana avy hatrany.</p>
+            
+            <form onsubmit="sendDesignOrder(event)">
+                <div class="form-group">
+                    <label>Anaranao na Orinasanao *</label>
+                    <input type="text" id="designName" required placeholder="Ohatra: Big Bazar">
+                </div>
+                <div class="form-group">
+                    <label>Inona ilay tolotra ilainao? *</label>
+                    <select id="designService" required>
+                        <option value="">-- Safidio eto --</option>
+                        <option value="Logo unique">Identity & Logo</option>
+                        <option value="Etikety sy Fonosana">Etikety sy Fonosana (Labels)</option>
+                        <option value="Afisy Fampiroboroboana">Afisy Fampiroboroboana (A4 / Facebook)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Inona avy ireo pitsopitsony momba ilay asa? (Loko tiana, soratra hapetraka...) *</label>
+                    <textarea id="designDetails" rows="5" required placeholder="Soraty eto daholo ny hevitrao rehetra..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Handefa ny kaomandy</button>
+            </form>
+            <a href="design.html" class="back-home">&larr; Hiverina amin'ny pejy teo aloha</a>
+        </div>
     </div>
 
     <script>
-        function sendOrder(event) {
+        function sendDesignOrder(event) {
             event.preventDefault();
-            
-            var name = document.getElementById('name').value;
-            var email = document.getElementById('idEmail').value;
-            var service = document.getElementById('service').value;
-            var details = document.getElementById('details').value;
+            var name = document.getElementById('designName').value;
+            var service = document.getElementById('designService').value;
+            var details = document.getElementById('designDetails').value;
             
             var subject = encodeURIComponent("Kaomandy Design vaovao avy amin'i " + name);
             var body = encodeURIComponent(
                 "Miarahaba anao,\n\n" +
                 "Misy kaomandy vaovao tonga ao amin'ny site-nao:\n\n" +
                 "- Orinasa/Anarana: " + name + "\n" +
-                "- Email: " + email + "\n" +
                 "- Tolotra ilaina: " + service + "\n" +
                 "- Pitsopitsony: " + details + "\n\n" +
                 "Mankasitraka!"
             );
-            
             window.location.href = "mailto:christian.rakoto.pro@gmail.com?subject=" + subject + "&body=" + body;
         }
     </script>
-
     <script src="https://alwingulla.com/act/files/tag.min.js?z=8848496" data-cfasync="false" async></script>
 </body>
 </html>
