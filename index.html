@@ -20,6 +20,7 @@
             background-color: #f8fafc;
             color: #334155;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         /* Style ho an'ny entête (Header) */
@@ -192,7 +193,7 @@
         /* Card Section */
         .services-section {
             max-width: 1200px;
-            margin: 80px auto;
+            margin: 80px auto 40px auto;
             padding: 0 20px;
             text-align: center;
         }
@@ -244,6 +245,81 @@
             font-size: 14px;
         }
 
+        /* SECTION DETAILS VAOVAO (tahaka ilay sary nalefanao) */
+        .details-section {
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 60px;
+        }
+        .details-text {
+            flex: 1;
+            min-width: 320px;
+        }
+        .details-text h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            color: #1e3c72;
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+        .details-text p {
+            color: #64748b;
+            font-size: 16px;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        .details-btn {
+            background-color: #1e3c72;
+            color: #ffffff;
+            padding: 14px 28px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 6px;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+        .details-btn:hover {
+            background-color: #ff5722;
+        }
+        
+        /* Ny sary mifanindry (Image Composition) */
+        .details-images {
+            flex: 1;
+            min-width: 320px;
+            position: relative;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .img-back {
+            width: 65%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: absolute;
+            left: 5%;
+            top: 10%;
+            z-index: 1;
+        }
+        .img-front {
+            width: 55%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            position: absolute;
+            right: 5%;
+            bottom: 5%;
+            z-index: 2;
+            border: 5px solid #ffffff;
+        }
+
         /* Section À propos */
         .about-section {
             background-color: #ffffff;
@@ -273,6 +349,17 @@
             text-align: center;
             padding: 30px 20px;
             font-size: 14px;
+        }
+
+        /* Responsive ho an'ny finday */
+        @media (max-width: 768px) {
+            .details-images {
+                height: 350px;
+                margin-top: 30px;
+            }
+            .img-back { height: 260px; }
+            .img-front { height: 280px; }
+            .details-text h2 { font-size: 28px; }
         }
     </style>
 </head>
@@ -335,6 +422,19 @@
                 <a href="web.html">Jereo ny pitsopitsony →</a>
             </div>
 
+        </div>
+    </section>
+
+    <section class="details-section">
+        <div class="details-text">
+            <h2>Nahoana no hifidy ny Rakoto Digital ?</h2>
+            <p>Miaraka amin'ny <strong>Rakoto Digital</strong>, mahazo vaoahala ara-kiditaly feno sy natao manokana ho an'ny orinasanao ianao. Ny fahaizantsika ara-teknika, ny paikady maty paika, ary ny fikarohana ny fahombiazana no miaraka mifarimbona mba hampisondrotana ny marikao ho eny amin'ny tampon'ny tontolo nomerika.</p>
+            <a href="#tolotra" class="details-btn">Hikaroka bebe kokoa</a>
+        </div>
+        
+        <div class="details-images">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto=format&fit=crop" alt="Ekipa miasa" class="img-back">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop" alt="Vehivavy mpandraharaha miasa amin'ny solosaina" class="img-front">
         </div>
     </section>
 
