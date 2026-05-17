@@ -357,6 +357,8 @@
             font-size: 14px;
             line-height: 1.6;
         }
+
+        /* STYLES HO AN'NY BLOG (REHEFA CLIKENA) */
         .blog-section {
             max-width: 1200px;
             margin: 100px auto;
@@ -368,13 +370,22 @@
             gap: 40px;
             margin-top: 40px;
         }
-        .blog-featured {
+        .blog-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: transform 0.3s;
+        }
+        .blog-featured-wrap {
             flex: 1.2;
             min-width: 320px;
+        }
+        .blog-featured {
             background: #ffffff;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            height: 100%;
         }
         .blog-featured img {
             width: 100%;
@@ -416,10 +427,6 @@
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.03);
             align-items: center;
-            transition: transform 0.2s;
-        }
-        .blog-item:hover {
-            transform: translateX(5px);
         }
         .blog-item img {
             width: 90px;
@@ -435,6 +442,13 @@
             margin-bottom: 6px;
             line-height: 1.4;
         }
+        .blog-link:hover {
+            transform: translateY(-5px);
+        }
+        .blog-list .blog-link:hover {
+            transform: translateX(5px);
+        }
+
         .share-section {
             max-width: 1200px;
             margin: 60px auto 0 auto;
@@ -657,36 +671,52 @@
     <section class="blog-section">
         <h2 style="font-family: 'Montserrat', sans-serif; font-size: 32px; color: #1e3c72; text-align: center;">Ireo Lahatsoratra Farany</h2>
         <div class="blog-container">
-            <div class="blog-featured">
-                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop" alt="Abonnements digitaux">
-                <div class="blog-featured-content">
-                    <h3>Nahoana no mampitombo haingana ny fidiram-bolan'ny PME ny fampiasana fitaovana nomerika raikitra?</h3>
-                    <p>Ny tontolo ara-kiditaly dia manolotra fahafahana tsy manam-petra ho an'ny orinasa madinika mba hifaninana amin'ny lehibe...</p>
-                    <div class="blog-meta">17/05/2026 &bull; Rakoto Digital</div>
-                </div>
+            
+            <div class="blog-featured-wrap">
+                <a href="blog-abonnements.html" class="blog-link">
+                    <div class="blog-featured">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop" alt="Abonnements digitaux">
+                        <div class="blog-featured-content">
+                            <h3>Nahoana no mampitombo haingana ny fidiram-bolan'ny PME ny fampiasana fitaovana nomerika raikitra?</h3>
+                            <p>Ny tontolo ara-kiditaly dia manolotra fahafahana tsy manam-petra ho an'ny orinasa madinika mba hifaninana amin'ny lehibe...</p>
+                            <div class="blog-meta">17/05/2026 &bull; Rakoto Digital</div>
+                        </div>
+                    </div>
+                </a>
             </div>
+
             <div class="blog-list">
-                <div class="blog-item">
-                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=200&auto=format&fit=crop" alt="Budget marketing">
-                    <div class="blog-item-text">
-                        <h4>Tetibola kely, vokatra lehibe: Ny tsiambaratelon'ny marketing mahomby</h4>
-                        <div class="blog-meta">15/05/2026</div>
+                
+                <a href="marketing.html" class="blog-link">
+                    <div class="blog-item">
+                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=200&auto=format&fit=crop" alt="Budget marketing">
+                        <div class="blog-item-text">
+                            <h4>Tetibola kely, vokatra lehibe: Ny tsiambaratelon'ny marketing mahomby</h4>
+                            <div class="blog-meta">15/05/2026</div>
+                        </div>
                     </div>
-                </div>
-                <div class="blog-item">
-                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=200&auto=format&fit=crop" alt="Réseaux sociaux">
-                    <div class="blog-item-text">
-                        <h4>Fomba fitantanana Facebook sy Instagram nefa tsy mandany andro manontolo</h4>
-                        <div class="blog-meta">13/05/2026</div>
+                </a>
+
+                <a href="marketing.html" class="blog-link">
+                    <div class="blog-item">
+                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=200&auto=format&fit=crop" alt="Réseaux sociaux">
+                        <div class="blog-item-text">
+                            <h4>Fomba fitantanana Facebook sy Instagram nefa tsy mandany andro manontolo</h4>
+                            <div class="blog-meta">13/05/2026</div>
+                        </div>
                     </div>
-                </div>
-                <div class="blog-item">
-                    <img src="https://images.unsplash.com/photo-1546074177-ffebd9a8af11?q=80&w=200&auto=format&fit=crop" alt="Site web non rentable">
-                    <div class="blog-item-text">
-                        <h4>Nahoana no tsy mahatonga vola ny tranonkalanao? Ary inona no tokony hovana?</h4>
-                        <div class="blog-meta">06/05/2026</div>
+                </a>
+
+                <a href="web.html" class="blog-link">
+                    <div class="blog-item">
+                        <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=200&auto=format&fit=crop" alt="Site web non rentable">
+                        <div class="blog-item-text">
+                            <h4>Nahoana no tsy mahatonga vola ny tranonkalanao? Ary inona no tokony hovana?</h4>
+                            <div class="blog-meta">06/05/2026</div>
+                        </div>
                     </div>
-                </div>
+                </a>
+
             </div>
         </div>
     </section>
@@ -710,34 +740,4 @@
                     <a href="#"><i class="fab fa-facebook"></i></a>
                     <a href="#"><i class="fab fa-linkedin"></i></a>
                     <a href="https://wa.me/261379412593" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    <a href="mailto:christian.rakoto.pro@gmail.com"><i class="fas fa-envelope"></i></a>
-                </div>
-                <p>Copyright &copy; 2026. Tous droits réservés.</p>
-                <div class="footer-contact-info">
-                    <p>Tel : +261 37 94 125 93</p>
-                    <p>Mailto : <a href="mailto:christian.rakoto.pro@gmail.com">christian.rakoto.pro@gmail.com</a></p>
-                    <p>Antananarivo, Madagascar</p>
-                </div>
-            </div>
-            <div class="footer-col" style="max-width: 200px;">
-                <h3>Rakoto Digital</h3>
-                <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="#tolotra">Nos Services</a></li>
-                    <li><a href="#tolotra">Nos offres & Packages</a></li>
-                    <li><a href="#antony-feno">Choisir Rakoto Digital?</a></li>
-                    <li><a href="mailto:christian.rakoto.pro@gmail.com">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>RAKOTO DIGITAL SOLUTIONS</h3>
-                <p>Rakoto Digital dia asa fandraharahana manokana natokana ho an'ny vahaolana ara-kiditaly sy ny famoronana tranonkala. Pejy natao hampisondrotana ny fidiram-bola sy hanampiana ireo orinasa madinika sy salany hivelatra amin'ny tontolo an-tserasera.</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>Raha mila fanazavana fanampiny, tsidiho ny <a href="index.html" style="color: #ff5722; text-decoration: none;">rakoto-digital-agency.vercel.app</a></p>
-        </div>
-    </footer>
-
-</body>
-</html>
+                    <a href="mailto:christian.rakoto.pro@gmail.com">
