@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rakoto Digital Solutions | Masoivoho Ara-kiditaly</title>
+    <title>Nahoana no mampitombo ny fidiram-bola ny fitaovana nomerika raikitra? | Rakoto Digital</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght=600;700&family=Poppins:wght=300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -19,13 +19,11 @@
             font-family: 'Poppins', sans-serif;
             background-color: #f8fafc;
             color: #334155;
-            line-height: 1.6;
+            line-height: 1.8;
         }
-        
-        /* HEADER */
         header {
             background: #ffffff;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -36,7 +34,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
+            padding: 15px 20px;
         }
         .logo {
             font-family: 'Montserrat', sans-serif;
@@ -48,313 +46,137 @@
         .logo span {
             color: #ff5722;
         }
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
         nav a {
             text-decoration: none;
-            color: #475569;
-            font-weight: 500;
+            color: #334155;
+            font-weight: 600;
             font-size: 15px;
             transition: color 0.3s;
         }
-        nav a:hover, nav a.active {
-            color: #1e3c72;
-            font-weight: 600;
+        nav a:hover {
+            color: #ff5722;
         }
-
-        /* HERO SECTION */
-        .hero {
-            background: linear-gradient(rgba(30, 60, 114, 0.85), rgba(42, 82, 152, 0.85)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            color: #ffffff;
-            text-align: center;
-            padding: 100px 20px;
-        }
-        .hero h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 38px;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-        .hero p {
-            font-size: 18px;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-        .btn-hero {
-            display: inline-block;
-            background-color: #ff5722;
-            color: #ffffff;
-            padding: 14px 30px;
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 6px;
-            box-shadow: 0 4px 15px rgba(255, 87, 34, 0.4);
-            transition: transform 0.2s;
-        }
-        .btn-hero:hover {
-            transform: translateY(-2px);
-        }
-
-        /* SERVICES SECTION */
-        .services-section {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 20px;
-            text-align: center;
-        }
-        .services-section h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 32px;
-            color: #1e3c72;
-            margin-bottom: 15px;
-        }
-        .services-section .subtitle {
-            color: #64748b;
-            margin-bottom: 50px;
-        }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        .service-card {
-            background: #ffffff;
-            padding: 40px 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-            border-top: 5px solid transparent;
-            cursor: pointer;
-        }
-        .service-card:nth-child(1) { border-top-color: #3b82f6; }
-        .service-card:nth-child(2) { border-top-color: #ff5722; }
-        .service-card:nth-child(3) { border-top-color: #10b981; }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-        }
-        .service-card i {
-            font-size: 40px;
-            margin-bottom: 20px;
-        }
-        .service-card:nth-child(1) i { color: #3b82f6; }
-        .service-card:nth-child(2) i { color: #ff5722; }
-        .service-card:nth-child(3) i { color: #10b981; }
-
-        .service-card h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 20px;
-            color: #1e3c72;
-            margin-bottom: 15px;
-        }
-        .service-card p {
-            font-size: 14px;
-            color: #64748b;
-        }
-
-        /* WHY CHOOSE US Section */
-        .why-choose-us {
-            background: #ffffff;
-            padding: 80px 20px;
-        }
-        .why-container {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .why-container h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 28px;
-            color: #1e3c72;
-            margin-bottom: 20px;
-        }
-        .why-container p {
-            font-size: 16px;
-            color: #475569;
-            margin-bottom: 30px;
-        }
-
-        /* FAQ ACCORDION */
-        .faq-section {
+        .article-container {
             max-width: 800px;
             margin: 60px auto;
             padding: 0 20px;
-        }
-        .faq-title {
-            text-align: center;
-            font-family: 'Montserrat', sans-serif;
-            color: #1e3c72;
-            margin-bottom: 30px;
-            font-size: 24px;
-        }
-        .faq-item {
-            background: #ffffff;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-            overflow: hidden;
-        }
-        .faq-question {
-            padding: 20px;
-            font-weight: 600;
-            color: #1e3c72;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .faq-answer {
-            padding: 0 20px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-            color: #475569;
-            font-size: 14px;
-        }
-        .faq-item.active .faq-answer {
-            padding: 0 20px 20px 20px;
-            max-height: 200px;
-        }
-
-        /* BLOG SECTION */
-        .blog-section {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 20px;
-        }
-        .blog-container {
-            display: flex;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-        .blog-main {
-            flex: 2;
-            min-width: 320px;
             background: #ffffff;
             border-radius: 12px;
-            overflow: hidden;
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            overflow: hidden;
         }
-        .blog-main img {
+        .article-img {
             width: 100%;
-            height: 350px;
+            height: 400px;
             object-fit: cover;
         }
-        .blog-main-content {
-            padding: 30px;
+        .article-content {
+            padding: 40px;
         }
-        .blog-main h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 24px;
-            color: #1e3c72;
-            margin-bottom: 15px;
-        }
-        .blog-meta {
-            font-size: 12px;
+        .article-meta {
+            font-size: 13px;
             color: #94a3b8;
-            margin-bottom: 15px;
-        }
-
-        .blog-sidebar {
-            flex: 1;
-            min-width: 300px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        .sidebar-card {
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-        .sidebar-card img {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-        .sidebar-text h4 {
-            font-size: 14px;
-            color: #1e3c72;
-            margin-bottom: 5px;
-        }
-
-        /* POP-UP MODAL */
-        .modal {
-            display: none; 
-            position: fixed; 
-            z-index: 2000; 
-            left: 0; top: 0; width: 100%; height: 100%; 
-            background-color: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(4px);
-            align-items: center; justify-content: center; padding: 20px;
-        }
-        .modal.show { display: flex; }
-        .modal-content {
-            background-color: #ffffff; padding: 40px; border-radius: 16px;
-            max-width: 600px; width: 100%; position: relative;
-        }
-        .close-modal {
-            position: absolute; top: 20px; right: 20px; font-size: 24px; color: #94a3b8; cursor: pointer;
-        }
-
-        /* FOOTER */
-        footer {
-            background-color: #0f172a;
-            color: #94a3b8;
-            padding: 60px 20px 30px;
-            font-size: 14px;
-        }
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            padding-bottom: 40px;
-            margin-bottom: 30px;
-            border-bottom: 1px solid #334155;
-        }
-        .footer-col h3 {
-            color: #ffffff;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 18px;
             margin-bottom: 20px;
+            font-weight: 500;
         }
-        .footer-col p { margin-bottom: 15px; }
-        .footer-socials a {
-            color: #ffffff; background: #1e293b; width: 36px; height: 36px;
-            display: inline-flex; align-items: center; justify-content: center;
-            border-radius: 50%; margin-right: 10px; text-decoration: none;
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            color: #1e3c72;
+            line-height: 1.4;
+            margin-bottom: 25px;
         }
-        .footer-bottom { text-align: center; color: #64748b; }
-        .footer-bottom a { color: #ff5722; text-decoration: none; }
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 22px;
+            color: #1e3c72;
+            margin: 35px 0 15px 0;
+        }
+        p {
+            font-size: 16px;
+            color: #475569;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        .highlight-box {
+            background-color: #f1f5f9;
+            border-left: 4px solid #ff5722;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+        .btn-back {
+            display: inline-block;
+            margin-top: 30px;
+            background-color: #1e3c72;
+            color: #ffffff;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: background 0.3s;
+        }
+        .btn-back:hover {
+            background-color: #ff5722;
+        }
+        footer {
+            background-color: #111827;
+            color: #9ca3af;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 14px;
+            margin-top: 100px;
+        }
+        footer a {
+            color: #ff5722;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
 
     <header>
         <div class="header-container">
-            <a href="#" class="logo">Rakoto<span>Digital</span></a>
+            <a href="index.html" class="logo">Rakoto<span>Digital</span></a>
             <nav>
-                <a href="#" class="active">Fandraisana</a>
-                <a href="#tolotra">Tolotra</a>
-                <a href="#nahoana">Nahoana no hifidy anay?</a>
-                <a href="#blog">Blog</a>
+                <a href="index.html"><i class="fas fa-arrow-left"></i> Hiverina amin'ny Fandraisana</a>
             </nav>
         </div>
     </header>
 
-    <section class="hero">
-        <h1>Miarahaba anao ao amin'ny Rakoto Digital Solutions</h1>
-        <p>Manampy anao amin'ny fampivoarana
+    <main class="article-container">
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop" alt="Abonnements digitaux" class="article-img">
+        
+        <div class="article-content">
+            <div class="article-meta">Navoaka tamin'ny: 17/05/2026 &bull; Mpanoratra: Rakoto Digital</div>
+            
+            <h1>Nahoana no mampitombo haingana ny fidiram-bolan'ny PME ny fampiasana fitaovana nomerika raikitra?</h1>
+            
+            <p>Ny tontolo ara-kiditaly dia manolotra fahafahana tsy manam-petra ho an'ny orinasa madinika sy salany (PME) mba hifaninana amin'ireo orinasa lehibe. Ny fampiasana paikady nomerika maty paika sy fitaovana raikitra no tsiambaratelo lehibe indrindra mampitombo ny fidiram-bola ao anatin'ny fotoana fohy.</p>
+            
+            <h2>1. Fahafahana manatratra mpanjifa maro kokoa</h2>
+            <p>Raha miankina amin'ny tsena eo an-toerana fotsiny ny fivarotana mahazatra, ny fananana tranonkala matihanina sy pejy Facebook mavitrika kosa dia mamela anao ho hita manerana ny nosy na manerana izao tontolo izao mihitsy. Ny dokambarotra lasy lasibatra (Facebook Ads) dia manampy anao hisafidy mpanjifa tena mila ny vokatrao.</p>
+
+            <div class="highlight-box">
+                "Ny fampiasam-bola amin'ny tontolo nomerika dia tsy fandaniam-bola fa fitaovana mampiditra tombony avo heny raha toa ka misy fanaraha-maso akaiky sy paikady maty paika."
+            </div>
+
+            <h2>2. Fitsitsiana fotoana sy tetibola amin'ny Marketing</h2>
+            <p>Ny fitaovana nomerika dia mamela anao hanao dokambarotra mifanaraka amin'ny tetibola kely anananao nefa mitondra vokatra lehibe. Azonao jerena avy hatrany hoe olona firy no liana, firy no nividy, ary inona no tokony hatsaraina. Izany dia miaro anao amin'ny fandaniam-bola amin'ny doka tsy mitondra mpanjifa.</p>
+
+            <h2>3. Fananganana fahatokisana (Marika matanjaka)</h2>
+            <p>Ny mpanjifa ankehitriny dia mikaroka ao amin'ny Google foana alohan'ny hividianany zavatra. Raha manana tranonkala milamina tsara sy sary (design) madio ary afisy manaitra ny orinasanao, tonga dia matoky azy avy hatrany ny olona ary vonona ny hividy amin'ny vidiny mendrika.</p>
+
+            <p>Raha vonona ny hampitombo ny fidiram-bolanao koa ianao, ny ekipan'ny Rakoto Digital dia vonona hifanome tanana aminao amin'ny famoronana ireo fitaovana nomerika rehetra ilainao.</p>
+
+            <a href="index.html" class="btn-back">Hiverina amin'ny Fandraisana</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>Copyright &copy; 2026. <a href="index.html">Rakoto Digital Solutions</a>. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
