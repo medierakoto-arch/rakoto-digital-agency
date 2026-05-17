@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="mg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fampiroboroboana Varotra (Digital Marketing) | Rakoto Digital Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://pl29456587.effectivecpmnetwork.com/2f/a8/6c/2fa86c529e3130ffd14b6752f9b2d2e.js"></script>
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #f8fafc; color: #333; margin: 0; padding: 0; }
+        .container-box { max-width: 900px; margin: 50px auto; background: #fff; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.06); overflow: hidden; display: flex; flex-wrap: wrap; }
+        .info-side { flex: 1; background: linear-gradient(135deg, #111827 0%, #1f2937 100%); color: #fff; padding: 40px; min-width: 300px; }
+        .form-side { flex: 1.2; padding: 40px; min-width: 300px; border-top: 6px solid #ff5722; }
+        .info-side h2 { font-family: 'Montserrat', sans-serif; font-size: 24px; color: #fff; margin-bottom: 20px; }
+        .info-side p { font-size: 14px; line-height: 1.6; color: #d1d5db; }
+        .steps { margin-top: 30px; }
+        .step-item { display: flex; margin-bottom: 15px; font-size: 14px; }
+        .step-number { background: #ff5722; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px; flex-shrink: 0; }
+        .form-side h3 { font-family: 'Montserrat', sans-serif; color: #1e3c72; margin-top: 0; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 13px; color: #4a5568; }
+        input, select, textarea { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; box-sizing: border-box; font-family: inherit; }
+        input:focus, select:focus, textarea:focus { border-color: #ff5722; outline: none; box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.15); }
+        .btn-submit { width: 100%; background: #ff5722; color: #fff; border: none; padding: 14px; border-radius: 8px; font-size: 15px; font-weight: bold; cursor: pointer; text-transform: uppercase; transition: 0.3s; }
+        .btn-submit:hover { background: #e64a19; }
+        .back-home { display: block; text-align: center; margin-top: 20px; color: #666; text-decoration: none; font-size: 13px; }
+    </style>
+</head>
+<body>
+
+    <div class="container-box">
+        <div class="info-side">
+            <h2>Ampitomboy avo 10 heny ny fidiram-bolanao!</h2>
+            <p>Ny fanaovana dokambarotra mifantoka tsara no lakile misintona ireo mpividy tena liana amin'ny tolotrao fa tsy manary vola fotsiny amin'ny boost tsotra.</p>
+            
+            <div class="steps">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div><strong>Facebook & Instagram Ads:</strong> Mikoriana any amin'izay olona tena manam-bola sy mpividy ny dokambarotra.</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div><strong>Copywriting Mandresy Lahatra:</strong> Teny mavesatra sy lahatsoratra manaitra mba hahatonga ny olona handray fanapahan-kevitra malaka.</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div><strong>Fandinihana ny Varotra (ROI):</strong> Fanaraha-maso ny tamberim-bidy mba hahazoana antoka fa mitondra tombony ny vola ampiasaina.</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-side">
+            <h3>Hiaraka Hiasa Aminay</h3>
+            <p style="color: #666; font-size: 13px; margin-bottom: 25px;">Mangataha fanadihadiana maimaim-poana (Audit Gratuit) ho an'ny orinasanao androany.</p>
+            
+            <form onsubmit="sendMarketingOrder(event)">
+                <div class="form-group">
+                    <label>Anaranao na Orinasanao *</label>
+                    <input type="text" id="mktName" required placeholder="Ohatra: Big Bazar">
+                </div>
+                <div class="form-group">
+                    <label>Inona ny tanjona lehibe tianao hotratrarina? *</label>
+                    <select id="mktGoal" required>
+                        <option value="">-- Safidio eto --</option>
+                        <option value="Hampitombo mpanjifa vaovao">Hampitombo Mpanjifa Vaovao</option>
+                        <option value="Hampahafantatra marika vaovao">Hampahafantatra Marika (Notoriété)</option>
+                        <option value="Hanatsara ny Pejy Facebook">Hanatsara ny fandehan'ny pejy sosialy</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Inona ny olana lehibe sedrainao amin'ny varotra ankehitriny? *</label>
+                    <textarea id="mktDetails" rows="4" required placeholder="Hazavao fohy eto ny zava-misy..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Py hifampiresaka amin'i Christian</button>
+            </form>
+            <a href="index.html" class="back-home">&larr; Hiverina amin'ny Fandraisana</a>
+        </div>
+    </div>
+
+    <script>
+        function sendMarketingOrder(event) {
+            event.preventDefault();
+            var name = document.getElementById('mktName').value;
+            var goal = document.getElementById('mktGoal').value;
+            var details = document.getElementById('mktDetails').value;
+            
+            var subject = encodeURIComponent("Demande Audit Marketing - " + name);
+            var body = encodeURIComponent(
+                "Miarahaba anao Christian,\n\n" +
+                "Misy fangatahana hiara-hiasa momba ny Marketing tonga:\n\n" +
+                "- Orinasa: " + name + "\n" +
+                "- Tanjona: " + goal + "\n" +
+                "- Olana sedraina: " + details + "\n\n" +
+                "Mankasitraka!"
+            );
+            window.location.href = "mailto:christian.rakoto.pro@gmail.com?subject=" + subject + "&body=" + body;
+        }
+    </script>
+    <script src="https://alwingulla.com/act/files/tag.min.js?z=8848496" data-cfasync="false" async></script>
+</body>
+</html>
