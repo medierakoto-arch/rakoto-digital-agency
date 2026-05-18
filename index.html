@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="mg">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,6 +18,10 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:'Poppins',sans-serif;
     background:#f8fafc;
@@ -32,7 +36,7 @@ header{
     width:100%;
     top:0;
     z-index:1000;
-    background:rgba(255,255,255,.9);
+    background:rgba(255,255,255,.92);
     backdrop-filter:blur(15px);
     box-shadow:0 4px 20px rgba(0,0,0,.05);
 }
@@ -89,7 +93,6 @@ header{
     background-size:cover;
     background-position:center;
     color:white;
-    position:relative;
 }
 
 .hero-content{
@@ -181,10 +184,6 @@ header{
     margin-bottom:10px;
 }
 
-.stat-card p{
-    color:#64748b;
-}
-
 /* SERVICES */
 
 .services{
@@ -205,13 +204,6 @@ header{
     margin-bottom:20px;
 }
 
-.section-title p{
-    color:#64748b;
-    max-width:700px;
-    margin:auto;
-    line-height:1.8;
-}
-
 .services-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -224,6 +216,7 @@ header{
     border-radius:24px;
     box-shadow:0 15px 40px rgba(0,0,0,.06);
     transition:.35s;
+    cursor:pointer;
     position:relative;
     overflow:hidden;
 }
@@ -280,7 +273,6 @@ header{
 .about img{
     width:100%;
     border-radius:28px;
-    box-shadow:0 25px 50px rgba(0,0,0,.3);
 }
 
 .about-text h2{
@@ -291,8 +283,7 @@ header{
 
 .about-text p{
     line-height:1.9;
-    opacity:.92;
-    margin-bottom:25px;
+    margin-bottom:20px;
 }
 
 /* TESTIMONIALS */
@@ -327,7 +318,7 @@ header{
 
 .cta{
     background:
-    linear-gradient(rgba(15,23,42,.9),rgba(15,23,42,.9)),
+    linear-gradient(rgba(15,23,42,.88),rgba(15,23,42,.88)),
     url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1600&auto=format&fit=crop');
 
     background-size:cover;
@@ -373,10 +364,6 @@ footer h3{
     font-family:'Montserrat',sans-serif;
 }
 
-footer p{
-    line-height:1.9;
-}
-
 .socials{
     display:flex;
     gap:15px;
@@ -398,7 +385,6 @@ footer p{
 
 .socials a:hover{
     background:#ff5722;
-    transform:translateY(-5px);
 }
 
 .copy{
@@ -406,6 +392,76 @@ footer p{
     margin-top:50px;
     padding-top:25px;
     border-top:1px solid rgba(255,255,255,.08);
+}
+
+/* POPUP */
+
+.service-modal{
+    display:none;
+    position:fixed;
+    z-index:9999;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.7);
+    backdrop-filter:blur(8px);
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.service-modal-content{
+    background:white;
+    max-width:700px;
+    width:100%;
+    border-radius:24px;
+    padding:40px;
+    animation:popup .35s ease;
+    position:relative;
+}
+
+@keyframes popup{
+    from{
+        opacity:0;
+        transform:scale(.85);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.close-modal{
+    position:absolute;
+    right:25px;
+    top:15px;
+    font-size:35px;
+    cursor:pointer;
+}
+
+.service-popup-title{
+    font-size:36px;
+    color:#1e3c72;
+    margin-bottom:20px;
+    font-family:'Montserrat',sans-serif;
+}
+
+.service-popup-text{
+    line-height:1.9;
+    color:#64748b;
+    margin-bottom:20px;
+}
+
+.popup-btn{
+    display:inline-block;
+    margin-top:20px;
+    background:#ff5722;
+    color:white;
+    text-decoration:none;
+    padding:14px 28px;
+    border-radius:12px;
+    font-weight:600;
 }
 
 /* MOBILE */
@@ -451,10 +507,12 @@ footer p{
         </div>
 
         <div class="nav-links">
-            <a href="#">Accueil</a>
-            <a href="#">Services</a>
-            <a href="#">À propos</a>
-            <a href="#">Contact</a>
+
+            <a href="#hero">Accueil</a>
+            <a href="#services">Services</a>
+            <a href="#about">À propos</a>
+            <a href="#contact">Contact</a>
+
         </div>
 
     </div>
@@ -463,7 +521,7 @@ footer p{
 
 <!-- HERO -->
 
-<section class="hero">
+<section class="hero" id="hero">
 
     <div class="hero-content">
 
@@ -473,9 +531,7 @@ footer p{
 
         <p>
             Rakoto Digital Solutions accompagne les entreprises,
-            marques et entrepreneurs dans leur croissance digitale
-            avec des sites web modernes, publicité performante
-            et branding professionnel.
+            marques et entrepreneurs dans leur croissance digitale.
         </p>
 
         <div class="hero-buttons">
@@ -538,16 +594,11 @@ footer p{
 
         <h2>Nos Services Premium</h2>
 
-        <p>
-            Solutions digitales modernes pour développer
-            votre présence en ligne et augmenter vos ventes.
-        </p>
-
     </div>
 
     <div class="services-grid">
 
-        <div class="service-card">
+        <div class="service-card" onclick="openService('web')">
 
             <i class="fas fa-laptop-code"></i>
 
@@ -555,12 +606,12 @@ footer p{
 
             <p>
                 Création de sites web modernes,
-                rapides, responsive et optimisés SEO.
+                rapides et optimisés SEO.
             </p>
 
         </div>
 
-        <div class="service-card">
+        <div class="service-card" onclick="openService('marketing')">
 
             <i class="fas fa-bullhorn"></i>
 
@@ -573,7 +624,7 @@ footer p{
 
         </div>
 
-        <div class="service-card">
+        <div class="service-card" onclick="openService('design')">
 
             <i class="fas fa-pen-nib"></i>
 
@@ -592,7 +643,7 @@ footer p{
 
 <!-- ABOUT -->
 
-<section class="about">
+<section class="about" id="about">
 
     <div class="about-container">
 
@@ -642,8 +693,7 @@ footer p{
         <div class="testimonial">
 
             <p>
-                “Service professionnel et moderne.
-                Notre business a beaucoup évolué.”
+                “Service professionnel et moderne.”
             </p>
 
             <strong>- Entreprise Madagascar</strong>
@@ -653,8 +703,7 @@ footer p{
         <div class="testimonial">
 
             <p>
-                “Excellent design et support rapide.
-                Une vraie agence premium.”
+                “Excellent design et support rapide.”
             </p>
 
             <strong>- Entrepreneur Digital</strong>
@@ -664,8 +713,7 @@ footer p{
         <div class="testimonial">
 
             <p>
-                “Très satisfait du site web créé
-                par Rakoto Digital.”
+                “Très satisfait du site web créé.”
             </p>
 
             <strong>- Client satisfait</strong>
@@ -686,8 +734,7 @@ footer p{
 
     <p>
         Contactez Rakoto Digital Solutions
-        pour créer une présence digitale moderne
-        et professionnelle.
+        pour créer une présence digitale moderne.
     </p>
 
     <a href="https://wa.me/261000000000"
@@ -701,7 +748,7 @@ footer p{
 
 <!-- FOOTER -->
 
-<footer>
+<footer id="contact">
 
     <div class="footer-container">
 
@@ -711,8 +758,7 @@ footer p{
 
             <p>
                 Agence digitale premium spécialisée
-                dans la création de sites web,
-                marketing digital et branding.
+                dans les solutions numériques modernes.
             </p>
 
             <div class="socials">
@@ -751,12 +797,148 @@ footer p{
 
     <div class="copy">
 
-        © 2026 Rakoto Digital Solutions.
-        Tous droits réservés.
+        © 2026 Rakoto Digital Solutions
 
     </div>
 
 </footer>
+
+<!-- POPUP -->
+
+<div id="serviceModal" class="service-modal">
+
+    <div class="service-modal-content">
+
+        <span class="close-modal" onclick="closeService()">
+            &times;
+        </span>
+
+        <div id="serviceContent"></div>
+
+    </div>
+
+</div>
+
+<script>
+
+function openService(type){
+
+let content = '';
+
+if(type === 'web'){
+
+content = `
+<h2 class="service-popup-title">
+Web Development
+</h2>
+
+<p class="service-popup-text">
+Création de sites web modernes,
+rapides et premium pour entreprises.
+</p>
+
+<p class="service-popup-text">
+✔ Site responsive mobile<br>
+✔ SEO Google optimisé<br>
+✔ Ultra rapide<br>
+✔ Design moderne
+</p>
+
+<a href="https://wa.me/261000000000"
+target="_blank"
+class="popup-btn">
+
+Commander maintenant
+
+</a>
+`;
+
+}
+
+if(type === 'marketing'){
+
+content = `
+<h2 class="service-popup-title">
+Digital Marketing
+</h2>
+
+<p class="service-popup-text">
+Publicité Facebook Ads
+et stratégie digitale moderne.
+</p>
+
+<p class="service-popup-text">
+✔ Facebook Ads<br>
+✔ Instagram Marketing<br>
+✔ Community management
+</p>
+
+<a href="https://wa.me/261000000000"
+target="_blank"
+class="popup-btn">
+
+Lancer campagne
+
+</a>
+`;
+
+}
+
+if(type === 'design'){
+
+content = `
+<h2 class="service-popup-title">
+Graphic Design
+</h2>
+
+<p class="service-popup-text">
+Création logo professionnel
+et branding premium.
+</p>
+
+<p class="service-popup-text">
+✔ Logo moderne<br>
+✔ Flyers & affiches<br>
+✔ Branding entreprise
+</p>
+
+<a href="https://wa.me/261000000000"
+target="_blank"
+class="popup-btn">
+
+Demander design
+
+</a>
+`;
+
+}
+
+document.getElementById('serviceContent').innerHTML = content;
+
+document.getElementById('serviceModal').style.display = 'flex';
+
+}
+
+function closeService(){
+
+document.getElementById('serviceModal').style.display = 'none';
+
+}
+
+window.onclick = function(e){
+
+const modal =
+document.getElementById('serviceModal');
+
+if(e.target == modal){
+
+modal.style.display = 'none';
+
+}
+
+}
+
+</script>
 
 </body>
 </html>
