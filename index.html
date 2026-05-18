@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="mg">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,489 +8,377 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 body{
-    font-family:'Poppins',sans-serif;
-    background:#f8fafc;
-    color:#334155;
-    overflow-x:hidden;
+font-family:'Poppins',sans-serif;
+background:#f5f7fb;
+color:#1e293b;
+overflow-x:hidden;
 }
 
 /* HEADER */
 
 header{
-    position:fixed;
-    width:100%;
-    top:0;
-    z-index:1000;
-    background:rgba(255,255,255,.92);
-    backdrop-filter:blur(15px);
-    box-shadow:0 4px 20px rgba(0,0,0,.05);
+background:#fff;
+position:sticky;
+top:0;
+z-index:999;
+box-shadow:0 2px 15px rgba(0,0,0,0.06);
 }
 
-.navbar{
-    max-width:1200px;
-    margin:auto;
-    padding:18px 25px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+.header-container{
+max-width:1200px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 20px;
 }
 
 .logo{
-    font-size:30px;
-    font-family:'Montserrat',sans-serif;
-    font-weight:800;
-    color:#1e3c72;
+font-size:28px;
+font-weight:800;
+font-family:'Montserrat',sans-serif;
+color:#0f172a;
 }
 
 .logo span{
-    color:#ff5722;
+color:#ff5722;
 }
 
-.nav-links{
-    display:flex;
-    gap:30px;
+nav{
+display:flex;
+align-items:center;
+gap:35px;
 }
 
-.nav-links a{
-    text-decoration:none;
-    color:#334155;
-    font-weight:600;
-    transition:.3s;
+nav a{
+text-decoration:none;
+font-weight:600;
+color:#334155;
+transition:0.3s;
 }
 
-.nav-links a:hover{
-    color:#ff5722;
+nav a:hover{
+color:#ff5722;
 }
 
 /* HERO */
 
 .hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:120px 20px;
-    background:
-    linear-gradient(rgba(15,23,42,.75),rgba(15,23,42,.75)),
-    url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1600&auto=format&fit=crop');
-
-    background-size:cover;
-    background-position:center;
-    color:white;
+min-height:90vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:80px 20px;
+background:
+linear-gradient(rgba(15,23,42,.75),rgba(15,23,42,.82)),
+url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1600&auto=format&fit=crop') center/cover;
+color:#fff;
 }
 
 .hero-content{
-    max-width:900px;
+max-width:850px;
 }
 
 .hero h1{
-    font-size:68px;
-    line-height:1.1;
-    margin-bottom:25px;
-    font-family:'Montserrat',sans-serif;
+font-size:55px;
+font-family:'Montserrat',sans-serif;
+margin-bottom:20px;
+line-height:1.2;
 }
 
 .hero p{
-    font-size:18px;
-    line-height:1.9;
-    opacity:.92;
-    margin-bottom:40px;
+font-size:18px;
+line-height:1.8;
+opacity:.92;
+margin-bottom:35px;
 }
 
 .hero-buttons{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
 }
 
 .btn{
-    padding:16px 34px;
-    border-radius:14px;
-    text-decoration:none;
-    font-weight:600;
-    transition:.3s;
+padding:15px 30px;
+border-radius:10px;
+font-weight:600;
+text-decoration:none;
+transition:.3s;
+display:inline-block;
 }
 
 .btn-primary{
-    background:#ff5722;
-    color:white;
+background:#ff5722;
+color:white;
+box-shadow:0 10px 25px rgba(255,87,34,.3);
 }
 
 .btn-primary:hover{
-    transform:translateY(-5px);
+transform:translateY(-3px);
 }
 
 .btn-secondary{
-    border:1px solid rgba(255,255,255,.25);
-    background:rgba(255,255,255,.08);
-    backdrop-filter:blur(10px);
-    color:white;
+background:white;
+color:#0f172a;
 }
 
 .btn-secondary:hover{
-    transform:translateY(-5px);
-}
-
-/* STATS */
-
-.stats{
-    max-width:1200px;
-    margin:auto;
-    margin-top:-80px;
-    padding:0 20px;
-    position:relative;
-    z-index:10;
-}
-
-.stats-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:25px;
-}
-
-.stat-card{
-    background:white;
-    padding:35px;
-    border-radius:24px;
-    box-shadow:0 20px 40px rgba(0,0,0,.08);
-    text-align:center;
-    transition:.35s;
-}
-
-.stat-card:hover{
-    transform:translateY(-10px);
-}
-
-.stat-card h2{
-    font-size:48px;
-    color:#ff5722;
-    margin-bottom:10px;
+background:#e2e8f0;
 }
 
 /* SERVICES */
 
-.services{
-    max-width:1200px;
-    margin:120px auto;
-    padding:0 20px;
+.section{
+padding:100px 20px;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
 }
 
 .section-title{
-    text-align:center;
-    margin-bottom:70px;
+text-align:center;
+margin-bottom:60px;
 }
 
 .section-title h2{
-    font-size:48px;
-    color:#1e3c72;
-    font-family:'Montserrat',sans-serif;
-    margin-bottom:20px;
+font-size:40px;
+font-family:'Montserrat',sans-serif;
+color:#0f172a;
+margin-bottom:10px;
+}
+
+.section-title p{
+color:#64748b;
+font-size:17px;
 }
 
 .services-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
 }
 
 .service-card{
-    background:white;
-    padding:40px;
-    border-radius:24px;
-    box-shadow:0 15px 40px rgba(0,0,0,.06);
-    transition:.35s;
-    cursor:pointer;
-    position:relative;
-    overflow:hidden;
-}
-
-.service-card::before{
-    content:'';
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:5px;
-    background:linear-gradient(90deg,#ff5722,#1e3c72);
+background:white;
+padding:40px 30px;
+border-radius:20px;
+box-shadow:0 8px 30px rgba(0,0,0,0.06);
+transition:.4s;
+cursor:pointer;
+position:relative;
+overflow:hidden;
 }
 
 .service-card:hover{
-    transform:translateY(-12px);
+transform:translateY(-8px);
 }
 
-.service-card i{
-    font-size:50px;
-    color:#ff5722;
-    margin-bottom:25px;
+.service-icon{
+font-size:45px;
+margin-bottom:20px;
+color:#ff5722;
 }
 
 .service-card h3{
-    font-size:26px;
-    color:#1e3c72;
-    margin-bottom:18px;
-    font-family:'Montserrat',sans-serif;
+font-size:25px;
+margin-bottom:15px;
+font-family:'Montserrat',sans-serif;
 }
 
 .service-card p{
-    line-height:1.8;
-    color:#64748b;
+color:#64748b;
+line-height:1.8;
+margin-bottom:20px;
+}
+
+.service-btn{
+background:#0f172a;
+color:white;
+padding:12px 22px;
+display:inline-block;
+border-radius:8px;
+font-size:14px;
+font-weight:600;
+}
+
+/* DYNAMIC CONTENT */
+
+.dynamic-content{
+margin-top:50px;
+background:white;
+padding:45px;
+border-radius:20px;
+box-shadow:0 10px 35px rgba(0,0,0,0.05);
+display:none;
+animation:fadeIn .4s ease;
+}
+
+.dynamic-content.active{
+display:block;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.dynamic-content h2{
+font-size:35px;
+margin-bottom:20px;
+font-family:'Montserrat',sans-serif;
+color:#0f172a;
+}
+
+.dynamic-content p{
+line-height:1.9;
+margin-bottom:18px;
+color:#475569;
+font-size:16px;
+}
+
+.dynamic-content ul{
+margin-left:20px;
+margin-bottom:20px;
+}
+
+.dynamic-content li{
+margin-bottom:10px;
 }
 
 /* ABOUT */
 
 .about{
-    background:#0f172a;
-    color:white;
-    padding:120px 20px;
-}
-
-.about-container{
-    max-width:1200px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:60px;
-    align-items:center;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
 }
 
 .about img{
-    width:100%;
-    border-radius:28px;
+width:100%;
+border-radius:20px;
+box-shadow:0 10px 40px rgba(0,0,0,0.1);
 }
 
-.about-text h2{
-    font-size:52px;
-    margin-bottom:25px;
-    font-family:'Montserrat',sans-serif;
+.about h2{
+font-size:40px;
+margin-bottom:20px;
+font-family:'Montserrat',sans-serif;
 }
 
-.about-text p{
-    line-height:1.9;
-    margin-bottom:20px;
+.about p{
+line-height:1.9;
+color:#475569;
+margin-bottom:20px;
 }
 
-/* TESTIMONIALS */
+/* CONTACT */
 
-.testimonials{
-    max-width:1200px;
-    margin:120px auto;
-    padding:0 20px;
+.contact-box{
+background:#0f172a;
+padding:60px 30px;
+border-radius:25px;
+text-align:center;
+color:white;
 }
 
-.testimonial-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:30px;
+.contact-box h2{
+font-size:40px;
+margin-bottom:20px;
+font-family:'Montserrat',sans-serif;
 }
 
-.testimonial{
-    background:white;
-    padding:35px;
-    border-radius:24px;
-    box-shadow:0 15px 35px rgba(0,0,0,.06);
-    border-left:6px solid #ff5722;
+.contact-box p{
+max-width:700px;
+margin:auto;
+line-height:1.9;
+margin-bottom:30px;
+opacity:.9;
 }
 
-.testimonial p{
-    line-height:1.8;
-    color:#64748b;
-    margin-bottom:20px;
-}
-
-/* CTA */
-
-.cta{
-    background:
-    linear-gradient(rgba(15,23,42,.88),rgba(15,23,42,.88)),
-    url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1600&auto=format&fit=crop');
-
-    background-size:cover;
-    background-position:center;
-
-    padding:120px 20px;
-    text-align:center;
-    color:white;
-}
-
-.cta h2{
-    font-size:58px;
-    margin-bottom:25px;
-    font-family:'Montserrat',sans-serif;
-}
-
-.cta p{
-    max-width:700px;
-    margin:auto;
-    line-height:1.9;
-    margin-bottom:40px;
+.contact-buttons{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
 }
 
 /* FOOTER */
 
 footer{
-    background:#020617;
-    color:#94a3b8;
-    padding:70px 20px 30px;
+background:#020617;
+padding:40px 20px;
+text-align:center;
+color:#94a3b8;
+margin-top:80px;
 }
 
-.footer-container{
-    max-width:1200px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:40px;
+.footer-social{
+margin:20px 0;
+display:flex;
+justify-content:center;
+gap:15px;
 }
 
-footer h3{
-    color:white;
-    margin-bottom:20px;
-    font-family:'Montserrat',sans-serif;
+.footer-social a{
+width:45px;
+height:45px;
+border-radius:50%;
+background:#111827;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+text-decoration:none;
+font-size:18px;
+transition:.3s;
 }
 
-.socials{
-    display:flex;
-    gap:15px;
-    margin-top:25px;
-}
-
-.socials a{
-    width:45px;
-    height:45px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:#0f172a;
-    color:white;
-    text-decoration:none;
-    transition:.3s;
-}
-
-.socials a:hover{
-    background:#ff5722;
-}
-
-.copy{
-    text-align:center;
-    margin-top:50px;
-    padding-top:25px;
-    border-top:1px solid rgba(255,255,255,.08);
-}
-
-/* POPUP */
-
-.service-modal{
-    display:none;
-    position:fixed;
-    z-index:9999;
-    left:0;
-    top:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,.7);
-    backdrop-filter:blur(8px);
-    justify-content:center;
-    align-items:center;
-    padding:20px;
-}
-
-.service-modal-content{
-    background:white;
-    max-width:700px;
-    width:100%;
-    border-radius:24px;
-    padding:40px;
-    animation:popup .35s ease;
-    position:relative;
-}
-
-@keyframes popup{
-    from{
-        opacity:0;
-        transform:scale(.85);
-    }
-    to{
-        opacity:1;
-        transform:scale(1);
-    }
-}
-
-.close-modal{
-    position:absolute;
-    right:25px;
-    top:15px;
-    font-size:35px;
-    cursor:pointer;
-}
-
-.service-popup-title{
-    font-size:36px;
-    color:#1e3c72;
-    margin-bottom:20px;
-    font-family:'Montserrat',sans-serif;
-}
-
-.service-popup-text{
-    line-height:1.9;
-    color:#64748b;
-    margin-bottom:20px;
-}
-
-.popup-btn{
-    display:inline-block;
-    margin-top:20px;
-    background:#ff5722;
-    color:white;
-    text-decoration:none;
-    padding:14px 28px;
-    border-radius:12px;
-    font-weight:600;
+.footer-social a:hover{
+background:#ff5722;
+transform:translateY(-4px);
 }
 
 /* MOBILE */
 
 @media(max-width:900px){
 
-    .hero h1{
-        font-size:42px;
-    }
+.hero h1{
+font-size:38px;
+}
 
-    .about-container{
-        grid-template-columns:1fr;
-    }
+.about{
+grid-template-columns:1fr;
+}
 
-    .section-title h2{
-        font-size:38px;
-    }
+nav{
+gap:15px;
+font-size:14px;
+}
 
-    .about-text h2{
-        font-size:38px;
-    }
-
-    .cta h2{
-        font-size:40px;
-    }
-
-    .nav-links{
-        display:none;
-    }
 }
 
 </style>
@@ -499,442 +387,301 @@ footer h3{
 <body>
 
 <header>
+<div class="header-container">
 
-    <div class="navbar">
+<div class="logo">
+Rakoto<span>Digital</span>
+</div>
 
-        <div class="logo">
-            Rakoto<span>Digital</span>
-        </div>
+<nav>
+<a href="#">Accueil</a>
+<a href="#services">Services</a>
+<a href="#about">À propos</a>
+<a href="#contact">Contact</a>
+</nav>
 
-        <div class="nav-links">
-
-            <a href="#hero">Accueil</a>
-            <a href="#services">Services</a>
-            <a href="#about">À propos</a>
-            <a href="#contact">Contact</a>
-
-        </div>
-
-    </div>
-
+</div>
 </header>
 
 <!-- HERO -->
 
-<section class="hero" id="hero">
+<section class="hero">
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <h1>
-            Agence Digitale Premium à Madagascar
-        </h1>
+<h1>
+Agence Digitale Ultra Premium
+</h1>
 
-        <p>
-            Rakoto Digital Solutions accompagne les entreprises,
-            marques et entrepreneurs dans leur croissance digitale.
-        </p>
+<p>
+Création de sites web modernes, marketing digital puissant, branding premium et solutions digitales complètes pour développer votre business rapidement.
+</p>
 
-        <div class="hero-buttons">
+<div class="hero-buttons">
+<a href="#services" class="btn btn-primary">Découvrir nos services</a>
+<a href="#contact" class="btn btn-secondary">Nous contacter</a>
+</div>
 
-            <a href="https://wa.me/261000000000"
-               class="btn btn-primary">
-
-               Contact WhatsApp
-
-            </a>
-
-            <a href="#services"
-               class="btn btn-secondary">
-
-               Nos Services
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- STATS -->
-
-<section class="stats">
-
-    <div class="stats-grid">
-
-        <div class="stat-card">
-            <h2>120+</h2>
-            <p>Clients satisfaits</p>
-        </div>
-
-        <div class="stat-card">
-            <h2>250+</h2>
-            <p>Projets réalisés</p>
-        </div>
-
-        <div class="stat-card">
-            <h2>98%</h2>
-            <p>Taux satisfaction</p>
-        </div>
-
-        <div class="stat-card">
-            <h2>24/7</h2>
-            <p>Support premium</p>
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 <!-- SERVICES -->
 
-<section class="services" id="services">
+<section class="section" id="services">
 
-    <div class="section-title">
+<div class="container">
 
-        <h2>Nos Services Premium</h2>
+<div class="section-title">
+<h2>Nos Services</h2>
+<p>Cliquez sur un service pour afficher son contenu dynamique.</p>
+</div>
 
-    </div>
+<div class="services-grid">
 
-    <div class="services-grid">
+<div class="service-card" onclick="showContent('web')">
 
-        <div class="service-card" onclick="openService('web')">
+<div class="service-icon">
+<i class="fa-solid fa-code"></i>
+</div>
 
-            <i class="fas fa-laptop-code"></i>
+<h3>Web Development</h3>
 
-            <h3>Web Development</h3>
+<p>
+Création de sites web modernes, rapides, responsive et optimisés SEO.
+</p>
 
-            <p>
-                Création de sites web modernes,
-                rapides et optimisés SEO.
-            </p>
+<div class="service-btn">
+Voir plus
+</div>
 
-        </div>
+</div>
 
-        <div class="service-card" onclick="openService('marketing')">
+<div class="service-card" onclick="showContent('marketing')">
 
-            <i class="fas fa-bullhorn"></i>
+<div class="service-icon">
+<i class="fa-solid fa-bullhorn"></i>
+</div>
 
-            <h3>Digital Marketing</h3>
+<h3>Digital Marketing</h3>
 
-            <p>
-                Publicité Facebook Ads,
-                stratégie marketing et croissance digitale.
-            </p>
+<p>
+Publicité Facebook Ads, stratégie marketing et croissance digitale.
+</p>
 
-        </div>
+<div class="service-btn">
+Voir plus
+</div>
 
-        <div class="service-card" onclick="openService('design')">
+</div>
 
-            <i class="fas fa-pen-nib"></i>
+<div class="service-card" onclick="showContent('design')">
 
-            <h3>Graphic Design</h3>
+<div class="service-icon">
+<i class="fa-solid fa-pen-ruler"></i>
+</div>
 
-            <p>
-                Logo professionnel,
-                branding premium et identité visuelle.
-            </p>
+<h3>Graphic Design</h3>
 
-        </div>
+<p>
+Logo professionnel, branding premium et identité visuelle.
+</p>
 
-    </div>
+<div class="service-btn">
+Voir plus
+</div>
+
+</div>
+
+</div>
+
+<!-- CONTENU DYNAMIQUE -->
+
+<div id="dynamic-content" class="dynamic-content"></div>
+
+</div>
 
 </section>
 
 <!-- ABOUT -->
 
-<section class="about" id="about">
+<section class="section" id="about">
 
-    <div class="about-container">
+<div class="container">
 
-        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop">
+<div class="about">
 
-        <div class="about-text">
+<div>
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop">
+</div>
 
-            <h2>
-                Pourquoi choisir Rakoto Digital ?
-            </h2>
+<div>
 
-            <p>
-                Nous créons des expériences digitales premium
-                pour aider les entreprises à se développer.
-            </p>
+<h2>Pourquoi choisir Rakoto Digital ?</h2>
 
-            <p>
-                Notre équipe combine design moderne,
-                stratégie marketing et développement avancé.
-            </p>
+<p>
+Rakoto Digital Solutions accompagne les entreprises, entrepreneurs et marques dans leur transformation digitale avec des solutions modernes et puissantes.
+</p>
 
-            <a href="https://wa.me/261000000000"
-               class="btn btn-primary">
+<p>
+Notre mission est de créer une présence digitale professionnelle qui attire des clients, augmente les ventes et améliore l’image de votre entreprise.
+</p>
 
-               Travailler avec nous
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- TESTIMONIALS -->
-
-<section class="testimonials">
-
-    <div class="section-title">
-
-        <h2>Témoignages Clients</h2>
-
-    </div>
-
-    <div class="testimonial-grid">
-
-        <div class="testimonial">
-
-            <p>
-                “Service professionnel et moderne.”
-            </p>
-
-            <strong>- Entreprise Madagascar</strong>
-
-        </div>
-
-        <div class="testimonial">
-
-            <p>
-                “Excellent design et support rapide.”
-            </p>
-
-            <strong>- Entrepreneur Digital</strong>
-
-        </div>
-
-        <div class="testimonial">
-
-            <p>
-                “Très satisfait du site web créé.”
-            </p>
-
-            <strong>- Client satisfait</strong>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- CTA -->
-
-<section class="cta">
-
-    <h2>
-        Développez votre business aujourd’hui
-    </h2>
-
-    <p>
-        Contactez Rakoto Digital Solutions
-        pour créer une présence digitale moderne.
-    </p>
-
-    <a href="https://wa.me/261000000000"
-       class="btn btn-primary">
-
-       Contact WhatsApp
-
-    </a>
-
-</section>
-
-<!-- FOOTER -->
-
-<footer id="contact">
-
-    <div class="footer-container">
-
-        <div>
-
-            <h3>Rakoto Digital</h3>
-
-            <p>
-                Agence digitale premium spécialisée
-                dans les solutions numériques modernes.
-            </p>
-
-            <div class="socials">
-
-                <a href="#">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-
-                <a href="#">
-                    <i class="fab fa-instagram"></i>
-                </a>
-
-                <a href="#">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-
-                <a href="#">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-
-            </div>
-
-        </div>
-
-        <div>
-
-            <h3>Contact</h3>
-
-            <p>Email : christian.rakoto.pro@gmail.com</p>
-            <p>Téléphone : +261 xx xx xxx xx</p>
-            <p>Antananarivo, Madagascar</p>
-
-        </div>
-
-    </div>
-
-    <div class="copy">
-
-        © 2026 Rakoto Digital Solutions
-
-    </div>
-
-</footer>
-
-<!-- POPUP -->
-
-<div id="serviceModal" class="service-modal">
-
-    <div class="service-modal-content">
-
-        <span class="close-modal" onclick="closeService()">
-            &times;
-        </span>
-
-        <div id="serviceContent"></div>
-
-    </div>
+<a href="#contact" class="btn btn-primary">
+Commencer maintenant
+</a>
 
 </div>
 
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="section" id="contact">
+
+<div class="container">
+
+<div class="contact-box">
+
+<h2>Prêt à développer votre business ?</h2>
+
+<p>
+Contactez Rakoto Digital dès maintenant pour créer votre site web, lancer vos campagnes publicitaires ou développer votre image de marque.
+</p>
+
+<div class="contact-buttons">
+
+<a href="mailto:christian.rakoto.pro@gmail.com" class="btn btn-primary">
+Envoyer un Email
+</a>
+
+<a href="https://wa.me/261000000000" class="btn btn-secondary">
+WhatsApp
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2 style="font-family:Montserrat;">
+Rakoto Digital Solutions
+</h2>
+
+<div class="footer-social">
+
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+<a href="#"><i class="fab fa-whatsapp"></i></a>
+<a href="#"><i class="fab fa-linkedin-in"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+
+</div>
+
+<p>
+© 2026 Rakoto Digital Solutions — Tous droits réservés.
+</p>
+
+</footer>
+
 <script>
 
-function openService(type){
+function showContent(service){
 
-let content = '';
+const content = document.getElementById("dynamic-content");
 
-if(type === 'web'){
+let html = "";
 
-content = `
-<h2 class="service-popup-title">
-Web Development
-</h2>
+if(service === "web"){
 
-<p class="service-popup-text">
-Création de sites web modernes,
-rapides et premium pour entreprises.
+html = `
+<h2>Web Development</h2>
+
+<p>
+Nous créons des sites web ultra modernes, rapides et professionnels adaptés aux entreprises, agences, restaurants, boutiques et portfolios.
 </p>
 
-<p class="service-popup-text">
-✔ Site responsive mobile<br>
-✔ SEO Google optimisé<br>
-✔ Ultra rapide<br>
-✔ Design moderne
+<ul>
+<li>Site vitrine professionnel</li>
+<li>Landing page moderne</li>
+<li>Portfolio premium</li>
+<li>Optimisation SEO Google</li>
+<li>Responsive Mobile & PC</li>
+<li>Hébergement & mise en ligne</li>
+</ul>
+
+<p>
+Nos sites sont conçus pour convertir les visiteurs en clients grâce à un design moderne et une expérience utilisateur premium.
 </p>
-
-<a href="https://wa.me/261000000000"
-target="_blank"
-class="popup-btn">
-
-Commander maintenant
-
-</a>
 `;
 
 }
 
-if(type === 'marketing'){
+if(service === "marketing"){
 
-content = `
-<h2 class="service-popup-title">
-Digital Marketing
-</h2>
+html = `
+<h2>Digital Marketing</h2>
 
-<p class="service-popup-text">
-Publicité Facebook Ads
-et stratégie digitale moderne.
+<p>
+Développez votre visibilité et augmentez vos ventes avec des stratégies digitales performantes.
 </p>
 
-<p class="service-popup-text">
-✔ Facebook Ads<br>
-✔ Instagram Marketing<br>
-✔ Community management
+<ul>
+<li>Facebook Ads</li>
+<li>Instagram Marketing</li>
+<li>Copywriting professionnel</li>
+<li>Stratégie de croissance</li>
+<li>Gestion réseaux sociaux</li>
+<li>Campagnes publicitaires premium</li>
+</ul>
+
+<p>
+Nous aidons les entreprises à atteindre plus de clients grâce à des campagnes digitales ciblées et rentables.
 </p>
-
-<a href="https://wa.me/261000000000"
-target="_blank"
-class="popup-btn">
-
-Lancer campagne
-
-</a>
 `;
 
 }
 
-if(type === 'design'){
+if(service === "design"){
 
-content = `
-<h2 class="service-popup-title">
-Graphic Design
-</h2>
+html = `
+<h2>Graphic Design</h2>
 
-<p class="service-popup-text">
-Création logo professionnel
-et branding premium.
+<p>
+Nous créons une identité visuelle forte et professionnelle pour votre marque.
 </p>
 
-<p class="service-popup-text">
-✔ Logo moderne<br>
-✔ Flyers & affiches<br>
-✔ Branding entreprise
+<ul>
+<li>Logo professionnel</li>
+<li>Flyers & affiches</li>
+<li>Branding complet</li>
+<li>Design réseaux sociaux</li>
+<li>Cartes de visite</li>
+<li>Bannières publicitaires</li>
+</ul>
+
+<p>
+Un design premium permet à votre entreprise de gagner confiance, crédibilité et visibilité.
 </p>
-
-<a href="https://wa.me/261000000000"
-target="_blank"
-class="popup-btn">
-
-Demander design
-
-</a>
 `;
 
 }
 
-document.getElementById('serviceContent').innerHTML = content;
+content.innerHTML = html;
 
-document.getElementById('serviceModal').style.display = 'flex';
+content.classList.add("active");
 
-}
-
-function closeService(){
-
-document.getElementById('serviceModal').style.display = 'none';
-
-}
-
-window.onclick = function(e){
-
-const modal =
-document.getElementById('serviceModal');
-
-if(e.target == modal){
-
-modal.style.display = 'none';
-
-}
+content.scrollIntoView({
+behavior:"smooth"
+});
 
 }
 
