@@ -1,263 +1,420 @@
 <!DOCTYPE html>
 <html lang="mg">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Rakoto Digital Solutions | Masoivoho Ara-kiditaly Matihanina</title>
-   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght=600;700;800&family=Poppins:wght=300;400;500;600;700&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-   <style>
-       :root {
-           --primary: #1e3c72;
-           --secondary: #2a5298;
-           --accent: #ff5722;
-           --accent-green: #2ec4b6;
-           --dark: #0f172a;
-           --light: #f8fafc;
-           --slate: #475569;
-       }
- 
-       * { margin: 0; padding: 0; box-sizing: border-box; }
-       body { font-family: 'Poppins', sans-serif; background-color: var(--light); color: var(--dark); line-height: 1.6; overflow-x: hidden; }
-       
-       header { background: #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 1000; }
-       .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; }
-       .logo { font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; text-decoration: none; cursor: pointer; }
-       .logo span { color: var(--accent); }
-       nav { display: flex; align-items: center; gap: 30px; }
-       nav a { text-decoration: none; color: var(--slate); font-weight: 600; font-size: 15px; transition: color 0.3s; cursor: pointer; }
-       nav a:hover { color: var(--accent) !important; }
-       
-       /* APP PAGES ROUTING */
-       .page { display: none; }
-       .page.active { display: block; animation: fadeIn 0.4s ease-in-out; }
- 
-       @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
- 
-       /* HERO HOME */
-       .hero { background: linear-gradient(rgba(30, 60, 114, 0.9), rgba(42, 82, 152, 0.9)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop') no-repeat center center/cover; color: #fff; padding: 140px 20px; text-align: center; }
-       .hero h1 { font-family: 'Montserrat', sans-serif; font-size: 42px; font-weight: 800; margin-bottom: 25px; letter-spacing: -0.5px; }
-       .hero p { font-size: 19px; max-width: 800px; margin: 0 auto 35px auto; opacity: 0.95; font-weight: 300; }
-       .hero-btn { background-color: var(--accent); color: #fff; padding: 16px 36px; text-decoration: none; font-weight: 600; border-radius: 8px; display: inline-block; box-shadow: 0 4px 15px rgba(255, 87, 34, 0.4); transition: all 0.3s; border: none; cursor: pointer; font-family: 'Poppins', sans-serif; font-size: 16px; }
-       .hero-btn:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(255, 87, 34, 0.6); }
-       
-       /* SERVICES SECTION HOME */
-       .services-section { max-width: 1200px; margin: 100px auto 60px auto; padding: 0 20px; text-align: center; }
-       .services-section h2 { font-family: 'Montserrat', sans-serif; font-size: 36px; color: var(--primary); margin-bottom: 15px; font-weight: 700; }
-       .services-section > p { color: var(--slate); margin-bottom: 60px; font-size: 16px; max-width: 600px; margin-left: auto; margin-right: auto; }
-       .services-container { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
-       .card { background: #ffffff; padding: 50px 35px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); flex: 1; min-width: 300px; max-width: 380px; text-align: left; border-top: 5px solid var(--primary); transition: all 0.3s; position: relative; }
-       .card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(30, 60, 114, 0.1); }
-       .card.orange { border-top-color: var(--accent); }
-       .card.green { border-top-color: var(--accent-green); }
-       .card .icon-box { width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; font-size: 24px; }
-       .card.blue .icon-box { background: rgba(30, 60, 114, 0.1); color: var(--primary); }
-       .card.orange .icon-box { background: rgba(255, 87, 34, 0.1); color: var(--accent); }
-       .card.green .icon-box { background: rgba(46, 196, 182, 0.1); color: var(--accent-green); }
-       .card h3 { font-family: 'Montserrat', sans-serif; font-size: 22px; color: var(--primary); margin-bottom: 15px; font-weight: 700; }
-       .card p { color: var(--slate); font-size: 15px; margin-bottom: 30px; min-height: 90px; }
-       .card .cta-link { color: var(--accent); text-decoration: none; font-weight: 700; font-size: 15px; display: inline-flex; align-items: center; gap: 8px; border: none; background: none; cursor: pointer; font-family: 'Poppins', sans-serif; }
-       .card .cta-link:hover { gap: 12px; transition: all 0.2s; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakoto Digital Solutions | Masoivoho Ara-kiditaly Matihanina</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght=600;700;800&family=Poppins:wght=300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #1e3c72;
+            --secondary: #2a5298;
+            --accent: #ff5722;
+            --accent-green: #2ec4b6;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --slate: #475569;
+        }
 
-       /* HOME DYNAMIC PACKAGES & BLOG STYLES */
-       .packages-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px; }
-       .package-card { border: 1px solid #e2e8f0; padding: 25px; border-radius: 12px; width: 280px; background: #ffffff; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.02); transition: transform 0.3s; }
-       .package-card:hover { transform: translateY(-5px); }
-       .package-card h3 { font-family: 'Montserrat', sans-serif; font-size: 20px; color: var(--primary); }
-       .package-card .price { font-size: 26px; font-weight: bold; color: var(--accent); margin: 15px 0; font-family: 'Montserrat', sans-serif; }
-       .package-card ul { text-align: left; font-size: 14px; padding-left: 0; margin-bottom: 20px; line-height: 1.8; color: var(--slate); list-style: none; }
-       .package-card ul li { margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
-       .blog-section { max-width: 1200px; margin: 100px auto; padding: 0 20px; }
-       .blog-section h2 { font-family: 'Montserrat', sans-serif; font-size: 36px; color: var(--primary); text-align: center; margin-bottom: 50px; font-weight: 700; }
-       .blog-container { display: flex; flex-direction: column; gap: 25px; max-width: 900px; margin: 0 auto; }
-       .blog-card { background: #ffffff; padding: 25px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); display: flex; align-items: center; gap: 25px; transition: transform 0.3s; }
-       .blog-card:hover { transform: translateX(5px); }
-       .blog-img { width: 120px; height: 120px; object-fit: cover; border-radius: 12px; }
-       .blog-content { flex: 1; }
-       .blog-content h3 { font-family: 'Montserrat', sans-serif; font-size: 18px; color: var(--primary); margin-bottom: 10px; line-height: 1.4; }
-       .blog-meta { font-size: 13px; color: #94a3b8; margin-top: 5px; }
-       .read-more { display: inline-block; color: var(--accent); text-decoration: none; font-weight: 600; font-size: 14px; margin-top: 8px; transition: color 0.2s; }
-       .read-more:hover { color: var(--primary); }
-       
-       /* ABOUT SECTION HOME */
-       .details-section { max-width: 1200px; margin: 120px auto; padding: 0 20px; display: flex; align-items: center; flex-wrap: wrap; gap: 60px; }
-       .details-text { flex: 1; min-width: 320px; }
-       .details-text h2 { font-family: 'Montserrat', sans-serif; font-size: 38px; color: var(--primary); margin-bottom: 25px; line-height: 1.3; font-weight: 700; }
-       .details-text p { color: var(--slate); font-size: 16px; margin-bottom: 35px; line-height: 1.8; }
-       
-       .details-images { flex: 1; min-width: 320px; position: relative; height: 450px; display: flex; align-items: center; justify-content: center; }
-       .img-back { width: 65%; height: 350px; object-fit: cover; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); position: absolute; left: 5%; top: 10%; z-index: 1; }
-       .img-front { width: 55%; height: 380px; object-fit: cover; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.12); position: absolute; right: 5%; bottom: 5%; z-index: 2; border: 6px solid #ffffff; }
- 
-       /* ==========================================
-          LANDING PAGES (ARGUMENTS LOURDES STYLE) 
-       ========================================== */
-       .landing-header { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #fff; padding: 80px 20px; text-align: center; position: relative; }
-       .landing-header .back-home { position: absolute; top: 30px; left: calc(50% - 580px); color: #fff; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; background: rgba(255,255,255,0.1); padding: 8px 16px; border-radius: 20px; transition: background 0.2s; cursor: pointer; }
-       @media (max-width: 1200px) { .landing-header .back-home { left: 20px; } }
-       .landing-header .back-home:hover { background: rgba(255,255,255,0.2); }
-       .landing-header h1 { font-family: 'Montserrat', sans-serif; font-size: 40px; font-weight: 800; margin-bottom: 15px; }
-       .landing-header p { font-size: 18px; opacity: 0.9; max-width: 700px; margin: 0 auto; font-weight: 300; }
- 
-       .argument-container { max-width: 1100px; margin: 80px auto; padding: 0 20px; }
-       .heavy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; margin-bottom: 90px; }
-       @media (max-width: 768px) { .heavy-grid { grid-template-columns: 1fr; gap: 35px; } }
-       .heavy-text h2 { font-family: 'Montserrat', sans-serif; font-size: 28px; color: var(--primary); margin-bottom: 20px; font-weight: 700; border-left: 5px solid var(--accent); padding-left: 15px; }
-       .heavy-text p { color: var(--slate); font-size: 16px; line-height: 1.8; margin-bottom: 20px; text-align: justify; }
-       .heavy-features { list-style: none; margin-top: 25px; }
-       .heavy-features li { display: flex; align-items: start; gap: 12px; margin-bottom: 15px; color: var(--dark); font-weight: 500; font-size: 15px; }
-       .heavy-features li i { color: var(--accent-green); font-size: 18px; margin-top: 3px; }
- 
-       /* PACKAGES / TARIFS */
-       .pricing-section { background-color: #ffffff; padding: 80px 20px; border-radius: 24px; box-shadow: 0 4px 25px rgba(0,0,0,0.02); margin-bottom: 60px; text-align: center; }
-       .pricing-section h2 { font-family: 'Montserrat', sans-serif; font-size: 32px; color: var(--primary); margin-bottom: 15px; }
-       .pricing-section > p { color: var(--slate); margin-bottom: 50px; }
-       .pricing-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; max-width: 1000px; margin: 0 auto; }
-       .price-card { background: var(--light); border: 1px solid #e2e8f0; border-radius: 16px; padding: 40px 30px; flex: 1; min-width: 280px; max-width: 320px; text-align: left; transition: all 0.3s; }
-       .price-card.featured { background: var(--primary); color: #fff; border: none; transform: scale(1.05); box-shadow: 0 15px 35px rgba(30, 60, 114, 0.2); }
-       @media (max-width: 768px) { .price-card.featured { transform: scale(1); } }
-       .price-card h4 { font-family: 'Montserrat', sans-serif; font-size: 18px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--slate); }
-       .price-card.featured h4 { color: rgba(255,255,255,0.7); }
-       .price-card .price { font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 800; color: var(--primary); margin-bottom: 25px; }
-       .price-card.featured .price { color: #fff; }
-       .price-card ul { list-style: none; margin-bottom: 35px; }
-       .price-card ul li { margin-bottom: 12px; font-size: 14px; display: flex; align-items: center; gap: 10px; color: var(--slate); }
-       .price-card.featured ul li { color: rgba(255,255,255,0.85); }
-       .price-card ul li i { color: var(--accent-green); }
-       .price-card.featured ul li i { color: #fff; }
-       .price-btn { display: block; text-align: center; background: var(--primary); color: #fff; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; transition: background 0.2s; }
-       .price-card.featured .price-btn { background: var(--accent); }
-       .price-btn:hover { opacity: 0.9; }
- 
-       /* BOTTOM CTA */
-       .bottom-cta { text-align: center; background: linear-gradient(rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1200&auto=format&fit=crop'); color: #fff; padding: 80px 20px; border-radius: 20px; margin-top: 40px; }
-       .bottom-cta h3 { font-family: 'Montserrat', sans-serif; font-size: 30px; margin-bottom: 15px; }
-       .bottom-cta p { opacity: 0.8; max-width: 600px; margin: 0 auto 30px auto; }
-       
-       /* FOOTER ALWAYS VISIBLE */
-       footer { background-color: var(--dark); color: #9ca3af; padding: 60px 20px 30px 20px; font-size: 14px; margin-top: 80px; width: 100%; }
-       .footer-container { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; }
-       .footer-col { flex: 1; min-width: 250px; }
-       .footer-col h3 { color: #ffffff; font-family: 'Montserrat', sans-serif; font-size: 20px; margin-bottom: 20px; }
-       .footer-col h3 span { color: var(--accent); }
-       .footer-col p { line-height: 1.8; margin-bottom: 20px; }
-       .footer-social-icons { display: flex; gap: 15px; margin-bottom: 20px; }
-       .footer-social-icons a { color: #ffffff; font-size: 18px; transition: color 0.2s; text-decoration: none; }
-       .footer-social-icons a:hover { color: var(--accent); }
-       .footer-col ul { list-style: none; }
-       .footer-col ul li { margin-bottom: 12px; }
-       .footer-col ul li a { color: #9ca3af; text-decoration: none; transition: color 0.2s; cursor: pointer; }
-       .footer-col ul li a:hover { color: #ffffff; }
-   </style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--light); color: var(--dark); line-height: 1.6; overflow-x: hidden; }
+        
+        header { background: #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 1000; }
+        .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; }
+        .logo { font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; text-decoration: none; cursor: pointer; }
+        .logo span { color: var(--accent); }
+        nav { display: flex; align-items: center; gap: 30px; }
+        nav a { text-decoration: none; color: var(--slate); font-weight: 600; font-size: 15px; transition: color 0.3s; cursor: pointer; }
+        nav a:hover { color: var(--accent) !important; }
+        
+        /* APP PAGES ROUTING */
+        .page { display: none; }
+        .page.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* HERO HOME */
+        .hero { background: linear-gradient(rgba(30, 60, 114, 0.9), rgba(42, 82, 152, 0.9)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop') no-repeat center center/cover; color: #fff; padding: 140px 20px; text-align: center; }
+        .hero h1 { font-family: 'Montserrat', sans-serif; font-size: 42px; font-weight: 800; margin-bottom: 25px; letter-spacing: -0.5px; }
+        .hero p { font-size: 19px; max-width: 800px; margin: 0 auto 35px auto; opacity: 0.95; font-weight: 300; }
+        .hero-btn { background-color: var(--accent); color: #fff; padding: 16px 36px; text-decoration: none; font-weight: 600; border-radius: 8px; display: inline-block; box-shadow: 0 4px 15px rgba(255, 87, 34, 0.4); transition: all 0.3s; border: none; cursor: pointer; font-family: 'Poppins', sans-serif; font-size: 16px; }
+        .hero-btn:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(255, 87, 34, 0.6); }
+        
+        /* SERVICES SECTION HOME */
+        .services-section { max-width: 1200px; margin: 100px auto 60px auto; padding: 0 20px; text-align: center; }
+        .services-section h2 { font-family: 'Montserrat', sans-serif; font-size: 36px; color: var(--primary); margin-bottom: 15px; font-weight: 700; }
+        .services-section > p { color: var(--slate); margin-bottom: 60px; font-size: 16px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .services-container { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+        .card { background: #ffffff; padding: 50px 35px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); flex: 1; min-width: 300px; max-width: 380px; text-align: left; border-top: 5px solid var(--primary); transition: all 0.3s; position: relative; }
+        .card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(30, 60, 114, 0.1); }
+        .card.orange { border-top-color: var(--accent); }
+        .card.green { border-top-color: var(--accent-green); }
+        .card .icon-box { width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; font-size: 24px; }
+        .card.blue .icon-box { background: rgba(30, 60, 114, 0.1); color: var(--primary); }
+        .card.orange .icon-box { background: rgba(255, 87, 34, 0.1); color: var(--accent); }
+        .card.green .icon-box { background: rgba(46, 196, 182, 0.1); color: var(--accent-green); }
+        .card h3 { font-family: 'Montserrat', sans-serif; font-size: 22px; color: var(--primary); margin-bottom: 15px; font-weight: 700; }
+        .card p { color: var(--slate); font-size: 15px; margin-bottom: 30px; min-height: 90px; }
+        .card .cta-link { color: var(--accent); text-decoration: none; font-weight: 700; font-size: 15px; display: inline-flex; align-items: center; gap: 8px; border: none; background: none; cursor: pointer; font-family: 'Poppins', sans-serif; }
+        .card .cta-link:hover { gap: 12px; transition: all 0.2s; }
+        
+        /* ABOUT SECTION HOME */
+        .details-section { max-width: 1200px; margin: 120px auto; padding: 0 20px; display: flex; align-items: center; flex-wrap: wrap; gap: 60px; }
+        .details-text { flex: 1; min-width: 320px; }
+        .details-text h2 { font-family: 'Montserrat', sans-serif; font-size: 38px; color: var(--primary); margin-bottom: 25px; line-height: 1.3; font-weight: 700; }
+        .details-text p { color: var(--slate); font-size: 16px; margin-bottom: 35px; line-height: 1.8; }
+        
+        .details-images { flex: 1; min-width: 320px; position: relative; height: 450px; display: flex; align-items: center; justify-content: center; }
+        .img-back { width: 65%; height: 350px; object-fit: cover; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); position: absolute; left: 5%; top: 10%; z-index: 1; }
+        .img-front { width: 55%; height: 380px; object-fit: cover; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.12); position: absolute; right: 5%; bottom: 5%; z-index: 2; border: 6px solid #ffffff; }
+
+        /* ==========================================
+           LANDING PAGES (ARGUMENTS LOURDES STYLE) 
+        ========================================== */
+        .landing-header { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #fff; padding: 80px 20px; text-align: center; position: relative; }
+        .landing-header .back-home { position: absolute; top: 30px; left: calc(50% - 580px); color: #fff; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; background: rgba(255,255,255,0.1); padding: 8px 16px; border-radius: 20px; transition: background 0.2s; cursor: pointer; }
+        @media (max-width: 1200px) { .landing-header .back-home { left: 20px; } }
+        .landing-header .back-home:hover { background: rgba(255,255,255,0.2); }
+        .landing-header h1 { font-family: 'Montserrat', sans-serif; font-size: 40px; font-weight: 800; margin-bottom: 15px; }
+        .landing-header p { font-size: 18px; opacity: 0.9; max-width: 700px; margin: 0 auto; font-weight: 300; }
+
+        .argument-container { max-width: 1100px; margin: 80px auto; padding: 0 20px; }
+        .heavy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; margin-bottom: 90px; }
+        @media (max-width: 768px) { .heavy-grid { grid-template-columns: 1fr; gap: 35px; } }
+        .heavy-text h2 { font-family: 'Montserrat', sans-serif; font-size: 28px; color: var(--primary); margin-bottom: 20px; font-weight: 700; border-left: 5px solid var(--accent); padding-left: 15px; }
+        .heavy-text p { color: var(--slate); font-size: 16px; line-height: 1.8; margin-bottom: 20px; text-align: justify; }
+        .heavy-features { list-style: none; margin-top: 25px; }
+        .heavy-features li { display: flex; align-items: start; gap: 12px; margin-bottom: 15px; color: var(--dark); font-weight: 500; font-size: 15px; }
+        .heavy-features li i { color: var(--accent-green); font-size: 18px; margin-top: 3px; }
+
+        /* PACKAGES / TARIFS */
+        .pricing-section { background-color: #ffffff; padding: 80px 20px; border-radius: 24px; box-shadow: 0 4px 25px rgba(0,0,0,0.02); margin-bottom: 60px; text-align: center; }
+        .pricing-section h2 { font-family: 'Montserrat', sans-serif; font-size: 32px; color: var(--primary); margin-bottom: 15px; }
+        .pricing-section > p { color: var(--slate); margin-bottom: 50px; }
+        .pricing-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; max-width: 1000px; margin: 0 auto; }
+        .price-card { background: var(--light); border: 1px solid #e2e8f0; border-radius: 16px; padding: 40px 30px; flex: 1; min-width: 280px; max-width: 320px; text-align: left; transition: all 0.3s; }
+        .price-card.featured { background: var(--primary); color: #fff; border: none; transform: scale(1.05); box-shadow: 0 15px 35px rgba(30, 60, 114, 0.2); }
+        @media (max-width: 768px) { .price-card.featured { transform: scale(1); } }
+        .price-card h4 { font-family: 'Montserrat', sans-serif; font-size: 18px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--slate); }
+        .price-card.featured h4 { color: rgba(255,255,255,0.7); }
+        .price-card .price { font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 800; color: var(--primary); margin-bottom: 25px; }
+        .price-card.featured .price { color: #fff; }
+        .price-card ul { list-style: none; margin-bottom: 35px; }
+        .price-card ul li { margin-bottom: 12px; font-size: 14px; display: flex; align-items: center; gap: 10px; color: var(--slate); }
+        .price-card.featured ul li { color: rgba(255,255,255,0.85); }
+        .price-card ul li i { color: var(--accent-green); }
+        .price-card.featured ul li i { color: #fff; }
+        .price-btn { display: block; text-align: center; background: var(--primary); color: #fff; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; transition: background 0.2s; }
+        .price-card.featured .price-btn { background: var(--accent); }
+        .price-btn:hover { opacity: 0.9; }
+
+        /* BOTTOM CTA */
+        .bottom-cta { text-align: center; background: linear-gradient(rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1200&auto=format&fit=crop'); color: #fff; padding: 80px 20px; border-radius: 20px; margin-top: 40px; }
+        .bottom-cta h3 { font-family: 'Montserrat', sans-serif; font-size: 30px; margin-bottom: 15px; }
+        .bottom-cta p { opacity: 0.8; max-width: 600px; margin: 0 auto 30px auto; }
+        
+        /* FOOTER ALWAYS VISIBLE */
+        footer { background-color: var(--dark); color: #9ca3af; padding: 60px 20px 30px 20px; font-size: 14px; margin-top: 80px; width: 100%; }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; }
+        .footer-col { flex: 1; min-width: 250px; }
+        .footer-col h3 { color: #ffffff; font-family: 'Montserrat', sans-serif; font-size: 20px; margin-bottom: 20px; }
+        .footer-col h3 span { color: var(--accent); }
+        .footer-col p { line-height: 1.8; margin-bottom: 20px; }
+        .footer-social-icons { display: flex; gap: 15px; margin-bottom: 20px; }
+        .footer-social-icons a { color: #ffffff; font-size: 18px; transition: color 0.2s; text-decoration: none; }
+        .footer-social-icons a:hover { color: var(--accent); }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 12px; }
+        .footer-col ul li a { color: #9ca3af; text-decoration: none; transition: color 0.2s; cursor: pointer; }
+        .footer-col ul li a:hover { color: #ffffff; }
+    </style>
 </head>
 <body>
- 
-   <header>
-       <div class="header-container">
-           <a onclick="showPage('home')" class="logo">Rakoto<span>Digital</span></a>
-           <nav>
-                <a onclick="showPage('home')">Fandraisana</a>
-                <a onclick="showPage('marketing')">Digital Marketing</a>
-                <a onclick="showPage('design')">Graphic Design</a>
-                <a onclick="showPage('web')">Web Development</a>
-                <a href="mailto:christian.rakoto.pro@gmail.com">Contact</a>
-           </nav>
-       </div>
-   </header>
- 
-   <div id="home" class="page active">
-       <section class="hero">
-           <h1>Miarahaba anao ao amin'ny Rakoto Digital Solutions</h1>
-           <p>Mpanolotra vahaolana ara-kiditaly ambony lenta sy paikady maty paika hampisondrotana ny fidiram-bolan'ny orinasanao.</p>
-           <button class="hero-btn" onclick="scrollToElement('tolotra')">Hijery ny Tolotra Omenay</button>
-       </section>
- 
-       <section class="services-section" id="tolotra">
-           <h2>Ny Tolotra Omenay</h2>
-           <p>Fidio ny tolotra mifanaraka amin'ny filanao mba handrafetana paikady matanjaka handresena ny mpifaninana aminao.</p>
-           <div class="services-container">
-                <div class="card blue">
-                    <div class="icon-box"><i class="fas fa-bullhorn"></i></div>
-                    <h3>Digital Marketing</h3>
-                    <p>Fampiroboroboana ny fandraharahana sy fitarihana mpanjifa mividy amin'ny alalan'ny Facebook Ads sy Copywriting mandresy lahatra.</p>
-                    <button class="cta-link" onclick="showPage('marketing')">Jereo ny pitsopitsony →</button>
-                </div>
-                <div class="card orange">
-                    <div class="icon-box"><i class="fas fa-palette"></i></div>
-                    <h3>Graphic Design</h3>
-                    <p>Famoronana Logo tokana, tsotra, ary mora tsaroan'ny olona nefa mitondra ny tena herin'ny marikao miaraka amin'ny etikety sy afisy.</p>
-                    <button class="cta-link" onclick="showPage('design')">Jereo ny pitsopitsony →</button>
-                </div>
-                <div class="card green">
-                    <div class="icon-box"><i class="fas fa-code"></i></div>
-                    <h3>Web Development</h3>
-                    <p>Famoronana tranonkala matihanina sady haingana, mifanaraka amin'ny finday rehetra, ary optimized tsara ho an'ny Google.</p>
-                    <button class="cta-link" onclick="showPage('web')">Jereo ny pitsopitsony →</button>
-                </div>
-           </div>
-       </section>
 
-       <section class="services-section" id="packages-global">
-            <h2>Nos Offres & Tarifs</h2>
-            <p style="text-align: center; color: var(--slate); margin-bottom: 30px;">Des solutions adaptées à votre budget pour propulser votre activité.</p>
-            
-            <div class="packages-container">
-                <div class="package-card">
-                    <h3>Starter</h3>
-                    <div class="price">150 USD</div>
-                    <p style="font-size: 14px; color: var(--slate); min-height: 50px;">Idéal pour lancer votre présence en ligne rapidement.</p>
-                    <ul>
-                        <li><i class="fas fa-check" style="color: var(--accent-green);"></i> Landing Page (Page unique)</li>
-                        <li><i class="fas fa-check" style="color: var(--accent-green);"></i> Design Mobile Responsive</li>
-                        <li><i class="fas fa-check" style="color: var(--accent-green);"></i> Formulaire de contact</li>
-                        <li><i class="fas fa-check" style="color: var(--accent-green);"></i> Intégration WhatsApp</li>
-                    </ul>
-                    <button class="hero-btn" onclick="window.location.href='mailto:christian.rakoto.pro@gmail.com?subject=Demande Package Starter'" style="padding: 10px 20px; font-size: 14px; width: 100%;">Choisir Starter</button>
-                </div>
+    <header>
+        <div class="header-container">
+            <a onclick="showPage('home')" class="logo">Rakoto<span>Digital</span></a>
+            <nav>
+                <a onclick="showPage('home')">Fandraisana</a>
+                <a onclick="showPage('marketing')">Digital Marketing</a>
+                <a onclick="showPage('design')">Graphic Design</a>
+                <a onclick="showPage('web')">Web Development</a>
+                <a href="mailto:christian.rakoto.pro@gmail.com">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-                <div class="package-card" style="border: 2px solid var(--accent-green); position: relative;">
-                    <span style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent-green); color: #fff; padding: 2px 10px; font-size: 11px; font-weight: bold; border-radius: 10px;">POPULAIRE</span>
-                    <h3>Growth</h3>
-                    <div class="price">300 USD</div>
-                    <p style="font-size: 14px; color: var(--slate); min-height: 50px;">Parfait pour les entreprises en pleine croissance.</p>
-                    <ul>
-                        <li><i class="fas fa-check" style="color: var(--accent-green);"></i> Site Web Complet (3 à 5 pages)</li>
-                        <li><i class="fas fa-check" style="color: var(--accent-green);"></i> Optimisation SEO de base</li>
-                        <li><i class="fas fa-check" style="color: var(--accent-green);"></i> Google Analytics configuré</li>
-                        <li><i class="fas fa-check" style="color: var(--accent-green);"></i> 1 mois de support technique</li>
-                    </ul>
-                    <button class="hero-btn" onclick="window.location.href='mailto:christian.rakoto.pro@gmail.com?subject=Demande Package Growth'" style="padding: 10px 20px; font-size: 14px; width: 100%; background: var(--accent-green);">Choisir Growth</button>
-                </div>
+    <div id="home" class="page active">
+        <section class="hero">
+            <h1>Miarahaba anao ao amin'ny Rakoto Digital Solutions</h1>
+            <p>Mpanolotra vahaolana ara-kiditaly ambony lenta sy paikady maty paika hampisondrotana ny fidiram-bolan'ny orinasanao.</p>
+            <button class="hero-btn" onclick="scrollToElement('tolotra')">Hijery ny Tolotra Omenay</button>
+        </section>
 
-                <div class="package-card">
-                    <h3>Premium</h3>
-                    <div class="price">500 USD+</div>
-                    <p style="font-size: 14px; color: var(--slate); min-height: 50px;">Solution sur-mesure et stratégie avancée.</p>
-                    <ul>
-                        <li><i class="fas fa-check" style="color: var(--accent-green);"></i> Site E-commerce / Dynamique</li>
-                        <li><i class="fas fa-check" style="color: var(--accent-green);"></i> Stratégie SEO Avancée</li>
-                        <li><i class="fas fa-check" style="color: var(--accent-green);"></i> Identité visuelle & Branding</li>
-                        <li><i class="fas fa-check" style="color: var(--accent-green);"></i> Support prioritaire 24/7</li>
-                    </ul>
-                    <button class="hero-btn" onclick="window.location.href='mailto:christian.rakoto.pro@gmail.com?subject=Demande Package Premium'" style="padding: 10px 20px; font-size: 14px; width: 100%;">Contacter</button>
-                </div>
-            </div>
-        </section>
+        <section class="services-section" id="tolotra">
+            <h2>Ny Tolotra Omenay</h2>
+            <p>Fidio ny tolotra mifanaraka amin'ny filanao mba handrafetana paikady matanjaka handresena ny mpifaninana aminao.</p>
+            <div class="services-container">
+                <div class="card blue">
+                    <div class="icon-box"><i class="fas fa-bullhorn"></i></div>
+                    <h3>Digital Marketing</h3>
+                    <p>Fampiroboroboana ny fandraharahana sy fitarihana mpanjifa mividy amin'ny alalan'ny Facebook Ads sy Copywriting mandresy lahatra.</p>
+                    <button class="cta-link" onclick="showPage('marketing')">Jereo ny pitsopitsony →</button>
+                </div>
+                <div class="card orange">
+                    <div class="icon-box"><i class="fas fa-palette"></i></div>
+                    <h3>Graphic Design</h3>
+                    <p>Famoronana Logo tokana, tsotra, ary mora tsaroan'ny olona nefa mitondra ny tena herin'ny marikao miaraka amin'ny etikety sy afisy.</p>
+                    <button class="cta-link" onclick="showPage('design')">Jereo ny pitsopitsony →</button>
+                </div>
+                <div class="card green">
+                    <div class="icon-box"><i class="fas fa-code"></i></div>
+                    <h3>Web Development</h3>
+                    <p>Famoronana tranonkala matihanina sady haingana, mifanaraka amin'ny finday rehetra, ary optimized tsara ho an'ny Google.</p>
+                    <button class="cta-link" onclick="showPage('web')">Jereo ny pitsopitsony →</button>
+                </div>
+            </div>
+        </section>
 
-        <section class="blog-section">
-            <h2>Lahatsoratra sy Torohevitra</h2>
-            <div class="blog-container">
-                <div class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=200&auto=format&fit=crop" class="blog-img" alt="Marketing">
-                    <div class="blog-content">
-                        <h3>Tetibola kely, vokatra lehibe: Ny tsiambaratelon'ny marketing mahomby</h3>
-                        <a href="#" class="read-more">Lire la suite →</a>
-                        <div class="blog-meta">15/05/2026</div>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=200&auto=format&fit=crop" class="blog-img" alt="Social Media">
-                    <div class="blog-content">
-                        <h3>Fomba fitantanana Facebook sy Instagram nefa tsy mandany andro manontolo</h3>
-                        <a href="#" class="
+        <section class="details-section">
+            <div class="details-text">
+                <h2>Nahoana no hifidy ny Rakoto Digital ?</h2>
+                <p>Miaraka amin'ny <strong>Rakoto Digital</strong>, mahazo vahaolana ara-kiditaly feno sy natao manokana ho an'ny orinasanao ianao. Ny fahaizantsika ara-teknika, ny paikady maty paika, ary ny fikarohana ny fahombiazana no miaraka mifarimbona mba hampisondrotana ny marikao ho eny amin'ny tampon'ny tontolo nomerika.</p>
+            </div>
+            <div class="details-images">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto=format&fit=crop" alt="Ekipa miasa" class="img-back">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop" alt="Mpanolotra vahaolana" class="img-front">
+            </div>
+        </section>
+    </div>
+
+    <div id="marketing" class="page">
+        <div class="landing-header">
+            <span class="back-home" onclick="showPage('home')"><i class="fas fa-arrow-left"></i> Hiverina</span>
+            <h1>Digital Marketing Maty Paika</h1>
+            <p>Tsy mandany vola amin'ny "Likes" tsy mividy izahay, ba manova ny teti-bola ho lasa mpanjifa mandoa vola.</p>
+        </div>
+        <div class="argument-container">
+            <div class="heavy-grid">
+                <div class="heavy-text">
+                    <h2>Nahoana no tsy mahomby ny dokambarotrao taloha?</h2>
+                    <p>Ny fanaovana "Boost" tsotra amin'ny Facebook dia fandaniambola fotsiny raha tsy misy paikady maty paika any ambadika. Ao amin'ny Rakoto Digital, mianatra ny fitondran-tenan'ny mpanjifanao izahay alohan'ny handefasana doka.</p>
+                    <p>Mampiasa ny rafitra <strong>Copywriting Mandresy Lahatra</strong> izahay mba hikasika mivantana ny filan'ny mpanjifa ary mampiasa ny teti-panorona Facebook Ads ambony lenta (Targeting & Retargeting) mba tsy ho very maina ny ariary tsirairay avy aminao.</p>
+                    <ul class="heavy-features">
+                        <li><i class="fas fa-check-circle"></i> Fikarohana lalina ny tsenanao sy ny mpifaninana aminao.</li>
+                        <li><i class="fas fa-check-circle"></i> Fandrafetana soratra matanjaka mampirisika hividy avy hatrany.</li>
+                        <li><i class="fas fa-check-circle"></i> Fitantanana ny teti-bola sy fanatsarana ny doka isan'andro (A/B Testing).</li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=600&auto=format&fit=crop" style="width:100%; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.05);" alt="Marketing">
+                </div>
+            </div>
+
+            <div class="pricing-section">
+                <h2>Fidira amin'ny Tolotra Mifanaraka aminao</h2>
+                <p>Natao ho an'ny PME te hampitombo ny varotra ao anatin'ny fotoana fohy.</p>
+                <div class="pricing-grid">
+                    <div class="price-card">
+                        <h4>Starter Pack</h4>
+                        <div class="price">Tolotra Natao Lahany</div>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Fitantanana Doka Facebook 1</li>
+                            <li><i class="fas fa-check"></i> Copywriting ho an'ny post 4</li>
+                            <li><i class="fas fa-check"></i> Target mpanjifa fototra</li>
+                            <li><i class="fas fa-check"></i> Tatitra isaky ny 15 andro</li>
+                        </ul>
+                        <a href="mailto:christian.rakoto.pro@gmail.com?subject=Tolotra Starter Marketing" class="price-btn">Hifidy ity tolotra ity</a>
+                    </div>
+                    <div class="price-card featured">
+                        <h4>Premium Growth</h4>
+                        <div class="price">Tena be mpitady</div>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Doka Facebook & Instagram feno</li>
+                            <li><i class="fas fa-check"></i> Copywriting tsy voatongotra</li>
+                            <li><i class="fas fa-check"></i> Retargeting mpanjifa nijery site</li>
+                            <li><i class="fas fa-check"></i> Fanatsarana sary sy horonan-tsary</li>
+                            <li><i class="fas fa-check"></i> Tatitra antsipiriany isan-kerinandro</li>
+                        </ul>
+                        <a href="mailto:christian.rakoto.pro@gmail.com?subject=Tolotra Premium Marketing" class="price-btn">Hifidy ity tolotra ity</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="design" class="page">
+        <div class="landing-header" style="background: linear-gradient(135deg, var(--accent), #e04413);">
+            <span class="back-home" onclick="showPage('home')"><i class="fas fa-arrow-left"></i> Hiverina</span>
+            <h1>Graphic Design sy Identité Visuelle</h1>
+            <p>Ny endrika ivelany no mampiseho ny lanjan'ny orinasanao. Omenay hery sy haja ny marikao.</p>
+        </div>
+        <div class="argument-container">
+            <div class="heavy-grid">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=600&auto=format&fit=crop" style="width:100%; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.05);" alt="Design">
+                </div>
+                <div class="heavy-text">
+                    <h2>Ny Logo tsotra sy manan-danja no faka sary ao an-tsain'ny mpanjifa</h2>
+                    <p>Ny Graphic Design dia tsy fanaovana sary miloko fotsiny, ba fandikana ny vina sy ny lanjan'ny orinasanao ho lasa endrika visialy tokana. Ny marika lehibe rehetra dia fantatra amin'ny alalan'ny logo tsotra nefa mafy fonosana.</p>
+                    <p>Mamorona etikety (labels), afisy, ary bokikely mifanaraka tsara amin'ny fenitry ny varotra izahay, mba hahatonga ny vokatrao ho mendrika ny vidiny lafo indrinta eny an-tsena.</p>
+                    <ul class="heavy-features">
+                        <li><i class="fas fa-check-circle"></i> Famoronana Logo vectoriel azo ampiasaina amin'ny habe rehetra.</li>
+                        <li><i class="fas fa-check-circle"></i> Fandinihana ny loko mifanaraka amin'ny saina (Psychologie des couleurs).</li>
+                        <li><i class="fas fa-check-circle"></i> Etikety vokatra manaitra ny maso sy mampisongadina eny amin'ny talantalana.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pricing-section">
+                <h2>Ireo Tolotra Identité Visuelle</h2>
+                <p>Omeo endrika mihaja sy matihanina ny mombamomba ny orinasanao.</p>
+                <div class="pricing-grid">
+                    <div class="price-card">
+                        <h4>Logo Pack</h4>
+                        <div class="price">Fototra Matanjaka</div>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Tolotra Logo 2 azo isafidianana</li>
+                            <li><i class="fas fa-check"></i> Format rehetra (PNG, JPG, Vectoriel)</li>
+                            <li><i class="fas fa-check"></i> Palette de couleurs fototra</li>
+                            <li><i class="fas fa-check"></i> Fanitsiana in-3 indray</li>
+                        </ul>
+                        <a href="mailto:christian.rakoto.pro@gmail.com?subject=Tolotra Logo Pack" class="price-btn">Hifidy ity tolotra ity</a>
+                    </div>
+                    <div class="price-card featured" style="background: var(--accent);">
+                        <h4>Full Branding Pack</h4>
+                        <div class="price">Feno sy Lavorary</div>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Logo Concept ambony lenta</li>
+                            <li><i class="fas fa-check"></i> Charte Graphique feno (Loko & Endri-tsoratra)</li>
+                            <li><i class="fas fa-check"></i> Fandrafetana Carte de Visite & Loha-taratasy</li>
+                            <li><i class="fas fa-check"></i> Afisy ho an'ny Facebook 5 sahady</li>
+                            <li><i class="fas fa-check"></i> Etikety ho an'ny fonosana vokatra</li>
+                        </ul>
+                        <a href="mailto:christian.rakoto.pro@gmail.com?subject=Tolotra Full Branding" class="price-btn" style="background: var(--primary);">Hifidy ity tolotra ity</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="web" class="page">
+        <div class="landing-header" style="background: linear-gradient(135deg, var(--accent-green), #249b90);">
+            <span class="back-home" onclick="showPage('home')"><i class="fas fa-arrow-left"></i> Hiverina</span>
+            <h1>Web Development sy SEO Avo Lenta</h1>
+            <p>Ny tranonkalanao no biraonao manerana izao tontolo izao. Ataovy haingana, azo antoka, sady hita ao amin'ny Google.</p>
+        </div>
+        <div class="argument-container">
+            <div class="heavy-grid">
+                <div class="heavy-text">
+                    <h2>Raha tsy hita ao amin'ny Google ny orinasanao, dia tsy misy amin'ny mpanjifa</h2>
+                    <p>Ny tranonkala tsara tarehy fotsiny dia tsy ampy raha tsy misokatra haingana sy tsy hita rehefa mikaroka ny olona. Izahay dia manangana tranonkala mampiasa kaody madio sy arifomba, mba hisokafan'ny pejy ao anatin'ny feha-potoana latsaky ny 2 segondra.</p>
+                    <p>Ampidiranay rafitra SEO (Search Engine Optimization) matihanina isaky ny pejy namboarina, mba ho lohany foana ny orinasanao rehefa misy mikaroka ny tolotra omenao ao amin'ny Google any Madagascar.</p>
+                    <ul class="heavy-features">
+                        <li><i class="fas fa-check-circle"></i> Responsive Design (Mifanaraka tsara amin'ny Finday, Tablette, PC).</li>
+                        <li><i class="fas fa-check-circle"></i> Fiarovana avo lenta amin'ny alalan'ny rafitra SSL (https).</li>
+                        <li><i class="fas fa-check-circle"></i> Pejy optimized tsara ho an'ny fikarohana Google any an-toerana.</li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b81166b58?q=80&w=600&auto=format&fit=crop" style="width:100%; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.05);" alt="Web Dev">
+                </div>
+            </div>
+
+            <div class="pricing-section">
+                <h2>Ireo Vahaolana Tranonkala</h2>
+                <p>Misafidiana tranonkala mifanaraka amin'ny fitaovana sy teti-bolanao.</p>
+                <div class="pricing-grid">
+                    <div class="price-card">
+                        <h4>Vitrine Website</h4>
+                        <div class="price">Matihanina & Tsotra</div>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Tranonkala pejy tokana na feno (toko 3)</li>
+                            <li><i class="fas fa-check"></i> Pejy mifanaraka amin'ny finday rehetra</li>
+                            <li><i class="fas fa-check"></i> Rohy mankany amin'ny Messenger & WhatsApp</li>
+                            <li><i class="fas fa-check"></i> Fampidirana fototra ao amin'ny Google</li>
+                        </ul>
+                        <a href="mailto:christian.rakoto.pro@gmail.com?subject=Tolotra Vitrine Website" class="price-btn">Hifidy ity tolotra ity</a>
+                    </div>
+                    <div class="price-card featured" style="background: var(--accent-green);">
+                        <h4>E-Commerce / Business</h4>
+                        <div class="price">Pejy fivarotana feno</div>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Tranonkala feno fampidirana vokatra tsy voafetra</li>
+                            <li><i class="fas fa-check"></i> Dashboard hitantanana ny tahiry (Stocks)</li>
+                            <li><i class="fas fa-check"></i> Rafitra fandefasana faktiora mandeha ho azy</li>
+                            <li><i class="fas fa-check"></i> SEO avo lenta ho an'ny vokatra rehetra</li>
+                            <li><i class="fas fa-check"></i> Fanohanana ara-teknika mandritra ny 3 volana</li>
+                        </ul>
+                        <a href="mailto:christian.rakoto.pro@gmail.com?subject=Tolotra E-Commerce Business" class="price-btn" style="background: var(--primary);">Hifidy ity tolotra ity</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="argument-container">
+        <section class="bottom-cta">
+            <h3>Vonona hampitombo ny lanjan'ny orinasanao ve ianao?</h3>
+            <p>Aza avela ho lasan'ny mpifaninana aminao ny mpanjifa tokony ho anao. Mifandraisa amin'ny ekipan'ny Rakoto Digital Solutions androany hahazoana dinika maimaim-poana.</p>
+            <a href="mailto:christian.rakoto.pro@gmail.com?subject=Demande de consultation gratuite" class="hero-btn" style="text-decoration:none;">Handefa mailaka mivantana</a>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-container" id="a-propos">
+            <div class="footer-col">
+                <h3>Miaraka amin'ny <span>Rakoto Digital</span></h3>
+                <p>Masoivoho natokana hanomezana hery sy lanjany vaovao ny orinasa madinika sy salany eto Madagascar amin'ny tontolo an-tserasera.</p>
+                <div class="footer-social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:christian.rakoto.pro@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+                <p style="font-size: 12px; color: #6b7280;">Copyright &copy; 2026. Tous droits réservés.</p>
+            </div>
+            <div class="footer-col" style="max-width: 200px;">
+                <h3>Rohy Ilaina</h3>
+                <ul>
+                    <li><a onclick="showPage('home')">Accueil</a></li>
+                    <li><a onclick="showPage('marketing')">Digital Marketing</a></li>
+                    <li><a onclick="showPage('design')">Graphic Design</a></li>
+                    <li><a onclick="showPage('web')">Web Development</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Mifandraisa aminay</h3>
+                <p>Antananarivo, Madagascar</p>
+                <p>Mail : christian.rakoto.pro@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            // Afenina daholo ny pejy rehetra
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Asehoy ilay pejy voafidy
+            const activePage = document.getElementById(pageId);
+            if(activePage) {
+                activePage.classList.add('active');
+                // Hiverina any ambony indrindra ny fijery isaky ny miova pejy
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function scrollToElement(id) {
+            const element = document.getElementById(id);
+            if(element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
