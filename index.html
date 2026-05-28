@@ -1,118 +1,228 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="mg">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rakoto Digital Agency - Portfolio</title>
+    <title>Rakoto Digital Solutions | Masoivoho Ara-kiditaly</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght=600;700&family=Poppins:wght=300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.6; }
-        header { background-color: #111; color: #fff; padding: 20px; text-align: center; position: fixed; width: 100%; top: 0; z-index: 1000; }
-        nav a { color: #fff; text-decoration: none; margin: 0 15px; font-weight: bold; cursor: pointer; }
-        nav a:hover { color: #ff5722; }
-        container { max-width: 1200px; margin: 100px auto 40px auto; padding: 20px; }
-        .page { display: none; }
-        .page.active { display: block; }
-        .btn { display: inline-block; padding: 12px 30px; background-color: #007bff; color: white; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 20px; box-shadow: 0 4px 15px rgba(0,123,255,0.3); }
-        .btn:hover { background-color: #0056b3; }
-        .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 30px; }
-        footer { background-color: #111; color: #777; text-align: center; padding: 20px; margin-top: 40px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background-color: #f8fafc; color: #334155; line-height: 1.6; overflow-x: hidden; }
+        header { background: #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
+        .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
+        .logo { font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 700; color: #1e3c72; letter-spacing: -0.5px; text-decoration: none; }
+        .logo span { color: #ff5722; }
+        nav { display: flex; align-items: center; gap: 30px; }
+        nav a { text-decoration: none; color: #334155; font-weight: 600; font-size: 15px; transition: color 0.3s; }
+        nav a:hover { color: #ff5722 !important; }
+        
+        .dropdown { position: relative; display: inline-block; }
+        .dropdown-btn { text-decoration: none; color: #334155; font-weight: 600; font-size: 15px; display: flex; align-items: center; gap: 5px; cursor: pointer; }
+        .dropdown-content { display: none; position: absolute; top: 100%; left: 0; background-color: #ffffff; min-width: 220px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border-radius: 8px; padding: 10px 0; margin-top: 10px; border-top: 3px solid #ff5722; }
+        .dropdown-content a { color: #334155; padding: 12px 20px; text-decoration: none; display: block; font-size: 14px; font-weight: 500; transition: background 0.2s; }
+        .dropdown-content a:hover { background-color: #f8fafc; color: #ff5722 !important; }
+        .dropdown:hover .dropdown-content { display: block !important; }
+        
+        .hero { background: linear-gradient(rgba(30, 60, 114, 0.85), rgba(42, 82, 152, 0.85)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop') no-repeat center center/cover; color: #fff; padding: 120px 20px; text-align: center; }
+        .hero h1 { font-family: 'Montserrat', sans-serif; font-size: 38px; font-weight: 700; margin-bottom: 20px; }
+        .hero p { font-size: 17px; max-width: 750px; margin: 0 auto 30px auto; opacity: 0.9; }
+        .hero-btn { background-color: #ff5722; color: #fff; padding: 14px 30px; text-decoration: none; font-weight: 600; border-radius: 6px; display: inline-block; box-shadow: 0 4px 15px rgba(255, 87, 34, 0.4); transition: transform 0.2s; }
+        .hero-btn:hover { transform: translateY(-2px); }
+        
+        .services-section { max-width: 1200px; margin: 80px auto 40px auto; padding: 0 20px; text-align: center; }
+        .services-section h2 { font-family: 'Montserrat', sans-serif; font-size: 32px; color: #1e3c72; margin-bottom: 50px; }
+        .services-container { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+        .card { background: #ffffff; padding: 40px 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); flex: 1; min-width: 280px; max-width: 360px; text-align: left; border-top: 4px solid #1e3c72; transition: transform 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .card.orange { border-top-color: #ff5722; }
+        .card.green { border-top-color: #2ec4b6; }
+        .card h3 { font-family: 'Montserrat', sans-serif; font-size: 20px; color: #1e3c72; margin-bottom: 15px; }
+        .card p { color: #64748b; font-size: 14px; margin-bottom: 25px; }
+        .card button { background: none; border: none; color: #ff5722; font-weight: 600; font-size: 14px; cursor: pointer; font-family: 'Poppins', sans-serif; }
+        
+        .details-section { max-width: 1200px; margin: 100px auto 60px auto; padding: 0 20px; display: flex; align-items: center; flex-wrap: wrap; gap: 60px; }
+        .details-text { flex: 1; min-width: 320px; }
+        .details-text h2 { font-family: 'Montserrat', sans-serif; font-size: 36px; color: #1e3c72; margin-bottom: 25px; line-height: 1.3; }
+        .details-text p { color: #64748b; font-size: 16px; margin-bottom: 30px; line-height: 1.8; }
+        .details-btn { background-color: #1e3c72; color: #ffffff; padding: 14px 28px; text-decoration: none; font-weight: 600; border-radius: 6px; display: inline-block; cursor: pointer; transition: background 0.3s; }
+        .details-btn:hover { background-color: #ff5722; }
+        
+        .details-images { flex: 1; min-width: 320px; position: relative; height: 450px; display: flex; align-items: center; justify-content: center; }
+        .img-back { width: 65%; height: 350px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: absolute; left: 5%; top: 10%; z-index: 1; }
+        .img-front { width: 55%; height: 380px; object-fit: cover; border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.15); position: absolute; right: 5%; bottom: 5%; z-index: 2; border: 5px solid #ffffff; }
+        
+        /* ===== MODAL STYLE (PEJY KELY MIPOITRA) ===== */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(15, 23, 42, 0.6); z-index: 2000; justify-content: center; align-items: center; padding: 20px; backdrop-filter: blur(4px); }
+        .modal-content { background-color: #ffffff; padding: 40px; border-radius: 16px; max-width: 600px; width: 100%; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); position: relative; animation: fadeIn 0.3s ease; border-top: 6px solid #1e3c72; }
+        .modal-content h3 { font-family: 'Montserrat', sans-serif; font-size: 24px; color: #1e3c72; margin-bottom: 15px; }
+        .modal-content p { color: #475569; font-size: 15px; line-height: 1.7; margin-bottom: 25px; }
+        .close-modal { position: absolute; top: 20px; right: 20px; font-size: 22px; color: #94a3b8; cursor: pointer; transition: color 0.2s; }
+        .close-modal:hover { color: #ff5722; }
+        .modal-btn { background-color: #ff5722; color: #fff; padding: 10px 24px; text-decoration: none; font-weight: 600; border-radius: 6px; display: inline-block; font-size: 14px; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+        
+        footer { background-color: #111827; color: #9ca3af; padding: 60px 20px 30px 20px; font-size: 14px; margin-top: 60px; }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; }
+        .footer-col { flex: 1; min-width: 250px; }
+        .footer-col h3 { color: #ffffff; font-family: 'Montserrat', sans-serif; font-size: 20px; margin-bottom: 20px; }
+        .footer-col h3 span { color: #ff5722; }
+        .footer-col p { line-height: 1.8; margin-bottom: 20px; }
+        .footer-social-icons { display: flex; gap: 15px; margin-bottom: 20px; }
+        .footer-social-icons a { color: #ffffff; font-size: 18px; transition: color 0.2s; }
+        .footer-social-icons a:hover { color: #ff5722; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 12px; }
+        .footer-col ul li a { color: #9ca3af; text-decoration: none; transition: color 0.2s; }
+        .footer-col ul li a:hover { color: #ffffff; }
+        .footer-bottom { max-width: 1200px; margin: 40px auto 0 auto; padding-top: 20px; border-top: 1px solid #1f2937; text-align: left; font-size: 13px; }
+        @media (max-width: 768px) { .details-images { height: 350px; margin-top: 30px; } .img-back { height: 260px; } .img-front { height: 280px; } .details-text h2 { font-size: 28px; } .footer-container { flex-direction: column; gap: 30px; } }
     </style>
 </head>
 <body>
-
     <header>
-        <nav>
-            <a onclick="showPage('home')">Accueil</a>
-            <a onclick="showPage('portfolio')">Portfolio</a>
-            <a onclick="showPage('blog')">Conseils & Blog</a>
-        </nav>
-    </header>
-
-    <container>
-        <!-- PEJY AKANJO (HOME) -->
-        <div id="home" class="page active">
-            <div class="card" style="text-align: center; padding: 50px 20px;">
-                <h1 style="font-size: 2.5rem; margin-bottom: 15px;">Rakoto Digital Agency</h1>
-                <p style="font-size: 1.2rem; color: #666; max-width: 700px; margin: 0 auto;">
-                    Matihanina amin'ny fampiroboroboana ny Varotra sy ny Sary ho an'ny Orinasa sy ny Supermarché.
-                </p>
-                <a onclick="showPage('blog')" class="btn">Hijery ny Tolotra Omenay</a>
-            </div>
-        </div>
-
-        <!-- PEJY PORTFOLIO -->
-        <div id="portfolio" class="page">
-            <div class="card">
-                <h2 style="margin-bottom: 20px; color: #ff5722;">Nos Réalisations</h2>
-                <p>Branding, Packaging, et Création de designs publicitaires professionnels pour booster la visibilité locale.</p>
-                <!-- Azonao asiana sary portfolio eto amin'ny manaraka -->
-            </div>
-        </div>
-
-        <!-- PEJY BLAOGY SY TOROHEVITRA (ETO ILAY MONETAG LINK) -->
-        <div id="blog" class="page">
-            <div class="card" style="padding: 0; overflow: hidden;">
-                <div style="width: 100%; height: 350px; background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop'); background-size: cover; background-position: center;"></div>
-                
-                <div style="padding: 40px 50px;">
-                    <h2 style="font-size: 2.2rem; color: #111111; margin-bottom: 25px; font-weight: 700; line-height: 1.3;">
-                        Top 5 des meilleures astuces de marketing digital pour les petites entreprises à Madagascar
-                    </h2>
-                    
-                    <p style="font-size: 1.1rem; color: #555555; line-height: 1.8; margin-bottom: 30px;">
-                        Le paysage entrepreneurial à Madagascar est en pleine mutation. Pour les petites et moyennes entreprises (PME), le numérique ne représente plus une simple option, mais un levier de croissance indispensable. Face à un marché local dynamique mais compétitif, voici 5 astuces stratégiques de marketing digital pour accroître votre visibilité et booster vos ventes.
-                    </p>
-
-                    <hr style="border: 0; height: 1px; background: #e0e0e0; margin-bottom: 30px;">
-
-                    <div style="margin-bottom: 25px;">
-                        <h3 style="font-size: 1.3rem; color: #ff5722; margin-bottom: 10px;">1. Optimiser sa présence sur Facebook (Le canal incontournable)</h3>
-                        <p style="color: #444; margin-left: 15px;">À Madagascar, Facebook reste le réseau social prédominant. Pour vous démarquer, une simple page personnelle ne suffit pas. Créer une Page Professionnelle claire, avec un logo soigné et une description précise de vos services.</p>
-                    </div>
-
-                    <div style="margin-bottom: 25px;">
-                        <h3 style="font-size: 1.3rem; color: #ff5722; margin-bottom: 10px;">2. Miser sur le Marketing de Contenu Visuel (Branding et Packaging)</h3>
-                        <p style="color: #444; margin-left: 15px;">L'identité visuelle est le premier point de contact avec vos clients potentiels. Un design professionnel renforce instantanément la crédibilité de votre marque. Concevoir des affiches publicitaires percutantes et des étiquettes de produits soignées (par exemple, pour le Miel Pur de Nosy Be).</p>
-                    </div>
-
-                    <div style="margin-bottom: 25px;">
-                        <h3 style="font-size: 1.3rem; color: #ff5722; margin-bottom: 10px;">3. Intégrer les solutions de Mobile Money dans la stratégie de conversion</h3>
-                        <p style="color: #444; margin-left: 15px;">Le commerce digital à Madagascar est indissociable des solutions de paiement mobiles telles que Mvola, Airtel Money ou Orange Money. Faciliter le parcours d'achat de vos clients en affichant clairement vos modalités de paiement.</p>
-                    </div>
-
-                    <div style="margin-bottom: 25px;">
-                        <h3 style="font-size: 1.3rem; color: #ff5722; margin-bottom: 10px;">4. Développer le Marketing de Proximité et le Réseautage Local</h3>
-                        <p style="color: #444; margin-left: 15px;">Le marketing digital est encore plus puissant lorsqu'il s'appuie sur une forte résonance locale. Intégrer des groupes thématiques locaux et des communautés d'entrepreneurs pour partager votre expertise.</p>
-                    </div>
-
-                    <div style="margin-bottom: 40px;">
-                        <h3 style="font-size: 1.3rem; color: #ff5722; margin-bottom: 10px;">5. Automatiser la relation client et la prospection</h3>
-                        <p style="color: #444; margin-left: 15px;">Configurer des réponses automatiques sur Messenger ou WhatsApp Business pour accueillir les clients. Mettre en place des campagnes d'Email Marketing professionnelles pour relancer vos prospects de manière structurée.</p>
-                    </div>
-
-                    <!-- BOKOTRA DIRECT LINK MONETAG -->
-                    <div style="text-align: center; margin-top: 20px;">
-                        <a href="https://omg10.com/4/11033276" target="_blank" class="btn" style="background-color: #28a745; padding: 15px 40px; font-size: 1.1rem;">
-                            Lire la suite de l'article et voir les détails →
-                        </a>
+        <div class="header-container">
+            <a href="index.html" class="logo">Rakoto<span>Digital</span></a>
+            <nav>
+                <a href="index.html">Fandraisana</a>
+                <div class="dropdown">
+                    <span class="dropdown-btn">Nos Services ▼</span>
+                    <div class="dropdown-content">
+                        <a href="#tolotra" onclick="openModal('digital')">Digital Marketing</a>
+                        <a href="#tolotra" onclick="openModal('graphic')">Graphic Design</a>
+                        <a href="#tolotra" onclick="openModal('web')">Web Development</a>
                     </div>
                 </div>
+                <a href="#a-propos">À propos de nous</a>
+                <a href="mailto:christian.rakoto.pro@gmail.com">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Miarahaba anao ao amin'ny Rakoto Digital Solutions</h1>
+        <p>Manampy anao amin'ny fampivoarana ny fandraharahana ara-kiditaly sy ny dokambarotra mifanaraka amin'ny teknolojia vaovao.</p>
+        <a href="#tolotra" class="hero-btn">Jereo ny Tolotra</a>
+    </section>
+
+    <section class="services-section" id="tolotra">
+        <h2>Ny Tolotra Omenay</h2>
+        <div class="services-container">
+            <div class="card">
+                <h3>Digital Marketing</h3>
+                <p>Fampiroboroboana ny fandraharahana sy fitarihana mpanjifa ao amin'ny tambajotra sosialy amin'ny alalan'ny Facebook Ads sy Copywriting mandresy lahatra.</p>
+                <button onclick="openModal('digital')">Jereo ny pitsopitsony →</button>
+            </div>
+            <div class="card orange">
+                <h3>Graphic Design</h3>
+                <p>Famoronana Logo tokana, tsotra, ary mora tsaroan'ny olona nefa mitondra ny herin'ny orinasanao, miaraka amin'ny etikety (labels) sy afisy.</p>
+                <button onclick="openModal('graphic')">Jereo ny pitsopitsony →</button>
+            </div>
+            <div class="card green">
+                <h3>Web Development</h3>
+                <p>Famoronana tranonkala matihanina sy fampiantranoana azy amin'ny fitaovana arifomba mba hisokafany haingana sady hahitana anao ao amin'ny Google.</p>
+                <button onclick="openModal('web')">Jereo ny pitsopitsony →</button>
             </div>
         </div>
-    </container>
+    </section>
+
+    <section class="details-section">
+        <div class="details-text">
+            <h2>Nahoana no hifidy ny Rakoto Digital ?</h2>
+            <p>Miaraka amin'ny <strong>Rakoto Digital</strong>, mahazo vahaolana ara-kiditaly feno sy natao manokana ho an'ny orinasanao ianao. Ny fahaizantsika ara-teknika, ny paikady maty paika, ary ny fikarohana ny fahombiazana no miaraka mifarimbona mba hampisondrotana ny marikao ho eny amin'ny tampon'ny tontolo nomerika.</p>
+            <div class="details-btn" onclick="openModal('agency')">Hikaroka bebe kokoa</div>
+        </div>
+        <div class="details-images">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto=format&fit=crop" alt="Ekipa miasa" class="img-back">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop" alt="Vehivavy mpandraharaha" class="img-front">
+        </div>
+    </section>
+
+    <div id="infoModal" class="modal">
+        <div class="modal-content" id="modalContentBorder">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h3 id="modalTitle">Anaran'ny Tolotra</h3>
+            <p id="modalBody">Andalan-tsoratra momba ilay tolotra...</p>
+            <a href="mailto:christian.rakoto.pro@gmail.com" class="modal-btn">Handefa Hafatra</a>
+        </div>
+    </div>
 
     <footer>
-        <p>&copy; 2026 Rakoto Digital Agency. Tous droits réservés.</p>
+        <div class="footer-container" id="a-propos">
+            <div class="footer-col">
+                <h3>Créez votre site web avec <span>Rakoto Digital</span>, votre agence de solutions numériques.</h3>
+                <div class="footer-social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:christian.rakoto.pro@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+                <p>Copyright &copy; 2026. Tous droits réservés.</p>
+                <p style="font-size: 13px; color: #6b7280;">Antananarivo, Madagascar</p>
+            </div>
+            <div class="footer-col" style="max-width: 200px;">
+                <h3>Rakoto Digital</h3>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="#tolotra">Nos Services</a></li>
+                    <li><a href="mailto:christian.rakoto.pro@gmail.com">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>RAKOTO DIGITAL SOLUTIONS</h3>
+                <p>Rakoto Digital dia asa fandraharahana manokana natokana ho an'ny vahaolana ara-kiditaly sy ny famoronana tranonkala. Pejy natao hanampiana ireo orinasa madinika sy salany hivelatra amin'ny tontolo an-tserasera amin'ny fomba madio sy matihanina.</p>
+            </div>
+        </div>
     </footer>
 
     <script>
-        function showPage(pageId) {
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => { page.classList.remove('active'); });
-            const activePage = document.getElementById(pageId);
-            if (activePage) { activePage.classList.add('active'); }
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        const data = {
+            digital: {
+                title: "🎯 Digital Marketing Solutions",
+                body: "Ny vahaolana arosonay amin'ny Digital Marketing dia ahitana ny fitantanana ny pejy Facebook sy Instagram, ny fandrafetana dokambarotra mifantoka (Facebook Ads), ary ny copywriting mandresy lahatra. Tanjona ny hisitona mpanjifa liana mivantana hividy ny vokatrao.",
+                color: "#1e3c72"
+            },
+            graphic: {
+                title: "🎨 Graphic Design matihanina",
+                body: "Mamorona famantarana (Logo) tokana, tsotra ary mora tsaroana izahay. Manolotra ihany koa ny fandrafetana afisy (posters) ho an'ny tambajotra sosialy, etikety (labels) ho an'ny vokatrao, ary sary famantarana ny marikao (identity visuelle).",
+                color: "#ff5722"
+            },
+            web: {
+                title: "💻 Web Development & SEO",
+                body: "Manangana tranonkala (sites web) ho an'ny orinasa, portfolio, ary blog tsara tarehy izahay. Ny tranonkala vokarinay dia mivoha haingana amin'ny finday rehetra, azo antoka tsara ny fiarovana azy, ary mora hita ao amin'ny fikarohana Google (SEO optimized).",
+                color: "#2ec4b6"
+            },
+            agency: {
+                title: "🚀 Nahoana no Rakoto Digital?",
+                body: "Satria izahay dia manome vahaolana feno tsy mila itadiavanao olona maro. Ny fahaizana ara-teknika eo amin'ny kaody, ny fahaizana mamorona sary, ary ny paikady ara-barotra dia mitambatra ho iray mba hampitomboana haingana ny fidiram-bolan'ny orinasanao.",
+                color: "#111827"
+            }
+        };
+
+        function openModal(type) {
+            const modal = document.getElementById('infoModal');
+            const title = document.getElementById('modalTitle');
+            const body = document.getElementById('modalBody');
+            const border = document.getElementById('modalContentBorder');
+            
+            title.innerText = data[type].title;
+            body.innerText = data[type].body;
+            border.style.borderTopColor = data[type].color;
+            
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('infoModal').style.display = 'none';
+        }	
+
+        // Manidy ny pop-up rehefa manindry ny ivelany ny olona
+        window.onclick = function(event) {
+            const modal = document.getElementById('infoModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
         }
     </script>
 </body>
