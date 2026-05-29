@@ -1,61 +1,368 @@
 <!DOCTYPE html>
 <html lang="mg">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Marketing | Rakoto Digital Solutions</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <script src="https://alwingulla.com/act/files/tag.min.js?z=8848496" data-cfasync="false" async></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Digital Marketing | Rakoto Digital</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#f8fafc;
+color:#334155;
+}
+
+header{
+background:#fff;
+padding:20px;
+box-shadow:0 4px 15px rgba(0,0,0,0.05);
+position:sticky;
+top:0;
+z-index:999;
+}
+
+.header-container{
+max-width:1200px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:28px;
+font-family:'Montserrat',sans-serif;
+font-weight:700;
+color:#1e3c72;
+}
+
+.logo span{
+color:#ff5722;
+}
+
+nav{
+display:flex;
+gap:25px;
+}
+
+nav a{
+text-decoration:none;
+color:#334155;
+font-weight:600;
+}
+
+.hero{
+padding:120px 20px;
+text-align:center;
+background:
+linear-gradient(rgba(30,60,114,0.8),rgba(30,60,114,0.8)),
+url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop');
+
+background-size:cover;
+background-position:center;
+color:#fff;
+}
+
+.hero h1{
+font-size:52px;
+margin-bottom:20px;
+font-family:'Montserrat',sans-serif;
+}
+
+.hero p{
+max-width:750px;
+margin:auto;
+line-height:1.9;
+font-size:18px;
+}
+
+.content-section{
+max-width:1200px;
+margin:80px auto;
+padding:0 20px;
+display:flex;
+align-items:center;
+gap:50px;
+flex-wrap:wrap;
+}
+
+.content-text{
+flex:1;
+min-width:300px;
+}
+
+.content-text h2{
+font-size:38px;
+margin-bottom:20px;
+color:#1e3c72;
+font-family:'Montserrat',sans-serif;
+}
+
+.content-text p{
+line-height:1.9;
+margin-bottom:20px;
+color:#64748b;
+}
+
+.content-image{
+flex:1;
+min-width:300px;
+}
+
+.content-image img{
+width:100%;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.services{
+background:#fff;
+padding:90px 20px;
+}
+
+.services h2{
+text-align:center;
+font-size:40px;
+margin-bottom:60px;
+color:#1e3c72;
+font-family:'Montserrat',sans-serif;
+}
+
+.services-container{
+max-width:1200px;
+margin:auto;
+display:flex;
+flex-wrap:wrap;
+gap:30px;
+justify-content:center;
+}
+
+.card{
+background:#f8fafc;
+padding:35px;
+border-radius:18px;
+width:340px;
+box-shadow:0 8px 25px rgba(0,0,0,0.05);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card i{
+font-size:40px;
+color:#ff5722;
+margin-bottom:20px;
+}
+
+.card h3{
+margin-bottom:15px;
+color:#1e3c72;
+}
+
+.card p{
+color:#64748b;
+line-height:1.8;
+}
+
+.cta{
+padding:100px 20px;
+text-align:center;
+background:#1e3c72;
+color:#fff;
+}
+
+.cta h2{
+font-size:42px;
+margin-bottom:20px;
+font-family:'Montserrat',sans-serif;
+}
+
+.cta p{
+max-width:700px;
+margin:auto;
+line-height:1.9;
+margin-bottom:35px;
+}
+
+.cta a{
+display:inline-block;
+background:#ff5722;
+padding:15px 30px;
+border-radius:10px;
+text-decoration:none;
+color:#fff;
+font-weight:600;
+}
+
+footer{
+background:#111827;
+padding:60px 20px;
+text-align:center;
+color:#9ca3af;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:36px;
+}
+
+.content-section{
+flex-direction:column;
+}
+
+}
+
+</style>
 </head>
+
 <body>
 
-    <header style="background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 20px 0;">
-        <div style="max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px;">
-            <div style="font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 700; color: #1e3c72;">
-                Rakoto<span style="color: #ff5722;">Digital</span>
-            </div>
-            <nav>
-                <a href="index.html" style="text-decoration: none; color: #333; margin-right: 20px; font-weight: 600; font-size: 14px;">Accueil</a>
-                <a href="index.html#services" style="text-decoration: none; color: #333; font-weight: 600; font-size: 14px;">Tolotra</a>
-            </nav>
-        </div>
-    </header>
+<header>
 
-    <section style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #fff; padding: 90px 20px; text-align: center;">
-        <h1 style="font-family: 'Montserrat', sans-serif; font-size: 42px; margin-bottom: 20px;">Digital Marketing</h1>
-        <p style="font-size: 18px; max-width: 700px; margin: 0 auto; opacity: 0.9; line-height: 1.6;">Fampiroboroboana ny varotra sy ny fandraharahana amin'ny alàlan'ny dokambarotra lasa mifantoka amin'ny mpividy manam-bola.</p>
-    </section>
+<div class="header-container">
 
-    <section style="max-width: 1100px; margin: 60px auto; padding: 0 20px;">
-        <h2 style="font-family: 'Montserrat', sans-serif; text-align: center; color: #1e3c72; margin-bottom: 40px; font-size: 28px;">Inona no hoavin'ny orinasanao miaraka aminay?</h2>
-        
-        <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
-            <div style="background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); flex: 1; min-width: 280px; max-width: 340px;">
-                <h3 style="color: #ff5722; margin-top: 0;">Facebook & Instagram Ads</h3>
-                <p style="color: #666; font-size: 14px; line-height: 1.6;">Tsy manao boost fotsiny fa mikirakira ny Facebook Pixel sy Custom Audiences hahitana ny mpanjifa tena manam-bola hividy ny vokatrao.</p>
-            </div>
-            <div style="background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); flex: 1; min-width: 280px; max-width: 340px;">
-                <h3 style="color: #ff5722; margin-top: 0;">Copywriting Mandresy Lahatra</h3>
-                <p style="color: #666; font-size: 14px; line-height: 1.6;">Soratantsika amin'ny teny manaitra sy mavesatra ny dokambarotra mba hisintonana ny sain'ny olona ao anatin'ny 3 segondra monja.</p>
-            </div>
-            <div style="background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); flex: 1; min-width: 280px; max-width: 340px;">
-                <h3 style="color: #ff5722; margin-top: 0;">Fitomboan'ny Varotra (ROI)</h3>
-                <p style="color: #666; font-size: 14px; line-height: 1.6;">Ny tanjona voalohany dia ny hamerina sy hampitombo ny vola nodikainao tamin'ny dokambarotra (Return on Investment).</p>
-            </div>
-        </div>
+<div class="logo">
+Rakoto<span>Digital</span>
+</div>
 
-        <div style="background: #1e293b; color: #fff; padding: 50px 40px; border-radius: 16px; margin-top: 60px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border-bottom: 5px solid #ff5722;">
-            <h3 style="font-family: 'Montserrat', sans-serif; font-size: 24px; margin-top: 0;">Vonona hampitombo ny fidiram-bolanao ve ianao?</h3>
-            <p style="margin-bottom: 30px; opacity: 0.9;">Aza avela ho lasan'ny mpifaninana aminao ny tsena. Mifandaisa aminay izao hahazoanao fandalinana maimaim-poana.</p>
-            <a href="order-marketing.html" style="background-color: #ff5722; color: #fff; padding: 15px 32px; text-decoration: none; font-weight: bold; border-radius: 8px; display: inline-block; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 15px rgba(255,87,34,0.3); transition: 0.3s;">Hanomboka ny Fiaraha-miasa</a>
-        </div>
-    </section>
+<nav>
+<a href="index.html">Accueil</a>
+<a href="#">Services</a>
+<a href="#">Contact</a>
+</nav>
 
-    <footer style="background: #1e3c72; color: #fff; text-align: center; padding: 30px 20px; font-size: 14px; margin-top: 80px;">
-        <p>&copy; 2026 Rakoto Digital Solutions. Zo rehetra voatokana.</p>
-    </footer>
+</div>
+
+</header>
+
+<section class="hero">
+
+<h1>Digital Marketing Moderne</h1>
+
+<p>
+Ampitomboy ny clients sy ventes-nao amin'ny stratégie marketing moderne,
+Facebook Ads professionnelle ary publicité digitale mahomby.
+</p>
+
+</section>
+
+<section class="content-section">
+
+<div class="content-text">
+
+<h2>Marketing Mahomby Ho An'ny Business-nao</h2>
+
+<p>
+Rakoto Digital dia manampy ireo entreprises sy business
+hahazo clients maro kokoa amin'ny alalan'ny publicité moderne.
+</p>
+
+<p>
+Manao Facebook Ads, Instagram Ads, stratégie marketing,
+copywriting mandresy lahatra ary optimisation campagne izahay.
+</p>
+
+<p>
+Tanjona ny hampitombo visibilité,
+messages ary ventes an'ny entreprise-nao.
+</p>
+
+</div>
+
+<div class="content-image">
+
+<img src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?q=80&w=1200&auto=format&fit=crop">
+
+</div>
+
+</section>
+
+<section class="services">
+
+<h2>Ny Services Omenay</h2>
+
+<div class="services-container">
+
+<div class="card">
+
+<i class="fab fa-facebook"></i>
+
+<h3>Facebook Ads</h3>
+
+<p>
+Publicité Facebook sy Instagram matihanina
+hahazoana clients sy ventes maro kokoa.
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-chart-line"></i>
+
+<h3>Stratégie Marketing</h3>
+
+<p>
+Fandrafetana stratégie moderne
+mifanaraka amin'ny business-nao.
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-pen-nib"></i>
+
+<h3>Copywriting</h3>
+
+<p>
+Fanoratana texte publicitaire
+mahasarika sy mandresy lahatra clients.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<h2>Te Hampitombo Ny Clients-nao Ve ?</h2>
+
+<p>
+Mifandraisa aminay dieny izao
+mba hanombohana stratégie marketing matihanina.
+</p>
+
+<a href="https://wa.me/261000000000" target="_blank">
+Hiresaka Aminay
+</a>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 Rakoto Digital — Tous droits réservés
+</p>
+
+</footer>
 
 </body>
 </html>
