@@ -10,6 +10,63 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
+        /* SERVICE MODAL */
+
+.service-modal{
+display:none;
+position:fixed;
+z-index:99999;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.service-modal-content{
+background:#fff;
+max-width:700px;
+width:100%;
+padding:40px;
+border-radius:20px;
+position:relative;
+animation:fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(-20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.close-service{
+position:absolute;
+top:15px;
+right:20px;
+font-size:32px;
+cursor:pointer;
+color:#ff5722;
+}
+
+.service-modal-content h2{
+color:#1e3c72;
+margin-bottom:20px;
+font-size:32px;
+}
+
+.service-modal-content p{
+line-height:1.9;
+margin-bottom:15px;
+color:#64748b;
+}
 
 *{
 margin:0;
@@ -776,6 +833,104 @@ const navbar = document.getElementById("navbar");
 menuToggle.addEventListener("click", () => {
 navbar.classList.toggle("active");
 });
+
+</script>
+    <script>
+
+const services = {
+
+marketing: `
+<h2>Digital Marketing</h2>
+
+<p>
+Ny Digital Marketing dia manampy
+ny business anao hahazo clients maro kokoa
+amin'ny Facebook sy Instagram.
+</p>
+
+<p>
+Manao Facebook Ads professionnelle,
+copywriting mandresy lahatra,
+stratégie marketing moderne
+ary optimisation campagne izahay.
+</p>
+
+<p>
+Tanjona ny hampitombo ventes,
+messages ary visibilité an'ny entreprise-nao.
+</p>
+`,
+
+design: `
+<h2>Graphic Design</h2>
+
+<p>
+Mamorona logo moderne,
+affiches publicitaires,
+flyers ary packaging matihanina izahay.
+</p>
+
+<p>
+Ny design tsara dia manampy
+ny marque-nao ho mora tadidin'ny olona
+sy mampitombo confiance clients.
+</p>
+
+<p>
+Atao qualité professionnelle
+ary moderne ny création rehetra.
+</p>
+`,
+
+web: `
+<h2>Web Development</h2>
+
+<p>
+Mamorona site web moderne,
+responsive ary rapide izahay.
+</p>
+
+<p>
+Mety amin'ny téléphone,
+ordinateur ary tablette ny site rehetra.
+</p>
+
+<p>
+Afaka atao site vitrine,
+portfolio,
+site business,
+na boutique en ligne.
+</p>
+`
+
+};
+
+function openService(service){
+
+document.getElementById("serviceModal").style.display = "flex";
+
+document.getElementById("serviceContent").innerHTML =
+services[service];
+
+}
+
+document.querySelector(".close-service").onclick = function(){
+
+document.getElementById("serviceModal").style.display = "none";
+
+};
+
+window.onclick = function(e){
+
+const modal = document.getElementById("serviceModal");
+
+if(e.target == modal){
+
+modal.style.display = "none";
+
+}
+
+};
 
 </script>
 
