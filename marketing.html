@@ -1,368 +1,75 @@
 <!DOCTYPE html>
 <html lang="mg">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Digital Marketing | Rakoto Digital</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:'Poppins',sans-serif;
-background:#f8fafc;
-color:#334155;
-}
-
-header{
-background:#fff;
-padding:20px;
-box-shadow:0 4px 15px rgba(0,0,0,0.05);
-position:sticky;
-top:0;
-z-index:999;
-}
-
-.header-container{
-max-width:1200px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo{
-font-size:28px;
-font-family:'Montserrat',sans-serif;
-font-weight:700;
-color:#1e3c72;
-}
-
-.logo span{
-color:#ff5722;
-}
-
-nav{
-display:flex;
-gap:25px;
-}
-
-nav a{
-text-decoration:none;
-color:#334155;
-font-weight:600;
-}
-
-.hero{
-padding:120px 20px;
-text-align:center;
-background:
-linear-gradient(rgba(30,60,114,0.8),rgba(30,60,114,0.8)),
-url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop');
-
-background-size:cover;
-background-position:center;
-color:#fff;
-}
-
-.hero h1{
-font-size:52px;
-margin-bottom:20px;
-font-family:'Montserrat',sans-serif;
-}
-
-.hero p{
-max-width:750px;
-margin:auto;
-line-height:1.9;
-font-size:18px;
-}
-
-.content-section{
-max-width:1200px;
-margin:80px auto;
-padding:0 20px;
-display:flex;
-align-items:center;
-gap:50px;
-flex-wrap:wrap;
-}
-
-.content-text{
-flex:1;
-min-width:300px;
-}
-
-.content-text h2{
-font-size:38px;
-margin-bottom:20px;
-color:#1e3c72;
-font-family:'Montserrat',sans-serif;
-}
-
-.content-text p{
-line-height:1.9;
-margin-bottom:20px;
-color:#64748b;
-}
-
-.content-image{
-flex:1;
-min-width:300px;
-}
-
-.content-image img{
-width:100%;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
-}
-
-.services{
-background:#fff;
-padding:90px 20px;
-}
-
-.services h2{
-text-align:center;
-font-size:40px;
-margin-bottom:60px;
-color:#1e3c72;
-font-family:'Montserrat',sans-serif;
-}
-
-.services-container{
-max-width:1200px;
-margin:auto;
-display:flex;
-flex-wrap:wrap;
-gap:30px;
-justify-content:center;
-}
-
-.card{
-background:#f8fafc;
-padding:35px;
-border-radius:18px;
-width:340px;
-box-shadow:0 8px 25px rgba(0,0,0,0.05);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-}
-
-.card i{
-font-size:40px;
-color:#ff5722;
-margin-bottom:20px;
-}
-
-.card h3{
-margin-bottom:15px;
-color:#1e3c72;
-}
-
-.card p{
-color:#64748b;
-line-height:1.8;
-}
-
-.cta{
-padding:100px 20px;
-text-align:center;
-background:#1e3c72;
-color:#fff;
-}
-
-.cta h2{
-font-size:42px;
-margin-bottom:20px;
-font-family:'Montserrat',sans-serif;
-}
-
-.cta p{
-max-width:700px;
-margin:auto;
-line-height:1.9;
-margin-bottom:35px;
-}
-
-.cta a{
-display:inline-block;
-background:#ff5722;
-padding:15px 30px;
-border-radius:10px;
-text-decoration:none;
-color:#fff;
-font-weight:600;
-}
-
-footer{
-background:#111827;
-padding:60px 20px;
-text-align:center;
-color:#9ca3af;
-}
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:36px;
-}
-
-.content-section{
-flex-direction:column;
-}
-
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing - Rakoto Digital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        *{ margin:0; padding:0; box-sizing:border-box; }
+        body{ font-family:'Poppins',sans-serif; background:#f8fafc; color:#334155; line-height:1.8; }
+        header{ background:#fff; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.05); }
+        .container{ max-width:1000px; margin:auto; padding:20px; }
+        .back-btn { display: inline-block; text-decoration: none; color: #1e3c72; font-weight: 600; margin-bottom: 20px; transition: 0.3s; }
+        .back-btn:hover { color: #ff5722; }
+        .hero-service { text-align: center; padding: 40px 0; }
+        .hero-service h1 { font-family: 'Montserrat', sans-serif; color: #1e3c72; font-size: 36px; margin-bottom: 15px; }
+        .service-img { width: 100%; height: 400px; object-fit: cover; border-radius: 15px; margin-bottom: 40px; box-shadow: 0 8px 25px rgba(0,0,0,0.05); }
+        .content-section { background: #fff; padding: 40px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.04); margin-bottom: 40px; }
+        .content-section h2 { color: #1e3c72; font-family: 'Montserrat', sans-serif; margin-bottom: 20px; font-size: 24px; border-left: 5px solid #ff5722; padding-left: 15px; }
+        .grid-points { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px; }
+        .point-card { flex: 1; min-width: 280px; background: #f1f5f9; padding: 20px; border-radius: 10px; }
+        .point-card i { color: #ff5722; font-size: 24px; margin-bottom: 10px; }
+        .point-card h3 { color: #1e3c72; margin-bottom: 10px; }
+        .cta-box { text-align: center; background: #1e3c72; color: #fff; padding: 40px; border-radius: 15px; margin-top: 40px; }
+        .cta-box h2 { color: #fff; margin-bottom: 15px; }
+        .cta-btn { display: inline-block; background: #ff5722; color: #fff; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: 600; margin-top: 20px; transition: 0.3s; }
+        .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(255,87,34,0.4); }
+    </style>
 </head>
-
 <body>
 
-<header>
+    <div class="container">
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Hiverina amin'ny Fandraisana</a>
+        
+        <div class="hero-service">
+            <h1>Digital Marketing</h1>
+            <p>Hampitombo ny mpanjifa sy ny fidiram-bolanao amin'ny alàlan'ny paikady matanjaka.</p>
+        </div>
 
-<div class="header-container">
+        <!-- SARY FANEHOANA MOMBA NY MARKETING -->
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" alt="Digital Marketing" class="service-img">
 
-<div class="logo">
-Rakoto<span>Digital</span>
-</div>
+        <div class="content-section">
+            <h2>Nahoana no mila Digital Marketing ny Business-nao?</h2>
+            <p>Amin izao fotoana izao, ny ankamaroan'ny mpanjifa dia efa ao amin'ny Internet avokoa. Raha te hampitombo ny varotra sy ny fahafantaran'ny olona ny fiharianao ianao, dia tsy maintsy mampiasa ny herin'ny tambajotra sosialy sy ny dokam-barotra mifantoka tsara.</p>
+            
+            <div class="grid-points">
+                <div class="point-card">
+                    <i class="fab fa-facebook"></i>
+                    <h3>Facebook & Instagram Ads</h3>
+                    <p>Fanaovana dokam-barotra lasitra avo lenta mikendry mivantana ny olona mety hividy ny vokatrao.</p>
+                </div>
+                <div class="point-card">
+                    <i class="fas fa-pen-nib"></i>
+                    <h3>Copywriting Mandresy Lahatra</h3>
+                    <p>Fanoratana lahatsoratra sy rary teny manaitra, misarika ny saina, ary mampirisika ny olona hividy avy hatrany.</p>
+                </div>
+                <div class="point-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Stratégie & Optimisation</h3>
+                    <p>Fandalinana ny tsena sy ny mpifaninana mba hamoronana paikady mahomby tsy mandany vola fotsiny.</p>
+                </div>
+            </div>
+        </div>
 
-<nav>
-<a href="index.html">Accueil</a>
-<a href="#">Services</a>
-<a href="#">Contact</a>
-</nav>
-
-</div>
-
-</header>
-
-<section class="hero">
-
-<h1>Digital Marketing Moderne</h1>
-
-<p>
-Ampitomboy ny clients sy ventes-nao amin'ny stratégie marketing moderne,
-Facebook Ads professionnelle ary publicité digitale mahomby.
-</p>
-
-</section>
-
-<section class="content-section">
-
-<div class="content-text">
-
-<h2>Marketing Mahomby Ho An'ny Business-nao</h2>
-
-<p>
-Rakoto Digital dia manampy ireo entreprises sy business
-hahazo clients maro kokoa amin'ny alalan'ny publicité moderne.
-</p>
-
-<p>
-Manao Facebook Ads, Instagram Ads, stratégie marketing,
-copywriting mandresy lahatra ary optimisation campagne izahay.
-</p>
-
-<p>
-Tanjona ny hampitombo visibilité,
-messages ary ventes an'ny entreprise-nao.
-</p>
-
-</div>
-
-<div class="content-image">
-
-<img src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?q=80&w=1200&auto=format&fit=crop">
-
-</div>
-
-</section>
-
-<section class="services">
-
-<h2>Ny Services Omenay</h2>
-
-<div class="services-container">
-
-<div class="card">
-
-<i class="fab fa-facebook"></i>
-
-<h3>Facebook Ads</h3>
-
-<p>
-Publicité Facebook sy Instagram matihanina
-hahazoana clients sy ventes maro kokoa.
-</p>
-
-</div>
-
-<div class="card">
-
-<i class="fas fa-chart-line"></i>
-
-<h3>Stratégie Marketing</h3>
-
-<p>
-Fandrafetana stratégie moderne
-mifanaraka amin'ny business-nao.
-</p>
-
-</div>
-
-<div class="card">
-
-<i class="fas fa-pen-nib"></i>
-
-<h3>Copywriting</h3>
-
-<p>
-Fanoratana texte publicitaire
-mahasarika sy mandresy lahatra clients.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="cta">
-
-<h2>Te Hampitombo Ny Clients-nao Ve ?</h2>
-
-<p>
-Mifandraisa aminay dieny izao
-mba hanombohana stratégie marketing matihanina.
-</p>
-
-<a href="https://wa.me/261000000000" target="_blank">
-Hiresaka Aminay
-</a>
-
-</section>
-
-<footer>
-
-<p>
-© 2026 Rakoto Digital — Tous droits réservés
-</p>
-
-</footer>
+        <div class="cta-box">
+            <h2>Vonona hampitombo ny mpanjifanao ve ianao?</h2>
+            <p>Andao hiara-hiasa hampisondrotra ny fiharianao amin'ny ambaratonga ambony kokoa.</p>
+            <a href="https://wa.me/261000000000" target="_blank" class="cta-btn"><i class="fab fa-whatsapp"></i> hiresaka amin'ny WhatsApp</a>
+        </div>
+    </div>
 
 </body>
 </html>
