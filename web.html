@@ -3,59 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Development | Rakoto Digital Solutions</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <script src="https://alwingulla.com/act/files/tag.min.js?z=8848496" data-cfasync="false" async></script>
+    <title>Web Development - Rakoto Digital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        *{ margin:0; padding:0; box-sizing:border-box; }
+        body{ font-family:'Poppins',sans-serif; background:#f8fafc; color:#334155; line-height:1.8; }
+        header{ background:#fff; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.05); }
+        .container{ max-width:1000px; margin:auto; padding:20px; }
+        .back-btn { display: inline-block; text-decoration: none; color: #1e3c72; font-weight: 600; margin-bottom: 20px; transition: 0.3s; }
+        .back-btn:hover { color: #ff5722; }
+        .hero-service { text-align: center; padding: 40px 0; }
+        .hero-service h1 { font-family: 'Montserrat', sans-serif; color: #1e3c72; font-size: 36px; margin-bottom: 15px; }
+        .service-img { width: 100%; height: 400px; object-fit: cover; border-radius: 15px; margin-bottom: 40px; box-shadow: 0 8px 25px rgba(0,0,0,0.05); }
+        .content-section { background: #fff; padding: 40px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.04); margin-bottom: 40px; }
+        .content-section h2 { color: #1e3c72; font-family: 'Montserrat', sans-serif; margin-bottom: 20px; font-size: 24px; border-left: 5px solid #ff5722; padding-left: 15px; }
+        .grid-points { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px; }
+        .point-card { flex: 1; min-width: 280px; background: #f1f5f9; padding: 20px; border-radius: 10px; }
+        .point-card i { color: #ff5722; font-size: 24px; margin-bottom: 10px; }
+        .point-card h3 { color: #1e3c72; margin-bottom: 10px; }
+        .cta-box { text-align: center; background: #1e3c72; color: #fff; padding: 40px; border-radius: 15px; margin-top: 40px; }
+        .cta-box h2 { color: #fff; margin-bottom: 15px; }
+        .cta-btn { display: inline-block; background: #ff5722; color: #fff; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: 600; margin-top: 20px; transition: 0.3s; }
+        .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(255,87,34,0.4); }
+    </style>
 </head>
 <body>
 
-    <header style="background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 20px 0;">
-        <div style="max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px;">
-            <div style="font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 700; color: #1e3c72;">
-                Rakoto<span style="color: #ff5722;">Digital</span>
-            </div>
-            <nav>
-                <a href="index.html" style="text-decoration: none; color: #333; margin-right: 20px; font-weight: 600; font-size: 14px;">Accueil</a>
-                <a href="index.html#services" style="text-decoration: none; color: #333; font-weight: 600; font-size: 14px;">Tolotra</a>
-            </nav>
-        </div>
-    </header>
-
-    <section style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: #fff; padding: 90px 20px; text-align: center;">
-        <h1 style="font-family: 'Montserrat', sans-serif; font-size: 42px; margin-bottom: 20px;">Web Development</h1>
-        <p style="font-size: 18px; max-width: 700px; margin: 0 auto; opacity: 0.9; line-height: 1.6;">Famoronana tranonkala matihanina sy fampiantranoana azy amin'ny fitaovana arifomba mba hampisongadinana ny asanao.</p>
-    </section>
-
-    <section style="max-width: 1100px; margin: 60px auto; padding: 0 20px;">
-        <h2 style="font-family: 'Montserrat', sans-serif; text-align: center; color: #1e3c72; margin-bottom: 40px; font-size: 28px;">Inona no tombony entin'ny Tranonkala ataonay?</h2>
+    <div class="container">
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Hiverina amin'ny Fandraisana</a>
         
-        <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
-            <div style="background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); flex: 1; min-width: 280px; max-width: 340px;">
-                <h3 style="color: #2979ff; margin-top: 0;">Haingana & Modernina</h3>
-                <p style="color: #666; font-size: 14px; line-height: 1.6;">Ampiasaina ny teknolojia farany (HTML5, CSS3, Vercel) mba hisokafan'ny site ao anatin'ny segondra vitsy monja.</p>
-            </div>
-            <div style="background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); flex: 1; min-width: 280px; max-width: 340px;">
-                <h3 style="color: #2979ff; margin-top: 0;">Fahitana Ao Amin'ny Google (SEO)</h3>
-                <p style="color: #666; font-size: 14px; line-height: 1.6;">Amboarina tsara ny kaody anatin'ny mba ho hita voalohany rehefa misy olona mitady ny tolotra omenao ao amin'ny internet.</p>
-            </div>
-            <div style="background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); flex: 1; min-width: 280px; max-width: 340px;">
-                <h3 style="color: #2979ff; margin-top: 0;">Ad Network Integration</h3>
-                <p style="color: #666; font-size: 14px; line-height: 1.6;">Fampidirana madio ny rafitra dokambarotra (Popunder, Native ads) mba hahazoanao fidiram-bola fanampiny isaky ny misy mpitsidika.</p>
+        <div class="hero-service">
+            <h1>Web Development</h1>
+            <p>Famoronana tranokala (Site Web) matanjaka, haingana, ary manara-penitra.</p>
+        </div>
+
+        <!-- SARY FANEHOANA MOMBA NY DEVELLOPEMENT WEB -->
+        <img src="https://images.unsplash.com/photo-1547658719-da2b81166b58?q=80&w=1200&auto=format&fit=crop" alt="Web Development" class="service-img">
+
+        <div class="content-section">
+            <h2>Nahoana no Tena Ilaina ny Site Web Matihanina?</h2>
+            <p>Ny tranokala no birao na magazay fandraisanao mpanjifa ao amin'ny tontolo dizitaly. Izy io dia miasa tsy miato 24 ora ao anatin'ny 7 andro mba hampahafantarana ny tolotrao, handraisana mpanjifa, ary hanehoana fa orinasa matotra sy azo itokisana ianao.</p>
+            
+            <div class="grid-points">
+                <div class="point-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Site Vitrine & Business</h3>
+                    <p>Famoronana pejy fampahafantarana orinasa, fikambanana, na tetikasa manokana mba hahazoana mpanjifa vaovao.</p>
+                </div>
+                <div class="point-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Responsive Design</h3>
+                    <p>Atao mifanaraka tsara sy tsara tarehy na sokafana amin'ny finday (Smartphone), tablette, na solosaina ny site-nao.</p>
+                </div>
+                <div class="point-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Haingana & SEO</h3>
+                    <p>Site maivana, misokatra haingana be, ary optimized tsara mba ho mora hita ao amin'ny fikarohana Google.</p>
+                </div>
             </div>
         </div>
 
-        <div style="background: #2979ff; color: #fff; padding: 50px 40px; border-radius: 16px; margin-top: 60px; text-align: center; box-shadow: 0 10px 30px rgba(41, 121, 255, 0.2);">
-            <h3 style="font-family: 'Montserrat', sans-serif; font-size: 24px; margin-top: 0;">Aza avela ho tara intsony ny fandrosoanao!</h3>
-            <p style="margin-bottom: 30px; opacity: 0.9;">Andao hanangana ny tranonkao raikitra ao amin'ny tontolon'ny internet androany.</p>
-            <a href="order-web.html" style="background-color: #ff5722; color: #fff; padding: 15px 32px; text-decoration: none; font-weight: bold; border-radius: 8px; display: inline-block; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 15px rgba(255,87,34,0.3); transition: 0.3s;">Hanangana Tranokala Izao</a>
+        <div class="cta-box">
+            <h2>Te hanana tranokala matihanina ve ianao?</h2>
+            <p>Andao hovolavolaina ho lasa site web tsara indrindra ny hevitrao sy ny fiharianao.</p>
+            <a href="https://wa.me/261000000000" target="_blank" class="cta-btn"><i class="fab fa-whatsapp"></i> hiresaka amin'ny WhatsApp</a>
         </div>
-    </section>
-
-    <footer style="background: #1e3c72; color: #fff; text-align: center; padding: 30px 20px; font-size: 14px; margin-top: 80px;">
-        <p>&copy; 2026 Rakoto Digital Solutions. Zo rehetra voatokana.</p>
-    </footer>
+    </div>
 
 </body>
 </html>
