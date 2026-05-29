@@ -21,8 +21,8 @@
         nav a:hover{ color:#ff5722; }
         .menu-toggle{ display:none; font-size:28px; cursor:pointer; color:#1e3c72; }
 
-        /* HERO SECTION (DOKAM-BAROTRA VOALOHANY) */
-        .hero{ padding:160px 20px 140px 20px; text-align:center; background: linear-gradient(rgba(15, 32, 67, 0.85), rgba(30, 60, 114, 0.85)), url('https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1600&auto=format&fit=crop'); background-size:cover; background-position:center; color:#fff; }
+        /* HERO SECTION */
+        .hero{ padding:160px 20px 140px 20px; text-align:center; background: linear-gradient(rgba(15, 32, 67, 0.85), rgba(30, 60, 114, 0.85)), url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1600&q=80'); background-size:cover; background-position:center; color:#fff; }
         .hero-tagline { background: rgba(255, 87, 34, 0.2); color: #ff9800; padding: 6px 16px; border-radius: 50px; display: inline-block; font-weight: 600; font-size: 14px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
         .hero h1{ font-size:54px; font-family:'Montserrat',sans-serif; font-weight: 800; margin-bottom:25px; line-height: 1.2; }
         .hero p{ max-width:750px; margin:auto; font-size:19px; line-height:1.8; margin-bottom:40px; color: #e2e8f0; }
@@ -32,14 +32,15 @@
         .hero-btn-secondary { display:inline-block; background:transparent; color:#fff; padding:16px 35px; border-radius:8px; text-decoration:none; font-weight:600; transition:0.3s; border: 2px solid #fff; }
         .hero-btn-secondary:hover { background: #fff; color: #1e3c72; }
 
-        /* TRUST NUMBERS (STATISTIQUES) */
+        /* TRUST NUMBERS */
         .stats-section { background: #fff; padding: 50px 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); position: relative; margin-top: -60px; max-width: 1000px; margin-left: auto; margin-right: auto; border-radius: 15px; z-index: 10; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px; text-align: center; }
         .stat-item h2 { font-size: 40px; color: #ff5722; font-family: 'Montserrat', sans-serif; font-weight: 800; }
         .stat-item p { color: #64748b; font-weight: 500; font-size: 15px; }
 
-        /* PROBLEM & SOLUTION (FANDRESENA LAHATRA) */
+        /* PROBLEM & SOLUTION */
         .problem-section { padding: 90px 20px; max-width: 1200px; margin: auto; display: flex; align-items: center; gap: 60px; flex-wrap: wrap; }
-        .problem-img { flex: 1; min-width: 300px; border-radius: 18px; box-shadow: 0 15px 35px rgba(0,0,0,0.08); object-fit: cover; height: 450px; }
+        .problem-img-container { flex: 1; min-width: 300px; height: 450px; }
+        .problem-img { width: 100%; height: 100%; border-radius: 18px; box-shadow: 0 15px 35px rgba(0,0,0,0.08); object-fit: cover; }
         .problem-text { flex: 1; min-width: 300px; }
         .problem-text h2 { font-size: 38px; color: #1e3c72; font-family: 'Montserrat', sans-serif; font-weight: 700; margin-bottom: 20px; line-height: 1.3; }
         .problem-text p { color: #64748b; margin-bottom: 25px; font-size: 16px; }
@@ -70,10 +71,10 @@
         .benefit-icon { font-size: 24px; color: #ff5722; margin-top: 5px; }
         .benefit-info h3 { font-size: 20px; font-family: 'Montserrat', sans-serif; margin-bottom: 8px; color: #fff; }
         .benefit-info p { color: #93c5fd; font-size: 15px; }
-        .benefits-img-box { flex: 1; min-width: 300px; display: flex; gap: 20px; }
-        .benefits-img-box img { width: 100%; border-radius: 15px; object-fit: cover; height: 400px; box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
+        .benefits-img-container { flex: 1; min-width: 300px; height: 400px; }
+        .benefits-img { width: 100%; height: 100%; border-radius: 15px; object-fit: cover; box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
 
-        /* CALL TO ACTION (DOKAM-BAROTRA FARANY) */
+        /* CALL TO ACTION */
         .final-cta { padding: 100px 20px; text-align: center; background: #fff; position: relative; }
         .cta-content { max-width: 800px; margin: auto; }
         .final-cta h2 { font-size: 42px; font-family: 'Montserrat', sans-serif; color: #1e3c72; margin-bottom: 20px; font-weight: 800; }
@@ -102,7 +103,7 @@
             .hero h1{ font-size:36px; }
             .hero p{ font-size:16px; }
             .problem-section, .benefits-container { flex-direction: column; }
-            .problem-img, .benefits-img-box img { height: 300px; }
+            .problem-img-container, .benefits-img-container { height: 300px; width: 100%; }
             .final-cta h2 { font-size: 30px; }
         }
     </style>
@@ -127,7 +128,7 @@
         <h1>Tsy Mahazo Mpanjifa Ampy Ve Ny Business-nao Ao Amin'ny Internet?</h1>
         <p>Izahay dia manampy anao hamorona sary matihanina, tranokala manara-penitra, ary dokam-barotra mandresy lahatra amin'ny Facebook mba hampiakarana avo roa heny ny varotra sy ny mpanjifanao.</p>
         <div class="hero-buttons">
-            <a href="#contact" class="hero-btn">Hanomboka Izao Vangio Neffa</a>
+            <a href="#contact" class="hero-btn">Hanomboka Izao</a>
             <a href="#services" class="hero-btn-secondary">Hijery Tolotra</a>
         </div>
     </section>
@@ -148,7 +149,9 @@
     </section>
 
     <section class="problem-section">
-        <img src="https://images.unsplash.com/photo-1542744094-3a31f103e35f?q=80&w=800&auto=format&fit=crop" alt="Business Growth" class="problem-img">
+        <div class="problem-img-container">
+            <img src="https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=800&q=80" alt="Business Growth" class="problem-img">
+        </div>
         <div class="problem-text">
             <h2>Ny Olana Mianjady Amin'ny Business Maro Amin'izao...</h2>
             <p>Mandany vola amin'ny dokam-barotra nefa tsy misy hafatra (messages) na mpanjifa mividy? Sa tsy manana sary sy site web matihanina ka tsy matoky anao ny mpanjifa?</p>
@@ -216,8 +219,8 @@
                     </div>
                 </div>
             </div>
-            <div class="benefits-img-box">
-                <img src="https://images.unsplash.com/photo-1552581234-2612b75d8953?q=80&w=800&auto=format&fit=crop" alt="Team Success">
+            <div class="benefits-img-container">
+                <img src="https://images.unsplash.com/photo-1552581234-2612b75d8953?auto=format&fit=crop&w=800&q=80" alt="Team Success" class="benefits-img">
             </div>
         </div>
     </section>
