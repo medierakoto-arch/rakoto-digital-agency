@@ -1,17 +1,29 @@
-```html
+
 <!DOCTYPE html>
 <html lang="mg">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Rakoto Digital</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>
+Rakoto Digital Solutions
+</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
+
+/* =========================
+RESET
+========================= */
 
 *{
 margin:0;
@@ -30,7 +42,9 @@ color:#334155;
 overflow-x:hidden;
 }
 
-/* HEADER */
+/* =========================
+HEADER
+========================= */
 
 header{
 background:#fff;
@@ -84,13 +98,16 @@ cursor:pointer;
 color:#1e3c72;
 }
 
-/* HERO */
+/* =========================
+HERO
+========================= */
 
 .hero{
 padding:130px 20px;
 text-align:center;
 background:
-linear-gradient(rgba(30,60,114,0.8),rgba(30,60,114,0.8)),
+linear-gradient(rgba(30,60,114,0.8),
+rgba(30,60,114,0.8)),
 url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop');
 
 background-size:cover;
@@ -99,7 +116,7 @@ color:#fff;
 }
 
 .hero h1{
-font-size:50px;
+font-size:48px;
 font-family:'Montserrat',sans-serif;
 margin-bottom:20px;
 }
@@ -127,7 +144,9 @@ transition:0.3s;
 transform:translateY(-5px);
 }
 
-/* SERVICES */
+/* =========================
+SERVICES
+========================= */
 
 .services-section{
 padding:90px 20px;
@@ -180,7 +199,9 @@ color:#ff5722;
 font-weight:600;
 }
 
-/* BLOG */
+/* =========================
+BLOG
+========================= */
 
 .custom-blog-section{
 padding:90px 20px;
@@ -258,132 +279,9 @@ text-decoration:none;
 font-weight:600;
 }
 
-/* DETAILS */
-
-.details-section{
-max-width:1200px;
-margin:100px auto;
-padding:0 20px;
-display:flex;
-align-items:center;
-gap:50px;
-flex-wrap:wrap;
-}
-
-.details-text{
-flex:1;
-min-width:300px;
-}
-
-.details-text h2{
-font-size:40px;
-margin-bottom:20px;
-color:#1e3c72;
-font-family:'Montserrat',sans-serif;
-}
-
-.details-text p{
-line-height:1.9;
-margin-bottom:30px;
-color:#64748b;
-}
-
-.details-btn{
-display:inline-block;
-padding:14px 25px;
-background:#1e3c72;
-color:#fff;
-text-decoration:none;
-border-radius:8px;
-font-weight:600;
-}
-
-.details-images{
-flex:1;
-min-width:300px;
-position:relative;
-height:450px;
-}
-
-.img-back{
-position:absolute;
-width:70%;
-left:0;
-top:0;
-border-radius:15px;
-}
-
-.img-front{
-position:absolute;
-width:60%;
-right:0;
-bottom:0;
-border-radius:15px;
-border:6px solid #fff;
-}
-
-/* FOOTER */
-
-footer{
-background:#111827;
-padding:70px 20px;
-color:#9ca3af;
-margin-top:80px;
-}
-
-.footer-container{
-max-width:1200px;
-margin:auto;
-display:flex;
-flex-wrap:wrap;
-gap:40px;
-}
-
-.footer-col{
-flex:1;
-min-width:250px;
-}
-
-.footer-col h3{
-color:#fff;
-margin-bottom:20px;
-}
-
-.footer-col p{
-line-height:1.8;
-}
-
-.footer-col a{
-color:#ff5722;
-text-decoration:none;
-}
-
-/* WHATSAPP */
-
-.whatsapp-float{
-position:fixed;
-width:60px;
-height:60px;
-bottom:25px;
-right:25px;
-background:#25d366;
-color:#fff;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:30px;
-text-decoration:none;
-box-shadow:0 8px 20px rgba(0,0,0,0.2);
-z-index:9999;
-transition:0.3s;
-}
-
-.whatsapp-float:hover{
-transform:scale(1.1);
-}
-
-/* SERVICE MODAL */
+/* =========================
+MODAL
+========================= */
 
 .service-modal{
 display:none;
@@ -410,14 +308,17 @@ animation:fadeIn 0.3s ease;
 }
 
 @keyframes fadeIn{
+
 from{
 opacity:0;
 transform:translateY(-20px);
 }
+
 to{
 opacity:1;
 transform:translateY(0);
 }
+
 }
 
 .close-service{
@@ -441,7 +342,65 @@ margin-bottom:15px;
 color:#64748b;
 }
 
-/* MOBILE */
+/* =========================
+WHATSAPP
+========================= */
+
+.whatsapp-float{
+position:fixed;
+width:60px;
+height:60px;
+bottom:25px;
+right:25px;
+background:#25d366;
+color:#fff;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+text-decoration:none;
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
+z-index:9999;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+background:#111827;
+padding:70px 20px;
+color:#9ca3af;
+margin-top:80px;
+}
+
+.footer-container{
+max-width:1200px;
+margin:auto;
+display:flex;
+flex-wrap:wrap;
+gap:40px;
+}
+
+.footer-col{
+flex:1;
+min-width:250px;
+}
+
+.footer-col h3{
+color:#fff;
+margin-bottom:20px;
+}
+
+.footer-col a{
+color:#ff5722;
+text-decoration:none;
+}
+
+/* =========================
+RESPONSIVE
+========================= */
 
 @media(max-width:768px){
 
@@ -450,20 +409,7 @@ display:block;
 }
 
 nav{
-position:absolute;
-top:80px;
-left:0;
-width:100%;
-background:#fff;
-padding:20px;
 display:none;
-flex-direction:column;
-align-items:flex-start;
-gap:20px;
-}
-
-nav.active{
-display:flex;
 }
 
 .hero h1{
@@ -478,17 +424,12 @@ font-size:15px;
 width:100%;
 }
 
-.details-section{
-flex-direction:column;
 }
 
-.details-images{
-height:350px;
-}
-
-}
+/* ========================= */
 
 </style>
+
 </head>
 
 <body>
@@ -501,19 +442,17 @@ height:350px;
 Rakoto<span>Digital</span>
 </div>
 
-<div class="menu-toggle" id="menuToggle">
-<i class="fas fa-bars"></i>
-</div>
+<nav>
 
-<nav id="navbar">
-
-<a href="#">Fandraisana</a>
+<a href="#">Accueil</a>
 
 <a href="#services">Services</a>
 
-<a href="#blog-conseils">Blog</a>
+<a href="#blog">Blog</a>
 
-<a href="#">Contact</a>
+<a href="mailto:christian.rakoto.pro@gmail.com">
+Contact
+</a>
 
 </nav>
 
@@ -528,17 +467,23 @@ Tongasoa eto amin'ny Rakoto Digital
 </h1>
 
 <p>
-Agence digitale moderne manampy ny entreprise
-sy business hampitombo ny clients sy visibilité.
+Agence digitale moderne manampy entreprise
+sy business hampitombo clients sy visibilité.
 </p>
 
-<a href="#services" class="hero-btn">
+<a href="#services"
+class="hero-btn">
+
 Hijery Services
+
 </a>
 
 </section>
 
-<section class="services-section" id="services">
+<!-- SERVICES -->
+
+<section class="services-section"
+id="services">
 
 <h2>Ny Tolotra Omenay</h2>
 
@@ -555,7 +500,9 @@ copywriting ary publicité moderne.
 
 <a href="javascript:void(0)"
 onclick="openService('marketing')">
+
 Jereo →
+
 </a>
 
 </div>
@@ -571,7 +518,9 @@ packaging ary branding professionnel.
 
 <a href="javascript:void(0)"
 onclick="openService('design')">
+
 Jereo →
+
 </a>
 
 </div>
@@ -587,7 +536,9 @@ responsive ary rapide.
 
 <a href="javascript:void(0)"
 onclick="openService('web')">
+
 Jereo →
+
 </a>
 
 </div>
@@ -596,15 +547,20 @@ Jereo →
 
 </section>
 
-<section id="blog-conseils" class="custom-blog-section">
+<!-- BLOG -->
+
+<section id="blog"
+class="custom-blog-section">
 
 <div class="custom-blog-header">
 
-<h2>Torohevitra & Bilaogy</h2>
+<h2>
+Torohevitra & Bilaogy
+</h2>
 
 <p>
-Torohevitra matihanina momba ny marketing,
-publicité ary développement digital.
+Conseils professionnels momba
+marketing sy développement digital.
 </p>
 
 </div>
@@ -622,12 +578,15 @@ Comment créer une affiche publicitaire
 </h3>
 
 <p>
-Découvrez les secrets pour concevoir
-un visuel attractif qui attire les clients.
+Découvrez les secrets pour créer
+une publicité attractive.
 </p>
 
-<a href="marketing.html">
+<a href="javascript:void(0)"
+onclick="openArticle('article1')">
+
 Lire la suite →
+
 </a>
 
 </div>
@@ -645,12 +604,15 @@ Importance d’un packaging professionnel
 </h3>
 
 <p>
-Un bon design d’étiquette peut renforcer
-l’image professionnelle de votre marque.
+Le packaging moderne améliore
+l’image de votre marque.
 </p>
 
-<a href="design.html">
+<a href="javascript:void(0)"
+onclick="openArticle('article2')">
+
 Lire la suite →
+
 </a>
 
 </div>
@@ -661,38 +623,44 @@ Lire la suite →
 
 </section>
 
-<section class="details-section">
+<!-- SERVICE MODAL -->
 
-<div class="details-text">
+<div class="service-modal"
+id="serviceModal">
 
-<h2>
-Nahoana no hifidy anay ?
-</h2>
+<div class="service-modal-content">
 
-<p>
-Rakoto Digital dia manampy anao
-hamorona image professionnelle,
-site web moderne ary stratégie marketing
-mahomby hampitombo ny ventes.
-</p>
+<span class="close-service">
+&times;
+</span>
 
-<a href="#" class="details-btn">
-Hahafantatra bebe kokoa
-</a>
+<div id="serviceContent"></div>
 
 </div>
 
-<div class="details-images">
+</div>
 
-<img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=700&auto=format&fit=crop"
-class="img-back">
+<!-- ARTICLE MODAL -->
 
-<img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=700&auto=format&fit=crop"
-class="img-front">
+<div class="service-modal"
+id="articleModal">
+
+<div class="service-modal-content">
+
+<span class="close-service"
+id="closeArticle">
+
+&times;
+
+</span>
+
+<div id="articleContent"></div>
 
 </div>
 
-</section>
+</div>
+
+<!-- FOOTER -->
 
 <footer>
 
@@ -718,10 +686,13 @@ Contact
 </h3>
 
 <p>
-Email :
+
 <a href="mailto:christian.rakoto.pro@gmail.com">
+
 christian.rakoto.pro@gmail.com
+
 </a>
+
 </p>
 
 <p>
@@ -734,7 +705,9 @@ Antananarivo Madagascar
 
 </footer>
 
-<a href="https://wa.me/261000000000"
+<!-- WHATSAPP -->
+
+<a href="https://wa.me/261340000000"
 class="whatsapp-float"
 target="_blank">
 
@@ -742,28 +715,9 @@ target="_blank">
 
 </a>
 
-<!-- MODAL -->
-
-<div id="serviceModal" class="service-modal">
-
-<div class="service-modal-content">
-
-<span class="close-service">&times;</span>
-
-<div id="serviceContent"></div>
-
-</div>
-
-</div>
+<!-- SCRIPT -->
 
 <script>
-
-const menuToggle = document.getElementById("menuToggle");
-const navbar = document.getElementById("navbar");
-
-menuToggle.addEventListener("click", () => {
-navbar.classList.toggle("active");
-});
 
 const services = {
 
@@ -772,20 +726,12 @@ marketing: `
 
 <p>
 Ny Digital Marketing dia manampy
-ny business anao hahazo clients maro kokoa
-amin'ny Facebook sy Instagram.
+business hahazo clients sy ventes.
 </p>
 
 <p>
-Manao Facebook Ads professionnelle,
-copywriting mandresy lahatra,
-stratégie marketing moderne
-ary optimisation campagne izahay.
-</p>
-
-<p>
-Tanjona ny hampitombo ventes,
-messages ary visibilité an'ny entreprise-nao.
+Manao Facebook Ads,
+copywriting ary stratégie moderne izahay.
 </p>
 `,
 
@@ -793,20 +739,9 @@ design: `
 <h2>Graphic Design</h2>
 
 <p>
-Mamorona logo moderne,
-affiches publicitaires,
-flyers ary packaging matihanina izahay.
-</p>
-
-<p>
-Ny design tsara dia manampy
-ny marque-nao ho mora tadidin'ny olona
-sy mampitombo confiance clients.
-</p>
-
-<p>
-Atao qualité professionnelle
-ary moderne ny création rehetra.
+Mamorona logo,
+flyers,
+packaging ary branding moderne izahay.
 </p>
 `,
 
@@ -817,44 +752,102 @@ web: `
 Mamorona site web moderne,
 responsive ary rapide izahay.
 </p>
-
-<p>
-Mety amin'ny téléphone,
-ordinateur ary tablette ny site rehetra.
-</p>
-
-<p>
-Afaka atao site vitrine,
-portfolio,
-site business,
-na boutique en ligne.
-</p>
 `
 
 };
 
 function openService(service){
 
-document.getElementById("serviceModal").style.display = "flex";
+document.getElementById("serviceModal").style.display =
+"flex";
 
 document.getElementById("serviceContent").innerHTML =
 services[service];
 
 }
 
-document.querySelector(".close-service").onclick = function(){
+document.querySelector(".close-service").onclick =
+function(){
 
-document.getElementById("serviceModal").style.display = "none";
+document.getElementById("serviceModal").style.display =
+"none";
+
+};
+
+/* ARTICLES */
+
+const articles = {
+
+article1: `
+<h2>
+Comment créer une affiche publicitaire
+</h2>
+
+<p>
+Une bonne affiche doit attirer rapidement
+l’attention des clients.
+</p>
+
+<p>
+Utilisez couleurs modernes,
+images professionnelles
+et titre puissant.
+</p>
+`,
+
+article2: `
+<h2>
+Importance d’un packaging professionnel
+</h2>
+
+<p>
+Le packaging améliore confiance
+et image de marque.
+</p>
+
+<p>
+Un bon design augmente souvent
+les ventes.
+</p>
+`
+
+};
+
+function openArticle(article){
+
+document.getElementById("articleModal").style.display =
+"flex";
+
+document.getElementById("articleContent").innerHTML =
+articles[article];
+
+}
+
+document.getElementById("closeArticle").onclick =
+function(){
+
+document.getElementById("articleModal").style.display =
+"none";
 
 };
 
 window.onclick = function(e){
 
-const modal = document.getElementById("serviceModal");
+const modal1 =
+document.getElementById("serviceModal");
 
-if(e.target == modal){
+const modal2 =
+document.getElementById("articleModal");
 
-modal.style.display = "none";
+if(e.target == modal1){
+
+modal1.style.display = "none";
+
+}
+
+if(e.target == modal2){
+
+modal2.style.display = "none";
 
 }
 
