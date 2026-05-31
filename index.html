@@ -3,416 +3,834 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rakoto Digital Solutions | Masoivoho Ara-kiditaly Matihanina</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght=600;700;800&family=Poppins:wght=300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Rakoto Digital Solutions | Masoivoho Ara-kiditaly</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght=600;700&family=Poppins:wght=300;400;500;600&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <script src="https://alwingulla.com/act/files/tag.min.js?z=8848496" data-cfasync="false" async></script>
+
     <style>
-        :root {
-            --primary: #1e3c72;
-            --secondary: #2a5298;
-            --accent: #ff5722;
-            --accent-green: #2ec4b6;
-            --dark: #0f172a;
-            --light: #f8fafc;
-            --slate: #475569;
+        /* CSS Reset fototra */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background-color: var(--light); color: var(--dark); line-height: 1.6; overflow-x: hidden; }
-        
-        header { background: #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 1000; }
-        .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; }
-        .logo { font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; text-decoration: none; cursor: pointer; }
-        .logo span { color: var(--accent); }
-        nav { display: flex; align-items: center; gap: 30px; }
-        nav a { text-decoration: none; color: var(--slate); font-weight: 600; font-size: 15px; transition: color 0.3s; cursor: pointer; }
-        nav a:hover { color: var(--accent) !important; }
-        
-        /* APP PAGES ROUTING */
-        .page { display: none; }
-        .page.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+        /* Style ho an'ny entête (Header) */
+        header {
+            background: #ffffff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e3c72;
+            letter-spacing: -0.5px;
+        }
+        .logo span {
+            color: #ff5722;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #334155;
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ff5722 !important;
+        }
 
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        /* Dropdown ho an'ny Tolotra */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-btn {
+            text-decoration: none;
+            color: #334155;
+            font-weight: 600;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ffffff;
+            min-width: 220px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            border-radius: 8px;
+            padding: 10px 0;
+            margin-top: 10px;
+            border-top: 3px solid #ff5722;
+        }
+        .dropdown-content a {
+            color: #334155;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        .dropdown-content a:hover {
+            background-color: #f8fafc;
+            color: #ff5722 !important;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block !important;
+        }
 
-        /* HERO HOME */
-        .hero { background: linear-gradient(rgba(30, 60, 114, 0.9), rgba(42, 82, 152, 0.9)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop') no-repeat center center/cover; color: #fff; padding: 140px 20px; text-align: center; }
-        .hero h1 { font-family: 'Montserrat', sans-serif; font-size: 42px; font-weight: 800; margin-bottom: 25px; letter-spacing: -0.5px; }
-        .hero p { font-size: 19px; max-width: 800px; margin: 0 auto 35px auto; opacity: 0.95; font-weight: 300; }
-        .hero-btn { background-color: var(--accent); color: #fff; padding: 16px 36px; text-decoration: none; font-weight: 600; border-radius: 8px; display: inline-block; box-shadow: 0 4px 15px rgba(255, 87, 34, 0.4); transition: all 0.3s; border: none; cursor: pointer; font-family: 'Poppins', sans-serif; font-size: 16px; }
-        .hero-btn:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(255, 87, 34, 0.6); }
+        /* Dropdown ho an'ny Teny */
+        .lang-dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 10px;
+        }
+        .lang-btn {
+            background: #f1f5f9;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            color: #334155;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .lang-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            background-color: #ffffff;
+            min-width: 110px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 6px;
+            padding: 5px 0;
+            margin-top: 5px;
+        }
+        .lang-content a {
+            color: #334155;
+            padding: 8px 15px;
+            text-decoration: none;
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .lang-content a:hover {
+            background-color: #f1f5f9;
+        }
+        .lang-dropdown:hover .lang-content {
+            display: block !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(30, 60, 114, 0.85), rgba(42, 82, 152, 0.85)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop') no-repeat center center/cover;
+            color: #fff;
+            padding: 120px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 17px;
+            max-width: 750px;
+            margin: 0 auto 30px auto;
+            opacity: 0.9;
+        }
+        .hero-btn {
+            background-color: #ff5722;
+            color: #fff;
+            padding: 14px 30px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 6px;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(255, 87, 34, 0.4);
+            transition: transform 0.2s;
+        }
+        .hero-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Container ho an'ny doka */
+        .ad-container-top {
+            max-width: 800px;
+            margin: 25px auto 0 auto;
+            text-align: center;
+        }
+
+        /* Card Section */
+        .services-section {
+            max-width: 1200px;
+            margin: 80px auto 40px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .services-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            color: #1e3c72;
+            margin-bottom: 50px;
+        }
+        .services-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        .card {
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            flex: 1;
+            min-width: 280px;
+            max-width: 360px;
+            text-align: left;
+            border-top: 4px solid #1e3c72;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card.orange { border-top-color: #ff5722; }
+        .card.green { border-top-color: #2ec4b6; }
         
-        /* SERVICES SECTION HOME */
-        .services-section { max-width: 1200px; margin: 100px auto 60px auto; padding: 0 20px; text-align: center; }
-        .services-section h2 { font-family: 'Montserrat', sans-serif; font-size: 36px; color: var(--primary); margin-bottom: 15px; font-weight: 700; }
-        .services-section > p { color: var(--slate); margin-bottom: 60px; font-size: 16px; max-width: 600px; margin-left: auto; margin-right: auto; }
-        .services-container { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
-        .card { background: #ffffff; padding: 50px 35px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); flex: 1; min-width: 300px; max-width: 380px; text-align: left; border-top: 5px solid var(--primary); transition: all 0.3s; position: relative; }
-        .card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(30, 60, 114, 0.1); }
-        .card.orange { border-top-color: var(--accent); }
-        .card.green { border-top-color: var(--accent-green); }
-        .card .icon-box { width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; font-size: 24px; }
-        .card.blue .icon-box { background: rgba(30, 60, 114, 0.1); color: var(--primary); }
-        .card.orange .icon-box { background: rgba(255, 87, 34, 0.1); color: var(--accent); }
-        .card.green .icon-box { background: rgba(46, 196, 182, 0.1); color: var(--accent-green); }
-        .card h3 { font-family: 'Montserrat', sans-serif; font-size: 22px; color: var(--primary); margin-bottom: 15px; font-weight: 700; }
-        .card p { color: var(--slate); font-size: 15px; margin-bottom: 30px; min-height: 90px; }
-        .card .cta-link { color: var(--accent); text-decoration: none; font-weight: 700; font-size: 15px; display: inline-flex; align-items: center; gap: 8px; border: none; background: none; cursor: pointer; font-family: 'Poppins', sans-serif; }
-        .card .cta-link:hover { gap: 12px; transition: all 0.2s; }
+        .card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            color: #1e3c72;
+            margin-bottom: 15px;
+        }
+        .card p {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+        .card a {
+            color: #ff5722;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* SECTION DETAILS (Ireo sary roa mifanindry teo) */
+        .details-section {
+            max-width: 1200px;
+            margin: 100px auto 60px auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 60px;
+        }
+        .details-text {
+            flex: 1;
+            min-width: 320px;
+        }
+        .details-text h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            color: #1e3c72;
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+        .details-text p {
+            color: #64748b;
+            font-size: 16px;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        .details-btn {
+            background-color: #1e3c72;
+            color: #ffffff;
+            padding: 14px 28px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 6px;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+        .details-btn:hover {
+            background-color: #ff5722;
+        }
         
-        /* ABOUT SECTION HOME */
-        .details-section { max-width: 1200px; margin: 120px auto; padding: 0 20px; display: flex; align-items: center; flex-wrap: wrap; gap: 60px; }
-        .details-text { flex: 1; min-width: 320px; }
-        .details-text h2 { font-family: 'Montserrat', sans-serif; font-size: 38px; color: var(--primary); margin-bottom: 25px; line-height: 1.3; font-weight: 700; }
-        .details-text p { color: var(--slate); font-size: 16px; margin-bottom: 35px; line-height: 1.8; }
-        
-        .details-images { flex: 1; min-width: 320px; position: relative; height: 450px; display: flex; align-items: center; justify-content: center; }
-        .img-back { width: 65%; height: 350px; object-fit: cover; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); position: absolute; left: 5%; top: 10%; z-index: 1; }
-        .img-front { width: 55%; height: 380px; object-fit: cover; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.12); position: absolute; right: 5%; bottom: 5%; z-index: 2; border: 6px solid #ffffff; }
+        .details-images {
+            flex: 1;
+            min-width: 320px;
+            position: relative;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .img-back {
+            width: 65%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: absolute;
+            left: 5%;
+            top: 10%;
+            z-index: 1;
+        }
+        .img-front {
+            width: 55%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            position: absolute;
+            right: 5%;
+            bottom: 5%;
+            z-index: 2;
+            border: 5px solid #ffffff;
+        }
 
-        /* ==========================================
-           LANDING PAGES (ARGUMENTS LOURDES STYLE) 
-        ========================================== */
-        .landing-header { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #fff; padding: 80px 20px; text-align: center; position: relative; }
-        .landing-header .back-home { position: absolute; top: 30px; left: calc(50% - 580px); color: #fff; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; background: rgba(255,255,255,0.1); padding: 8px 16px; border-radius: 20px; transition: background 0.2s; cursor: pointer; }
-        @media (max-width: 1200px) { .landing-header .back-home { left: 20px; } }
-        .landing-header .back-home:hover { background: rgba(255,255,255,0.2); }
-        .landing-header h1 { font-family: 'Montserrat', sans-serif; font-size: 40px; font-weight: 800; margin-bottom: 15px; }
-        .landing-header p { font-size: 18px; opacity: 0.9; max-width: 700px; margin: 0 auto; font-weight: 300; }
+        /* SECTION BLOG */
+        .blog-section {
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 0 20px;
+        }
+        .blog-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .blog-featured {
+            flex: 1.2;
+            min-width: 320px;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            cursor: pointer; /* Natao azo tsindrina */
+            transition: transform 0.2s;
+        }
+        .blog-featured:hover {
+            transform: translateY(-3px);
+        }
+        .blog-featured img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+        }
+        .blog-featured-content {
+            padding: 25px;
+        }
+        .blog-featured-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 22px;
+            color: #1e3c72;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .blog-featured-content p {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        .read-more-text {
+            color: #ff5722;
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .blog-meta {
+            font-size: 12px;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+        .blog-list {
+            flex: 1;
+            min-width: 320px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .blog-item {
+            display: flex;
+            gap: 20px;
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            align-items: center;
+            cursor: pointer; /* Natao azo tsindrina */
+            transition: transform 0.2s;
+        }
+        .blog-item:hover {
+            transform: translateX(5px);
+        }
+        .blog-item img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+        .blog-item-text h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            color: #1e3c72;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
 
-        .argument-container { max-width: 1100px; margin: 80px auto; padding: 0 20px; }
-        .heavy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; margin-bottom: 90px; }
-        @media (max-width: 768px) { .heavy-grid { grid-template-columns: 1fr; gap: 35px; } }
-        .heavy-text h2 { font-family: 'Montserrat', sans-serif; font-size: 28px; color: var(--primary); margin-bottom: 20px; font-weight: 700; border-left: 5px solid var(--accent); padding-left: 15px; }
-        .heavy-text p { color: var(--slate); font-size: 16px; line-height: 1.8; margin-bottom: 20px; text-align: justify; }
-        .heavy-features { list-style: none; margin-top: 25px; }
-        .heavy-features li { display: flex; align-items: start; gap: 12px; margin-bottom: 15px; color: var(--dark); font-weight: 500; font-size: 15px; }
-        .heavy-features li i { color: var(--accent-green); font-size: 18px; margin-top: 3px; }
+        /* STYLE HO AN'NY MODALE (PEJY KELY MIPOITRA REHEFA MANINDRI "LIRE LA SUITE") */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 2000; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(15, 23, 42, 0.6); 
+            backdrop-filter: blur(4px);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .modal-content {
+            background-color: #ffffff;
+            margin: auto;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            max-width: 700px;
+            width: 100%;
+            position: relative;
+            animation: fadeIn 0.3s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            color: #64748b;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .close-btn:hover {
+            color: #ff5722;
+        }
+        .modal-content h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: #1e3c72;
+            margin-bottom: 20px;
+            font-size: 24px;
+            line-height: 1.4;
+        }
+        .modal-content img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .modal-content p {
+            color: #475569;
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
 
-        /* PACKAGES / TARIFS */
-        .pricing-section { background-color: #ffffff; padding: 80px 20px; border-radius: 24px; box-shadow: 0 4px 25px rgba(0,0,0,0.02); margin-bottom: 60px; text-align: center; }
-        .pricing-section h2 { font-family: 'Montserrat', sans-serif; font-size: 32px; color: var(--primary); margin-bottom: 15px; }
-        .pricing-section > p { color: var(--slate); margin-bottom: 50px; }
-        .pricing-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; max-width: 1000px; margin: 0 auto; }
-        .price-card { background: var(--light); border: 1px solid #e2e8f0; border-radius: 16px; padding: 40px 30px; flex: 1; min-width: 280px; max-width: 320px; text-align: left; transition: all 0.3s; }
-        .price-card.featured { background: var(--primary); color: #fff; border: none; transform: scale(1.05); box-shadow: 0 15px 35px rgba(30, 60, 114, 0.2); }
-        @media (max-width: 768px) { .price-card.featured { transform: scale(1); } }
-        .price-card h4 { font-family: 'Montserrat', sans-serif; font-size: 18px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--slate); }
-        .price-card.featured h4 { color: rgba(255,255,255,0.7); }
-        .price-card .price { font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 800; color: var(--primary); margin-bottom: 25px; }
-        .price-card.featured .price { color: #fff; }
-        .price-card ul { list-style: none; margin-bottom: 35px; }
-        .price-card ul li { margin-bottom: 12px; font-size: 14px; display: flex; align-items: center; gap: 10px; color: var(--slate); }
-        .price-card.featured ul li { color: rgba(255,255,255,0.85); }
-        .price-card ul li i { color: var(--accent-green); }
-        .price-card.featured ul li i { color: #fff; }
-        .price-btn { display: block; text-align: center; background: var(--primary); color: #fff; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; transition: background 0.2s; }
-        .price-card.featured .price-btn { background: var(--accent); }
-        .price-btn:hover { opacity: 0.9; }
+        /* SECTION SHARE */
+        .share-section {
+            max-width: 1200px;
+            margin: 60px auto 0 auto;
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .share-section p {
+            font-size: 15px;
+            color: #475569;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        .share-buttons {
+            display: flex;
+            gap: 12px;
+        }
+        .share-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+        .share-btn:hover {
+            transform: scale(1.1);
+            opacity: 0.9;
+        }
+        .btn-fb { background-color: #1877f2; }
+        .btn-wa { background-color: #25d366; }
+        .btn-x { background-color: #000000; }
+        .btn-in { background-color: #0a66c2; }
+        .btn-mail { background-color: #94a3b8; }
 
-        /* BOTTOM CTA */
-        .bottom-cta { text-align: center; background: linear-gradient(rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1200&auto=format&fit=crop'); color: #fff; padding: 80px 20px; border-radius: 20px; margin-top: 40px; }
-        .bottom-cta h3 { font-family: 'Montserrat', sans-serif; font-size: 30px; margin-bottom: 15px; }
-        .bottom-cta p { opacity: 0.8; max-width: 600px; margin: 0 auto 30px auto; }
-        
-        /* FOOTER ALWAYS VISIBLE */
-        footer { background-color: var(--dark); color: #9ca3af; padding: 60px 20px 30px 20px; font-size: 14px; margin-top: 80px; width: 100%; }
-        .footer-container { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; }
-        .footer-col { flex: 1; min-width: 250px; }
-        .footer-col h3 { color: #ffffff; font-family: 'Montserrat', sans-serif; font-size: 20px; margin-bottom: 20px; }
-        .footer-col h3 span { color: var(--accent); }
-        .footer-col p { line-height: 1.8; margin-bottom: 20px; }
-        .footer-social-icons { display: flex; gap: 15px; margin-bottom: 20px; }
-        .footer-social-icons a { color: #ffffff; font-size: 18px; transition: color 0.2s; text-decoration: none; }
-        .footer-social-icons a:hover { color: var(--accent); }
-        .footer-col ul { list-style: none; }
-        .footer-col ul li { margin-bottom: 12px; }
-        .footer-col ul li a { color: #9ca3af; text-decoration: none; transition: color 0.2s; cursor: pointer; }
-        .footer-col ul li a:hover { color: #ffffff; }
+        /* FOOTER */
+        footer {
+            background-color: #111827;
+            color: #9ca3af;
+            padding: 60px 20px 30px 20px;
+            font-size: 14px;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: space-between;
+        }
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+        }
+        .footer-col h3 {
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .footer-col h3 span {
+            color: #ff5722;
+        }
+        .footer-col p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .footer-social-icons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .footer-social-icons a {
+            color: #ffffff;
+            font-size: 18px;
+            transition: color 0.2s;
+        }
+        .footer-social-icons a:hover {
+            color: #ff5722;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+        .footer-col ul li a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer-col ul li a:hover {
+            color: #ffffff;
+        }
+        .footer-contact-info p {
+            margin-bottom: 8px !important;
+        }
+        .footer-contact-info a {
+            color: #ff5722;
+            text-decoration: none;
+        }
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0 auto;
+            padding-top: 20px;
+            border-top: 1px solid #1f2937;
+            text-align: left;
+            font-size: 13px;
+        }
+
+        /* Responsive ho an'ny finday */
+        @media (max-width: 768px) {
+            .details-images { height: 350px; margin-top: 30px; }
+            .img-back { height: 260px; }
+            .img-front { height: 280px; }
+            .details-text h2 { font-size: 28px; }
+            .blog-featured img { height: 220px; }
+            .footer-container { flex-direction: column; gap: 30px; }
+        }
     </style>
 </head>
 <body>
 
     <header>
         <div class="header-container">
-            <a onclick="showPage('home')" class="logo">Rakoto<span>Digital</span></a>
+            <div class="logo">Rakoto<span>Digital</span></div>
             <nav>
-                <a onclick="showPage('home')">Fandraisana</a>
-                <a onclick="showPage('marketing')">Digital Marketing</a>
-                <a onclick="showPage('design')">Graphic Design</a>
-                <a onclick="showPage('web')">Web Development</a>
+                <a href="index.html">Fandraisana</a>
+                <div class="dropdown">
+                    <span class="dropdown-btn">Nos Services ▼</span>
+                    <div class="dropdown-content">
+                        <a href="marketing.html">Digital Marketing</a>
+                        <a href="design.html">Graphic Design</a>
+                        <a href="web.html">Web Development</a>
+                    </div>
+                </div>
+                <a href="#a-propos">À propos de nous</a>
                 <a href="mailto:christian.rakoto.pro@gmail.com">Contact</a>
+                <div class="lang-dropdown">
+                    <button class="lang-btn">🇲🇬 MG ▼</button>
+                    <div class="lang-content">
+                        <a href="fr/index.html">🇫🇷 FR</a>
+                        <a href="en/index.html">🇺🇸 EN</a>
+                    </div>
+                </div>
             </nav>
         </div>
     </header>
 
-    <div id="home" class="page active">
-        <section class="hero">
-            <h1>Miarahaba anao ao amin'ny Rakoto Digital Solutions</h1>
-            <p>Mpanolotra vahaolana ara-kiditaly ambony lenta sy paikady maty paika hampisondrotana ny fidiram-bolan'ny orinasanao.</p>
-            <button class="hero-btn" onclick="scrollToElement('tolotra')">Hijery ny Tolotra Omenay</button>
-        </section>
-
-        <section class="services-section" id="tolotra">
-            <h2>Ny Tolotra Omenay</h2>
-            <p>Fidio ny tolotra mifanaraka amin'ny filanao mba handrafetana paikady matanjaka handresena ny mpifaninana aminao.</p>
-            <div class="services-container">
-                <div class="card blue">
-                    <div class="icon-box"><i class="fas fa-bullhorn"></i></div>
-                    <h3>Digital Marketing</h3>
-                    <p>Fampiroboroboana ny fandraharahana sy fitarihana mpanjifa mividy amin'ny alalan'ny Facebook Ads sy Copywriting mandresy lahatra.</p>
-                    <button class="cta-link" onclick="showPage('marketing')">Jereo ny pitsopitsony →</button>
-                </div>
-                <div class="card orange">
-                    <div class="icon-box"><i class="fas fa-palette"></i></div>
-                    <h3>Graphic Design</h3>
-                    <p>Famoronana Logo tokana, tsotra, ary mora tsaroan'ny olona nefa mitondra ny tena herin'ny marikao miaraka amin'ny etikety sy afisy.</p>
-                    <button class="cta-link" onclick="showPage('design')">Jereo ny pitsopitsony →</button>
-                </div>
-                <div class="card green">
-                    <div class="icon-box"><i class="fas fa-code"></i></div>
-                    <h3>Web Development</h3>
-                    <p>Famoronana tranonkala matihanina sady haingana, mifanaraka amin'ny finday rehetra, ary optimized tsara ho an'ny Google.</p>
-                    <button class="cta-link" onclick="showPage('web')">Jereo ny pitsopitsony →</button>
-                </div>
-            </div>
-        </section>
-
-        <section class="details-section">
-            <div class="details-text">
-                <h2>Nahoana no hifidy ny Rakoto Digital ?</h2>
-                <p>Miaraka amin'ny <strong>Rakoto Digital</strong>, mahazo vahaolana ara-kiditaly feno sy natao manokana ho an'ny orinasanao ianao. Ny fahaizantsika ara-teknika, ny paikady maty paika, ary ny fikarohana ny fahombiazana no miaraka mifarimbona mba hampisondrotana ny marikao ho eny amin'ny tampon'ny tontolo nomerika.</p>
-            </div>
-            <div class="details-images">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto=format&fit=crop" alt="Ekipa miasa" class="img-back">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop" alt="Mpanolotra vahaolana" class="img-front">
-            </div>
-        </section>
-    </div>
-
-    <div id="marketing" class="page">
-        <div class="landing-header">
-            <span class="back-home" onclick="showPage('home')"><i class="fas fa-arrow-left"></i> Hiverina</span>
-            <h1>Digital Marketing Maty Paika</h1>
-            <p>Tsy mandany vola amin'ny "Likes" tsy mividy izahay, ba manova ny teti-bola ho lasa mpanjifa mandoa vola.</p>
+    <section class="hero">
+        <h1>Miarahaba anao ao amin'ny Rakoto Digital Solutions</h1>
+        <p>Manampy anao amin'ny fampivoarana ny fandraharahana ara-kiditaly sy ny dokambarotra mifanaraka amin'ny teknolojia vaovao.</p>
+        <a href="#tolotra" class="hero-btn">Jereo ny Tolotra</a>
+        
+        <div class="ad-container-top">
+            <script async="async" data-cfasync="false" src="https://pl29456588.effectivecpmnetwork.com/5296384f95bedb25c23e272892be86ef/invoke.js"></script>
+            <div id="container-5296384f95bedb25c23e272892be86ef"></div>
         </div>
-        <div class="argument-container">
-            <div class="heavy-grid">
-                <div class="heavy-text">
-                    <h2>Nahoana no tsy mahomby ny dokambarotrao taloha?</h2>
-                    <p>Ny fanaovana "Boost" tsotra amin'ny Facebook dia fandaniambola fotsiny raha tsy misy paikady maty paika any ambadika. Ao amin'ny Rakoto Digital, mianatra ny fitondran-tenan'ny mpanjifanao izahay alohan'ny handefasana doka.</p>
-                    <p>Mampiasa ny rafitra <strong>Copywriting Mandresy Lahatra</strong> izahay mba hikasika mivantana ny filan'ny mpanjifa ary mampiasa ny teti-panorona Facebook Ads ambony lenta (Targeting & Retargeting) mba tsy ho very maina ny ariary tsirairay avy aminao.</p>
-                    <ul class="heavy-features">
-                        <li><i class="fas fa-check-circle"></i> Fikarohana lalina ny tsenanao sy ny mpifaninana aminao.</li>
-                        <li><i class="fas fa-check-circle"></i> Fandrafetana soratra matanjaka mampirisika hividy avy hatrany.</li>
-                        <li><i class="fas fa-check-circle"></i> Fitantanana ny teti-bola sy fanatsarana ny doka isan'andro (A/B Testing).</li>
-                    </ul>
-                </div>
-                <div>
-                    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=600&auto=format&fit=crop" style="width:100%; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.05);" alt="Marketing">
-                </div>
-            </div>
+    </section>
 
-            <div class="pricing-section">
-                <h2>Fidira amin'ny Tolotra Mifanaraka aminao</h2>
-                <p>Natao ho an'ny PME te hampitombo ny varotra ao anatin'ny fotoana fohy.</p>
-                <div class="pricing-grid">
-                    <div class="price-card">
-                        <h4>Starter Pack</h4>
-                        <div class="price">Tolotra Natao Lahany</div>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Fitantanana Doka Facebook 1</li>
-                            <li><i class="fas fa-check"></i> Copywriting ho an'ny post 4</li>
-                            <li><i class="fas fa-check"></i> Target mpanjifa fototra</li>
-                            <li><i class="fas fa-check"></i> Tatitra isaky ny 15 andro</li>
-                        </ul>
-                        <a href="mailto:christian.rakoto.pro@gmail.com?subject=Tolotra Starter Marketing" class="price-btn">Hifidy ity tolotra ity</a>
+    <section class="services-section" id="tolotra">
+        <h2>Ny Tolotra Omenay</h2>
+        <div class="services-container">
+            <div class="card">
+                <h3>Digital Marketing</h3>
+                <p>Fampiroboroboana ny fandraharahana sy fitarihana mpanjifa ao amin'ny tambajotra sosialy amin'ny alalan'ny Facebook Ads sy Copywriting mandresy lahatra.</p>
+                <a href="marketing.html">Jereo ny pitsopitsony →</a>
+            </div>
+            <div class="card orange">
+                <h3>Graphic Design</h3>
+                <p>Famoronana Logo tokana, tsotra, ary mora tsaroan'ny olona nefa mitondra ny herin'ny orinasanao, miaraka amin'ny etikety (labels) sy afisy.</p>
+                <a href="design.html">Jereo ny pitsopitsony →</a>
+            </div>
+            <div class="card green">
+                <h3>Web Development</h3>
+                <p>Famoronana tranonkala matihanina sy fampiantranoana azy amin'ny fitaovana arifomba mba hisokafany haingana sy hahitana anao ao amin'ny Google.</p>
+                <a href="web.html">Jereo ny pitsopitsony →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="details-section">
+        <div class="details-text">
+            <h2>Nahoana no hifidy ny Rakoto Digital ?</h2>
+            <p>Miaraka amin'ny <strong>Rakoto Digital</strong>, mahazo vahaolana ara-kiditaly feno sy natao manokana ho an'ny orinasanao ianao. Ny fahaizantsika ara-teknika, ny paikady maty paika, ary ny fikarohana ny fahombiazana no miaraka mifarimbona mba hampisondrotana ny marikao ho eny amin'ny tampon'ny tontolo nomerika.</p>
+            <a href="#tolotra" class="details-btn">Hikaroka bebe kokoa</a>
+        </div>
+        <div class="details-images">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto=format&fit=crop" alt="Ekipa miasa" class="img-back">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop" alt="Vehivavy mpandraharaha" class="img-front">
+        </div>
+    </section>
+
+    <section class="blog-section">
+        <h2 style="font-family: 'Montserrat', sans-serif; font-size: 32px; color: #1e3c72; text-align: center;">Ireo Lahatsoratra Farany</h2>
+        <div class="blog-container">
+            
+            <div class="blog-featured" onclick="openModal('post-main')">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop" alt="Abonnements digitaux">
+                <div class="blog-featured-content">
+                    <h3>Nahoana no mampitombo haingana ny fidiram-bolan'ny PME ny fampiasana fitaovana nomerika raikitra?</h3>
+                    <p>Ny tontolo ara-kiditaly dia manolotra fahafahana tsy manam-petra ho an'ny orinasa madinika mba hifaninana amin'ny lehibe...</p>
+                    <span class="read-more-text">Lire la suite →</span>
+                    <div class="blog-meta">17/05/2026 &bull; Rakoto Digital</div>
+                </div>
+            </div>
+            
+            <div class="blog-list">
+                <div class="blog-item" onclick="openModal('post-1')">
+                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=200&auto=format&fit=crop" alt="Budget marketing">
+                    <div class="blog-item-text">
+                        <h4>Tetibola kely, vokatra lehibe: Ny tsiambaratelon'ny marketing mahomby</h4>
+                        <span class="read-more-text" style="font-size: 12px; margin-bottom: 0;">Lire la suite →</span>
+                        <div class="blog-meta">15/05/2026</div>
                     </div>
-                    <div class="price-card featured">
-                        <h4>Premium Growth</h4>
-                        <div class="price">Tena be mpitady</div>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Doka Facebook & Instagram feno</li>
-                            <li><i class="fas fa-check"></i> Copywriting tsy voatongotra</li>
-                            <li><i class="fas fa-check"></i> Retargeting mpanjifa nijery site</li>
-                            <li><i class="fas fa-check"></i> Fanatsarana sary sy horonan-tsary</li>
-                            <li><i class="fas fa-check"></i> Tatitra antsipiriany isan-kerinandro</li>
-                        </ul>
-                        <a href="mailto:christian.rakoto.pro@gmail.com?subject=Tolotra Premium Marketing" class="price-btn">Hifidy ity tolotra ity</a>
+                </div>
+
+                <div class="blog-item" onclick="openModal('post-2')">
+                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=200&auto=format&fit=crop" alt="Réseaux sociaux">
+                    <div class="blog-item-text">
+                        <h4>Fomba fitantanana Facebook sy Instagram nefa tsy mandany andro manontolo</h4>
+                        <span class="read-more-text" style="font-size: 12px; margin-bottom: 0;">Lire la suite →</span>
+                        <div class="blog-meta">13/05/2026</div>
+                    </div>
+                </div>
+
+                <div class="blog-item" onclick="openModal('post-3')">
+                    <img src="https://images.unsplash.com/photo-1547082299-de196ea013d6?q=80&w=200&auto=format&fit=crop" alt="Site web non rentable">
+                    <div class="blog-item-text">
+                        <h4>Nahoana no tsy mahatonga vola ny tranonkalanao? Ary inona no tokony hovana?</h4>
+                        <span class="read-more-text" style="font-size: 12px; margin-bottom: 0;">Lire la suite →</span>
+                        <div class="blog-meta">06/05/2026</div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <div id="blogModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="modal-body-content"></div>
         </div>
     </div>
 
-    <div id="design" class="page">
-        <div class="landing-header" style="background: linear-gradient(135deg, var(--accent), #e04413);">
-            <span class="back-home" onclick="showPage('home')"><i class="fas fa-arrow-left"></i> Hiverina</span>
-            <h1>Graphic Design sy Identité Visuelle</h1>
-            <p>Ny endrika ivelany no mampiseho ny lanjan'ny orinasanao. Omenay hery sy haja ny marikao.</p>
+    <section class="share-section">
+        <p>Partager à vos contacts sur :</p>
+        <div class="share-buttons">
+            <a href="#" class="share-btn btn-fb"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="share-btn btn-wa"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="share-btn btn-x"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" class="share-btn btn-in"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:?subject=Rakoto Digital" class="share-btn btn-mail"><i class="fas fa-envelope"></i></a>
         </div>
-        <div class="argument-container">
-            <div class="heavy-grid">
-                <div>
-                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=600&auto=format&fit=crop" style="width:100%; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.05);" alt="Design">
-                </div>
-                <div class="heavy-text">
-                    <h2>Ny Logo tsotra sy manan-danja no faka sary ao an-tsain'ny mpanjifa</h2>
-                    <p>Ny Graphic Design dia tsy fanaovana sary miloko fotsiny, ba fandikana ny vina sy ny lanjan'ny orinasanao ho lasa endrika visialy tokana. Ny marika lehibe rehetra dia fantatra amin'ny alalan'ny logo tsotra nefa mafy fonosana.</p>
-                    <p>Mamorona etikety (labels), afisy, ary bokikely mifanaraka tsara amin'ny fenitry ny varotra izahay, mba hahatonga ny vokatrao ho mendrika ny vidiny lafo indrinta eny an-tsena.</p>
-                    <ul class="heavy-features">
-                        <li><i class="fas fa-check-circle"></i> Famoronana Logo vectoriel azo ampiasaina amin'ny habe rehetra.</li>
-                        <li><i class="fas fa-check-circle"></i> Fandinihana ny loko mifanaraka amin'ny saina (Psychologie des couleurs).</li>
-                        <li><i class="fas fa-check-circle"></i> Etikety vokatra manaitra ny maso sy mampisongadina eny amin'ny talantalana.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="pricing-section">
-                <h2>Ireo Tolotra Identité Visuelle</h2>
-                <p>Omeo endrika mihaja sy matihanina ny mombamomba ny orinasanao.</p>
-                <div class="pricing-grid">
-                    <div class="price-card">
-                        <h4>Logo Pack</h4>
-                        <div class="price">Fototra Matanjaka</div>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Tolotra Logo 2 azo isafidianana</li>
-                            <li><i class="fas fa-check"></i> Format rehetra (PNG, JPG, Vectoriel)</li>
-                            <li><i class="fas fa-check"></i> Palette de couleurs fototra</li>
-                            <li><i class="fas fa-check"></i> Fanitsiana in-3 indray</li>
-                        </ul>
-                        <a href="mailto:christian.rakoto.pro@gmail.com?subject=Tolotra Logo Pack" class="price-btn">Hifidy ity tolotra ity</a>
-                    </div>
-                    <div class="price-card featured" style="background: var(--accent);">
-                        <h4>Full Branding Pack</h4>
-                        <div class="price">Feno sy Lavorary</div>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Logo Concept ambony lenta</li>
-                            <li><i class="fas fa-check"></i> Charte Graphique feno (Loko & Endri-tsoratra)</li>
-                            <li><i class="fas fa-check"></i> Fandrafetana Carte de Visite & Loha-taratasy</li>
-                            <li><i class="fas fa-check"></i> Afisy ho an'ny Facebook 5 sahady</li>
-                            <li><i class="fas fa-check"></i> Etikety ho an'ny fonosana vokatra</li>
-                        </ul>
-                        <a href="mailto:christian.rakoto.pro@gmail.com?subject=Tolotra Full Branding" class="price-btn" style="background: var(--primary);">Hifidy ity tolotra ity</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="web" class="page">
-        <div class="landing-header" style="background: linear-gradient(135deg, var(--accent-green), #249b90);">
-            <span class="back-home" onclick="showPage('home')"><i class="fas fa-arrow-left"></i> Hiverina</span>
-            <h1>Web Development sy SEO Avo Lenta</h1>
-            <p>Ny tranonkalanao no biraonao manerana izao tontolo izao. Ataovy haingana, azo antoka, sady hita ao amin'ny Google.</p>
-        </div>
-        <div class="argument-container">
-            <div class="heavy-grid">
-                <div class="heavy-text">
-                    <h2>Raha tsy hita ao amin'ny Google ny orinasanao, dia tsy misy amin'ny mpanjifa</h2>
-                    <p>Ny tranonkala tsara tarehy fotsiny dia tsy ampy raha tsy misokatra haingana sy tsy hita rehefa mikaroka ny olona. Izahay dia manangana tranonkala mampiasa kaody madio sy arifomba, mba hisokafan'ny pejy ao anatin'ny feha-potoana latsaky ny 2 segondra.</p>
-                    <p>Ampidiranay rafitra SEO (Search Engine Optimization) matihanina isaky ny pejy namboarina, mba ho lohany foana ny orinasanao rehefa misy mikaroka ny tolotra omenao ao amin'ny Google any Madagascar.</p>
-                    <ul class="heavy-features">
-                        <li><i class="fas fa-check-circle"></i> Responsive Design (Mifanaraka tsara amin'ny Finday, Tablette, PC).</li>
-                        <li><i class="fas fa-check-circle"></i> Fiarovana avo lenta amin'ny alalan'ny rafitra SSL (https).</li>
-                        <li><i class="fas fa-check-circle"></i> Pejy optimized tsara ho an'ny fikarohana Google any an-toerana.</li>
-                    </ul>
-                </div>
-                <div>
-                    <img src="https://images.unsplash.com/photo-1547658719-da2b81166b58?q=80&w=600&auto=format&fit=crop" style="width:100%; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.05);" alt="Web Dev">
-                </div>
-            </div>
-
-            <div class="pricing-section">
-                <h2>Ireo Vahaolana Tranonkala</h2>
-                <p>Misafidiana tranonkala mifanaraka amin'ny fitaovana sy teti-bolanao.</p>
-                <div class="pricing-grid">
-                    <div class="price-card">
-                        <h4>Vitrine Website</h4>
-                        <div class="price">Matihanina & Tsotra</div>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Tranonkala pejy tokana na feno (toko 3)</li>
-                            <li><i class="fas fa-check"></i> Pejy mifanaraka amin'ny finday rehetra</li>
-                            <li><i class="fas fa-check"></i> Rohy mankany amin'ny Messenger & WhatsApp</li>
-                            <li><i class="fas fa-check"></i> Fampidirana fototra ao amin'ny Google</li>
-                        </ul>
-                        <a href="mailto:christian.rakoto.pro@gmail.com?subject=Tolotra Vitrine Website" class="price-btn">Hifidy ity tolotra ity</a>
-                    </div>
-                    <div class="price-card featured" style="background: var(--accent-green);">
-                        <h4>E-Commerce / Business</h4>
-                        <div class="price">Pejy fivarotana feno</div>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Tranonkala feno fampidirana vokatra tsy voafetra</li>
-                            <li><i class="fas fa-check"></i> Dashboard hitantanana ny tahiry (Stocks)</li>
-                            <li><i class="fas fa-check"></i> Rafitra fandefasana faktiora mandeha ho azy</li>
-                            <li><i class="fas fa-check"></i> SEO avo lenta ho an'ny vokatra rehetra</li>
-                            <li><i class="fas fa-check"></i> Fanohanana ara-teknika mandritra ny 3 volana</li>
-                        </ul>
-                        <a href="mailto:christian.rakoto.pro@gmail.com?subject=Tolotra E-Commerce Business" class="price-btn" style="background: var(--primary);">Hifidy ity tolotra ity</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="argument-container">
-        <section class="bottom-cta">
-            <h3>Vonona hampitombo ny lanjan'ny orinasanao ve ianao?</h3>
-            <p>Aza avela ho lasan'ny mpifaninana aminao ny mpanjifa tokony ho anao. Mifandraisa amin'ny ekipan'ny Rakoto Digital Solutions androany hahazoana dinika maimaim-poana.</p>
-            <a href="mailto:christian.rakoto.pro@gmail.com?subject=Demande de consultation gratuite" class="hero-btn" style="text-decoration:none;">Handefa mailaka mivantana</a>
-        </section>
-    </div>
+    </section>
 
     <footer>
-        <div class="footer-container" id="a-propos">
-            <div class="footer-col">
-                <h3>Miaraka amin'ny <span>Rakoto Digital</span></h3>
-                <p>Masoivoho natokana hanomezana hery sy lanjany vaovao ny orinasa madinika sy salany eto Madagascar amin'ny tontolo an-tserasera.</p>
+        <div class="footer-container">
+            <div class="footer-col" id="a-propos">
+                <h3>Créez votre site web avec <span>Rakoto Digital</span>, votre agence de solutions numériques.</h3>
                 <div class="footer-social-icons">
                     <a href="#"><i class="fab fa-facebook"></i></a>
                     <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
                     <a href="mailto:christian.rakoto.pro@gmail.com"><i class="fas fa-envelope"></i></a>
                 </div>
-                <p style="font-size: 12px; color: #6b7280;">Copyright &copy; 2026. Tous droits réservés.</p>
+                <p>Copyright &copy; 2026. Tous droits réservés.</p>
+                <div class="footer-contact-info">
+                    <p>Tel : (+261) xx xx xxx xx</p>
+                    <p>Mailto : <a href="mailto:christian.rakoto.pro@gmail.com">christian.rakoto.pro@gmail.com</a></p>
+                    <p>Antananarivo, Madagascar</p>
+                </div>
             </div>
             <div class="footer-col" style="max-width: 200px;">
-                <h3>Rohy Ilaina</h3>
+                <h3>Rakoto Digital</h3>
                 <ul>
-                    <li><a onclick="showPage('home')">Accueil</a></li>
-                    <li><a onclick="showPage('marketing')">Digital Marketing</a></li>
-                    <li><a onclick="showPage('design')">Graphic Design</a></li>
-                    <li><a onclick="showPage('web')">Web Development</a></li>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="#tolotra">Nos Services</a></li>
+                    <li><a href="#tolotra">Nos offres & Packages</a></li>
+                    <li><a href="#tolotra">Choisir Rakoto Digital?</a></li>
+                    <li><a href="mailto:christian.rakoto.pro@gmail.com">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h3>Mifandraisa aminay</h3>
-                <p>Antananarivo, Madagascar</p>
-                <p>Mail : christian.rakoto.pro@gmail.com</p>
+                <h3>RAKOTO DIGITAL SOLUTIONS</h3>
+                <p>Rakoto Digital dia asa fandraharahana manokana natokana ho an'ny vahaolana ara-kiditaly sy ny famoronana tranonkala. Pejy natao hampisondrotana ny fidiram-bola sy hanampiana ireo orinasa madinika sy salany hivelatra amin'ny tontolo an-tserasera.</p>
             </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Raha mila fanazavana fanampiny, tsidiho ny <a href="index.html" style="color: #ff5722; text-decoration: none;">rakoto-digital-agency.vercel.app</a></p>
         </div>
     </footer>
 
+    <script src="https://pl29456587.effectivecpmnetwork.com/2f/a8/6c/2fa86c5a29e3130ffd14b6752f9b2d2e.js"></script>
+
     <script>
-        function showPage(pageId) {
-            // Afenina daholo ny pejy rehetra
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => {
-                page.classList.remove('active');
-            });
-            
-            // Asehoy ilay pejy voafidy
-            const activePage = document.getElementById(pageId);
-            if(activePage) {
-                activePage.classList.add('active');
-                // Hiverina any ambony indrindra ny fijery isaky ny miova pejy
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+        // Ny votoatiny feno hivoaka amin'ny Lire la suite
+        const blogPosts = {
+            'post-main': {
+                title: "Nahoana no mampitombo haingana ny fidiram-bolan'ny PME ny fampiasana fitaovana nomerika raikitra?",
+                image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop",
+                content: "<p>Ny tontolo ara-kiditaly dia manolotra fahafahana tsy manam-petra ho an'ny orinasa madinika mba hifaninana amin'ny lehibe. Ny fitaovana nomerika raikitra dia manampy ny orinasa madinika sy salany (PME) ho lasa haingam-pandeha kokoa sy hahatratra mpanjifa maro kokoa. Amin'ny alalan'ny rafitra mandeha ho azy, ho voatahiry ny fotoana ary hitombo ny fahombiazana.</p><p>Ny fampiasana CRM, ny fitantanana ny mailaka mandeha ho azy (Email marketing), ary ny fandaharam-potoana nomerika no fanalahidy lehibe mampitombo ny fidiram-bola ao anatin'ny fotoana fohy nefa tsy mandany hery be loatra.</p>"
+            },
+            'post-1': {
+                title: "Tetibola kely, vokatra lehibe: Ny tsiambaratelon'ny marketing mahomby",
+                image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=200&auto=format&fit=crop",
+                content: "<p>Tsy voatery ho manana vola an-tapitrisany vao afaka manao dokambarotra mahomby. Ny zava-dehibe indrindra dia ny fahaizana mamantatra tsara ny olona kendrena (Target Audience) sy ny fampiasana hafatra mazava sy mandresy lahatra (Copywriting).</p><p>Azonao atao ny manomboka amin'ny tetibola kely ao amin'ny Facebook Ads, manao fitandramana sy fitsapana (A/B Testing), ary mampitombo ny vola miandalana rehefa hita fa misy vokany sy mitondra tombony ho an'ny fandraharahanao.</p>"
+            },
+            'post-2': {
+                title: "Fomba fitantanana Facebook sy Instagram nefa tsy mandany andro manontolo",
+                image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=200&auto=format&fit=crop",
+                content: "<p>Maro ny mpandraharaha no lany andro fotsiny amin'ny famoahana sary sy famaliana hafatra ao amin'ny tambajotra sosialy. Mba hialana amin'izany, tsara ny mampiasa fitaovana fandaharam-potoana (Scheduling tools) toy ny Meta Business Suite.</p><p>Manokana andro iray fotsiny ao anatin'ny herinandro hamoronana ny votoatiny rehetra, dia fandaharina hivoaka ho azy izany isan'andro. Ho afaka hifantoka amin'ny asa hafa sy ny fandraisana mpanjifa ianao avy eo.</p>"
+            },
+            'post-3': {
+                title: "Nahoana no tsy mahatonga vola ny tranonkalanao? Ary inona no tokony hovana?",
+                image: "https://images.unsplash.com/photo-1547082299-de196ea013d6?q=80&w=200&auto=format&fit=crop",
+                content: "<p>Raha manana tranonkala ianao nefa tsy misy mpanjifa mifandray aminao, dia mety misy olana telo ireto: Tsy hita ao amin'ny Google ilay site (olana SEO), sarotra ampiasaina ho an'ny finday, na tsy mazava ny zavatra tokony hataon'ny mpanjifa (Call to Action).</p><p>Mba hanovana izany, ahena ny haavon'ny sary mba hisokatra haingana ilay site, asio bokotra mazava tsara toy ny 'Hifandray aminay', ary soraty amin'ny teny mora azo ny tombontsoa azon'ny mpanjifa fa tsy ny mombamomba anao fotsiny.</p>"
+            }
+        };
+
+        function openModal(postId) {
+            const post = blogPosts[postId];
+            if(post) {
+                const htmlContent = `
+                    <h2>${post.title}</h2>
+                    <img src="${post.image}" alt="${post.title}">
+                    <div>${post.content}</div>
+                `;
+                document.getElementById('modal-body-content').innerHTML = htmlContent;
+                document.getElementById('blogModal').style.display = "flex";
             }
         }
 
-        function scrollToElement(id) {
-            const element = document.getElementById(id);
-            if(element) {
-                element.scrollIntoView({ behavior: 'smooth' });
+        function closeModal() {
+            document.getElementById('blogModal').style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('blogModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
             }
         }
     </script>
