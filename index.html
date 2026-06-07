@@ -1,12 +1,25 @@
 <!DOCTYPE html>
-<html lang="mg">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rakoto Digital Solutions | Transformez Votre Business Digital</title>
-    <meta name="description" content="Agence digitale à Madagascar - Création de sites web, marketing digital, graphic design. Transformez votre business avec nos experts.">
+    <title>Rakoto Digital Solutions | Agence Web & Marketing Digital Madagascar</title>
+    
+    <!-- SEO META TAGS -->
+    <meta name="description" content="Agence digitale à Madagascar. Création de sites web à partir de 800€, marketing digital, Facebook Ads et graphisme. Devis gratuit WhatsApp: +261 37 94 125 93.">
+    <meta name="keywords" content="agence digitale madagascar, création site web antananarivo, marketing digital madagascar, facebook ads, seo madagascar, rakoto digital">
+    <meta name="author" content="Rakoto Digital Solutions">
+    
+    <!-- OPEN GRAPH (Pour Facebook / LinkedIn) -->
+    <meta property="og:title" content="Rakoto Digital | Agence Digitale Madagascar">
+    <meta property="og:description" content="Sites web professionnels dès 800€. Marketing digital et graphisme. Contactez-nous sur WhatsApp: +261 37 94 125 93">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&auto=format&fit=crop">
+    <meta property="og:url" content="https://rakoto-digital-agency.vercel.app">
+    <meta property="og:type" content="website">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
             --primary: #4F46E5;
@@ -19,1533 +32,197 @@
             --whatsapp: #25D366;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--dark); line-height: 1.6; overflow-x: hidden; }
+        h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; line-height: 1.2; }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        /* NAVIGATION MODERNE */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            z-index: 1000;
-            transition: all 0.3s;
-        }
-
-        .header-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-        }
-
-        .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.75rem;
-            font-weight: 700;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            cursor: pointer;
-        }
-
-        .logo span {
-            color: var(--secondary);
-            -webkit-text-fill-color: var(--secondary);
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 2.5rem;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: width 0.3s;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        .nav-cta {
-            background: var(--gradient);
-            color: white !important;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .nav-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
-        }
-
-        .nav-cta::after {
-            display: none !important;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--dark);
-        }
+        /* NAVIGATION */
+        header { position: fixed; top: 0; width: 100%; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); box-shadow: 0 1px 3px rgba(0,0,0,0.1); z-index: 1000; transition: all 0.3s; }
+        .header-container { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
+        .logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.75rem; font-weight: 700; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; cursor: pointer; }
+        .logo span { color: var(--secondary); -webkit-text-fill-color: var(--secondary); }
+        nav { display: flex; align-items: center; gap: 2rem; }
+        nav a { text-decoration: none; color: var(--dark); font-weight: 500; font-size: 0.95rem; transition: color 0.3s; position: relative; }
+        nav a:hover { color: var(--primary); }
+        .nav-cta { background: var(--gradient); color: white !important; padding: 0.75rem 1.5rem; border-radius: 50px; font-weight: 600; transition: transform 0.3s, box-shadow 0.3s; }
+        .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3); }
+        .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--dark); }
 
         /* WHATSAPP FLOATING BUTTON */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--whatsapp);
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: all 0.3s;
-            animation: pulse 2s infinite;
-        }
-
-        .whatsapp-float:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
-        }
-
-        .whatsapp-tooltip {
-            position: absolute;
-            right: 70px;
-            background: white;
-            color: var(--dark);
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            white-space: nowrap;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-
-        .whatsapp-float:hover .whatsapp-tooltip {
-            opacity: 1;
-            visibility: visible;
-            right: 75px;
-        }
-
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
-        }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: var(--whatsapp); color: white; width: 60px; height: 60px; border-radius: 50%; text-align: center; font-size: 30px; box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4); z-index: 1000; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s; animation: pulse 2s infinite; }
+        .whatsapp-float:hover { transform: translateY(-5px) scale(1.1); box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5); }
+        .whatsapp-tooltip { position: absolute; right: 70px; background: white; color: var(--dark); padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.875rem; font-weight: 600; white-space: nowrap; opacity: 0; visibility: hidden; transition: all 0.3s; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .whatsapp-float:hover .whatsapp-tooltip { opacity: 1; visibility: visible; right: 75px; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
 
         /* PAGE CONTAINER */
-        .page {
-            display: none;
-            margin-top: 80px;
-        }
-
-        .page.active {
-            display: block;
-        }
-
-        /* HERO SECTION MODERNE */
-        .hero {
-            padding: 6rem 2rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.3;
-        }
-
-        .hero-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            color: white;
-            margin-bottom: 1.5rem;
-            font-weight: 800;
-            line-height: 1.1;
-        }
-
-        .hero-content h1 span {
-            color: #FBBF24;
-        }
-
-        .hero-content p {
-            font-size: 1.25rem;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 2.5rem;
-            line-height: 1.8;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background: white;
-            color: var(--primary);
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-        }
-
-        .btn-secondary {
-            background: rgba(255,255,255,0.1);
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            border: 2px solid rgba(255,255,255,0.3);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-3px);
-        }
-
-        .hero-image {
-            position: relative;
-        }
-
-        .hero-image img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
-        }
-
-        .floating-card {
-            position: absolute;
-            background: white;
-            padding: 1.5rem;
-            border-radius: 16px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .card-1 {
-            top: -20px;
-            right: -20px;
-            animation-delay: 0s;
-        }
-
-        .card-2 {
-            bottom: 40px;
-            left: -30px;
-            animation-delay: 1.5s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        /* STATS SECTION */
-        .stats {
-            background: white;
-            padding: 4rem 2rem;
-            margin-top: -4rem;
-            position: relative;
-            z-index: 10;
-        }
-
-        .stats-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            background: white;
-            padding: 3rem;
-            border-radius: 24px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 1.5rem;
-        }
-
-        .stat-number {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 3rem;
-            font-weight: 700;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: block;
-        }
-
-        .stat-label {
-            color: var(--gray);
-            font-size: 1rem;
-            margin-top: 0.5rem;
-        }
-
-        /* PRICING SECTION - NEW */
-        .pricing-section {
-            padding: 8rem 2rem;
-            background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
-        }
-
-        .pricing-container {
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .pricing-card {
-            background: white;
-            padding: 3rem 2.5rem;
-            border-radius: 24px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            text-align: center;
-            position: relative;
-            transition: all 0.3s;
-            border: 2px solid transparent;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-        }
-
-        .pricing-card.featured {
-            background: var(--gradient);
-            color: white;
-            transform: scale(1.05);
-            border-color: transparent;
-        }
-
-        .pricing-card.featured:hover {
-            transform: scale(1.05) translateY(-10px);
-        }
-
-        .pricing-badge {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--secondary);
-            color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.875rem;
-            font-weight: 600;
-        }
-
-        .pricing-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .pricing-price {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .pricing-price span {
-            font-size: 1rem;
-            font-weight: 400;
-        }
-
-        .pricing-features {
-            list-style: none;
-            margin: 2rem 0;
-            text-align: left;
-        }
-
-        .pricing-features li {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .pricing-card.featured .pricing-features li {
-            border-bottom-color: rgba(255,255,255,0.2);
-        }
-
-        .pricing-features i {
-            color: #10B981;
-        }
-
-        .pricing-card.featured .pricing-features i {
-            color: white;
-        }
-
-        .pricing-btn {
-            display: inline-block;
-            background: var(--gradient);
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            width: 100%;
-        }
-
-        .pricing-card.featured .pricing-btn {
-            background: white;
-            color: var(--primary);
-        }
-
-        .pricing-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
-        /* SERVICES SECTION */
-        .services {
-            padding: 8rem 2rem;
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-tag {
-            display: inline-block;
-            background: rgba(79, 70, 229, 0.1);
-            color: var(--primary);
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .section-title {
-            font-size: 3rem;
-            color: var(--dark);
-            margin-bottom: 1rem;
-        }
-
-        .section-subtitle {
-            color: var(--gray);
-            font-size: 1.25rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 3rem 2.5rem;
-            border-radius: 24px;
-            border: 2px solid #E2E8F0;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--gradient);
-            transform: scaleX(0);
-            transition: transform 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-            border-color: transparent;
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--gradient);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: white;
-            margin-bottom: 2rem;
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-
-        .service-card p {
-            color: var(--gray);
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-link {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: gap 0.3s;
-            cursor: pointer;
-        }
-
-        .service-link:hover {
-            gap: 1rem;
-        }
-
-        /* WHY CHOOSE US */
-        .why-us {
-            background: var(--dark);
-            color: white;
-            padding: 8rem 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .why-us::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(79, 70, 229, 0.2) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .why-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .why-content h2 {
-            font-size: 3rem;
-            margin-bottom: 2rem;
-        }
-
-        .why-content p {
-            color: rgba(255,255,255,0.8);
-            font-size: 1.125rem;
-            line-height: 1.8;
-            margin-bottom: 2.5rem;
-        }
-
-        .why-features {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1.5rem;
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-
-        .feature-text h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .feature-text p {
-            color: rgba(255,255,255,0.7);
-            font-size: 1rem;
-            margin: 0;
-        }
-
-        .why-image {
-            position: relative;
-        }
-
-        .why-image img {
-            width: 100%;
-            border-radius: 24px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
-        }
-
-        /* PORTFOLIO */
-        .portfolio {
-            padding: 8rem 2rem;
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .portfolio-item {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            aspect-ratio: 4/3;
-            cursor: pointer;
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .portfolio-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(79, 70, 229, 0.9), transparent);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 2rem;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .portfolio-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
-
-        .portfolio-overlay h3 {
-            color: white;
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .portfolio-overlay p {
-            color: rgba(255,255,255,0.9);
-        }
-
-        /* BLOG SECTION - NEW */
-        .blog-section {
-            padding: 8rem 2rem;
-            background: white;
-        }
-
-        .blog-container {
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
-            margin-top: 4rem;
-        }
-
-        .blog-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-
-        .blog-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-        }
-
-        .blog-image {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-        }
-
-        .blog-content {
-            padding: 2rem;
-        }
-
-        .blog-category {
-            display: inline-block;
-            background: rgba(79, 70, 229, 0.1);
-            color: var(--primary);
-            padding: 0.25rem 1rem;
-            border-radius: 50px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .blog-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-            line-height: 1.4;
-        }
-
-        .blog-excerpt {
-            color: var(--gray);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .blog-meta {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            font-size: 0.875rem;
-            color: var(--gray);
-        }
-
-        .blog-meta span {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .blog-meta i {
-            color: var(--primary);
-        }
-
-        .read-more {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-top: 1rem;
-            transition: gap 0.3s;
-        }
-
-        .read-more:hover {
-            gap: 1rem;
-        }
-
-        /* TESTIMONIALS */
-        .testimonials {
-            background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
-            padding: 8rem 2rem;
-        }
-
-        .testimonials-container {
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
-            margin-top: 4rem;
-        }
-
-        .testimonial-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 24px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-        }
-
-        .testimonial-stars {
-            color: #FBBF24;
-            margin-bottom: 1.5rem;
-            font-size: 1.25rem;
-        }
-
-        .testimonial-text {
-            color: var(--gray);
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .testimonial-author img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .author-info h4 {
-            color: var(--dark);
-            font-size: 1.1rem;
-        }
-
-        .author-info p {
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-
-        /* CTA SECTION */
-        .cta {
-            padding: 6rem 2rem;
-            background: var(--gradient);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .cta h2 {
-            font-size: 3rem;
-            color: white;
-            margin-bottom: 1.5rem;
-        }
-
-        .cta p {
-            font-size: 1.25rem;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 2.5rem;
-        }
-
-        .btn-white {
-            background: white;
-            color: var(--primary);
-            padding: 1.25rem 3rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            display: inline-block;
-            transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .btn-white:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-        }
-
-        /* FOOTER MODERNE */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 5rem 2rem 2rem;
-        }
-
-        .footer-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 4rem;
-            margin-bottom: 4rem;
-        }
-
-        .footer-brand h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .footer-brand p {
-            color: rgba(255,255,255,0.7);
-            line-height: 1.8;
-            margin-bottom: 2rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-links a {
-            width: 45px;
-            height: 45px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.25rem;
-            transition: all 0.3s;
-        }
-
-        .social-links a:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        .footer-col h4 {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: white;
-        }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 1rem;
-        }
-
-        .footer-col ul li a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-col ul li a:hover {
-            color: white;
-        }
-
-        .footer-bottom {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            text-align: center;
-            color: rgba(255,255,255,0.5);
-        }
-
-        /* SERVICE PAGE STYLES */
-        .service-page-hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 8rem 2rem 6rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-page-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.3;
-        }
-
-        .service-page-hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .service-page-hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            font-weight: 800;
-        }
-
-        .service-page-hero p {
-            font-size: 1.5rem;
-            opacity: 0.9;
-            line-height: 1.8;
-        }
-
-        .back-btn {
-            position: absolute;
-            top: 2rem;
-            left: 2rem;
-            background: rgba(255,255,255,0.2);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s;
-            cursor: pointer;
-            border: none;
-            font-size: 1rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            z-index: 10;
-        }
-
-        .back-btn:hover {
-            background: rgba(255,255,255,0.3);
-            transform: translateX(-5px);
-        }
-
-        .service-details {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 6rem 2rem;
-        }
-
-        .detail-section {
-            margin-bottom: 6rem;
-        }
-
-        .detail-section h2 {
-            font-size: 2.5rem;
-            color: var(--dark);
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .detail-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .detail-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-        }
-
-        .detail-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .detail-card-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: white;
-            margin-bottom: 1.5rem;
-        }
-
-        .detail-card h3 {
-            font-size: 1.5rem;
-            color: var(--dark);
-            margin-bottom: 1rem;
-        }
-
-        .detail-card p {
-            color: var(--gray);
-            line-height: 1.8;
-        }
-
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .process-step {
-            text-align: center;
-            position: relative;
-        }
-
-        .process-step::after {
-            content: '';
-            position: absolute;
-            top: 40px;
-            right: -1rem;
-            width: 2rem;
-            height: 2px;
-            background: var(--primary);
-        }
-
-        .process-step:last-child::after {
-            display: none;
-        }
-
-        .step-number {
-            width: 80px;
-            height: 80px;
-            background: var(--gradient);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            font-weight: 700;
-            color: white;
-            margin: 0 auto 1.5rem;
-        }
-
-        .process-step h3 {
-            font-size: 1.25rem;
-            color: var(--dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .process-step p {
-            color: var(--gray);
-            font-size: 0.95rem;
-        }
-
-        .faq-section {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background: white;
-            margin-bottom: 1rem;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        .faq-question {
-            padding: 1.5rem 2rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-            color: var(--dark);
-            transition: background 0.3s;
-        }
-
-        .faq-question:hover {
-            background: var(--light);
-        }
-
-        .faq-question i {
-            transition: transform 0.3s;
-        }
-
-        .faq-item.active .faq-question i {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            background: var(--light);
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 500px;
-        }
-
-        .faq-answer p {
-            padding: 0 2rem 1.5rem;
-            color: var(--gray);
-            line-height: 1.8;
-        }
-
-        /* BLOG ARTICLE PAGE */
-        .blog-article {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .article-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .article-category {
-            display: inline-block;
-            background: rgba(79, 70, 229, 0.1);
-            color: var(--primary);
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .article-title {
-            font-size: 3rem;
-            color: var(--dark);
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
-        .article-meta {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            color: var(--gray);
-            font-size: 1rem;
-        }
-
-        .article-meta span {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .article-image {
-            width: 100%;
-            border-radius: 20px;
-            margin-bottom: 3rem;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-        }
-
-        .article-content {
-            font-size: 1.125rem;
-            line-height: 1.9;
-            color: var(--dark);
-        }
-
-        .article-content h2 {
-            font-size: 2rem;
-            margin: 2.5rem 0 1rem;
-            color: var(--dark);
-        }
-
-        .article-content p {
-            margin-bottom: 1.5rem;
-        }
-
-        .article-content ul {
-            margin: 1.5rem 0;
-            padding-left: 2rem;
-        }
-
-        .article-content li {
-            margin-bottom: 0.75rem;
-        }
-
-        .article-tags {
-            display: flex;
-            gap: 1rem;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 2px solid #E2E8F0;
-        }
-
-        .tag {
-            background: var(--light);
-            color: var(--gray);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.875rem;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-
-        .tag:hover {
-            background: var(--primary);
-            color: white;
-        }
+        .page { display: none; margin-top: 80px; }
+        .page.active { display: block; }
+
+        /* HERO SECTION */
+        .hero { padding: 6rem 2rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); position: relative; overflow: hidden; }
+        .hero-container { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; z-index: 1; }
+        .hero-content h1 { font-size: 3.5rem; color: white; margin-bottom: 1.5rem; font-weight: 800; }
+        .hero-content h1 span { color: #FBBF24; }
+        .hero-content p { font-size: 1.25rem; color: rgba(255,255,255,0.9); margin-bottom: 2.5rem; }
+        .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn-primary { background: white; color: var(--primary); padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s; box-shadow: 0 10px 30px rgba(0,0,0,0.2); border: none; cursor: pointer; }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
+        .btn-secondary { background: rgba(255,255,255,0.1); color: white; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; border: 2px solid rgba(255,255,255,0.3); backdrop-filter: blur(10px); transition: all 0.3s; cursor: pointer; }
+        .btn-secondary:hover { background: rgba(255,255,255,0.2); transform: translateY(-3px); }
+        .hero-image img { width: 100%; border-radius: 20px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
+
+        /* STATS */
+        .stats { background: white; padding: 4rem 2rem; margin-top: -4rem; position: relative; z-index: 10; }
+        .stats-container { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; background: white; padding: 3rem; border-radius: 24px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); }
+        .stat-item { text-align: center; }
+        .stat-number { font-family: 'Space Grotesk', sans-serif; font-size: 3rem; font-weight: 700; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: block; }
+        .stat-label { color: var(--gray); font-size: 1rem; margin-top: 0.5rem; }
+
+        /* PRICING SECTION */
+        .pricing-section { padding: 8rem 2rem; background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%); }
+        .pricing-container { max-width: 1280px; margin: 0 auto; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem; }
+        .pricing-card { background: white; padding: 3rem 2.5rem; border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); text-align: center; position: relative; transition: all 0.3s; border: 2px solid transparent; }
+        .pricing-card:hover { transform: translateY(-10px); border-color: var(--primary); }
+        .pricing-card.featured { background: var(--gradient); color: white; transform: scale(1.05); }
+        .pricing-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--secondary); color: white; padding: 0.5rem 1.5rem; border-radius: 50px; font-size: 0.875rem; font-weight: 600; }
+        .pricing-price { font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .pricing-price span { font-size: 1rem; font-weight: 400; }
+        .pricing-features { list-style: none; margin: 2rem 0; text-align: left; }
+        .pricing-features li { padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.1); display: flex; align-items: center; gap: 0.75rem; }
+        .pricing-card.featured .pricing-features li { border-bottom-color: rgba(255,255,255,0.2); }
+        .pricing-features i { color: #10B981; }
+        .pricing-card.featured .pricing-features i { color: white; }
+        .pricing-btn { display: inline-block; background: var(--gradient); color: white; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s; width: 100%; }
+        .pricing-card.featured .pricing-btn { background: white; color: var(--primary); }
+        .pricing-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+
+        /* SERVICES */
+        .services { padding: 8rem 2rem; max-width: 1280px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-tag { display: inline-block; background: rgba(79, 70, 229, 0.1); color: var(--primary); padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 600; font-size: 0.9rem; margin-bottom: 1rem; }
+        .section-title { font-size: 3rem; color: var(--dark); margin-bottom: 1rem; }
+        .section-subtitle { color: var(--gray); font-size: 1.25rem; max-width: 600px; margin: 0 auto; }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+        .service-card { background: white; padding: 3rem 2.5rem; border-radius: 24px; border: 2px solid #E2E8F0; transition: all 0.3s; cursor: pointer; }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 20px 60px rgba(0,0,0,0.1); border-color: transparent; }
+        .service-icon { width: 70px; height: 70px; background: var(--gradient); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white; margin-bottom: 2rem; }
+        .service-link { color: var(--primary); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: gap 0.3s; }
+        .service-link:hover { gap: 1rem; }
+
+        /* BLOG SECTION */
+        .blog-section { padding: 8rem 2rem; background: white; }
+        .blog-container { max-width: 1280px; margin: 0 auto; }
+        .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; margin-top: 4rem; }
+        .blog-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: all 0.3s; cursor: pointer; }
+        .blog-card:hover { transform: translateY(-10px); box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
+        .blog-image { width: 100%; height: 220px; object-fit: cover; }
+        .blog-content { padding: 2rem; }
+        .blog-category { display: inline-block; background: rgba(79, 70, 229, 0.1); color: var(--primary); padding: 0.25rem 1rem; border-radius: 50px; font-size: 0.875rem; font-weight: 600; margin-bottom: 1rem; }
+        .blog-card h3 { font-size: 1.25rem; margin-bottom: 1rem; color: var(--dark); line-height: 1.4; }
+        .blog-excerpt { color: var(--gray); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem; }
+        .blog-meta { display: flex; align-items: center; gap: 1.5rem; font-size: 0.875rem; color: var(--gray); }
+        .blog-meta span { display: flex; align-items: center; gap: 0.5rem; }
+        .read-more { color: var(--primary); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1rem; transition: gap 0.3s; }
+        .read-more:hover { gap: 1rem; }
+
+        /* PORTFOLIO & TESTIMONIALS */
+        .portfolio { padding: 8rem 2rem; max-width: 1280px; margin: 0 auto; }
+        .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem; }
+        .portfolio-item { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 4/3; cursor: pointer; }
+        .portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .portfolio-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(79, 70, 229, 0.9), transparent); display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem; opacity: 0; transition: opacity 0.3s; }
+        .portfolio-item:hover img { transform: scale(1.1); }
+        .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+        .portfolio-overlay h3 { color: white; font-size: 1.5rem; margin-bottom: 0.5rem; }
+        
+        .testimonials { background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%); padding: 8rem 2rem; }
+        .testimonials-container { max-width: 1280px; margin: 0 auto; }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; margin-top: 4rem; }
+        .testimonial-card { background: white; padding: 2.5rem; border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); }
+        .testimonial-stars { color: #FBBF24; margin-bottom: 1.5rem; }
+        .testimonial-text { color: var(--gray); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem; font-style: italic; }
+        .testimonial-author { display: flex; align-items: center; gap: 1rem; }
+        .testimonial-author img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; }
+
+        /* CTA & FOOTER */
+        .cta { padding: 6rem 2rem; background: var(--gradient); text-align: center; position: relative; overflow: hidden; }
+        .cta-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+        .cta h2 { font-size: 3rem; color: white; margin-bottom: 1.5rem; }
+        .cta p { font-size: 1.25rem; color: rgba(255,255,255,0.9); margin-bottom: 2.5rem; }
+        .btn-white { background: white; color: var(--primary); padding: 1.25rem 3rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.1rem; display: inline-block; transition: all 0.3s; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .btn-white:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
+
+        footer { background: var(--dark); color: white; padding: 5rem 2rem 2rem; }
+        .footer-container { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem; }
+        .footer-brand h3 { font-size: 2rem; margin-bottom: 1.5rem; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .footer-brand p { color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 2rem; }
+        .social-links { display: flex; gap: 1rem; }
+        .social-links a { width: 45px; height: 45px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all 0.3s; }
+        .social-links a:hover { background: var(--primary); transform: translateY(-3px); }
+        .footer-col h4 { font-size: 1.1rem; margin-bottom: 1.5rem; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 1rem; }
+        .footer-col ul li a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s; }
+        .footer-col ul li a:hover { color: white; }
+        .footer-bottom { max-width: 1280px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; color: rgba(255,255,255,0.5); }
+
+        /* SERVICE & ARTICLE PAGES */
+        .service-page-hero, .article-header-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 8rem 2rem 6rem; text-align: center; }
+        .service-page-hero h1, .article-title { font-size: 3rem; margin-bottom: 1.5rem; }
+        .back-btn { position: absolute; top: 2rem; left: 2rem; background: rgba(255,255,255,0.2); color: white; padding: 0.75rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; backdrop-filter: blur(10px); transition: all 0.3s; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 0.5rem; z-index: 10; }
+        .back-btn:hover { background: rgba(255,255,255,0.3); transform: translateX(-5px); }
+        .service-details, .blog-article { max-width: 1280px; margin: 0 auto; padding: 6rem 2rem; }
+        .detail-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; margin-top: 3rem; }
+        .detail-card { background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
+        .detail-card-icon { width: 60px; height: 60px; background: var(--gradient); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: white; margin-bottom: 1.5rem; }
+        .article-content { font-size: 1.125rem; line-height: 1.9; color: var(--dark); max-width: 900px; margin: 0 auto; }
+        .article-content h2 { font-size: 2rem; margin: 2.5rem 0 1rem; }
+        .article-content ul { margin: 1.5rem 0; padding-left: 2rem; }
+        .article-tags { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #E2E8F0; flex-wrap: wrap; }
+        .tag { background: var(--light); color: var(--gray); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.875rem; text-decoration: none; transition: all 0.3s; }
+        .tag:hover { background: var(--primary); color: white; }
+
+        /* FAQ */
+        .faq-section { max-width: 800px; margin: 3rem auto 0; }
+        .faq-item { background: white; margin-bottom: 1rem; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .faq-question { padding: 1.5rem 2rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; }
+        .faq-question i { transition: transform 0.3s; }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background: var(--light); }
+        .faq-item.active .faq-answer { max-height: 500px; }
+        .faq-answer p { padding: 0 2rem 1.5rem; color: var(--gray); }
 
         /* MOBILE MENU */
-        .mobile-nav {
-            display: none;
-            position: fixed;
-            top: 80px;
-            left: 0;
-            width: 100%;
-            background: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            padding: 2rem;
-            z-index: 999;
-        }
-
-        .mobile-nav.active {
-            display: block;
-        }
-
-        .mobile-nav a {
-            display: block;
-            padding: 1rem 0;
-            color: var(--dark);
-            text-decoration: none;
-            font-weight: 500;
-            border-bottom: 1px solid #E2E8F0;
-        }
-
-        .mobile-nav a:last-child {
-            border-bottom: none;
-        }
+        .mobile-nav { display: none; position: fixed; top: 80px; left: 0; width: 100%; background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.1); padding: 2rem; z-index: 999; }
+        .mobile-nav.active { display: block; }
+        .mobile-nav a { display: block; padding: 1rem 0; color: var(--dark); text-decoration: none; font-weight: 500; border-bottom: 1px solid #E2E8F0; }
 
         /* RESPONSIVE */
         @media (max-width: 1024px) {
-            .hero-container,
-            .why-container {
-                grid-template-columns: 1fr;
-            }
-
-            .services-grid,
-            .portfolio-grid,
-            .testimonials-grid,
-            .blog-grid,
-            .detail-grid,
-            .pricing-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .stats-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .hero-content h1,
-            .service-page-hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .section-title {
-                font-size: 2.5rem;
-            }
-
-            .process-steps {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .process-step::after {
-                display: none;
-            }
-
-            .pricing-card.featured {
-                transform: scale(1);
-            }
+            .hero-container, .pricing-grid, .services-grid, .blog-grid, .portfolio-grid, .testimonials-grid, .detail-grid { grid-template-columns: repeat(2, 1fr); }
+            .stats-container { grid-template-columns: repeat(2, 1fr); }
+            .footer-container { grid-template-columns: repeat(2, 1fr); }
+            .pricing-card.featured { transform: scale(1); }
         }
-
         @media (max-width: 768px) {
-            nav {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .services-grid,
-            .portfolio-grid,
-            .testimonials-grid,
-            .blog-grid,
-            .detail-grid,
-            .pricing-grid,
-            .process-steps {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-container {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-content h1,
-            .service-page-hero h1,
-            .article-title {
-                font-size: 2rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .why-content h2,
-            .cta h2 {
-                font-size: 2rem;
-            }
-
-            .back-btn {
-                top: 1rem;
-                left: 1rem;
-                padding: 0.5rem 1rem;
-                font-size: 0.875rem;
-            }
-
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                font-size: 24px;
-                bottom: 20px;
-                right: 20px;
-            }
-
-            .whatsapp-tooltip {
-                display: none;
-            }
+            nav { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero-container, .pricing-grid, .services-grid, .blog-grid, .portfolio-grid, .testimonials-grid, .detail-grid, .stats-container, .footer-container { grid-template-columns: 1fr; }
+            .hero-content h1, .service-page-hero h1, .article-title { font-size: 2.2rem; }
+            .whatsapp-float { width: 50px; height: 50px; font-size: 24px; bottom: 20px; right: 20px; }
+            .whatsapp-tooltip { display: none; }
+            .back-btn { top: 1rem; left: 1rem; padding: 0.5rem 1rem; font-size: 0.875rem; }
         }
 
-        /* ANIMATIONS */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s, transform 0.8s;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s, transform 0.8s; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 <body>
+
     <!-- NAVIGATION -->
     <header>
         <div class="header-container">
@@ -1556,45 +233,33 @@
                 <a href="#" onclick="scrollToSection('tarifs'); return false;">Tarifs</a>
                 <a href="#" onclick="scrollToSection('portfolio'); return false;">Portfolio</a>
                 <a href="#" onclick="showBlog(); return false;">Blog</a>
-                <a href="#" onclick="scrollToSection('contact'); return false;" class="nav-cta">Contactez-nous</a>
+                <a href="https://wa.me/261379412593?text=Bonjour%20Rakoto%20Digital,%20je%20souhaite%20un%20devis" class="nav-cta" target="_blank">Contactez-nous</a>
             </nav>
             <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
         </div>
     </header>
 
     <!-- WHATSAPP FLOATING BUTTON -->
-    <a href="https://wa.me/261340000000?text=Bonjour%20Rakoto%20Digital,%20je%20suis%20intéressé%20par%20vos%20services" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/261379412593?text=Bonjour%20Rakoto%20Digital,%20je%20suis%20intéressé%20par%20vos%20services" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
         <span class="whatsapp-tooltip">Discutons sur WhatsApp!</span>
     </a>
 
     <!-- PAGE ACCUEIL -->
     <div id="homePage" class="page active">
-        <!-- HERO SECTION -->
+        <!-- HERO -->
         <section class="hero" id="accueil">
             <div class="hero-container">
                 <div class="hero-content">
                     <h1>Transformez Votre Vision en <span>Réalité Digitale</span></h1>
-                    <p>Nous accompagnons les entreprises malgaches et internationales dans leur transformation digitale avec des solutions innovantes et sur mesure.</p>
+                    <p>Nous accompagnons les entreprises malgaches dans leur transformation digitale avec des solutions innovantes, des sites web performants et du marketing qui convertit.</p>
                     <div class="hero-buttons">
-                        <a href="#" onclick="scrollToSection('contact'); return false;" class="btn-primary">
-                            Démarrer un projet <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <a href="https://wa.me/261379412593?text=Bonjour,%20je%20veux%20démarrer%20un%20projet" class="btn-primary" target="_blank">Démarrer un projet <i class="fas fa-arrow-right"></i></a>
                         <a href="#" onclick="scrollToSection('portfolio'); return false;" class="btn-secondary">Voir nos réalisations</a>
                     </div>
                 </div>
                 <div class="hero-image">
                     <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop" alt="Équipe digitale">
-                    <div class="floating-card card-1">
-                        <i class="fas fa-chart-line" style="color: var(--primary); font-size: 2rem;"></i>
-                        <p style="font-weight: 700; margin-top: 0.5rem;">+150%</p>
-                        <p style="font-size: 0.875rem; color: var(--gray);">Croissance moyenne</p>
-                    </div>
-                    <div class="floating-card card-2">
-                        <i class="fas fa-users" style="color: var(--secondary); font-size: 2rem;"></i>
-                        <p style="font-weight: 700; margin-top: 0.5rem;">500+</p>
-                        <p style="font-size: 0.875rem; color: var(--gray);">Clients satisfaits</p>
-                    </div>
                 </div>
             </div>
         </section>
@@ -1602,36 +267,24 @@
         <!-- STATS -->
         <section class="stats">
             <div class="stats-container">
-                <div class="stat-item">
-                    <span class="stat-number">150+</span>
-                    <p class="stat-label">Projets Réussis</p>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">500+</span>
-                    <p class="stat-label">Clients Satisfaits</p>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">8+</span>
-                    <p class="stat-label">Années d'Expérience</p>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">98%</span>
-                    <p class="stat-label">Taux de Satisfaction</p>
-                </div>
+                <div class="stat-item"><span class="stat-number">150+</span><p class="stat-label">Projets Réussis</p></div>
+                <div class="stat-item"><span class="stat-number">500+</span><p class="stat-label">Clients Satisfaits</p></div>
+                <div class="stat-item"><span class="stat-number">8+</span><p class="stat-label">Années d'Expérience</p></div>
+                <div class="stat-item"><span class="stat-number">98%</span><p class="stat-label">Taux de Satisfaction</p></div>
             </div>
         </section>
 
-        <!-- PRICING SECTION - NEW -->
+        <!-- PRICING SECTION -->
         <section class="pricing-section" id="tarifs">
             <div class="pricing-container">
                 <div class="section-header fade-in">
                     <span class="section-tag">Nos Tarifs</span>
                     <h2 class="section-title">Des Prix Transparents et Compétitifs</h2>
-                    <p class="section-subtitle">Choisissez le package qui correspond à vos besoins et à votre budget</p>
+                    <p class="section-subtitle">Choisissez le package qui correspond à vos besoins</p>
                 </div>
                 <div class="pricing-grid">
                     <div class="pricing-card fade-in">
-                        <h3><i class="fas fa-palette" style="margin-right: 0.5rem;"></i>Creation Logo</h3>
+                        <h3><i class="fas fa-palette" style="margin-right: 0.5rem;"></i>Création Logo</h3>
                         <div class="pricing-price">150€</div>
                         <ul class="pricing-features">
                             <li><i class="fas fa-check"></i> 3 propositions initiales</li>
@@ -1640,7 +293,7 @@
                             <li><i class="fas fa-check"></i> Formats web (PNG, JPG, SVG)</li>
                             <li><i class="fas fa-check"></i> Livraison en 5 jours</li>
                         </ul>
-                        <a href="https://wa.me/261340000000?text=Je%20suis%20intéressé%20par%20le%20pack%20Logo%20à%20150€" class="pricing-btn" target="_blank">Commander</a>
+                        <a href="https://wa.me/261379412593?text=Je%20suis%20intéressé%20par%20le%20pack%20Logo%20à%20150€" class="pricing-btn" target="_blank">Commander</a>
                     </div>
                     <div class="pricing-card featured fade-in">
                         <div class="pricing-badge">Populaire</div>
@@ -1648,13 +301,13 @@
                         <div class="pricing-price">800€</div>
                         <ul class="pricing-features">
                             <li><i class="fas fa-check"></i> Jusqu'à 5 pages</li>
-                            <li><i class="fas fa-check"></i> Design responsive</li>
+                            <li><i class="fas fa-check"></i> Design responsive (Mobile)</li>
                             <li><i class="fas fa-check"></i> Formulaire de contact</li>
                             <li><i class="fas fa-check"></i> Optimisation SEO basique</li>
                             <li><i class="fas fa-check"></i> Hébergement 1 an inclus</li>
                             <li><i class="fas fa-check"></i> Livraison en 2 semaines</li>
                         </ul>
-                        <a href="https://wa.me/261340000000?text=Je%20suis%20intéressé%20par%20le%20pack%20Site%20Vitrine%20à%20800€" class="pricing-btn" target="_blank">Commander</a>
+                        <a href="https://wa.me/261379412593?text=Je%20suis%20intéressé%20par%20le%20pack%20Site%20Vitrine%20à%20800€" class="pricing-btn" target="_blank">Commander</a>
                     </div>
                     <div class="pricing-card fade-in">
                         <h3><i class="fas fa-bullhorn" style="margin-right: 0.5rem;"></i>Marketing Digital</h3>
@@ -1667,7 +320,7 @@
                             <li><i class="fas fa-check"></i> Stratégie de contenu</li>
                             <li><i class="fas fa-check"></i> Sans engagement</li>
                         </ul>
-                        <a href="https://wa.me/261340000000?text=Je%20suis%20intéressé%20par%20le%20pack%20Marketing%20à%20200€/mois" class="pricing-btn" target="_blank">S'abonner</a>
+                        <a href="https://wa.me/261379412593?text=Je%20suis%20intéressé%20par%20le%20pack%20Marketing%20à%20200€/mois" class="pricing-btn" target="_blank">S'abonner</a>
                     </div>
                 </div>
             </div>
@@ -1678,75 +331,25 @@
             <div class="section-header fade-in">
                 <span class="section-tag">Nos Services</span>
                 <h2 class="section-title">Des Solutions Digitales Complètes</h2>
-                <p class="section-subtitle">Nous offrons un éventail complet de services pour propulser votre entreprise dans l'ère digitale</p>
             </div>
             <div class="services-grid">
                 <div class="service-card fade-in" onclick="showServicePage('marketing')">
-                    <div class="service-icon">
-                        <i class="fas fa-bullhorn"></i>
-                    </div>
+                    <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
                     <h3>Digital Marketing</h3>
-                    <p>Stratégies marketing sur mesure, gestion des réseaux sociaux, publicités Facebook & Google Ads, et content marketing pour maximiser votre visibilité.</p>
+                    <p>Stratégies sur mesure, gestion des réseaux sociaux, Facebook & Google Ads pour maximiser votre visibilité.</p>
                     <span class="service-link">En savoir plus <i class="fas fa-arrow-right"></i></span>
                 </div>
                 <div class="service-card fade-in" onclick="showServicePage('design')">
-                    <div class="service-icon" style="background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);">
-                        <i class="fas fa-palette"></i>
-                    </div>
+                    <div class="service-icon" style="background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);"><i class="fas fa-palette"></i></div>
                     <h3>Graphic Design</h3>
-                    <p>Création d'identités visuelles uniques, logos professionnels, supports de communication, packaging et design d'interfaces modernes.</p>
+                    <p>Création d'identités visuelles uniques, logos professionnels, supports de communication et design d'interfaces.</p>
                     <span class="service-link">En savoir plus <i class="fas fa-arrow-right"></i></span>
                 </div>
                 <div class="service-card fade-in" onclick="showServicePage('web')">
-                    <div class="service-icon" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">
-                        <i class="fas fa-code"></i>
-                    </div>
+                    <div class="service-icon" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);"><i class="fas fa-code"></i></div>
                     <h3>Web Development</h3>
-                    <p>Développement de sites web vitrines, e-commerce, applications web sur mesure avec les dernières technologies (React, Node.js, etc.).</p>
+                    <p>Développement de sites web vitrines, e-commerce, applications sur mesure (React, Node.js, etc.).</p>
                     <span class="service-link">En savoir plus <i class="fas fa-arrow-right"></i></span>
-                </div>
-            </div>
-        </section>
-
-        <!-- WHY CHOOSE US -->
-        <section class="why-us">
-            <div class="why-container">
-                <div class="why-content fade-in">
-                    <span class="section-tag" style="background: rgba(255,255,255,0.1); color: white;">Pourquoi Nous Choisir</span>
-                    <h2>Un Partenaire de Confiance pour Votre Succès Digital</h2>
-                    <p>Nous combinons expertise technique, créativité et compréhension approfondie du marché malgache pour offrir des résultats exceptionnels.</p>
-                    <div class="why-features">
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-rocket"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h3>Livraison Rapide</h3>
-                                <p>Respect des délais et livraison dans les temps impartis sans compromis sur la qualité.</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon" style="background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h3>Qualité Garantie</h3>
-                                <p>Standards internationaux et suivi rigoureux pour des produits impeccables.</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">
-                                <i class="fas fa-headset"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h3>Support 24/7</h3>
-                                <p>Accompagnement continu et assistance technique disponible à tout moment.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="why-image fade-in">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format&fit=crop" alt="Équipe professionnelle">
                 </div>
             </div>
         </section>
@@ -1756,81 +359,36 @@
             <div class="section-header fade-in">
                 <span class="section-tag">Portfolio</span>
                 <h2 class="section-title">Nos Réalisations Récentes</h2>
-                <p class="section-subtitle">Découvrez quelques-uns de nos projets les plus récents</p>
             </div>
             <div class="portfolio-grid">
                 <div class="portfolio-item fade-in">
                     <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop" alt="Projet 1">
-                    <div class="portfolio-overlay">
-                        <h3>Site E-commerce</h3>
-                        <p>Plateforme de vente en ligne complète</p>
-                    </div>
+                    <div class="portfolio-overlay"><h3>Site E-commerce</h3><p>Plateforme de vente en ligne</p></div>
                 </div>
                 <div class="portfolio-item fade-in">
                     <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&auto=format&fit=crop" alt="Projet 2">
-                    <div class="portfolio-overlay">
-                        <h3>Application Mobile</h3>
-                        <p>App de gestion pour startup</p>
-                    </div>
+                    <div class="portfolio-overlay"><h3>Application Mobile</h3><p>App de gestion pour startup</p></div>
                 </div>
                 <div class="portfolio-item fade-in">
                     <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&auto=format&fit=crop" alt="Projet 3">
-                    <div class="portfolio-overlay">
-                        <h3>Branding Complet</h3>
-                        <p>Identité visuelle pour PME</p>
-                    </div>
+                    <div class="portfolio-overlay"><h3>Branding Complet</h3><p>Identité visuelle pour PME</p></div>
                 </div>
             </div>
         </section>
 
-        <!-- BLOG SECTION - NEW -->
+        <!-- BLOG PREVIEW -->
         <section class="blog-section" id="blog">
             <div class="blog-container">
                 <div class="section-header fade-in">
                     <span class="section-tag">Notre Blog</span>
                     <h2 class="section-title">Conseils & Actualités Digitales</h2>
-                    <p class="section-subtitle">Restez informé des dernières tendances et astuces pour développer votre business en ligne</p>
+                    <p class="section-subtitle">Restez informé des dernières tendances pour développer votre business</p>
                 </div>
-                <div class="blog-grid">
-                    <article class="blog-card fade-in" onclick="showArticle('facebook-ads')">
-                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&auto=format&fit=crop" alt="Facebook Ads" class="blog-image">
-                        <div class="blog-content">
-                            <span class="blog-category">Marketing</span>
-                            <h3>Ahoana no hampitomboana ny varotry ny orinasa amin'ny Facebook Ads eto Madagasikara?</h3>
-                            <p class="blog-excerpt">Dikany torolàlana feno momba ny fampiasana Facebook Ads hampitomboana ny varotrao eto Madagasikara...</p>
-                            <div class="blog-meta">
-                                <span><i class="far fa-calendar"></i> 5 Juin 2026</span>
-                                <span><i class="far fa-clock"></i> 8 min</span>
-                            </div>
-                            <span class="read-more">Vakio bebe kokoa <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </article>
-                    <article class="blog-card fade-in" onclick="showArticle('seo-basics')">
-                        <img src="https://images.unsplash.com/photo-1432888622747-4eb9a8f2c293?w=600&auto=format&fit=crop" alt="SEO" class="blog-image">
-                        <div class="blog-content">
-                            <span class="blog-category">SEO</span>
-                            <h3>SEO: Ahoana no hisehoana voalohany amin'ny Google?</h3>
-                            <p class="blog-excerpt">Torolàlana feno momba ny SEO (Search Engine Optimization) hahitana ny site-nao voalohany amin'ny Google...</p>
-                            <div class="blog-meta">
-                                <span><i class="far fa-calendar"></i> 2 Juin 2026</span>
-                                <span><i class="far fa-clock"></i> 10 min</span>
-                            </div>
-                            <span class="read-more">Vakio bebe kokoa <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </article>
-                    <article class="blog-card fade-in" onclick="showArticle('website-importance')">
-                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&auto=format&fit=crop" alt="Website" class="blog-image">
-                        <div class="blog-content">
-                            <span class="blog-category">Web</span>
-                            <h3=Nahoana ilaina ny manana site web ho an'ny orinasanao?</h3>
-                            <p class="blog-excerpt">Hitadiavanao eto ny antony 5 lehibe mahatonga ny site web ho ilaina amin'ny fampandrosoana ny orinasanao...</p>
-                            <div class="blog-meta">
-                                <span><i class="far fa-calendar"></i> 28 Mai 2026</span>
-                                <span><i class="far fa-clock"></i> 6 min</span>
-                            </div>
-                            <span class="read-more">Vakio bebe kokoa <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </article>
+                <div class="blog-grid" id="blogPreviewGrid">
+                    <!-- Rempli par JavaScript -->
+                </div>
+                <div style="text-align: center; margin-top: 3rem;">
+                    <button class="btn-primary" onclick="showBlog()">Voir tous les articles <i class="fas fa-arrow-right"></i></button>
                 </div>
             </div>
         </section>
@@ -1841,58 +399,30 @@
                 <div class="section-header fade-in">
                     <span class="section-tag">Témoignages</span>
                     <h2 class="section-title">Ce Que Disent Nos Clients</h2>
-                    <p class="section-subtitle">La satisfaction de nos clients est notre plus grande fierté</p>
                 </div>
                 <div class="testimonials-grid">
                     <div class="testimonial-card fade-in">
-                        <div class="testimonial-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"Rakoto Digital a transformé notre présence en ligne. Notre chiffre d'affaires a augmenté de 200% en 6 mois grâce à leur stratégie marketing."</p>
+                        <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="testimonial-text">"Notre chiffre d'affaires a augmenté de 200% en 6 mois grâce à leur stratégie marketing."</p>
                         <div class="testimonial-author">
                             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop" alt="Client">
-                            <div class="author-info">
-                                <h4>Jean Rakotondrasoa</h4>
-                                <p>CEO, TechMadagascar</p>
-                            </div>
+                            <div class="author-info"><h4>Jean Rakotondrasoa</h4><p>CEO, TechMadagascar</p></div>
                         </div>
                     </div>
                     <div class="testimonial-card fade-in">
-                        <div class="testimonial-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"Professionnalisme et créativité au rendez-vous. Le site web qu'ils ont créé dépasse toutes nos attentes. Je recommande vivement !"</p>
+                        <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="testimonial-text">"Professionnalisme et créativité. Le site web dépasse toutes nos attentes. Je recommande !"</p>
                         <div class="testimonial-author">
                             <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop" alt="Client">
-                            <div class="author-info">
-                                <h4>Sarah Andriamampianina</h4>
-                                <p>Directrice, Madagascar Art</p>
-                            </div>
+                            <div class="author-info"><h4>Sarah Andriamampianina</h4><p>Directrice, Madagascar Art</p></div>
                         </div>
                     </div>
                     <div class="testimonial-card fade-in">
-                        <div class="testimonial-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <p class="testimonial-text">"Une équipe réactive et compétente. Ils ont su comprendre nos besoins et proposer des solutions innovantes. Excellent rapport qualité-prix."</p>
+                        <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                        <p class="testimonial-text">"Une équipe réactive et compétente. Excellent rapport qualité-prix."</p>
                         <div class="testimonial-author">
                             <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&auto=format&fit=crop" alt="Client">
-                            <div class="author-info">
-                                <h4>Michel Razafindramasy</h4>
-                                <p>Fondateur, GreenAgro MG</p>
-                            </div>
+                            <div class="author-info"><h4>Michel Razafindramasy</h4><p>Fondateur, GreenAgro MG</p></div>
                         </div>
                     </div>
                 </div>
@@ -1903,8 +433,8 @@
         <section class="cta" id="contact">
             <div class="cta-content">
                 <h2>Prêt à Lancer Votre Projet ?</h2>
-                <p>Discutons ensemble de vos besoins et trouvons la solution digitale parfaite pour votre entreprise.</p>
-                <a href="https://wa.me/261340000000?text=Bonjour%20Rakoto%20Digital,%20je%20souhaite%20discuter%20d'un%20projet" class="btn-white" target="_blank">
+                <p>Discutons ensemble de vos besoins et trouvons la solution digitale parfaite.</p>
+                <a href="https://wa.me/261379412593?text=Bonjour%20Rakoto%20Digital,%20je%20souhaite%20discuter%20d'un%20projet" class="btn-white" target="_blank">
                     <i class="fab fa-whatsapp"></i> Contactez-nous sur WhatsApp
                 </a>
             </div>
@@ -1913,34 +443,25 @@
 
     <!-- BLOG PAGE -->
     <div id="blogPage" class="page">
-        <button class="back-btn" onclick="showHome()">
-            <i class="fas fa-arrow-left"></i> Retour à l'accueil
-        </button>
+        <button class="back-btn" onclick="showHome()"><i class="fas fa-arrow-left"></i> Retour à l'accueil</button>
         <section class="blog-section" style="margin-top: 0; padding-top: 6rem;">
             <div class="blog-container">
                 <div class="section-header">
                     <span class="section-tag">Notre Blog</span>
                     <h2 class="section-title">Tous nos articles</h2>
-                    <p class="section-subtitle">Conseils, astuces et actualités sur le digital</p>
                 </div>
-                <div class="blog-grid" id="allBlogPosts">
-                    <!-- Blog posts will be loaded here -->
-                </div>
+                <div class="blog-grid" id="allBlogPosts"></div>
             </div>
         </section>
     </div>
 
     <!-- ARTICLE PAGE -->
     <div id="articlePage" class="page">
-        <button class="back-btn" onclick="showBlog()">
-            <i class="fas fa-arrow-left"></i> Retour au blog
-        </button>
-        <article class="blog-article" id="articleContent">
-            <!-- Article content will be loaded here -->
-        </article>
+        <button class="back-btn" onclick="showBlog()"><i class="fas fa-arrow-left"></i> Retour au blog</button>
+        <article class="blog-article" id="articleContent"></article>
     </div>
 
-    <!-- PAGES SERVICES (Dynamiquement générées par JavaScript) -->
+    <!-- SERVICE PAGE -->
     <div id="servicePage" class="page"></div>
 
     <!-- FOOTER -->
@@ -1948,7 +469,7 @@
         <div class="footer-container">
             <div class="footer-brand">
                 <h3>Rakoto Digital</h3>
-                <p>Votre partenaire de confiance pour la transformation digitale à Madagascar. Nous créons des solutions innovantes pour propulser votre entreprise vers de nouveaux sommets.</p>
+                <p>Votre partenaire de confiance pour la transformation digitale à Madagascar.</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -1962,7 +483,6 @@
                     <li><a href="#" onclick="showServicePage('marketing'); return false;">Digital Marketing</a></li>
                     <li><a href="#" onclick="showServicePage('design'); return false;">Graphic Design</a></li>
                     <li><a href="#" onclick="showServicePage('web'); return false;">Web Development</a></li>
-                    <li><a href="#">SEO & SEA</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -1970,7 +490,6 @@
                 <ul>
                     <li><a href="#" onclick="showHome(); return false;">À Propos</a></li>
                     <li><a href="#" onclick="scrollToSection('portfolio'); return false;">Portfolio</a></li>
-                    <li><a href="#">Carrières</a></li>
                     <li><a href="#" onclick="showBlog(); return false;">Blog</a></li>
                 </ul>
             </div>
@@ -1978,7 +497,7 @@
                 <h4>Contact</h4>
                 <ul>
                     <li><a href="mailto:christian.rakoto.pro@gmail.com">christian.rakoto.pro@gmail.com</a></li>
-                    <li><a href="tel:+261340000000">+261 34 00 000 00</a></li>
+                    <li><a href="https://wa.me/261379412593" target="_blank">+261 37 94 125 93</a></li>
                     <li>Antananarivo, Madagascar</li>
                 </ul>
             </div>
@@ -1989,475 +508,165 @@
     </footer>
 
     <script>
-        // BLOG ARTICLES DATA
+        // DONNÉES DES ARTICLES DE BLOG (SEO OPTIMISÉ)
         const blogArticles = {
-            'facebook-ads': {
-                category: 'Marketing',
-                title: 'Ahoana no hampitomboana ny varotry ny orinasa amin\'ny Facebook Ads eto Madagasikara?',
-                date: '5 Juin 2026',
+            'prix-site-web': {
+                category: 'Guide',
+                title: 'Combien coûte un site web à Madagascar en 2026?',
+                date: '7 Juin 2026',
                 readTime: '8 min',
-                image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1200&auto=format&fit=crop',
-                tags: ['Facebook Ads', 'Marketing Digital', 'Madagascar', 'Publicité'],
+                image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&auto=format&fit=crop',
+                tags: ['Prix', 'Site Web', 'Madagascar'],
                 content: `
-                    <p>Ny Facebook Ads dia iray amin'ireo fomba mahomby indrindra hampitomboana ny varotra amin'ny internet eto Madagasikara. Ity torolàlana ity dia hanampy anao hahatakatra ny fomba fampiasana azy amin'ny fomba mahomby.</p>
-                    
-                    <h2>1. Fantaro tsara ny mpanjifanao (Targeting)</h2>
-                    <p>Voalohany indrindra, dia tokony ho fantatrao tsara ny olona tianao ho tonga mpanjifa. Eto Madagasikara, misy safidy maro azo atao:</p>
+                    <p>Vous souhaitez créer un site web pour votre entreprise à Madagascar? Une des premières questions est: <strong>"Combien ça coûte?"</strong></p>
+                    <h2>Les Prix du Marché à Madagascar</h2>
+                    <h3>Site Vitrine (5 pages) : 800€ - 1,500€</h3>
+                    <p>Idéal pour présenter votre entreprise, afficher vos services et générer des contacts. Chez Rakoto Digital, nous proposons un pack complet à <strong>800€</strong> incluant le design responsive, l'hébergement 1 an et l'optimisation SEO de base.</p>
+                    <h3>Site E-commerce : 2,500€ - 5,000€</h3>
+                    <p>Pour vendre en ligne avec paiement sécurisé (Mobile Money, carte bancaire) et gestion des stocks.</p>
+                    <h2>Pourquoi ces prix?</h2>
                     <ul>
-                        <li><strong>Toerana:</strong> Antananarivo, Toamasina, Antsiranana, sns</li>
-                        <li><strong>Taona:</strong> 18-24, 25-34, 35-44, sns</li>
-                        <li><strong>Zavatra tiany:</strong> Shopping, Technology, Food, sns</li>
+                        <li>Design personnalisé (pas de template basique)</li>
+                        <li>Optimisation mobile (80% des Malgaches utilisent le mobile)</li>
+                        <li>Sécurité (SSL, backups) et support après-vente</li>
                     </ul>
-
-                    <h2>2. Mifidiana ny karazana campaign mety</h2>
-                    <p>Misy karazana campaign maro azo atao amin'ny Facebook Ads:</p>
-                    <ul>
-                        <li><strong>Traffic:</strong> Raha te hampitombo ny mpitsidika ny site-nao ianao</li>
-                        <li><strong>Conversions:</strong> Raha te hahazo varotra na filazana (leads) ianao</li>
-                        <li><strong>Awareness:</strong> Raha te hahafantarana ny marikao (brand) ianao</li>
-                    </ul>
-
-                    <h2>3. Mamorona sary na horonantsary mahaliana</h2>
-                    <p>Ny sary na horonantsary dia tena ilaina. Tokony:</p>
-                    <ul>
-                        <li>Mazava tsara sy avo kalitao</li>
-                        <li>Mampiseho ny vokatra na serivisy</li>
-                        <li>Manana soratra fohy sy mazava</li>
-                        <li>Manana bokotra (Call-to-Action) mazava</li>
-                    </ul>
-
-                    <h2>4. Manomboka amin'ny budget kely</h2>
-                    <p>Aza manomboka amin'ny budget lehibe. Manomboka amin'ny 5-10€ isan'andro ianao dia jereo ny valiny. Raha mahomby dia ampitomboy ny budget.</p>
-
-                    <h2>5. Diniho sy ovaina (Test & Optimize)</h2>
-                    <p>Jereo matetika ny statistique (Facebook Pixel) ary ovaina ny zavatra tsy mandeha. Izany no fomba hahafantaranao ny mety indrindra ho an'ny orinasanao.</p>
-
-                    <p><strong>Famaranana:</strong> Ny Facebook Ads dia fitaovana mahery vaika raha ampiasaina araka ny tokony ho iziny. Aza kivy raha tsy mandeha haingana ny vokatra - mila fotoana sy fitsapana izany.</p>
+                    <p><strong>Offre Spéciale :</strong> Site vitrine à 800€ + Logo offert. Contactez-nous sur WhatsApp au <strong>+261 37 94 125 93</strong> pour un devis gratuit.</p>
                 `
-            },
-            'seo-basics': {
-                category: 'SEO',
-                title: 'SEO: Ahoana no hisehoana voalohany amin\'ny Google?',
-                date: '2 Juin 2026',
+},
+            'facebook-ads-guide': {
+                category: 'Marketing',
+                title: 'Facebook Ads Madagascar: Guide Complet 2026',
+                date: '5 Juin 2026',
                 readTime: '10 min',
-                image: 'https://images.unsplash.com/photo-1432888622747-4eb9a8f2c293?w=1200&auto=format&fit=crop',
-                tags: ['SEO', 'Google', 'Référencement', 'Website'],
+                image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&auto=format&fit=crop',
+                tags: ['Facebook Ads', 'Marketing', 'Publicité'],
                 content: `
-                    <p>Ny SEO (Search Engine Optimization) dia ny fomba hahatonga ny site-nao hiseho amin'ny laharana voalohany amin'ny Google. Ity no fomba tsara indrindra hahazoana mpitsidika maimaim-poana.</p>
-                    
-                    <h2>Inona no SEO?</h2>
-                    <p>Ny SEO dia fitambaran'ny fomba sy teknika hampitomboana ny kalitaon'ny site-nao mba ho tian'ny Google sy hasehony voalohany rehefa mitady zavatra ny olona.</p>
-
-                    <h2>1. Fikarohana teny (Keyword Research)</h2>
-                    <p>Teny inona no tadiavin'ny olona rehefa mitady ny vokatra na serivisy omenao? Ohatra:</p>
-                    <ul>
-                        <li>"Création site web Madagascar"</li>
-                        <li>"Agence digitale Antananarivo"</li>
-                        <li>"Marketing digital Madagascar"</li>
-                    </ul>
-
-                    <h2>2. Optimization amin'ny page (On-page SEO)</h2>
-                    <p>Tokony hatao amin'ny page tsirairay ny:</p>
-                    <ul>
-                        <li><strong>Title tag:</strong> Soratra miseho amin'ny Google (50-60 caractères)</li>
-                        <li><strong>Meta description:</strong> Famaritana fohy (150-160 caractères)</li>
-                        <li><strong>H1, H2, H3:</strong> Lohateny mazava sy misy ny teny tadiavina</li>
-                        <li><strong>Content:</strong> Lahatsoratra lava sy manan-danja (min 1000 mots)</li>
-                    </ul>
-
-                    <h2>3. Kalitaon'ny votoaty (Content Quality)</h2>
-                    <p>Ny Google dia tiany ny votoaty:</p>
-                    <ul>
-                        <li>Mahasoa sy manan-danja</li>
-                        <li>Vaovao sy farany</li>
-                        <li>Mora vakiana sy voalamina tsara</li>
-                        <li>Misy sary sy horonantsary</li>
-                    </ul>
-
-                    <h2>4. Hafainganam-pandeha (Page Speed)</h2>
-                    <p>Tokony haingana ny site-nao. Ny olona dia tsy mahazo fanahy raha miandry. Ampidiro:</p>
-                    <ul>
-                        <li>Sary voaoptimize (compressée)</li>
-                        <li>Hébergement tsara</li>
-                        <li>Code madio</li>
-                    </ul>
-
-                    <h2>5. Mobile Friendly</h2>
-                    <p>Eto Madagasikara, maro ny mampiasa téléphone. Tokony ho tsara amin'ny mobile ny site-nao (responsive design).</p>
-
-                    <h2>6. Backlinks</h2>
-                    <p>Ny backlinks dia rohy avy amin'ny site hafa mankany amin'ny site-nao. Maro ny backlinks avy amin'ny site malaza = tsara ho an'ny SEO.</p>
-
-                    <p><strong>Famaranana:</strong> Ny SEO dia mila fotoana (3-6 volana vao hita ny vokatra) fa tena mahomby amin'ny lafiny vola satria maimaim-poana ny mpitsidika azo.</p>
+                    <p>Facebook compte plus de 3 millions d'utilisateurs à Madagascar. C'est LE canal publicitaire incontournable.</p>
+                    <h2>Étape 1: Définir Votre Objectif</h2>
+                    <p>Pour débuter, choisissez l'objectif "Trafic" ou "Messages" avec un budget de 5 à 10€ par jour.</p>
+                    <h2>Étape 2: Le Visuel et le Texte</h2>
+                    <p>Utilisez des photos réelles de votre équipe ou de vos produits. Les Malgaches réagissent bien à l'humain. Le texte doit être court, avec un appel à l'action clair vers WhatsApp.</p>
+                    <h2>Étape 3: Le Ciblage</h2>
+                    <p>Ciblez Antananarivo (+50km), âge 25-55 ans, avec des intérêts comme "Entrepreneuriat" ou "Petite entreprise".</p>
+                    <p>Besoin d'aide pour gérer vos campagnes? Notre pack Marketing Digital commence à <strong>200€/mois</strong>. Écrivez-nous au <strong>+261 37 94 125 93</strong>.</p>
                 `
             },
-            'website-importance': {
-                category: 'Web',
-                title: 'Nahoana ilaina ny manana site web ho an\'ny orinasanao?',
+            'seo-madagascar': {
+                category: 'SEO',
+                title: 'SEO Madagascar: Comment Apparaître en 1ère Page de Google?',
+                date: '2 Juin 2026',
+                readTime: '9 min',
+                image: 'https://images.unsplash.com/photo-1432888622747-4eb9a8f2c293?w=800&auto=format&fit=crop',
+                tags: ['SEO', 'Google', 'Référencement'],
+                content: `
+                    <p>Le SEO (Search Engine Optimization) est la méthode pour apparaître gratuitement sur Google.</p>
+                    <h2>1. Mots-clés (Keywords)</h2>
+                    <p>Utilisez les mots que vos clients cherchent : "création site web antananarivo", "agence digitale madagascar".</p>
+                    <h2>2. Contenu de Qualité</h2>
+                    <p>Google adore les articles de blog longs, utiles et bien structurés (avec des titres H1, H2).</p>
+                    <h2>3. Vitesse et Mobile</h2>
+                    <p>Votre site doit charger en moins de 3 secondes et être parfait sur téléphone mobile.</p>
+                    <p>Nous incluons une optimisation SEO de base dans tous nos sites web à partir de 800€. Contactez <strong>Rakoto Digital</strong> au <strong>+261 37 94 125 93</strong>.</p>
+                `
+            },
+            'pourquoi-site-web': {
+                category: 'Business',
+                title: '5 Raisons Pour lesquelles Votre Entreprise a Besoin d\'un Site Web',
                 date: '28 Mai 2026',
                 readTime: '6 min',
-                image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200&auto=format&fit=crop',
-                tags: ['Website', 'Business', 'Digital', 'Entreprise'],
+                image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&auto=format&fit=crop',
+                tags: ['Business', 'Digital', 'Entreprise'],
                 content: `
-                    <p>Ankehitriny, ny site web dia tsy safidy intsony fa ilaina ho an'ny orinasa rehetra, na kely na lehibe. Indreto ny antony 5 mahatonga azy ho tena ilaina.</p>
-                    
-                    <h2>1. Hisy amin'ny 24/7 ianao</h2>
-                    <p>Ny site web dia miteny ho an'ny mpanjifanao na dia matory aza ianao. Mety hisy olona mitady ny vokatrao amin'ny 10pm na 3am - ny site-nao dia ho eo hamaly ny fanontaniany.</p>
-
-                    <h2>2. Hahatonga ny orinasanao ho azo antoka (Crédibilité)</h2>
-                    <p>Ankehitriny, ny olona dia manao recherche Google alohan'ny hividianana. Raha tsy manana site web ianao, dia mety ho very ny mpanjifa satria hisy ahiahiny ny momba ny orinasanao.</p>
-
-                    <h2>3. Hisy mpitsidika avy amin'ny Google (Visibilité)</h2>
-                    <p>Ny Google dia manome mpitsidika mihoatra ny 5 miliara isan'andro. Raha manana site web ianao dia mety hisy olona maro hitady anao amin'ny Google.</p>
-
-                    <h2>4. Mora kokoa noho ny dokam-barotra (Marketing)</h2>
-                    <p>Ny site web dia fomba marketing mora kokoa noho ny radio, TV, na gazety. Rehefa vita izy dia miasa ho anao mandritra ny taona maro.</p>
-
-                    <h2>5. Hahafahanao mampiseho ny vokatrao (Showcase)</h2>
-                    <p>Afaka mampiseho ny vokatrao, serivisinao, portfolio, sy ny mpanjifa efa nankasitraka anao ianao. Izany dia manampy amin'ny fampitomboana ny varotra.</p>
-
-                    <h2>Famaranana</h2>
-                    <p>Ny site web dia fitaovana tena ilaina amin'ny fampandrosoana ny orinasa ankehitriny. Aza miandry ela - manomboka ankehitriny!</p>
+                    <p>Aujourd'hui, un site web n'est plus une option, c'est une nécessité pour toute entreprise à Madagascar.</p>
+                    <h2>1. Crédibilité Professionnelle</h2>
+                    <p>87% des consommateurs font une recherche Google avant d'acheter. Sans site web, vous perdez en crédibilité.</p>
+                    <h2>2. Disponibilité 24h/24 et 7j/7</h2>
+                    <p>Votre site travaille pour vous même la nuit et les week-ends.</p>
+                    <h2>3. Visibilité sur Google</h2>
+                    <p>Un site bien optimisé vous apporte des clients gratuitement via les recherches Google.</p>
+                    <p>Ne laissez pas vos concurrents prendre de l'avance. Obtenez votre site web dès <strong>800€</strong>. WhatsApp: <strong>+261 37 94 125 93</strong>.</p>
+                `
+            },
+            'ecommerce-madagascar': {
+                category: 'E-commerce',
+                title: 'E-commerce Madagascar: Comment Vendre en Ligne en 2026?',
+                date: '20 Mai 2026',
+                readTime: '7 min',
+                image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&auto=format&fit=crop',
+                tags: ['E-commerce', 'Vente en ligne', 'Mobile Money'],
+                content: `
+                    <p>La vente en ligne explose à Madagascar. Voici comment lancer votre boutique.</p>
+                    <h2>1. Choisissez la bonne plateforme</h2>
+                    <p>Un site e-commerce sur mesure vous permet de contrôler votre marque et d'éviter les commissions des marketplaces.</p>
+                    <h2>2. Intégrez Mobile Money</h2>
+                    <p>La majorité des paiements à Madagascar se font par MVola, Orange Money ou Airtel Money. Votre site doit les accepter.</p>
+                    <h2>3. Livraison fiable</h2>
+                    <p>Partenariat avec des sociétés de livraison locales pour assurer la satisfaction client.</p>
+                    <p>Nous développons des boutiques en ligne complètes à partir de <strong>2,500€</strong>. Demandez votre devis au <strong>+261 37 94 125 93</strong>.</p>
                 `
             }
         };
 
-        // DONNÉES COMPLÈTES POUR CHAQUE SERVICE
+        // DONNÉES DES SERVICES
         const servicesData = {
             'marketing': {
                 title: 'Digital Marketing',
-                subtitle: 'Propulsez votre entreprise avec des stratégies marketing digitales qui convertissent',
-                heroImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&auto=format&fit=crop',
+                subtitle: 'Propulsez votre entreprise avec des stratégies qui convertissent',
                 details: [
-                    {
-                        icon: 'fa-bullseye',
-                        title: 'Facebook & Instagram Ads',
-                        description: 'Création et gestion de campagnes publicitaires ciblées sur Facebook et Instagram. Nous atteignons votre audience idéale avec des messages percutants qui génèrent des conversions.'
-                    },
-                    {
-                        icon: 'fa-search',
-                        title: 'Google Ads & SEO',
-                        description: 'Apparaissez en premier sur Google grâce à nos campagnes Google Ads optimisées et notre stratégie SEO complète. Attirez des clients qualifiés prêts à acheter.'
-                    },
-                    {
-                        icon: 'fa-pen-fancy',
-                        title: 'Content Marketing',
-                        description: 'Création de contenu de qualité qui attire, engage et convertit. Articles de blog, vidéos, infographies - nous créons du contenu qui parle à votre audience.'
-                    },
-                    {
-                        icon: 'fa-envelope-open-text',
-                        title: 'Email Marketing',
-                        description: 'Automatisez votre relation client avec des campagnes email personnalisées. Newsletters, séquences de bienvenue, relances - nous maximisons votre ROI.'
-                    }
-                ],
-                process: [
-                    { step: 1, title: 'Analyse', description: 'Étude approfondie de votre marché et de vos concurrents' },
-                    { step: 2, title: 'Stratégie', description: 'Élaboration d\'un plan d\'action sur mesure' },
-                    { step: 3, title: 'Exécution', description: 'Mise en place des campagnes et du contenu' },
-                    { step: 4, title: 'Optimisation', description: 'Suivi des performances et ajustements continus' }
+                    { icon: 'fa-bullseye', title: 'Facebook & Instagram Ads', description: 'Campagnes publicitaires ciblées pour atteindre votre audience idéale.' },
+                    { icon: 'fa-search', title: 'Google Ads & SEO', description: 'Apparaissez en premier sur Google et attirez des clients qualifiés.' },
+                    { icon: 'fa-pen-fancy', title: 'Content Marketing', description: 'Création de contenu de qualité qui attire, engage et convertit.' }
                 ],
                 pricing: [
-                    {
-                        name: 'Starter',
-                        price: '200€',
-                        period: '/mois',
-                        features: ['Gestion 1 réseau social', '4 publications/semaine', 'Rapport mensuel', 'Community management basique'],
-                        featured: false
-                    },
-                    {
-                        name: 'Business',
-                        price: '500€',
-                        period: '/mois',
-                        features: ['Gestion 3 réseaux sociaux', 'Publications quotidiennes', 'Campagnes publicitaires (budget pub non inclus)', 'Rapport hebdomadaire', 'Stratégie de contenu', 'Community management avancé'],
-                        featured: true,
-                        badge: 'Populaire'
-                    },
-                    {
-                        name: 'Enterprise',
-                        price: '1000€',
-                        period: '/mois',
-                        features: ['Gestion illimitée réseaux sociaux', 'Publications quotidiennes + stories', 'Campagnes publicitaires complètes', 'Rapport quotidien', 'Stratégie complète', 'Account manager dédié', 'Support prioritaire 24/7'],
-                        featured: false
-                    }
-                ],
-                faq: [
-                    {
-                        question: 'Combien de temps faut-il pour voir des résultats ?',
-                        answer: 'Les premiers résultats sont généralement visibles après 2-3 mois. Le marketing digital est un investissement à long terme qui nécessite de la constance et de l\'optimisation continue.'
-                    },
-                    {
-                        question: 'Quel budget publicitaire dois-je prévoir ?',
-                        answer: 'Nous recommandons un minimum de 300€/mois pour les publicités. Ce budget est directement versé aux plateformes (Facebook, Google) et n\'est pas inclus dans nos frais de gestion.'
-                    },
-                    {
-                        question: 'Est-ce que vous garantissez des résultats ?',
-                        answer: 'Nous ne pouvons pas garantir des résultats spécifiques car cela dépend de nombreux facteurs (marché, concurrence, budget). Cependant, nous garantissons un travail professionnel et une optimisation continue pour maximiser vos résultats.'
-                    },
-                    {
-                        question: 'Puis-je annuler à tout moment ?',
-                        answer: 'Oui, nos contrats sont sans engagement. Vous pouvez annuler à tout moment avec un préavis de 30 jours.'
-                    }
+                    { name: 'Starter', price: '200€', period: '/mois', features: ['Gestion 1 réseau social', '4 publications/semaine', 'Rapport mensuel'], featured: false },
+                    { name: 'Business', price: '500€', period: '/mois', features: ['Gestion 3 réseaux sociaux', 'Publications quotidiennes', 'Campagnes publicitaires', 'Rapport hebdomadaire'], featured: true, badge: 'Populaire' }
                 ]
             },
             'design': {
                 title: 'Graphic Design',
-                subtitle: 'Créez une identité visuelle unique qui marque les esprits et renforce votre marque',
-                heroImage: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=1200&auto=format&fit=crop',
+                subtitle: 'Créez une identité visuelle unique qui marque les esprits',
                 details: [
-                    {
-                        icon: 'fa-pen-nib',
-                        title: 'Logo & Identité Visuelle',
-                        description: 'Création de logos professionnels et mémorables qui reflètent l\'essence de votre marque. Nous développons une identité visuelle complète : charte graphique, typographies, palette de couleurs.'
-                    },
-                    {
-                        icon: 'fa-box',
-                        title: 'Packaging Design',
-                        description: 'Design d\'emballages attractifs qui se démarquent en rayon et donnent envie d\'acheter. Nous créons des packagings qui racontent votre histoire et séduisent vos clients.'
-                    },
-                    {
-                        icon: 'fa-print',
-                        title: 'Supports Print',
-                        description: 'Cartes de visite, flyers, brochures, affiches - tous vos supports de communication imprimés avec un design professionnel qui reflète la qualité de votre entreprise.'
-                    },
-                    {
-                        icon: 'fa-mobile-alt',
-                        title: 'UI/UX Design',
-                        description: 'Design d\'interfaces utilisateur modernes et intuitives pour vos applications web et mobiles. Nous créons des expériences utilisateur fluides et agréables.'
-                    }
-                ],
-                process: [
-                    { step: 1, title: 'Brief', description: 'Compréhension de vos besoins et de votre vision' },
-                    { step: 2, title: 'Recherche', description: 'Étude du marché et analyse de la concurrence' },
-                    { step: 3, title: 'Création', description: 'Développement de concepts et propositions' },
-                    { step: 4, title: 'Finalisation', description: 'Ajustements et livraison des fichiers finals' }
+                    { icon: 'fa-pen-nib', title: 'Logo & Identité Visuelle', description: 'Création de logos professionnels et mémorables avec charte graphique.' },
+                    { icon: 'fa-print', title: 'Supports Print', description: 'Cartes de visite, flyers, brochures avec un design professionnel.' },
+                    { icon: 'fa-mobile-alt', title: 'UI/UX Design', description: 'Design d\'interfaces utilisateur modernes pour vos applications.' }
                 ],
                 pricing: [
-                    {
-                        name: 'Logo Simple',
-                        price: '150€',
-                        period: '',
-                        features: ['3 propositions initiales', '2 révisions incluses', 'Fichiers source (AI, PSD)', 'Formats web (PNG, JPG, SVG)', 'Livraison en 5 jours'],
-                        featured: false
-                    },
-                    {
-                        name: 'Identité Complète',
-                        price: '500€',
-                        period: '',
-                        features: ['Logo professionnel', 'Charte graphique complète', 'Carte de visite', 'Papeterie (en-tête, facture)', 'Templates réseaux sociaux', '5 révisions incluses', 'Livraison en 10 jours'],
-                        featured: true,
-                        badge: 'Recommandé'
-                    },
-                    {
-                        name: 'Branding Premium',
-                        price: '1200€',
-                        period: '',
-                        features: ['Logo + déclinaisons', 'Charte graphique étendue', 'Tous supports print', 'Templates digitaux', 'Guide de marque complet', 'Révisions illimitées', 'Support 3 mois', 'Livraison en 15 jours'],
-                        featured: false
-                    }
-                ],
-                faq: [
-                    {
-                        question: 'Combien de propositions vais-je recevoir ?',
-                        answer: 'Nous proposons généralement 3 concepts initiaux différents. Vous choisissez ensuite celui qui vous plaît le plus et nous travaillons sur les révisions.'
-                    },
-                    {
-                        question: 'Quels fichiers vais-je recevoir ?',
-                        answer: 'Vous recevrez tous les fichiers sources modifiables (Adobe Illustrator, Photoshop) ainsi que les formats web optimisés (PNG, JPG, SVG, PDF).'
-                    },
-                    {
-                        question: 'Puis-je modifier le logo moi-même après ?',
-                        answer: 'Oui, vous recevrez les fichiers sources complets. Cependant, nous recommandons de nous confier les modifications importantes pour maintenir la cohérence de votre identité.'
-                    },
-                    {
-                        question: 'Que se passe-t-il si je n\'aime aucune proposition ?',
-                        answer: 'Nous travaillons ensemble pour comprendre ce qui ne convient pas et nous créons de nouvelles propositions. Votre satisfaction est notre priorité.'
-                    }
+                    { name: 'Logo Simple', price: '150€', period: '', features: ['3 propositions', '2 révisions', 'Fichiers source'], featured: false },
+                    { name: 'Identité Complète', price: '500€', period: '', features: ['Logo professionnel', 'Charte graphique', 'Carte de visite', 'Templates réseaux sociaux'], featured: true, badge: 'Recommandé' }
                 ]
             },
             'web': {
                 title: 'Web Development',
-                subtitle: 'Des sites web performants, modernes et optimisés qui convertissent vos visiteurs en clients',
-                heroImage: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&auto=format&fit=crop',
+                subtitle: 'Des sites web performants, modernes et optimisés',
                 details: [
-                    {
-                        icon: 'fa-laptop-code',
-                        title: 'Sites Vitrines',
-                        description: 'Sites web professionnels qui présentent votre entreprise et vos services. Design moderne, responsive et optimisé pour le référencement Google.'
-                    },
-                    {
-                        icon: 'fa-shopping-cart',
-                        title: 'E-commerce',
-                        description: 'Boutiques en ligne complètes avec gestion des produits, panier, paiement sécurisé (Mobile Money, carte bancaire), et tableau de bord admin.'
-                    },
-                    {
-                        icon: 'fa-mobile-alt',
-                        title: 'Applications Web',
-                        description: 'Développement d\'applications web sur mesure avec les dernières technologies (React, Node.js, Python). Solutions adaptées à vos besoins spécifiques.'
-                    },
-                    {
-                        icon: 'fa-chart-line',
-                        title: 'SEO & Performance',
-                        description: 'Optimisation pour les moteurs de recherche et performances maximales. Votre site rapide, bien référencé et visible sur Google.'
-                    }
-                ],
-                process: [
-                    { step: 1, title: 'Analyse', description: 'Étude de vos besoins et objectifs' },
-                    { step: 2, title: 'Design', description: 'Création des maquettes et prototypes' },
-                    { step: 3, title: 'Développement', description: 'Codage et intégration du site' },
-                    { step: 4, title: 'Lancement', description: 'Tests, optimisation et mise en ligne' }
+                    { icon: 'fa-laptop-code', title: 'Sites Vitrines', description: 'Sites web professionnels, responsive et optimisés pour le référencement.' },
+                    { icon: 'fa-shopping-cart', title: 'E-commerce', description: 'Boutiques en ligne avec paiement Mobile Money et gestion des stocks.' },
+                    { icon: 'fa-mobile-alt', title: 'Applications Web', description: 'Développement sur mesure avec React, Node.js, etc.' }
                 ],
                 pricing: [
-                    {
-                        name: 'Site Vitrine',
-                        price: '800€',
-                        period: '',
-                        features: ['Jusqu\'à 5 pages', 'Design responsive', 'Formulaire de contact', 'Optimisation SEO basique', 'Hébergement 1 an inclus', 'Livraison en 2 semaines'],
-                        featured: false
-                    },
-                    {
-                        name: 'Site Pro',
-                        price: '2000€',
-                        period: '',
-                        features: ['Jusqu\'à 15 pages', 'Design sur mesure', 'Blog intégré', 'Optimisation SEO avancée', 'Google Analytics', 'Formation utilisation', 'Hébergement 1 an inclus', 'Livraison en 4 semaines'],
-                        featured: true,
-                        badge: 'Populaire'
-                    },
-                    {
-                        name: 'E-commerce',
-                        price: '3500€',
-                        period: '',
-                        features: ['Boutique complète', 'Paiement en ligne', 'Gestion des stocks', 'Dashboard admin', 'Optimisation SEO', 'Formation complète', 'Support 3 mois', 'Hébergement 1 an inclus', 'Livraison en 6 semaines'],
-                        featured: false
-                    }
-                ],
-                faq: [
-                    {
-                        question: 'Combien de temps prend la création d\'un site ?',
-                        answer: 'Un site vitrine prend environ 2-3 semaines, un site professionnel 4-6 semaines, et un e-commerce 6-8 semaines. Ces délais peuvent varier selon la complexité du projet.'
-                    },
-                    {
-                        question: 'Est-ce que je pourrai modifier le site moi-même ?',
-                        answer: 'Oui ! Nous créons des sites avec des interfaces d\'administration simples. Nous vous formons également à l\'utilisation de votre site pour que vous soyez autonome.'
-                    },
-                    {
-                        question: 'L\'hébergement est-il inclus ?',
-                        answer: 'Oui, l\'hébergement est inclus pour la première année. Ensuite, le coût est d\'environ 100-200€/an selon les besoins.'
-                    },
-                    {
-                        question: 'Que se passe-t-il après la livraison ?',
-                        answer: 'Nous offrons un support gratuit pendant 1 à 3 mois selon le package. Ensuite, nous proposons des contrats de maintenance pour les mises à jour et le support continu.'
-                    }
+                    { name: 'Site Vitrine', price: '800€', period: '', features: ['Jusqu\'à 5 pages', 'Design responsive', 'Optimisation SEO', 'Hébergement 1 an'], featured: false },
+                    { name: 'Site Pro', price: '2000€', period: '', features: ['Jusqu\'à 15 pages', 'Design sur mesure', 'Blog intégré', 'SEO avancé'], featured: true, badge: 'Populaire' }
                 ]
             }
         };
 
-        // FONCTION POUR AFFICHER UNE PAGE SERVICE
-        function showServicePage(serviceKey) {
-            const service = servicesData[serviceKey];
-            if (!service) return;
-
-            document.getElementById('homePage').classList.remove('active');
-            
-            const servicePage = document.getElementById('servicePage');
-            servicePage.innerHTML = `
-                <button class="back-btn" onclick="showHome()">
-                    <i class="fas fa-arrow-left"></i> Retour
-                </button>
-                
-                <section class="service-page-hero">
-                    <div class="service-page-hero-content">
-                        <h1>${service.title}</h1>
-                        <p>${service.subtitle}</p>
-                    </div>
-                </section>
-
-                <section class="service-details">
-                    <div class="detail-section">
-                        <h2>Ce Que Nous Offrons</h2>
-                        <div class="detail-grid">
-                            ${service.details.map(detail => `
-                                <div class="detail-card">
-                                    <div class="detail-card-icon">
-                                        <i class="fas ${detail.icon}"></i>
-                                    </div>
-                                    <h3>${detail.title}</h3>
-                                    <p>${detail.description}</p>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-
-                    <div class="detail-section">
-                        <h2>Notre Processus</h2>
-                        <div class="process-steps">
-                            ${service.process.map(step => `
-                                <div class="process-step">
-                                    <div class="step-number">${step.step}</div>
-                                    <h3>${step.title}</h3>
-                                    <p>${step.description}</p>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-
-                    <div class="detail-section">
-                        <h2>Nos Tarifs</h2>
-                        <div class="pricing-grid">
-                            ${service.pricing.map(pricing => `
-                                <div class="pricing-card ${pricing.featured ? 'featured' : ''}">
-                                    ${pricing.badge ? `<div class="pricing-badge">${pricing.badge}</div>` : ''}
-                                    <h3>${pricing.name}</h3>
-                                    <div class="pricing-price">${pricing.price}<span>${pricing.period}</span></div>
-                                    <ul class="pricing-features">
-                                        ${pricing.features.map(feature => `
-                                            <li><i class="fas fa-check"></i> ${feature}</li>
-                                        `).join('')}
-                                    </ul>
-                                    <a href="https://wa.me/261379412593?text=Je%20suis%20intéressé%20par%20${encodeURIComponent(service.title + ' - ' + pricing.name)}" class="pricing-btn" target="_blank">Choisir ce package</a>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-
-                    <div class="detail-section">
-                        <h2>Questions Fréquentes</h2>
-                        <div class="faq-section">
-                            ${service.faq.map((faq, index) => `
-                                <div class="faq-item" onclick="toggleFaq(this)">
-                                    <div class="faq-question">
-                                        <span>${faq.question}</span>
-                                        <i class="fas fa-chevron-down"></i>
-                                    </div>
-                                    <div class="faq-answer">
-                                        <p>${faq.answer}</p>
-                                    </div>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-
-                    <div class="cta" style="margin-top: 4rem; border-radius: 24px;">
-                        <div class="cta-content">
-                            <h2>Prêt à Démarrer ?</h2>
-                            <p>Contactez-nous dès maintenant pour discuter de votre projet et obtenir un devis personnalisé.</p>
-                            <a href="https://wa.me/261379412593?text=Bonjour,%20je%20souhaite%20discuter%20de%20${encodeURIComponent(service.title)}" class="btn-white" target="_blank">
-                                <i class="fab fa-whatsapp"></i> Contactez-nous sur WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </section>
-            `;
-
-            servicePage.classList.add('active');
+        // FONCTIONS DE NAVIGATION
+        function showHome() {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById('homePage').classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // FONCTION POUR AFFICHER LE BLOG
+        function scrollToSection(sectionId) {
+            showHome();
+            setTimeout(() => {
+                const section = document.getElementById(sectionId);
+                if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
+
         function showBlog() {
-            document.getElementById('homePage').classList.remove('active');
-            document.getElementById('servicePage').classList.remove('active');
-            document.getElementById('articlePage').classList.remove('active');
-            
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
             const blogPage = document.getElementById('blogPage');
             const blogGrid = document.getElementById('allBlogPosts');
             
@@ -2469,12 +678,12 @@
                         <div class="blog-content">
                             <span class="blog-category">${article.category}</span>
                             <h3>${article.title}</h3>
-                            <p class="blog-excerpt">${article.content.substring(0, 150)}...</p>
+                            <p class="blog-excerpt">${article.content.substring(0, 120)}...</p>
                             <div class="blog-meta">
                                 <span><i class="far fa-calendar"></i> ${article.date}</span>
                                 <span><i class="far fa-clock"></i> ${article.readTime}</span>
                             </div>
-                            <span class="read-more">Vakio bebe kokoa <i class="fas fa-arrow-right"></i></span>
+                            <span class="read-more">Lire la suite <i class="fas fa-arrow-right"></i></span>
                         </div>
                     </article>
                 `;
@@ -2482,81 +691,104 @@
             
             blogPage.classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
-            
-            // Observer pour les animations
-            setTimeout(() => {
-                document.querySelectorAll('.fade-in').forEach((el) => {
-                    el.classList.add('visible');
-                });
-            }, 100);
+            setTimeout(initObserver, 100);
         }
 
-        // FONCTION POUR AFFICHER UN ARTICLE
         function showArticle(articleKey) {
             const article = blogArticles[articleKey];
             if (!article) return;
 
-            document.getElementById('homePage').classList.remove('active');
-            document.getElementById('blogPage').classList.remove('active');
-            document.getElementById('servicePage').classList.remove('active');
-            
-            const articlePage = document.getElementById('articlePage');
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
             const articleContent = document.getElementById('articleContent');
             
             articleContent.innerHTML = `
-                <div class="article-header">
-                    <span class="article-category">${article.category}</span>
-                    <h1 class="article-title">${article.title}</h1>
-                    <div class="article-meta">
+                <div class="article-header-bg" style="position:relative; padding: 6rem 2rem 4rem;">
+                    <span class="section-tag" style="background: rgba(255,255,255,0.2); color: white;">${article.category}</span>
+                    <h1 class="article-title" style="color:white; margin-top:1rem;">${article.title}</h1>
+                    <div class="blog-meta" style="color: rgba(255,255,255,0.8); justify-content: center; margin-top: 1rem;">
                         <span><i class="far fa-calendar"></i> ${article.date}</span>
                         <span><i class="far fa-clock"></i> ${article.readTime}</span>
                     </div>
-                </div>
-                <img src="${article.image}" alt="${article.title}" class="article-image">
-                <div class="article-content">
-                    ${article.content}
-                </div>
-                <div class="article-tags">
-                    ${article.tags.map(tag => `<a href="#" class="tag">${tag}</a>`).join('')}
-                </div>
-                <div class="cta" style="margin-top: 4rem; border-radius: 24px;">
-                    <div class="cta-content">
-                        <h2>Besoin d'aide pour votre projet digital ?</h2>
-                        <p>Nous sommes là pour vous accompagner. Contactez-nous sur WhatsApp pour en discuter.</p>
-                        <a href="https://wa.me/261379412593?text=Bonjour,%20j'ai%20lu%20votre%20article%20et%20j'aimerais%20en%20savoir%20plus" class="btn-white" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Discutons ensemble
-                        </a>
+               
+</div>
+                <div class="blog-article">
+                    <img src="${article.image}" alt="${article.title}" style="width:100%; border-radius:20px; margin-bottom:3rem; box-shadow: 0 20px 60px rgba(0,0,0,0.1);">
+                    <div class="article-content">${article.content}</div>
+                    <div class="article-tags">
+                        ${article.tags.map(tag => `<a href="#" class="tag">${tag}</a>`).join('')}
+                    </div>
+                    <div class="cta" style="margin-top: 4rem; border-radius: 24px;">
+                        <div class="cta-content">
+                            <h2>Besoin d'aide pour votre projet digital ?</h2>
+                            <p>Contactez-nous sur WhatsApp pour en discuter gratuitement.</p>
+                            <a href="https://wa.me/261379412593?text=Bonjour,%20j'ai%20lu%20votre%20article%20et%20j'aimerais%20en%20savoir%20plus" class="btn-white" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Discutons ensemble
+                            </a>
+                        </div>
                     </div>
                 </div>
             `;
             
-            articlePage.classList.add('active');
+            document.getElementById('articlePage').classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // FONCTION POUR REVENIR À L'ACCUEIL
-        function showHome() {
-            document.getElementById('servicePage').classList.remove('active');
-            document.getElementById('blogPage').classList.remove('active');
-            document.getElementById('articlePage').classList.remove('active');
-            document.getElementById('homePage').classList.add('active');
+        function showServicePage(serviceKey) {
+            const service = servicesData[serviceKey];
+            if (!service) return;
+
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            const servicePage = document.getElementById('servicePage');
+            
+            servicePage.innerHTML = `
+                <button class="back-btn" onclick="showHome()"><i class="fas fa-arrow-left"></i> Retour</button>
+                <section class="service-page-hero">
+                    <h1>${service.title}</h1>
+                    <p style="font-size: 1.25rem; opacity: 0.9;">${service.subtitle}</p>
+                </section>
+                <section class="service-details">
+                    <div class="detail-section">
+                        <h2 style="text-align:center; margin-bottom:2rem;">Ce Que Nous Offrons</h2>
+                        <div class="detail-grid">
+                            ${service.details.map(detail => `
+                                <div class="detail-card">
+                                    <div class="detail-card-icon"><i class="fas ${detail.icon}"></i></div>
+                                    <h3>${detail.title}</h3>
+                                    <p style="color:var(--gray);">${detail.description}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                    <div class="detail-section">
+                        <h2 style="text-align:center; margin-bottom:2rem;">Nos Tarifs</h2>
+                        <div class="pricing-grid">
+                            ${service.pricing.map(pricing => `
+                                <div class="pricing-card ${pricing.featured ? 'featured' : ''}">
+                                    ${pricing.badge ? `<div class="pricing-badge">${pricing.badge}</div>` : ''}
+                                    <h3>${pricing.name}</h3>
+                                    <div class="pricing-price">${pricing.price}<span>${pricing.period}</span></div>
+                                    <ul class="pricing-features">
+                                        ${pricing.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
+                                    </ul>
+                                    <a href="https://wa.me/261379412593?text=Je%20suis%20intéressé%20par%20${encodeURIComponent(service.title + ' - ' + pricing.name)}" class="pricing-btn" target="_blank">Choisir ce package</a>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                    <div class="cta" style="margin-top: 4rem; border-radius: 24px;">
+                        <div class="cta-content">
+                            <h2>Prêt à Démarrer ?</h2>
+                            <p>Contactez-nous dès maintenant pour un devis personnalisé.</p>
+                            <a href="https://wa.me/261379412593?text=Bonjour,%20je%20souhaite%20un%20devis%20pour%20${encodeURIComponent(service.title)}" class="btn-white" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Contactez-nous
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            `;
+            
+            servicePage.classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // FONCTION POUR SCROLLER VERS UNE SECTION
-        function scrollToSection(sectionId) {
-            showHome();
-            setTimeout(() => {
-                const section = document.getElementById(sectionId);
-                if (section) {
-                    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            }, 100);
-        }
-
-        // FONCTION POUR TOGGLER FAQ
-        function toggleFaq(element) {
-            element.classList.toggle('active');
         }
 
         // MOBILE MENU
@@ -2569,18 +801,13 @@
             <a href="#" onclick="scrollToSection('tarifs'); closeMobileMenu(); return false;">Tarifs</a>
             <a href="#" onclick="scrollToSection('portfolio'); closeMobileMenu(); return false;">Portfolio</a>
             <a href="#" onclick="showBlog(); closeMobileMenu(); return false;">Blog</a>
-            <a href="#" onclick="scrollToSection('contact'); closeMobileMenu(); return false;" class="nav-cta" style="display: inline-block; margin-top: 1rem;">Contactez-nous</a>
+            <a href="https://wa.me/261379412593" class="nav-cta" style="display: block; text-align: center; margin-top: 1rem;" target="_blank">Contactez-nous</a>
         `;
         document.body.appendChild(mobileNav);
 
         mobileMenuBtn.addEventListener('click', function() {
             mobileNav.classList.toggle('active');
-            const icon = this.querySelector('i');
-            if(mobileNav.classList.contains('active')) {
-                icon.className = 'fas fa-times';
-            } else {
-                icon.className = 'fas fa-bars';
-            }
+            this.querySelector('i').className = mobileNav.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars';
         });
 
         function closeMobileMenu() {
@@ -2588,38 +815,43 @@
             mobileMenuBtn.querySelector('i').className = 'fas fa-bars';
         }
 
-        // Animation au scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -100px 0px"
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Initialiser l'observateur
+        // ANIMATION AU SCROLL
         function initObserver() {
-            document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                });
+            }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
         }
+
+        // INITIALISATION
+        document.addEventListener('DOMContentLoaded', function() {
+            // Remplir l'aperçu du blog sur la page d'accueil (3 premiers articles)
+            const previewGrid = document.getElementById('blogPreviewGrid');
+            const keys = Object.keys(blogArticles).slice(0, 3);
+            previewGrid.innerHTML = keys.map(key => {
+                const article = blogArticles[key];
+                return `
+                    <article class="blog-card fade-in" onclick="showArticle('${key}')">
+                        <img src="${article.image}" alt="${article.title}" class="blog-image">
+                        <div class="blog-content">
+                            <span class="blog-category">${article.category}</span>
+                            <h3>${article.title}</h3>
+                            <p class="blog-excerpt">${article.content.substring(0, 100)}...</p>
+                            <span class="read-more">Lire la suite <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+            
+            initObserver();
+        });
 
         // Header scroll effect
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
-            } else {
-                header.style.boxShadow = '0 1px 3px rgba(0,0,0,0.1)';
-            }
-        });
-
-        // Initialisation
-        document.addEventListener('DOMContentLoaded', function() {
-            initObserver();
+            header.style.boxShadow = window.scrollY > 100 ? '0 4px 20px rgba(0,0,0,0.1)' : '0 1px 3px rgba(0,0,0,0.1)';
         });
     </script>
 </body>
