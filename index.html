@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rakoto Digital Solutions | Transformez Votre Business Digital</title>
+    <meta name="description" content="Agence digitale à Madagascar - Création de sites web, marketing digital, graphic design. Transformez votre business avec nos experts.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -15,6 +16,7 @@
             --light: #F8FAFC;
             --gray: #64748B;
             --gradient: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+            --whatsapp: #25D366;
         }
 
         * {
@@ -133,6 +135,67 @@
             font-size: 1.5rem;
             cursor: pointer;
             color: var(--dark);
+        }
+
+        /* WHATSAPP FLOATING BUTTON */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--whatsapp);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-tooltip {
+            position: absolute;
+            right: 70px;
+            background: white;
+            color: var(--dark);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .whatsapp-float:hover .whatsapp-tooltip {
+            opacity: 1;
+            visibility: visible;
+            right: 75px;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
         }
 
         /* PAGE CONTAINER */
@@ -316,6 +379,129 @@
             color: var(--gray);
             font-size: 1rem;
             margin-top: 0.5rem;
+        }
+
+        /* PRICING SECTION - NEW */
+        .pricing-section {
+            padding: 8rem 2rem;
+            background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
+        }
+
+        .pricing-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 3rem 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            text-align: center;
+            position: relative;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .pricing-card.featured {
+            background: var(--gradient);
+            color: white;
+            transform: scale(1.05);
+            border-color: transparent;
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--secondary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-price span {
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .pricing-card.featured .pricing-features li {
+            border-bottom-color: rgba(255,255,255,0.2);
+        }
+
+        .pricing-features i {
+            color: #10B981;
+        }
+
+        .pricing-card.featured .pricing-features i {
+            color: white;
+        }
+
+        .pricing-btn {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .pricing-card.featured .pricing-btn {
+            background: white;
+            color: var(--primary);
+        }
+
+        .pricing-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
         /* SERVICES SECTION */
@@ -578,6 +764,106 @@
 
         .portfolio-overlay p {
             color: rgba(255,255,255,0.9);
+        }
+
+        /* BLOG SECTION - NEW */
+        .blog-section {
+            padding: 8rem 2rem;
+            background: white;
+        }
+
+        .blog-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 2rem;
+        }
+
+        .blog-category {
+            display: inline-block;
+            background: rgba(79, 70, 229, 0.1);
+            color: var(--primary);
+            padding: 0.25rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .blog-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            line-height: 1.4;
+        }
+
+        .blog-excerpt {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            font-size: 0.875rem;
+            color: var(--gray);
+        }
+
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .blog-meta i {
+            color: var(--primary);
+        }
+
+        .read-more {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            transition: gap 0.3s;
+        }
+
+        .read-more:hover {
+            gap: 1rem;
         }
 
         /* TESTIMONIALS */
@@ -961,116 +1247,6 @@
             font-size: 0.95rem;
         }
 
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-
-        .pricing-card {
-            background: white;
-            padding: 3rem 2.5rem;
-            border-radius: 24px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            text-align: center;
-            position: relative;
-            transition: all 0.3s;
-            border: 2px solid transparent;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary);
-        }
-
-        .pricing-card.featured {
-            background: var(--gradient);
-            color: white;
-            transform: scale(1.05);
-        }
-
-        .pricing-card.featured:hover {
-            transform: scale(1.05) translateY(-10px);
-        }
-
-        .pricing-badge {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--secondary);
-            color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.875rem;
-            font-weight: 600;
-        }
-
-        .pricing-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .pricing-price {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .pricing-price span {
-            font-size: 1rem;
-            font-weight: 400;
-        }
-
-        .pricing-features {
-            list-style: none;
-            margin: 2rem 0;
-            text-align: left;
-        }
-
-        .pricing-features li {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .pricing-card.featured .pricing-features li {
-            border-bottom-color: rgba(255,255,255,0.2);
-        }
-
-        .pricing-features i {
-            color: #10B981;
-        }
-
-        .pricing-card.featured .pricing-features i {
-            color: white;
-        }
-
-        .pricing-btn {
-            display: inline-block;
-            background: var(--gradient);
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            width: 100%;
-        }
-
-        .pricing-card.featured .pricing-btn {
-            background: white;
-            color: var(--primary);
-        }
-
-        .pricing-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
         .faq-section {
             max-width: 800px;
             margin: 0 auto;
@@ -1124,6 +1300,104 @@
             line-height: 1.8;
         }
 
+        /* BLOG ARTICLE PAGE */
+        .blog-article {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .article-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .article-category {
+            display: inline-block;
+            background: rgba(79, 70, 229, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .article-title {
+            font-size: 3rem;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            color: var(--gray);
+            font-size: 1rem;
+        }
+
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-image {
+            width: 100%;
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .article-content {
+            font-size: 1.125rem;
+            line-height: 1.9;
+            color: var(--dark);
+        }
+
+        .article-content h2 {
+            font-size: 2rem;
+            margin: 2.5rem 0 1rem;
+            color: var(--dark);
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content ul {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.75rem;
+        }
+
+        .article-tags {
+            display: flex;
+            gap: 1rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #E2E8F0;
+        }
+
+        .tag {
+            background: var(--light);
+            color: var(--gray);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .tag:hover {
+            background: var(--primary);
+            color: white;
+        }
+
         /* MOBILE MENU */
         .mobile-nav {
             display: none;
@@ -1164,6 +1438,7 @@
             .services-grid,
             .portfolio-grid,
             .testimonials-grid,
+            .blog-grid,
             .detail-grid,
             .pricing-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -1193,6 +1468,10 @@
             .process-step::after {
                 display: none;
             }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
         }
 
         @media (max-width: 768px) {
@@ -1207,6 +1486,7 @@
             .services-grid,
             .portfolio-grid,
             .testimonials-grid,
+            .blog-grid,
             .detail-grid,
             .pricing-grid,
             .process-steps {
@@ -1218,7 +1498,8 @@
             }
 
             .hero-content h1,
-            .service-page-hero h1 {
+            .service-page-hero h1,
+            .article-title {
                 font-size: 2rem;
             }
 
@@ -1231,19 +1512,23 @@
                 font-size: 2rem;
             }
 
-            .pricing-card.featured {
-                transform: scale(1);
-            }
-
-            .pricing-card.featured:hover {
-                transform: translateY(-10px);
-            }
-
             .back-btn {
                 top: 1rem;
                 left: 1rem;
                 padding: 0.5rem 1rem;
                 font-size: 0.875rem;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .whatsapp-tooltip {
+                display: none;
             }
         }
 
@@ -1268,13 +1553,20 @@
             <nav>
                 <a href="#" onclick="showHome(); return false;">Accueil</a>
                 <a href="#" onclick="scrollToSection('services'); return false;">Services</a>
+                <a href="#" onclick="scrollToSection('tarifs'); return false;">Tarifs</a>
                 <a href="#" onclick="scrollToSection('portfolio'); return false;">Portfolio</a>
-                <a href="#" onclick="scrollToSection('temoignages'); return false;">Témoignages</a>
+                <a href="#" onclick="showBlog(); return false;">Blog</a>
                 <a href="#" onclick="scrollToSection('contact'); return false;" class="nav-cta">Contactez-nous</a>
             </nav>
             <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
         </div>
     </header>
+
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <a href="https://wa.me/261340000000?text=Bonjour%20Rakoto%20Digital,%20je%20suis%20intéressé%20par%20vos%20services" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Discutons sur WhatsApp!</span>
+    </a>
 
     <!-- PAGE ACCUEIL -->
     <div id="homePage" class="page active">
@@ -1325,6 +1617,58 @@
                 <div class="stat-item">
                     <span class="stat-number">98%</span>
                     <p class="stat-label">Taux de Satisfaction</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICING SECTION - NEW -->
+        <section class="pricing-section" id="tarifs">
+            <div class="pricing-container">
+                <div class="section-header fade-in">
+                    <span class="section-tag">Nos Tarifs</span>
+                    <h2 class="section-title">Des Prix Transparents et Compétitifs</h2>
+                    <p class="section-subtitle">Choisissez le package qui correspond à vos besoins et à votre budget</p>
+                </div>
+                <div class="pricing-grid">
+                    <div class="pricing-card fade-in">
+                        <h3><i class="fas fa-palette" style="margin-right: 0.5rem;"></i>Creation Logo</h3>
+                        <div class="pricing-price">150€</div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> 3 propositions initiales</li>
+                            <li><i class="fas fa-check"></i> 2 révisions incluses</li>
+                            <li><i class="fas fa-check"></i> Fichiers source (AI, PSD)</li>
+                            <li><i class="fas fa-check"></i> Formats web (PNG, JPG, SVG)</li>
+                            <li><i class="fas fa-check"></i> Livraison en 5 jours</li>
+                        </ul>
+                        <a href="https://wa.me/261340000000?text=Je%20suis%20intéressé%20par%20le%20pack%20Logo%20à%20150€" class="pricing-btn" target="_blank">Commander</a>
+                    </div>
+                    <div class="pricing-card featured fade-in">
+                        <div class="pricing-badge">Populaire</div>
+                        <h3><i class="fas fa-laptop" style="margin-right: 0.5rem;"></i>Site Vitrine</h3>
+                        <div class="pricing-price">800€</div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> Jusqu'à 5 pages</li>
+                            <li><i class="fas fa-check"></i> Design responsive</li>
+                            <li><i class="fas fa-check"></i> Formulaire de contact</li>
+                            <li><i class="fas fa-check"></i> Optimisation SEO basique</li>
+                            <li><i class="fas fa-check"></i> Hébergement 1 an inclus</li>
+                            <li><i class="fas fa-check"></i> Livraison en 2 semaines</li>
+                        </ul>
+                        <a href="https://wa.me/261340000000?text=Je%20suis%20intéressé%20par%20le%20pack%20Site%20Vitrine%20à%20800€" class="pricing-btn" target="_blank">Commander</a>
+                    </div>
+                    <div class="pricing-card fade-in">
+                        <h3><i class="fas fa-bullhorn" style="margin-right: 0.5rem;"></i>Marketing Digital</h3>
+                        <div class="pricing-price">200€<span>/mois</span></div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> Gestion 1 réseau social</li>
+                            <li><i class="fas fa-check"></i> 4 publications/semaine</li>
+                            <li><i class="fas fa-check"></i> Rapport mensuel</li>
+                            <li><i class="fas fa-check"></i> Community management</li>
+                            <li><i class="fas fa-check"></i> Stratégie de contenu</li>
+                            <li><i class="fas fa-check"></i> Sans engagement</li>
+                        </ul>
+                        <a href="https://wa.me/261340000000?text=Je%20suis%20intéressé%20par%20le%20pack%20Marketing%20à%20200€/mois" class="pricing-btn" target="_blank">S'abonner</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1439,6 +1783,58 @@
             </div>
         </section>
 
+        <!-- BLOG SECTION - NEW -->
+        <section class="blog-section" id="blog">
+            <div class="blog-container">
+                <div class="section-header fade-in">
+                    <span class="section-tag">Notre Blog</span>
+                    <h2 class="section-title">Conseils & Actualités Digitales</h2>
+                    <p class="section-subtitle">Restez informé des dernières tendances et astuces pour développer votre business en ligne</p>
+                </div>
+                <div class="blog-grid">
+                    <article class="blog-card fade-in" onclick="showArticle('facebook-ads')">
+                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&auto=format&fit=crop" alt="Facebook Ads" class="blog-image">
+                        <div class="blog-content">
+                            <span class="blog-category">Marketing</span>
+                            <h3>Ahoana no hampitomboana ny varotry ny orinasa amin'ny Facebook Ads eto Madagasikara?</h3>
+                            <p class="blog-excerpt">Dikany torolàlana feno momba ny fampiasana Facebook Ads hampitomboana ny varotrao eto Madagasikara...</p>
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> 5 Juin 2026</span>
+                                <span><i class="far fa-clock"></i> 8 min</span>
+                            </div>
+                            <span class="read-more">Vakio bebe kokoa <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </article>
+                    <article class="blog-card fade-in" onclick="showArticle('seo-basics')">
+                        <img src="https://images.unsplash.com/photo-1432888622747-4eb9a8f2c293?w=600&auto=format&fit=crop" alt="SEO" class="blog-image">
+                        <div class="blog-content">
+                            <span class="blog-category">SEO</span>
+                            <h3>SEO: Ahoana no hisehoana voalohany amin'ny Google?</h3>
+                            <p class="blog-excerpt">Torolàlana feno momba ny SEO (Search Engine Optimization) hahitana ny site-nao voalohany amin'ny Google...</p>
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> 2 Juin 2026</span>
+                                <span><i class="far fa-clock"></i> 10 min</span>
+                            </div>
+                            <span class="read-more">Vakio bebe kokoa <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </article>
+                    <article class="blog-card fade-in" onclick="showArticle('website-importance')">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&auto=format&fit=crop" alt="Website" class="blog-image">
+                        <div class="blog-content">
+                            <span class="blog-category">Web</span>
+                            <h3=Nahoana ilaina ny manana site web ho an'ny orinasanao?</h3>
+                            <p class="blog-excerpt">Hitadiavanao eto ny antony 5 lehibe mahatonga ny site web ho ilaina amin'ny fampandrosoana ny orinasanao...</p>
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> 28 Mai 2026</span>
+                                <span><i class="far fa-clock"></i> 6 min</span>
+                            </div>
+                            <span class="read-more">Vakio bebe kokoa <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <!-- TESTIMONIALS -->
         <section class="testimonials" id="temoignages">
             <div class="testimonials-container">
@@ -1508,11 +1904,40 @@
             <div class="cta-content">
                 <h2>Prêt à Lancer Votre Projet ?</h2>
                 <p>Discutons ensemble de vos besoins et trouvons la solution digitale parfaite pour votre entreprise.</p>
-                <a href="mailto:christian.rakoto.pro@gmail.com" class="btn-white">
-                    <i class="fas fa-paper-plane"></i> Contactez-nous Maintenant
+                <a href="https://wa.me/261340000000?text=Bonjour%20Rakoto%20Digital,%20je%20souhaite%20discuter%20d'un%20projet" class="btn-white" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Contactez-nous sur WhatsApp
                 </a>
             </div>
         </section>
+    </div>
+
+    <!-- BLOG PAGE -->
+    <div id="blogPage" class="page">
+        <button class="back-btn" onclick="showHome()">
+            <i class="fas fa-arrow-left"></i> Retour à l'accueil
+        </button>
+        <section class="blog-section" style="margin-top: 0; padding-top: 6rem;">
+            <div class="blog-container">
+                <div class="section-header">
+                    <span class="section-tag">Notre Blog</span>
+                    <h2 class="section-title">Tous nos articles</h2>
+                    <p class="section-subtitle">Conseils, astuces et actualités sur le digital</p>
+                </div>
+                <div class="blog-grid" id="allBlogPosts">
+                    <!-- Blog posts will be loaded here -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ARTICLE PAGE -->
+    <div id="articlePage" class="page">
+        <button class="back-btn" onclick="showBlog()">
+            <i class="fas fa-arrow-left"></i> Retour au blog
+        </button>
+        <article class="blog-article" id="articleContent">
+            <!-- Article content will be loaded here -->
+        </article>
     </div>
 
     <!-- PAGES SERVICES (Dynamiquement générées par JavaScript) -->
@@ -1546,7 +1971,7 @@
                     <li><a href="#" onclick="showHome(); return false;">À Propos</a></li>
                     <li><a href="#" onclick="scrollToSection('portfolio'); return false;">Portfolio</a></li>
                     <li><a href="#">Carrières</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="#" onclick="showBlog(); return false;">Blog</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -1564,6 +1989,139 @@
     </footer>
 
     <script>
+        // BLOG ARTICLES DATA
+        const blogArticles = {
+            'facebook-ads': {
+                category: 'Marketing',
+                title: 'Ahoana no hampitomboana ny varotry ny orinasa amin\'ny Facebook Ads eto Madagasikara?',
+                date: '5 Juin 2026',
+                readTime: '8 min',
+                image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1200&auto=format&fit=crop',
+                tags: ['Facebook Ads', 'Marketing Digital', 'Madagascar', 'Publicité'],
+                content: `
+                    <p>Ny Facebook Ads dia iray amin'ireo fomba mahomby indrindra hampitomboana ny varotra amin'ny internet eto Madagasikara. Ity torolàlana ity dia hanampy anao hahatakatra ny fomba fampiasana azy amin'ny fomba mahomby.</p>
+                    
+                    <h2>1. Fantaro tsara ny mpanjifanao (Targeting)</h2>
+                    <p>Voalohany indrindra, dia tokony ho fantatrao tsara ny olona tianao ho tonga mpanjifa. Eto Madagasikara, misy safidy maro azo atao:</p>
+                    <ul>
+                        <li><strong>Toerana:</strong> Antananarivo, Toamasina, Antsiranana, sns</li>
+                        <li><strong>Taona:</strong> 18-24, 25-34, 35-44, sns</li>
+                        <li><strong>Zavatra tiany:</strong> Shopping, Technology, Food, sns</li>
+                    </ul>
+
+                    <h2>2. Mifidiana ny karazana campaign mety</h2>
+                    <p>Misy karazana campaign maro azo atao amin'ny Facebook Ads:</p>
+                    <ul>
+                        <li><strong>Traffic:</strong> Raha te hampitombo ny mpitsidika ny site-nao ianao</li>
+                        <li><strong>Conversions:</strong> Raha te hahazo varotra na filazana (leads) ianao</li>
+                        <li><strong>Awareness:</strong> Raha te hahafantarana ny marikao (brand) ianao</li>
+                    </ul>
+
+                    <h2>3. Mamorona sary na horonantsary mahaliana</h2>
+                    <p>Ny sary na horonantsary dia tena ilaina. Tokony:</p>
+                    <ul>
+                        <li>Mazava tsara sy avo kalitao</li>
+                        <li>Mampiseho ny vokatra na serivisy</li>
+                        <li>Manana soratra fohy sy mazava</li>
+                        <li>Manana bokotra (Call-to-Action) mazava</li>
+                    </ul>
+
+                    <h2>4. Manomboka amin'ny budget kely</h2>
+                    <p>Aza manomboka amin'ny budget lehibe. Manomboka amin'ny 5-10€ isan'andro ianao dia jereo ny valiny. Raha mahomby dia ampitomboy ny budget.</p>
+
+                    <h2>5. Diniho sy ovaina (Test & Optimize)</h2>
+                    <p>Jereo matetika ny statistique (Facebook Pixel) ary ovaina ny zavatra tsy mandeha. Izany no fomba hahafantaranao ny mety indrindra ho an'ny orinasanao.</p>
+
+                    <p><strong>Famaranana:</strong> Ny Facebook Ads dia fitaovana mahery vaika raha ampiasaina araka ny tokony ho iziny. Aza kivy raha tsy mandeha haingana ny vokatra - mila fotoana sy fitsapana izany.</p>
+                `
+            },
+            'seo-basics': {
+                category: 'SEO',
+                title: 'SEO: Ahoana no hisehoana voalohany amin\'ny Google?',
+                date: '2 Juin 2026',
+                readTime: '10 min',
+                image: 'https://images.unsplash.com/photo-1432888622747-4eb9a8f2c293?w=1200&auto=format&fit=crop',
+                tags: ['SEO', 'Google', 'Référencement', 'Website'],
+                content: `
+                    <p>Ny SEO (Search Engine Optimization) dia ny fomba hahatonga ny site-nao hiseho amin'ny laharana voalohany amin'ny Google. Ity no fomba tsara indrindra hahazoana mpitsidika maimaim-poana.</p>
+                    
+                    <h2>Inona no SEO?</h2>
+                    <p>Ny SEO dia fitambaran'ny fomba sy teknika hampitomboana ny kalitaon'ny site-nao mba ho tian'ny Google sy hasehony voalohany rehefa mitady zavatra ny olona.</p>
+
+                    <h2>1. Fikarohana teny (Keyword Research)</h2>
+                    <p>Teny inona no tadiavin'ny olona rehefa mitady ny vokatra na serivisy omenao? Ohatra:</p>
+                    <ul>
+                        <li>"Création site web Madagascar"</li>
+                        <li>"Agence digitale Antananarivo"</li>
+                        <li>"Marketing digital Madagascar"</li>
+                    </ul>
+
+                    <h2>2. Optimization amin'ny page (On-page SEO)</h2>
+                    <p>Tokony hatao amin'ny page tsirairay ny:</p>
+                    <ul>
+                        <li><strong>Title tag:</strong> Soratra miseho amin'ny Google (50-60 caractères)</li>
+                        <li><strong>Meta description:</strong> Famaritana fohy (150-160 caractères)</li>
+                        <li><strong>H1, H2, H3:</strong> Lohateny mazava sy misy ny teny tadiavina</li>
+                        <li><strong>Content:</strong> Lahatsoratra lava sy manan-danja (min 1000 mots)</li>
+                    </ul>
+
+                    <h2>3. Kalitaon'ny votoaty (Content Quality)</h2>
+                    <p>Ny Google dia tiany ny votoaty:</p>
+                    <ul>
+                        <li>Mahasoa sy manan-danja</li>
+                        <li>Vaovao sy farany</li>
+                        <li>Mora vakiana sy voalamina tsara</li>
+                        <li>Misy sary sy horonantsary</li>
+                    </ul>
+
+                    <h2>4. Hafainganam-pandeha (Page Speed)</h2>
+                    <p>Tokony haingana ny site-nao. Ny olona dia tsy mahazo fanahy raha miandry. Ampidiro:</p>
+                    <ul>
+                        <li>Sary voaoptimize (compressée)</li>
+                        <li>Hébergement tsara</li>
+                        <li>Code madio</li>
+                    </ul>
+
+                    <h2>5. Mobile Friendly</h2>
+                    <p>Eto Madagasikara, maro ny mampiasa téléphone. Tokony ho tsara amin'ny mobile ny site-nao (responsive design).</p>
+
+                    <h2>6. Backlinks</h2>
+                    <p>Ny backlinks dia rohy avy amin'ny site hafa mankany amin'ny site-nao. Maro ny backlinks avy amin'ny site malaza = tsara ho an'ny SEO.</p>
+
+                    <p><strong>Famaranana:</strong> Ny SEO dia mila fotoana (3-6 volana vao hita ny vokatra) fa tena mahomby amin'ny lafiny vola satria maimaim-poana ny mpitsidika azo.</p>
+                `
+            },
+            'website-importance': {
+                category: 'Web',
+                title: 'Nahoana ilaina ny manana site web ho an\'ny orinasanao?',
+                date: '28 Mai 2026',
+                readTime: '6 min',
+                image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200&auto=format&fit=crop',
+                tags: ['Website', 'Business', 'Digital', 'Entreprise'],
+                content: `
+                    <p>Ankehitriny, ny site web dia tsy safidy intsony fa ilaina ho an'ny orinasa rehetra, na kely na lehibe. Indreto ny antony 5 mahatonga azy ho tena ilaina.</p>
+                    
+                    <h2>1. Hisy amin'ny 24/7 ianao</h2>
+                    <p>Ny site web dia miteny ho an'ny mpanjifanao na dia matory aza ianao. Mety hisy olona mitady ny vokatrao amin'ny 10pm na 3am - ny site-nao dia ho eo hamaly ny fanontaniany.</p>
+
+                    <h2>2. Hahatonga ny orinasanao ho azo antoka (Crédibilité)</h2>
+                    <p>Ankehitriny, ny olona dia manao recherche Google alohan'ny hividianana. Raha tsy manana site web ianao, dia mety ho very ny mpanjifa satria hisy ahiahiny ny momba ny orinasanao.</p>
+
+                    <h2>3. Hisy mpitsidika avy amin'ny Google (Visibilité)</h2>
+                    <p>Ny Google dia manome mpitsidika mihoatra ny 5 miliara isan'andro. Raha manana site web ianao dia mety hisy olona maro hitady anao amin'ny Google.</p>
+
+                    <h2>4. Mora kokoa noho ny dokam-barotra (Marketing)</h2>
+                    <p>Ny site web dia fomba marketing mora kokoa noho ny radio, TV, na gazety. Rehefa vita izy dia miasa ho anao mandritra ny taona maro.</p>
+
+                    <h2>5. Hahafahanao mampiseho ny vokatrao (Showcase)</h2>
+                    <p>Afaka mampiseho ny vokatrao, serivisinao, portfolio, sy ny mpanjifa efa nankasitraka anao ianao. Izany dia manampy amin'ny fampitomboana ny varotra.</p>
+
+                    <h2>Famaranana</h2>
+                    <p>Ny site web dia fitaovana tena ilaina amin'ny fampandrosoana ny orinasa ankehitriny. Aza miandry ela - manomboka ankehitriny!</p>
+                `
+            }
+        };
+
         // DONNÉES COMPLÈTES POUR CHAQUE SERVICE
         const servicesData = {
             'marketing': {
@@ -1798,10 +2356,8 @@
             const service = servicesData[serviceKey];
             if (!service) return;
 
-            // Cacher la page d'accueil
             document.getElementById('homePage').classList.remove('active');
             
-            // Générer le contenu de la page service
             const servicePage = document.getElementById('servicePage');
             servicePage.innerHTML = `
                 <button class="back-btn" onclick="showHome()">
@@ -1857,7 +2413,7 @@
                                             <li><i class="fas fa-check"></i> ${feature}</li>
                                         `).join('')}
                                     </ul>
-                                    <a href="mailto:christian.rakoto.pro@gmail.com?subject=Demande de devis - ${service.title} - ${pricing.name}" class="pricing-btn">Choisir ce package</a>
+                                    <a href="https://wa.me/261379412593?text=Je%20suis%20intéressé%20par%20${encodeURIComponent(service.title + ' - ' + pricing.name)}" class="pricing-btn" target="_blank">Choisir ce package</a>
                                 </div>
                             `).join('')}
                         </div>
@@ -1884,24 +2440,105 @@
                         <div class="cta-content">
                             <h2>Prêt à Démarrer ?</h2>
                             <p>Contactez-nous dès maintenant pour discuter de votre projet et obtenir un devis personnalisé.</p>
-                            <a href="mailto:christian.rakoto.pro@gmail.com?subject=Demande de devis - ${service.title}" class="btn-white">
-                                <i class="fas fa-paper-plane"></i> Contactez-nous
+                            <a href="https://wa.me/261379412593?text=Bonjour,%20je%20souhaite%20discuter%20de%20${encodeURIComponent(service.title)}" class="btn-white" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Contactez-nous sur WhatsApp
                             </a>
                         </div>
                     </div>
                 </section>
             `;
 
-            // Afficher la page service
             servicePage.classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // FONCTION POUR AFFICHER LE BLOG
+        function showBlog() {
+            document.getElementById('homePage').classList.remove('active');
+            document.getElementById('servicePage').classList.remove('active');
+            document.getElementById('articlePage').classList.remove('active');
             
-            // Scroll en haut
+            const blogPage = document.getElementById('blogPage');
+            const blogGrid = document.getElementById('allBlogPosts');
+            
+            blogGrid.innerHTML = Object.keys(blogArticles).map(key => {
+                const article = blogArticles[key];
+                return `
+                    <article class="blog-card fade-in" onclick="showArticle('${key}')">
+                        <img src="${article.image}" alt="${article.title}" class="blog-image">
+                        <div class="blog-content">
+                            <span class="blog-category">${article.category}</span>
+                            <h3>${article.title}</h3>
+                            <p class="blog-excerpt">${article.content.substring(0, 150)}...</p>
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> ${article.date}</span>
+                                <span><i class="far fa-clock"></i> ${article.readTime}</span>
+                            </div>
+                            <span class="read-more">Vakio bebe kokoa <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+            
+            blogPage.classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Observer pour les animations
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in').forEach((el) => {
+                    el.classList.add('visible');
+                });
+            }, 100);
+        }
+
+        // FONCTION POUR AFFICHER UN ARTICLE
+        function showArticle(articleKey) {
+            const article = blogArticles[articleKey];
+            if (!article) return;
+
+            document.getElementById('homePage').classList.remove('active');
+            document.getElementById('blogPage').classList.remove('active');
+            document.getElementById('servicePage').classList.remove('active');
+            
+            const articlePage = document.getElementById('articlePage');
+            const articleContent = document.getElementById('articleContent');
+            
+            articleContent.innerHTML = `
+                <div class="article-header">
+                    <span class="article-category">${article.category}</span>
+                    <h1 class="article-title">${article.title}</h1>
+                    <div class="article-meta">
+                        <span><i class="far fa-calendar"></i> ${article.date}</span>
+                        <span><i class="far fa-clock"></i> ${article.readTime}</span>
+                    </div>
+                </div>
+                <img src="${article.image}" alt="${article.title}" class="article-image">
+                <div class="article-content">
+                    ${article.content}
+                </div>
+                <div class="article-tags">
+                    ${article.tags.map(tag => `<a href="#" class="tag">${tag}</a>`).join('')}
+                </div>
+                <div class="cta" style="margin-top: 4rem; border-radius: 24px;">
+                    <div class="cta-content">
+                        <h2>Besoin d'aide pour votre projet digital ?</h2>
+                        <p>Nous sommes là pour vous accompagner. Contactez-nous sur WhatsApp pour en discuter.</p>
+                        <a href="https://wa.me/261379412593?text=Bonjour,%20j'ai%20lu%20votre%20article%20et%20j'aimerais%20en%20savoir%20plus" class="btn-white" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Discutons ensemble
+                        </a>
+                    </div>
+                </div>
+            `;
+            
+            articlePage.classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         // FONCTION POUR REVENIR À L'ACCUEIL
         function showHome() {
             document.getElementById('servicePage').classList.remove('active');
+            document.getElementById('blogPage').classList.remove('active');
+            document.getElementById('articlePage').classList.remove('active');
             document.getElementById('homePage').classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
@@ -1929,8 +2566,9 @@
         mobileNav.innerHTML = `
             <a href="#" onclick="showHome(); closeMobileMenu(); return false;">Accueil</a>
             <a href="#" onclick="scrollToSection('services'); closeMobileMenu(); return false;">Services</a>
+            <a href="#" onclick="scrollToSection('tarifs'); closeMobileMenu(); return false;">Tarifs</a>
             <a href="#" onclick="scrollToSection('portfolio'); closeMobileMenu(); return false;">Portfolio</a>
-            <a href="#" onclick="scrollToSection('temoignages'); closeMobileMenu(); return false;">Témoignages</a>
+            <a href="#" onclick="showBlog(); closeMobileMenu(); return false;">Blog</a>
             <a href="#" onclick="scrollToSection('contact'); closeMobileMenu(); return false;" class="nav-cta" style="display: inline-block; margin-top: 1rem;">Contactez-nous</a>
         `;
         document.body.appendChild(mobileNav);
@@ -1964,7 +2602,10 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+        // Initialiser l'observateur
+        function initObserver() {
+            document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+        }
 
         // Header scroll effect
         window.addEventListener('scroll', () => {
@@ -1974,6 +2615,11 @@
             } else {
                 header.style.boxShadow = '0 1px 3px rgba(0,0,0,0.1)';
             }
+        });
+
+        // Initialisation
+        document.addEventListener('DOMContentLoaded', function() {
+            initObserver();
         });
     </script>
 </body>
