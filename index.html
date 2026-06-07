@@ -846,6 +846,420 @@
     </style>
 </head>
 <body>
+    <!-- MODALE HO AN'NY SERVICES -->
+<div id="serviceModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div id="service-modal-body"></div>
+    </div>
+</div>
+
+<!-- MODALE HO AN'NY PORTFOLIO -->
+<div id="portfolioModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div id="portfolio-modal-body"></div>
+    </div>
+</div>
+
+<style>
+    /* MODAL STYLES */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.7);
+        backdrop-filter: blur(5px);
+        animation: fadeIn 0.3s;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    .modal-content {
+        background-color: white;
+        margin: 5% auto;
+        padding: 3rem;
+        border-radius: 24px;
+        width: 90%;
+        max-width: 800px;
+        position: relative;
+        animation: slideDown 0.4s;
+        max-height: 85vh;
+        overflow-y: auto;
+    }
+
+    @keyframes slideDown {
+        from {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .close-modal {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: var(--gray);
+        font-size: 2.5rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: color 0.3s;
+        z-index: 10;
+    }
+
+    .close-modal:hover {
+        color: var(--primary);
+    }
+
+    .modal-content h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--dark);
+    }
+
+    .modal-content img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 16px;
+        margin-bottom: 2rem;
+    }
+
+    .modal-content p {
+        color: var(--gray);
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    .modal-content ul {
+        margin: 1.5rem 0;
+        padding-left: 1.5rem;
+    }
+
+    .modal-content ul li {
+        color: var(--gray);
+        margin-bottom: 0.75rem;
+        line-height: 1.6;
+    }
+
+    .modal-cta {
+        display: inline-block;
+        background: var(--gradient);
+        color: white;
+        padding: 1rem 2.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        margin-top: 1.5rem;
+        transition: transform 0.3s;
+    }
+
+    .modal-cta:hover {
+        transform: translateY(-2px);
+    }
+
+    /* MOBILE MENU */
+    .mobile-nav {
+        display: none;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: white;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        padding: 2rem;
+        z-index: 999;
+    }
+
+    .mobile-nav.active {
+        display: block;
+    }
+
+    .mobile-nav a {
+        display: block;
+        padding: 1rem 0;
+        color: var(--dark);
+        text-decoration: none;
+        font-weight: 500;
+        border-bottom: 1px solid #E2E8F0;
+    }
+
+    .mobile-nav a:last-child {
+        border-bottom: none;
+    }
+
+    @media (max-width: 768px) {
+        .modal-content {
+            margin: 10% auto;
+            padding: 2rem;
+        }
+
+        .modal-content h2 {
+            font-size: 1.75rem;
+        }
+
+        .modal-content img {
+            height: 200px;
+        }
+    }
+</style>
+
+<script>
+    // DONNÉES HO AN'NY SERVICES
+    const servicesData = {
+        'marketing': {
+            title: 'Digital Marketing',
+            image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop',
+            content: `
+                <p>Ny Digital Marketing dia stratejia feno mampivoatra ny fandraharahanao amin'ny tontolo nomerika. Manampy anao hahatratra mpanjifa maro kokoa sy hampitombo ny varotra.</p>
+                
+                <h3 style="color: var(--primary); margin: 2rem 0 1rem 0;">Ny Tolotra Omenay:</h3>
+                <ul>
+                    <li><strong>Facebook & Instagram Ads:</strong> Dokambarotra kendrena amin'ny olona mety ho mpanjifa</li>
+                    <li><strong>Google Ads:</strong> Fisehoana voalohany ao amin'ny Google</li>
+                    <li><strong>Content Marketing:</strong> Famoronana votoaty mandresy lahatra</li>
+                    <li><strong>Email Marketing:</strong> Fitantanana relation client automatique</li>
+                    <li><strong>Social Media Management:</strong> Fitantanana ny réseaux sociaux anao</li>
+                </ul>
+
+                <h3 style="color: var(--primary); margin: 2rem 0 1rem 0;">Tombony Azonao:</h3>
+                <ul>
+                    <li>✅ +200% ny visibilité en ligne</li>
+                    <li>✅ Mpanjifa vaovao isan'andro</li>
+                    <li>✅ ROI (Return on Investment) mazava sy refesina</li>
+                    <li>✅ Stratégie natao manokana ho an'ny orinasanao</li>
+                </ul>
+
+                <a href="mailto:christian.rakoto.pro@gmail.com?subject=Demande de devis - Digital Marketing" class="modal-cta">
+                    Mangataka Devis <i class="fas fa-arrow-right"></i>
+                </a>
+            `
+        },
+        'design': {
+            title: 'Graphic Design',
+            image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&auto=format&fit=crop',
+            content: `
+                <p>Ny Graphic Design dia ny endrika sy ny hatsaran'ny orinasanao. Mamorona identity visuelle maharitra sy mandresy lahatra izahay.</p>
+                
+                <h3 style="color: var(--primary); margin: 2rem 0 1rem 0;">Ny Tolotra Omenay:</h3>
+                <ul>
+                    <li><strong>Logo Design:</strong> Logo tokana, moderne, ary mora tsaroana</li>
+                    <li><strong>Charte Graphique:</strong> Règles complètes ho an'ny marque anao</li>
+                    <li><strong>Packaging Design:</strong> Famolavolana fonosana entana attractif</li>
+                    <li><strong>Print Design:</strong> Carte de visite, flyers, affiches, brochures</li>
+                    <li><strong>Social Media Design:</strong> Posts attractifs ho an'ny réseaux sociaux</li>
+                </ul>
+
+                <h3 style="color: var(--primary); margin: 2rem 0 1rem 0;">Tombony Azonao:</h3>
+                <ul>
+                    <li>✅ Image de marque professionnelle</li>
+                    <li>✅ Fahasamihafana amin'ny mpifaninana</li>
+                    <li>✅ Fitiavan'ny mpanjifa sy confiance</li>
+                    <li>✅ Fichiers source rehetra (AI, PSD, PNG, SVG)</li>
+                </ul>
+
+                <a href="mailto:christian.rakoto.pro@gmail.com?subject=Demande de devis - Graphic Design" class="modal-cta">
+                    Mangataka Devis <i class="fas fa-arrow-right"></i>
+                </a>
+            `
+        },
+        'web': {
+            title: 'Web Development',
+            image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop',
+            content: `
+                <p>Ny Web Development dia ny fototra ny fandraharahanao amin'ny tontolo nomerika. Mamorona tranonkala moderne, rapide, ary efficace izahay.</p>
+                
+                <h3 style="color: var(--primary); margin: 2rem 0 1rem 0;">Ny Tolotra Omenay:</h3>
+                <ul>
+                    <li><strong>Site Vitrine:</strong> Tranonkala fampisehoana ny orinasanao</li>
+                    <li><strong>E-commerce:</strong> Boutique en ligne miaraka amin'ny paiement sécurisé</li>
+                    <li><strong>Application Web:</strong> Logiciel sur mesure ho an'ny besoins anao</li>
+                    <li><strong>SEO Optimization:</strong> Fanaovana ny site anao ho hita ao amin'ny Google</li>
+                    <li><strong>Maintenance:</strong> Fanarahamaso sy fanavaozana ny site anao</li>
+                </ul>
+
+                <h3 style="color: var(--primary); margin: 2rem 0 1rem 0;">Technologies Ampiasaina:</h3>
+                <ul>
+                    <li>⚡ React, Vue.js, Angular</li>
+                    <li>⚡ Node.js, PHP, Python</li>
+                    <li>⚡ WordPress, Shopify</li>
+                    <li>⚡ Responsive Design (Mobile-first)</li>
+                </ul>
+
+                <a href="mailto:christian.rakoto.pro@gmail.com?subject=Demande de devis - Web Development" class="modal-cta">
+                    Mangataka Devis <i class="fas fa-arrow-right"></i>
+                </a>
+            `
+        }
+    };
+
+    // DONNÉES HO AN'NY PORTFOLIO
+    const portfolioData = {
+        'ecommerce': {
+            title: 'Site E-commerce - Madagascar Art',
+            image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&auto=format&fit=crop',
+            content: `
+                <p>Famoronana plateforme e-commerce feno ho an'ny orinasa Madagascar Art, mivarotra zavakanto sy souvenirs.</p>
+                
+                <h3 style="color: var(--primary); margin: 2rem 0 1rem 0;">Ny Natao:</h3>
+                <ul>
+                    <li>✅ Design moderne sy responsive</li>
+                    <li>✅ Système de paiement intégré (Mobile Money, Carte bancaire)</li>
+                    <li>✅ Gestion des stocks automatique</li>
+                    <li>✅ Dashboard admin complet</li>
+                    <li>✅ SEO optimization</li>
+                </ul>
+
+                <h3 style="color: var(--primary); margin: 2rem 0 1rem 0;">Vokatra:</h3>
+                <ul>
+                    <li>📈 +300% ny ventes en ligne</li>
+                    <li>📈 500+ commandes isam-bolana</li>
+                    <li>📈 Taux de conversion 4.5%</li>
+                </ul>
+            `
+        },
+        'mobile-app': {
+            title: 'Application Mobile - TechStartup',
+            image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&auto=format&fit=crop',
+            content: `
+                <p>Famolavolana application mobile ho an'ny startup TechStartup, mampifandray mpampiasa sy mpampiantrano.</p>
+                
+                <h3 style="color: var(--primary); margin: 2rem 0 1rem 0;">Ny Natao:</h3>
+                <ul>
+                    <li>✅ UI/UX Design intuitive</li>
+                    <li>✅ iOS sy Android (React Native)</li>
+                    <li>✅ Backend API (Node.js)</li>
+                    <li>✅ Système de notification push</li>
+                    <li>✅ Géolocalisation sy map</li>
+                </ul>
+
+                <h3 style="color: var(--primary); margin: 2rem 0 1rem 0;">Vokatra:</h3>
+                <ul>
+                    <li>📱 10,000+ téléchargements</li>
+                    <li>⭐ Note 4.8/5 ao amin'ny App Store</li>
+                    <li>📱 85% retention rate</li>
+                </ul>
+            `
+        },
+        'branding': {
+            title: 'Branding Complet - GreenAgro',
+            image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&auto=format&fit=crop',
+            content: `
+                <p>Famoronana identité visuelle feno ho an'ny orinasa GreenAgro, miasa ao amin'ny secteur agricole.</p>
+                
+                <h3 style="color: var(--primary); margin: 2rem 0 1rem 0;">Ny Natao:</h3>
+                <ul>
+                    <li>✅ Logo moderne sy signifiant</li>
+                    <li>✅ Charte graphique complète</li>
+                    <li>✅ Carte de visite sy papeterie</li>
+                    <li>✅ Packaging design ho an'ny vokatra</li>
+                    <li>✅ Social media kit</li>
+                </ul>
+
+                <h3 style="color: var(--primary); margin: 2rem 0 1rem 0;">Vokatra:</h3>
+                <ul>
+                    <li>🎨 Image de marque forte sy cohérente</li>
+                    <li>🎨 +150% ny reconnaissance ny marque</li>
+                    <li>🎨 Fitiavan'ny mpanjifa sy confiance</li>
+                </ul>
+            `
+        }
+    };
+
+    // FONCTION HO AN'NY SERVICES
+    document.querySelectorAll('.service-link').forEach((link, index) => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const serviceKeys = ['marketing', 'design', 'web'];
+            const service = servicesData[serviceKeys[index]];
+            
+            if(service) {
+                const htmlContent = `
+                    <h2>${service.title}</h2>
+                    <img src="${service.image}" alt="${service.title}">
+                    <div>${service.content}</div>
+                `;
+                document.getElementById('service-modal-body').innerHTML = htmlContent;
+                document.getElementById('serviceModal').style.display = 'block';
+            }
+        });
+    });
+
+    // FONCTION HO AN'NY PORTFOLIO
+    document.querySelectorAll('.portfolio-item').forEach((item, index) => {
+        item.addEventListener('click', function() {
+            const portfolioKeys = ['ecommerce', 'mobile-app', 'branding'];
+            const project = portfolioData[portfolioKeys[index]];
+            
+            if(project) {
+                const htmlContent = `
+                    <h2>${project.title}</h2>
+                    <img src="${project.image}" alt="${project.title}">
+                    <div>${project.content}</div>
+                `;
+                document.getElementById('portfolio-modal-body').innerHTML = htmlContent;
+                document.getElementById('portfolioModal').style.display = 'block';
+            }
+        });
+    });
+
+    // FANAKATONA NY MODAL
+    document.querySelectorAll('.close-modal').forEach(btn => {
+        btn.addEventListener('click', function() {
+            this.closest('.modal').style.display = 'none';
+        });
+    });
+
+    window.addEventListener('click', function(event) {
+        if(event.target.classList.contains('modal')) {
+            event.target.style.display = 'none';
+        }
+    });
+
+    // MOBILE MENU
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileNav = document.createElement('div');
+    mobileNav.className = 'mobile-nav';
+    mobileNav.innerHTML = `
+        <a href="#accueil">Accueil</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#temoignages">Témoignages</a>
+        <a href="#contact" class="nav-cta" style="display: inline-block; margin-top: 1rem;">Contactez-nous</a>
+    `;
+    document.body.appendChild(mobileNav);
+
+    mobileMenuBtn.addEventListener('click', function() {
+        mobileNav.classList.toggle('active');
+        const icon = this.querySelector('i');
+        if(mobileNav.classList.contains('active')) {
+            icon.className = 'fas fa-times';
+        } else {
+            icon.className = 'fas fa-bars';
+        }
+    });
+
+    // Fermer le menu mobile rehefa misindro link
+    mobileNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            mobileNav.classList.remove('active');
+            mobileMenuBtn.querySelector('i').className = 'fas fa-bars';
+        });
+    });
+</script>
 
     <!-- NAVIGATION -->
     <header>
