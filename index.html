@@ -70,6 +70,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            cursor: pointer;
         }
 
         .logo span {
@@ -134,9 +135,18 @@
             color: var(--dark);
         }
 
+        /* PAGE CONTAINER */
+        .page {
+            display: none;
+            margin-top: 80px;
+        }
+
+        .page.active {
+            display: block;
+        }
+
         /* HERO SECTION MODERNE */
         .hero {
-            margin-top: 80px;
             padding: 6rem 2rem;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             position: relative;
@@ -203,6 +213,8 @@
             gap: 0.5rem;
             transition: all 0.3s;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            cursor: pointer;
+            border: none;
         }
 
         .btn-primary:hover {
@@ -220,6 +232,7 @@
             border: 2px solid rgba(255,255,255,0.3);
             backdrop-filter: blur(10px);
             transition: all 0.3s;
+            cursor: pointer;
         }
 
         .btn-secondary:hover {
@@ -355,6 +368,7 @@
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
+            cursor: pointer;
         }
 
         .service-card::before {
@@ -770,99 +784,272 @@
             color: rgba(255,255,255,0.5);
         }
 
-        /* MODAL STYLES */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.7);
-            backdrop-filter: blur(5px);
-            animation: fadeIn 0.3s;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .modal-content {
-            background-color: white;
-            margin: 5% auto;
-            padding: 3rem;
-            border-radius: 24px;
-            width: 90%;
-            max-width: 800px;
+        /* SERVICE PAGE STYLES */
+        .service-page-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8rem 2rem 6rem;
+            text-align: center;
             position: relative;
-            animation: slideDown 0.4s;
-            max-height: 85vh;
-            overflow-y: auto;
+            overflow: hidden;
         }
 
-        @keyframes slideDown {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .close-modal {
+        .service-page-hero::before {
+            content: '';
             position: absolute;
-            top: 20px;
-            right: 30px;
-            color: var(--gray);
-            font-size: 2.5rem;
-            font-weight: bold;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .service-page-hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-page-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .service-page-hero p {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
             cursor: pointer;
-            transition: color 0.3s;
+            border: none;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             z-index: 10;
         }
 
-        .close-modal:hover {
-            color: var(--primary);
+        .back-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateX(-5px);
         }
 
-        .modal-content h2 {
+        .service-details {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .detail-section {
+            margin-bottom: 6rem;
+        }
+
+        .detail-section h2 {
             font-size: 2.5rem;
-            margin-bottom: 1.5rem;
             color: var(--dark);
-        }
-
-        .modal-content img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            border-radius: 16px;
             margin-bottom: 2rem;
+            text-align: center;
         }
 
-        .modal-content p {
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .detail-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .detail-card-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-card h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .detail-card p {
             color: var(--gray);
             line-height: 1.8;
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
         }
 
-        .modal-content ul {
-            margin: 1.5rem 0;
-            padding-left: 1.5rem;
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
-        .modal-content ul li {
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .process-step::after {
+            content: '';
+            position: absolute;
+            top: 40px;
+            right: -1rem;
+            width: 2rem;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .process-step:last-child::after {
+            display: none;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            margin: 0 auto 1.5rem;
+        }
+
+        .process-step h3 {
+            font-size: 1.25rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .process-step p {
             color: var(--gray);
-            margin-bottom: 0.75rem;
-            line-height: 1.6;
+            font-size: 0.95rem;
         }
 
-        .modal-cta {
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 3rem 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            text-align: center;
+            position: relative;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+        }
+
+        .pricing-card.featured {
+            background: var(--gradient);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--secondary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-price span {
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .pricing-card.featured .pricing-features li {
+            border-bottom-color: rgba(255,255,255,0.2);
+        }
+
+        .pricing-features i {
+            color: #10B981;
+        }
+
+        .pricing-card.featured .pricing-features i {
+            color: white;
+        }
+
+        .pricing-btn {
             display: inline-block;
             background: var(--gradient);
             color: white;
@@ -870,12 +1057,71 @@
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            margin-top: 1.5rem;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .pricing-card.featured .pricing-btn {
+            background: white;
+            color: var(--primary);
+        }
+
+        .pricing-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--dark);
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: var(--light);
+        }
+
+        .faq-question i {
             transition: transform 0.3s;
         }
 
-        .modal-cta:hover {
-            transform: translateY(-2px);
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: var(--light);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            padding: 0 2rem 1.5rem;
+            color: var(--gray);
+            line-height: 1.8;
         }
 
         /* MOBILE MENU */
@@ -917,7 +1163,9 @@
 
             .services-grid,
             .portfolio-grid,
-            .testimonials-grid {
+            .testimonials-grid,
+            .detail-grid,
+            .pricing-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
@@ -929,12 +1177,21 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .hero-content h1 {
+            .hero-content h1,
+            .service-page-hero h1 {
                 font-size: 2.5rem;
             }
 
             .section-title {
                 font-size: 2.5rem;
+            }
+
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-step::after {
+                display: none;
             }
         }
 
@@ -949,7 +1206,10 @@
 
             .services-grid,
             .portfolio-grid,
-            .testimonials-grid {
+            .testimonials-grid,
+            .detail-grid,
+            .pricing-grid,
+            .process-steps {
                 grid-template-columns: 1fr;
             }
 
@@ -957,7 +1217,8 @@
                 grid-template-columns: 1fr;
             }
 
-            .hero-content h1 {
+            .hero-content h1,
+            .service-page-hero h1 {
                 font-size: 2rem;
             }
 
@@ -970,17 +1231,19 @@
                 font-size: 2rem;
             }
 
-            .modal-content {
-                margin: 10% auto;
-                padding: 2rem;
+            .pricing-card.featured {
+                transform: scale(1);
             }
 
-            .modal-content h2 {
-                font-size: 1.75rem;
+            .pricing-card.featured:hover {
+                transform: translateY(-10px);
             }
 
-            .modal-content img {
-                height: 200px;
+            .back-btn {
+                top: 1rem;
+                left: 1rem;
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
             }
         }
 
@@ -1001,253 +1264,259 @@
     <!-- NAVIGATION -->
     <header>
         <div class="header-container">
-            <div class="logo">Rakoto<span>Digital</span></div>
+            <div class="logo" onclick="showHome()">Rakoto<span>Digital</span></div>
             <nav>
-                <a href="#accueil">Accueil</a>
-                <a href="#services">Services</a>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#temoignages">Témoignages</a>
-                <a href="#contact" class="nav-cta">Contactez-nous</a>
+                <a href="#" onclick="showHome(); return false;">Accueil</a>
+                <a href="#" onclick="scrollToSection('services'); return false;">Services</a>
+                <a href="#" onclick="scrollToSection('portfolio'); return false;">Portfolio</a>
+                <a href="#" onclick="scrollToSection('temoignages'); return false;">Témoignages</a>
+                <a href="#" onclick="scrollToSection('contact'); return false;" class="nav-cta">Contactez-nous</a>
             </nav>
             <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero" id="accueil">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1>Transformez Votre Vision en <span>Réalité Digitale</span></h1>
-                <p>Nous accompagnons les entreprises malgaches et internationales dans leur transformation digitale avec des solutions innovantes et sur mesure.</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn-primary">
-                        Démarrer un projet <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="#portfolio" class="btn-secondary">Voir nos réalisations</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop" alt="Équipe digitale">
-                <div class="floating-card card-1">
-                    <i class="fas fa-chart-line" style="color: var(--primary); font-size: 2rem;"></i>
-                    <p style="font-weight: 700; margin-top: 0.5rem;">+150%</p>
-                    <p style="font-size: 0.875rem; color: var(--gray);">Croissance moyenne</p>
-                </div>
-                <div class="floating-card card-2">
-                    <i class="fas fa-users" style="color: var(--secondary); font-size: 2rem;"></i>
-                    <p style="font-weight: 700; margin-top: 0.5rem;">500+</p>
-                    <p style="font-size: 0.875rem; color: var(--gray);">Clients satisfaits</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- STATS -->
-    <section class="stats">
-        <div class="stats-container">
-            <div class="stat-item">
-                <span class="stat-number">150+</span>
-                <p class="stat-label">Projets Réussis</p>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">500+</span>
-                <p class="stat-label">Clients Satisfaits</p>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">8+</span>
-                <p class="stat-label">Années d'Expérience</p>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">98%</span>
-                <p class="stat-label">Taux de Satisfaction</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section class="services" id="services">
-        <div class="section-header fade-in">
-            <span class="section-tag">Nos Services</span>
-            <h2 class="section-title">Des Solutions Digitales Complètes</h2>
-            <p class="section-subtitle">Nous offrons un éventail complet de services pour propulser votre entreprise dans l'ère digitale</p>
-        </div>
-        <div class="services-grid">
-            <div class="service-card fade-in">
-                <div class="service-icon">
-                    <i class="fas fa-bullhorn"></i>
-                </div>
-                <h3>Digital Marketing</h3>
-                <p>Stratégies marketing sur mesure, gestion des réseaux sociaux, publicités Facebook & Google Ads, et content marketing pour maximiser votre visibilité.</p>
-                <a href="#" class="service-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon" style="background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);">
-                    <i class="fas fa-palette"></i>
-                </div>
-                <h3>Graphic Design</h3>
-                <p>Création d'identités visuelles uniques, logos professionnels, supports de communication, packaging et design d'interfaces modernes.</p>
-                <a href="#" class="service-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">
-                    <i class="fas fa-code"></i>
-                </div>
-                <h3>Web Development</h3>
-                <p>Développement de sites web vitrines, e-commerce, applications web sur mesure avec les dernières technologies (React, Node.js, etc.).</p>
-                <a href="#" class="service-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- WHY CHOOSE US -->
-    <section class="why-us">
-        <div class="why-container">
-            <div class="why-content fade-in">
-                <span class="section-tag" style="background: rgba(255,255,255,0.1); color: white;">Pourquoi Nous Choisir</span>
-                <h2>Un Partenaire de Confiance pour Votre Succès Digital</h2>
-                <p>Nous combinons expertise technique, créativité et compréhension approfondie du marché malgache pour offrir des résultats exceptionnels.</p>
-                <div class="why-features">
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <div class="feature-text">
-                            <h3>Livraison Rapide</h3>
-                            <p>Respect des délais et livraison dans les temps impartis sans compromis sur la qualité.</p>
-                        </div>
+    <!-- PAGE ACCUEIL -->
+    <div id="homePage" class="page active">
+        <!-- HERO SECTION -->
+        <section class="hero" id="accueil">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1>Transformez Votre Vision en <span>Réalité Digitale</span></h1>
+                    <p>Nous accompagnons les entreprises malgaches et internationales dans leur transformation digitale avec des solutions innovantes et sur mesure.</p>
+                    <div class="hero-buttons">
+                        <a href="#" onclick="scrollToSection('contact'); return false;" class="btn-primary">
+                            Démarrer un projet <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#" onclick="scrollToSection('portfolio'); return false;" class="btn-secondary">Voir nos réalisations</a>
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-icon" style="background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <div class="feature-text">
-                            <h3>Qualité Garantie</h3>
-                            <p>Standards internationaux et suivi rigoureux pour des produits impeccables.</p>
-                        </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop" alt="Équipe digitale">
+                    <div class="floating-card card-1">
+                        <i class="fas fa-chart-line" style="color: var(--primary); font-size: 2rem;"></i>
+                        <p style="font-weight: 700; margin-top: 0.5rem;">+150%</p>
+                        <p style="font-size: 0.875rem; color: var(--gray);">Croissance moyenne</p>
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-icon" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">
-                            <i class="fas fa-headset"></i>
-                        </div>
-                        <div class="feature-text">
-                            <h3>Support 24/7</h3>
-                            <p>Accompagnement continu et assistance technique disponible à tout moment.</p>
-                        </div>
+                    <div class="floating-card card-2">
+                        <i class="fas fa-users" style="color: var(--secondary); font-size: 2rem;"></i>
+                        <p style="font-weight: 700; margin-top: 0.5rem;">500+</p>
+                        <p style="font-size: 0.875rem; color: var(--gray);">Clients satisfaits</p>
                     </div>
                 </div>
             </div>
-            <div class="why-image fade-in">
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format&fit=crop" alt="Équipe professionnelle">
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- PORTFOLIO -->
-    <section class="portfolio" id="portfolio">
-        <div class="section-header fade-in">
-            <span class="section-tag">Portfolio</span>
-            <h2 class="section-title">Nos Réalisations Récentes</h2>
-            <p class="section-subtitle">Découvrez quelques-uns de nos projets les plus récents</p>
-        </div>
-        <div class="portfolio-grid">
-            <div class="portfolio-item fade-in">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop" alt="Projet 1">
-                <div class="portfolio-overlay">
-                    <h3>Site E-commerce</h3>
-                    <p>Plateforme de vente en ligne complète</p>
+        <!-- STATS -->
+        <section class="stats">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-number">150+</span>
+                    <p class="stat-label">Projets Réussis</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">500+</span>
+                    <p class="stat-label">Clients Satisfaits</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">8+</span>
+                    <p class="stat-label">Années d'Expérience</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">98%</span>
+                    <p class="stat-label">Taux de Satisfaction</p>
                 </div>
             </div>
-            <div class="portfolio-item fade-in">
-                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&auto=format&fit=crop" alt="Projet 2">
-                <div class="portfolio-overlay">
-                    <h3>Application Mobile</h3>
-                    <p>App de gestion pour startup</p>
-                </div>
-            </div>
-            <div class="portfolio-item fade-in">
-                <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&auto=format&fit=crop" alt="Projet 3">
-                <div class="portfolio-overlay">
-                    <h3>Branding Complet</h3>
-                    <p>Identité visuelle pour PME</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- TESTIMONIALS -->
-    <section class="testimonials" id="temoignages">
-        <div class="testimonials-container">
+        <!-- SERVICES -->
+        <section class="services" id="services">
             <div class="section-header fade-in">
-                <span class="section-tag">Témoignages</span>
-                <h2 class="section-title">Ce Que Disent Nos Clients</h2>
-                <p class="section-subtitle">La satisfaction de nos clients est notre plus grande fierté</p>
+                <span class="section-tag">Nos Services</span>
+                <h2 class="section-title">Des Solutions Digitales Complètes</h2>
+                <p class="section-subtitle">Nous offrons un éventail complet de services pour propulser votre entreprise dans l'ère digitale</p>
             </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card fade-in">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+            <div class="services-grid">
+                <div class="service-card fade-in" onclick="showServicePage('marketing')">
+                    <div class="service-icon">
+                        <i class="fas fa-bullhorn"></i>
                     </div>
-                    <p class="testimonial-text">"Rakoto Digital a transformé notre présence en ligne. Notre chiffre d'affaires a augmenté de 200% en 6 mois grâce à leur stratégie marketing."</p>
-                    <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop" alt="Client">
-                        <div class="author-info">
-                            <h4>Jean Rakotondrasoa</h4>
-                            <p>CEO, TechMadagascar</p>
-                        </div>
-                    </div>
+                    <h3>Digital Marketing</h3>
+                    <p>Stratégies marketing sur mesure, gestion des réseaux sociaux, publicités Facebook & Google Ads, et content marketing pour maximiser votre visibilité.</p>
+                    <span class="service-link">En savoir plus <i class="fas fa-arrow-right"></i></span>
                 </div>
-                <div class="testimonial-card fade-in">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                <div class="service-card fade-in" onclick="showServicePage('design')">
+                    <div class="service-icon" style="background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);">
+                        <i class="fas fa-palette"></i>
                     </div>
-                    <p class="testimonial-text">"Professionnalisme et créativité au rendez-vous. Le site web qu'ils ont créé dépasse toutes nos attentes. Je recommande vivement !"</p>
-                    <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop" alt="Client">
-                        <div class="author-info">
-                            <h4>Sarah Andriamampianina</h4>
-                            <p>Directrice, Madagascar Art</p>
-                        </div>
-                    </div>
+                    <h3>Graphic Design</h3>
+                    <p>Création d'identités visuelles uniques, logos professionnels, supports de communication, packaging et design d'interfaces modernes.</p>
+                    <span class="service-link">En savoir plus <i class="fas fa-arrow-right"></i></span>
                 </div>
-                <div class="testimonial-card fade-in">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
+                <div class="service-card fade-in" onclick="showServicePage('web')">
+                    <div class="service-icon" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">
+                        <i class="fas fa-code"></i>
                     </div>
-                    <p class="testimonial-text">"Une équipe réactive et compétente. Ils ont su comprendre nos besoins et proposer des solutions innovantes. Excellent rapport qualité-prix."</p>
-                    <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&auto=format&fit=crop" alt="Client">
-                        <div class="author-info">
-                            <h4>Michel Razafindramasy</h4>
-                            <p>Fondateur, GreenAgro MG</p>
-                        </div>
-                    </div>
+                    <h3>Web Development</h3>
+                    <p>Développement de sites web vitrines, e-commerce, applications web sur mesure avec les dernières technologies (React, Node.js, etc.).</p>
+                    <span class="service-link">En savoir plus <i class="fas fa-arrow-right"></i></span>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA -->
-    <section class="cta" id="contact">
-        <div class="cta-content">
-            <h2>Prêt à Lancer Votre Projet ?</h2>
-            <p>Discutons ensemble de vos besoins et trouvons la solution digitale parfaite pour votre entreprise.</p>
-            <a href="mailto:christian.rakoto.pro@gmail.com" class="btn-white">
-                <i class="fas fa-paper-plane"></i> Contactez-nous Maintenant
-            </a>
-        </div>
-    </section>
+        <!-- WHY CHOOSE US -->
+        <section class="why-us">
+            <div class="why-container">
+                <div class="why-content fade-in">
+                    <span class="section-tag" style="background: rgba(255,255,255,0.1); color: white;">Pourquoi Nous Choisir</span>
+                    <h2>Un Partenaire de Confiance pour Votre Succès Digital</h2>
+                    <p>Nous combinons expertise technique, créativité et compréhension approfondie du marché malgache pour offrir des résultats exceptionnels.</p>
+                    <div class="why-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h3>Livraison Rapide</h3>
+                                <p>Respect des délais et livraison dans les temps impartis sans compromis sur la qualité.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon" style="background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h3>Qualité Garantie</h3>
+                                <p>Standards internationaux et suivi rigoureux pour des produits impeccables.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h3>Support 24/7</h3>
+                                <p>Accompagnement continu et assistance technique disponible à tout moment.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="why-image fade-in">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format&fit=crop" alt="Équipe professionnelle">
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTFOLIO -->
+        <section class="portfolio" id="portfolio">
+            <div class="section-header fade-in">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">Nos Réalisations Récentes</h2>
+                <p class="section-subtitle">Découvrez quelques-uns de nos projets les plus récents</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop" alt="Projet 1">
+                    <div class="portfolio-overlay">
+                        <h3>Site E-commerce</h3>
+                        <p>Plateforme de vente en ligne complète</p>
+                    </div>
+                </div>
+                <div class="portfolio-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&auto=format&fit=crop" alt="Projet 2">
+                    <div class="portfolio-overlay">
+                        <h3>Application Mobile</h3>
+                        <p>App de gestion pour startup</p>
+                    </div>
+                </div>
+                <div class="portfolio-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&auto=format&fit=crop" alt="Projet 3">
+                    <div class="portfolio-overlay">
+                        <h3>Branding Complet</h3>
+                        <p>Identité visuelle pour PME</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section class="testimonials" id="temoignages">
+            <div class="testimonials-container">
+                <div class="section-header fade-in">
+                    <span class="section-tag">Témoignages</span>
+                    <h2 class="section-title">Ce Que Disent Nos Clients</h2>
+                    <p class="section-subtitle">La satisfaction de nos clients est notre plus grande fierté</p>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card fade-in">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Rakoto Digital a transformé notre présence en ligne. Notre chiffre d'affaires a augmenté de 200% en 6 mois grâce à leur stratégie marketing."</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop" alt="Client">
+                            <div class="author-info">
+                                <h4>Jean Rakotondrasoa</h4>
+                                <p>CEO, TechMadagascar</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card fade-in">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Professionnalisme et créativité au rendez-vous. Le site web qu'ils ont créé dépasse toutes nos attentes. Je recommande vivement !"</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop" alt="Client">
+                            <div class="author-info">
+                                <h4>Sarah Andriamampianina</h4>
+                                <p>Directrice, Madagascar Art</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card fade-in">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="testimonial-text">"Une équipe réactive et compétente. Ils ont su comprendre nos besoins et proposer des solutions innovantes. Excellent rapport qualité-prix."</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&auto=format&fit=crop" alt="Client">
+                            <div class="author-info">
+                                <h4>Michel Razafindramasy</h4>
+                                <p>Fondateur, GreenAgro MG</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta" id="contact">
+            <div class="cta-content">
+                <h2>Prêt à Lancer Votre Projet ?</h2>
+                <p>Discutons ensemble de vos besoins et trouvons la solution digitale parfaite pour votre entreprise.</p>
+                <a href="mailto:christian.rakoto.pro@gmail.com" class="btn-white">
+                    <i class="fas fa-paper-plane"></i> Contactez-nous Maintenant
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <!-- PAGES SERVICES (Dynamiquement générées par JavaScript) -->
+    <div id="servicePage" class="page"></div>
 
     <!-- FOOTER -->
     <footer>
@@ -1265,17 +1534,17 @@
             <div class="footer-col">
                 <h4>Services</h4>
                 <ul>
-                    <li><a href="#">Digital Marketing</a></li>
-                    <li><a href="#">Graphic Design</a></li>
-                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#" onclick="showServicePage('marketing'); return false;">Digital Marketing</a></li>
+                    <li><a href="#" onclick="showServicePage('design'); return false;">Graphic Design</a></li>
+                    <li><a href="#" onclick="showServicePage('web'); return false;">Web Development</a></li>
                     <li><a href="#">SEO & SEA</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Entreprise</h4>
                 <ul>
-                    <li><a href="#">À Propos</a></li>
-                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#" onclick="showHome(); return false;">À Propos</a></li>
+                    <li><a href="#" onclick="scrollToSection('portfolio'); return false;">Portfolio</a></li>
                     <li><a href="#">Carrières</a></li>
                     <li><a href="#">Blog</a></li>
                 </ul>
@@ -1294,244 +1563,375 @@
         </div>
     </footer>
 
-    <!-- MODALES -->
-    <div id="serviceModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div id="service-modal-body"></div>
-        </div>
-    </div>
-
-    <div id="portfolioModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div id="portfolio-modal-body"></div>
-        </div>
-    </div>
-
-    <!-- SCRIPTS - NAPETRAKA FARANY -->
     <script>
-        // DONNÉES HO AN'NY SERVICES
+        // DONNÉES COMPLÈTES POUR CHAQUE SERVICE
         const servicesData = {
             'marketing': {
                 title: 'Digital Marketing',
-                image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop',
-                content: `
-                    <p>Ny Digital Marketing dia stratejia feno mampivoatra ny fandraharahanao amin'ny tontolo nomerika. Manampy anao hahatratra mpanjifa maro kokoa sy hampitombo ny varotra.</p>
-                    
-                    <h3 style="color: var(--primary); margin: 2rem 0 1rem 0;">Ny Tolotra Omenay:</h3>
-                    <ul>
-                        <li><strong>Facebook & Instagram Ads:</strong> Dokambarotra kendrena amin'ny olona mety ho mpanjifa</li>
-                        <li><strong>Google Ads:</strong> Fisehoana voalohany ao amin'ny Google</li>
-                        <li><strong>Content Marketing:</strong> Famoronana votoaty mandresy lahatra</li>
-                        <li><strong>Email Marketing:</strong> Fitantanana relation client automatique</li>
-                        <li><strong>Social Media Management:</strong> Fitantanana ny réseaux sociaux anao</li>
-                    </ul>
-
-                    <h3 style="color: var(--primary); margin: 2rem 0 1rem 0;">Tombony Azonao:</h3>
-                    <ul>
-                        <li>✅ +200% ny visibilité en ligne</li>
-                        <li>✅ Mpanjifa vaovao isan'andro</li>
-                        <li>✅ ROI (Return on Investment) mazava sy refesina</li>
-                        <li>✅ Stratégie natao manokana ho an'ny orinasanao</li>
-                    </ul>
-
-                    <a href="mailto:christian.rakoto.pro@gmail.com?subject=Demande de devis - Digital Marketing" class="modal-cta">
-                        Mangataka Devis <i class="fas fa-arrow-right"></i>
-                    </a>
-                `
+                subtitle: 'Propulsez votre entreprise avec des stratégies marketing digitales qui convertissent',
+                heroImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&auto=format&fit=crop',
+                details: [
+                    {
+                        icon: 'fa-bullseye',
+                        title: 'Facebook & Instagram Ads',
+                        description: 'Création et gestion de campagnes publicitaires ciblées sur Facebook et Instagram. Nous atteignons votre audience idéale avec des messages percutants qui génèrent des conversions.'
+                    },
+                    {
+                        icon: 'fa-search',
+                        title: 'Google Ads & SEO',
+                        description: 'Apparaissez en premier sur Google grâce à nos campagnes Google Ads optimisées et notre stratégie SEO complète. Attirez des clients qualifiés prêts à acheter.'
+                    },
+                    {
+                        icon: 'fa-pen-fancy',
+                        title: 'Content Marketing',
+                        description: 'Création de contenu de qualité qui attire, engage et convertit. Articles de blog, vidéos, infographies - nous créons du contenu qui parle à votre audience.'
+                    },
+                    {
+                        icon: 'fa-envelope-open-text',
+                        title: 'Email Marketing',
+                        description: 'Automatisez votre relation client avec des campagnes email personnalisées. Newsletters, séquences de bienvenue, relances - nous maximisons votre ROI.'
+                    }
+                ],
+                process: [
+                    { step: 1, title: 'Analyse', description: 'Étude approfondie de votre marché et de vos concurrents' },
+                    { step: 2, title: 'Stratégie', description: 'Élaboration d\'un plan d\'action sur mesure' },
+                    { step: 3, title: 'Exécution', description: 'Mise en place des campagnes et du contenu' },
+                    { step: 4, title: 'Optimisation', description: 'Suivi des performances et ajustements continus' }
+                ],
+                pricing: [
+                    {
+                        name: 'Starter',
+                        price: '200€',
+                        period: '/mois',
+                        features: ['Gestion 1 réseau social', '4 publications/semaine', 'Rapport mensuel', 'Community management basique'],
+                        featured: false
+                    },
+                    {
+                        name: 'Business',
+                        price: '500€',
+                        period: '/mois',
+                        features: ['Gestion 3 réseaux sociaux', 'Publications quotidiennes', 'Campagnes publicitaires (budget pub non inclus)', 'Rapport hebdomadaire', 'Stratégie de contenu', 'Community management avancé'],
+                        featured: true,
+                        badge: 'Populaire'
+                    },
+                    {
+                        name: 'Enterprise',
+                        price: '1000€',
+                        period: '/mois',
+                        features: ['Gestion illimitée réseaux sociaux', 'Publications quotidiennes + stories', 'Campagnes publicitaires complètes', 'Rapport quotidien', 'Stratégie complète', 'Account manager dédié', 'Support prioritaire 24/7'],
+                        featured: false
+                    }
+                ],
+                faq: [
+                    {
+                        question: 'Combien de temps faut-il pour voir des résultats ?',
+                        answer: 'Les premiers résultats sont généralement visibles après 2-3 mois. Le marketing digital est un investissement à long terme qui nécessite de la constance et de l\'optimisation continue.'
+                    },
+                    {
+                        question: 'Quel budget publicitaire dois-je prévoir ?',
+                        answer: 'Nous recommandons un minimum de 300€/mois pour les publicités. Ce budget est directement versé aux plateformes (Facebook, Google) et n\'est pas inclus dans nos frais de gestion.'
+                    },
+                    {
+                        question: 'Est-ce que vous garantissez des résultats ?',
+                        answer: 'Nous ne pouvons pas garantir des résultats spécifiques car cela dépend de nombreux facteurs (marché, concurrence, budget). Cependant, nous garantissons un travail professionnel et une optimisation continue pour maximiser vos résultats.'
+                    },
+                    {
+                        question: 'Puis-je annuler à tout moment ?',
+                        answer: 'Oui, nos contrats sont sans engagement. Vous pouvez annuler à tout moment avec un préavis de 30 jours.'
+                    }
+                ]
             },
             'design': {
                 title: 'Graphic Design',
-                image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&auto=format&fit=crop',
-                content: `
-                    <p>Ny Graphic Design dia ny endrika sy ny hatsaran'ny orinasanao. Mamorona identity visuelle maharitra sy mandresy lahatra izahay.</p>
-                    
-                    <h3 style="color: var(--primary); margin: 2rem 0 1rem 0;">Ny Tolotra Omenay:</h3>
-                    <ul>
-                        <li><strong>Logo Design:</strong> Logo tokana, moderne, ary mora tsaroana</li>
-                        <li><strong>Charte Graphique:</strong> Règles complètes ho an'ny marque anao</li>
-                        <li><strong>Packaging Design:</strong> Famolavolana fonosana entana attractif</li>
-                        <li><strong>Print Design:</strong> Carte de visite, flyers, affiches, brochures</li>
-                        <li><strong>Social Media Design:</strong> Posts attractifs ho an'ny réseaux sociaux</li>
-                    </ul>
-
-                    <h3 style="color: var(--primary); margin: 2rem 0 1rem 0;">Tombony Azonao:</h3>
-                    <ul>
-                        <li>✅ Image de marque professionnelle</li>
-                        <li>✅ Fahasamihafana amin'ny mpifaninana</li>
-                        <li>✅ Fitiavan'ny mpanjifa sy confiance</li>
-                        <li>✅ Fichiers source rehetra (AI, PSD, PNG, SVG)</li>
-                    </ul>
-
-                    <a href="mailto:christian.rakoto.pro@gmail.com?subject=Demande de devis - Graphic Design" class="modal-cta">
-                        Mangataka Devis <i class="fas fa-arrow-right"></i>
-                    </a>
-                `
+                subtitle: 'Créez une identité visuelle unique qui marque les esprits et renforce votre marque',
+                heroImage: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=1200&auto=format&fit=crop',
+                details: [
+                    {
+                        icon: 'fa-pen-nib',
+                        title: 'Logo & Identité Visuelle',
+                        description: 'Création de logos professionnels et mémorables qui reflètent l\'essence de votre marque. Nous développons une identité visuelle complète : charte graphique, typographies, palette de couleurs.'
+                    },
+                    {
+                        icon: 'fa-box',
+                        title: 'Packaging Design',
+                        description: 'Design d\'emballages attractifs qui se démarquent en rayon et donnent envie d\'acheter. Nous créons des packagings qui racontent votre histoire et séduisent vos clients.'
+                    },
+                    {
+                        icon: 'fa-print',
+                        title: 'Supports Print',
+                        description: 'Cartes de visite, flyers, brochures, affiches - tous vos supports de communication imprimés avec un design professionnel qui reflète la qualité de votre entreprise.'
+                    },
+                    {
+                        icon: 'fa-mobile-alt',
+                        title: 'UI/UX Design',
+                        description: 'Design d\'interfaces utilisateur modernes et intuitives pour vos applications web et mobiles. Nous créons des expériences utilisateur fluides et agréables.'
+                    }
+                ],
+                process: [
+                    { step: 1, title: 'Brief', description: 'Compréhension de vos besoins et de votre vision' },
+                    { step: 2, title: 'Recherche', description: 'Étude du marché et analyse de la concurrence' },
+                    { step: 3, title: 'Création', description: 'Développement de concepts et propositions' },
+                    { step: 4, title: 'Finalisation', description: 'Ajustements et livraison des fichiers finals' }
+                ],
+                pricing: [
+                    {
+                        name: 'Logo Simple',
+                        price: '150€',
+                        period: '',
+                        features: ['3 propositions initiales', '2 révisions incluses', 'Fichiers source (AI, PSD)', 'Formats web (PNG, JPG, SVG)', 'Livraison en 5 jours'],
+                        featured: false
+                    },
+                    {
+                        name: 'Identité Complète',
+                        price: '500€',
+                        period: '',
+                        features: ['Logo professionnel', 'Charte graphique complète', 'Carte de visite', 'Papeterie (en-tête, facture)', 'Templates réseaux sociaux', '5 révisions incluses', 'Livraison en 10 jours'],
+                        featured: true,
+                        badge: 'Recommandé'
+                    },
+                    {
+                        name: 'Branding Premium',
+                        price: '1200€',
+                        period: '',
+                        features: ['Logo + déclinaisons', 'Charte graphique étendue', 'Tous supports print', 'Templates digitaux', 'Guide de marque complet', 'Révisions illimitées', 'Support 3 mois', 'Livraison en 15 jours'],
+                        featured: false
+                    }
+                ],
+                faq: [
+                    {
+                        question: 'Combien de propositions vais-je recevoir ?',
+                        answer: 'Nous proposons généralement 3 concepts initiaux différents. Vous choisissez ensuite celui qui vous plaît le plus et nous travaillons sur les révisions.'
+                    },
+                    {
+                        question: 'Quels fichiers vais-je recevoir ?',
+                        answer: 'Vous recevrez tous les fichiers sources modifiables (Adobe Illustrator, Photoshop) ainsi que les formats web optimisés (PNG, JPG, SVG, PDF).'
+                    },
+                    {
+                        question: 'Puis-je modifier le logo moi-même après ?',
+                        answer: 'Oui, vous recevrez les fichiers sources complets. Cependant, nous recommandons de nous confier les modifications importantes pour maintenir la cohérence de votre identité.'
+                    },
+                    {
+                        question: 'Que se passe-t-il si je n\'aime aucune proposition ?',
+                        answer: 'Nous travaillons ensemble pour comprendre ce qui ne convient pas et nous créons de nouvelles propositions. Votre satisfaction est notre priorité.'
+                    }
+                ]
             },
             'web': {
                 title: 'Web Development',
-                image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop',
-                content: `
-                    <p>Ny Web Development dia ny fototra ny fandraharahanao amin'ny tontolo nomerika. Mamorona tranonkala moderne, rapide, ary efficace izahay.</p>
-                    
-                    <h3 style="color: var(--primary); margin: 2rem 0 1rem 0;">Ny Tolotra Omenay:</h3>
-                    <ul>
-                        <li><strong>Site Vitrine:</strong> Tranonkala fampisehoana ny orinasanao</li>
-                        <li><strong>E-commerce:</strong> Boutique en ligne miaraka amin'ny paiement sécurisé</li>
-                        <li><strong>Application Web:</strong> Logiciel sur mesure ho an'ny besoins anao</li>
-                        <li><strong>SEO Optimization:</strong> Fanaovana ny site anao ho hita ao amin'ny Google</li>
-                        <li><strong>Maintenance:</strong> Fanarahamaso sy fanavaozana ny site anao</li>
-                    </ul>
-
-                    <h3 style="color: var(--primary); margin: 2rem 0 1rem 0;">Technologies Ampiasaina:</h3>
-                    <ul>
-                        <li>⚡ React, Vue.js, Angular</li>
-                        <li>⚡ Node.js, PHP, Python</li>
-                        <li>⚡ WordPress, Shopify</li>
-                        <li>⚡ Responsive Design (Mobile-first)</li>
-                    </ul>
-
-                    <a href="mailto:christian.rakoto.pro@gmail.com?subject=Demande de devis - Web Development" class="modal-cta">
-                        Mangataka Devis <i class="fas fa-arrow-right"></i>
-                    </a>
-                `
+                subtitle: 'Des sites web performants, modernes et optimisés qui convertissent vos visiteurs en clients',
+                heroImage: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&auto=format&fit=crop',
+                details: [
+                    {
+                        icon: 'fa-laptop-code',
+                        title: 'Sites Vitrines',
+                        description: 'Sites web professionnels qui présentent votre entreprise et vos services. Design moderne, responsive et optimisé pour le référencement Google.'
+                    },
+                    {
+                        icon: 'fa-shopping-cart',
+                        title: 'E-commerce',
+                        description: 'Boutiques en ligne complètes avec gestion des produits, panier, paiement sécurisé (Mobile Money, carte bancaire), et tableau de bord admin.'
+                    },
+                    {
+                        icon: 'fa-mobile-alt',
+                        title: 'Applications Web',
+                        description: 'Développement d\'applications web sur mesure avec les dernières technologies (React, Node.js, Python). Solutions adaptées à vos besoins spécifiques.'
+                    },
+                    {
+                        icon: 'fa-chart-line',
+                        title: 'SEO & Performance',
+                        description: 'Optimisation pour les moteurs de recherche et performances maximales. Votre site rapide, bien référencé et visible sur Google.'
+                    }
+                ],
+                process: [
+                    { step: 1, title: 'Analyse', description: 'Étude de vos besoins et objectifs' },
+                    { step: 2, title: 'Design', description: 'Création des maquettes et prototypes' },
+                    { step: 3, title: 'Développement', description: 'Codage et intégration du site' },
+                    { step: 4, title: 'Lancement', description: 'Tests, optimisation et mise en ligne' }
+                ],
+                pricing: [
+                    {
+                        name: 'Site Vitrine',
+                        price: '800€',
+                        period: '',
+                        features: ['Jusqu\'à 5 pages', 'Design responsive', 'Formulaire de contact', 'Optimisation SEO basique', 'Hébergement 1 an inclus', 'Livraison en 2 semaines'],
+                        featured: false
+                    },
+                    {
+                        name: 'Site Pro',
+                        price: '2000€',
+                        period: '',
+                        features: ['Jusqu\'à 15 pages', 'Design sur mesure', 'Blog intégré', 'Optimisation SEO avancée', 'Google Analytics', 'Formation utilisation', 'Hébergement 1 an inclus', 'Livraison en 4 semaines'],
+                        featured: true,
+                        badge: 'Populaire'
+                    },
+                    {
+                        name: 'E-commerce',
+                        price: '3500€',
+                        period: '',
+                        features: ['Boutique complète', 'Paiement en ligne', 'Gestion des stocks', 'Dashboard admin', 'Optimisation SEO', 'Formation complète', 'Support 3 mois', 'Hébergement 1 an inclus', 'Livraison en 6 semaines'],
+                        featured: false
+                    }
+                ],
+                faq: [
+                    {
+                        question: 'Combien de temps prend la création d\'un site ?',
+                        answer: 'Un site vitrine prend environ 2-3 semaines, un site professionnel 4-6 semaines, et un e-commerce 6-8 semaines. Ces délais peuvent varier selon la complexité du projet.'
+                    },
+                    {
+                        question: 'Est-ce que je pourrai modifier le site moi-même ?',
+                        answer: 'Oui ! Nous créons des sites avec des interfaces d\'administration simples. Nous vous formons également à l\'utilisation de votre site pour que vous soyez autonome.'
+                    },
+                    {
+                        question: 'L\'hébergement est-il inclus ?',
+                        answer: 'Oui, l\'hébergement est inclus pour la première année. Ensuite, le coût est d\'environ 100-200€/an selon les besoins.'
+                    },
+                    {
+                        question: 'Que se passe-t-il après la livraison ?',
+                        answer: 'Nous offrons un support gratuit pendant 1 à 3 mois selon le package. Ensuite, nous proposons des contrats de maintenance pour les mises à jour et le support continu.'
+                    }
+                ]
             }
         };
 
-        // DONNÉES HO AN'NY PORTFOLIO
-        const portfolioData = {
-            'ecommerce': {
-                title: 'Site E-commerce - Madagascar Art',
-                image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&auto=format&fit=crop',
-                content: `
-                    <p>Famoronana plateforme e-commerce feno ho an'ny orinasa Madagascar Art, mivarotra zavakanto sy souvenirs.</p>
-                    
-                    <h3 style="color: var(--primary); margin: 2rem 0 1rem 0;">Ny Natao:</h3>
-                    <ul>
-                        <li>✅ Design moderne sy responsive</li>
-                        <li>✅ Système de paiement intégré (Mobile Money, Carte bancaire)</li>
-                        <li>✅ Gestion des stocks automatique</li>
-                        <li>✅ Dashboard admin complet</li>
-                        <li>✅ SEO optimization</li>
-                    </ul>
+        // FONCTION POUR AFFICHER UNE PAGE SERVICE
+        function showServicePage(serviceKey) {
+            const service = servicesData[serviceKey];
+            if (!service) return;
 
-                    <h3 style="color: var(--primary); margin: 2rem 0 1rem 0;">Vokatra:</h3>
-                    <ul>
-                        <li>📈 +300% ny ventes en ligne</li>
-                        <li>📈 500+ commandes isam-bolana</li>
-                        <li>📈 Taux de conversion 4.5%</li>
-                    </ul>
-                `
-            },
-            'mobile-app': {
-                title: 'Application Mobile - TechStartup',
-                image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&auto=format&fit=crop',
-                content: `
-                    <p>Famolavolana application mobile ho an'ny startup TechStartup, mampifandray mpampiasa sy mpampiantrano.</p>
-                    
-                    <h3 style="color: var(--primary); margin: 2rem 0 1rem 0;">Ny Natao:</h3>
-                    <ul>
-                        <li>✅ UI/UX Design intuitive</li>
-                        <li>✅ iOS sy Android (React Native)</li>
-                        <li>✅ Backend API (Node.js)</li>
-                        <li>✅ Système de notification push</li>
-                        <li>✅ Géolocalisation sy map</li>
-                    </ul>
-
-                    <h3 style="color: var(--primary); margin: 2rem 0 1rem 0;">Vokatra:</h3>
-                    <ul>
-                        <li>📱 10,000+ téléchargements</li>
-                        <li>⭐ Note 4.8/5 ao amin'ny App Store</li>
-                        <li>📱 85% retention rate</li>
-                    </ul>
-                `
-            },
-            'branding': {
-                title: 'Branding Complet - GreenAgro',
-                image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&auto=format&fit=crop',
-                content: `
-                    <p>Famoronana identité visuelle feno ho an'ny orinasa GreenAgro, miasa ao amin'ny secteur agricole.</p>
-                    
-                    <h3 style="color: var(--primary); margin: 2rem 0 1rem 0;">Ny Natao:</h3>
-                    <ul>
-                        <li>✅ Logo moderne sy signifiant</li>
-                        <li>✅ Charte graphique complète</li>
-                        <li>✅ Carte de visite sy papeterie</li>
-                        <li>✅ Packaging design ho an'ny vokatra</li>
-                        <li>✅ Social media kit</li>
-                    </ul>
-
-                    <h3 style="color: var(--primary); margin: 2rem 0 1rem 0;">Vokatra:</h3>
-                    <ul>
-                        <li>🎨 Image de marque forte sy cohérente</li>
-                        <li>🎨 +150% ny reconnaissance ny marque</li>
-                        <li>🎨 Fitiavan'ny mpanjifa sy confiance</li>
-                    </ul>
-                `
-            }
-        };
-
-        // FONCTION HO AN'NY SERVICES
-        document.querySelectorAll('.service-link').forEach((link, index) => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const serviceKeys = ['marketing', 'design', 'web'];
-                const service = servicesData[serviceKeys[index]];
+            // Cacher la page d'accueil
+            document.getElementById('homePage').classList.remove('active');
+            
+            // Générer le contenu de la page service
+            const servicePage = document.getElementById('servicePage');
+            servicePage.innerHTML = `
+                <button class="back-btn" onclick="showHome()">
+                    <i class="fas fa-arrow-left"></i> Retour
+                </button>
                 
-                if(service) {
-                    const htmlContent = `
-                        <h2>${service.title}</h2>
-                        <img src="${service.image}" alt="${service.title}">
-                        <div>${service.content}</div>
-                    `;
-                    document.getElementById('service-modal-body').innerHTML = htmlContent;
-                    document.getElementById('serviceModal').style.display = 'block';
+                <section class="service-page-hero">
+                    <div class="service-page-hero-content">
+                        <h1>${service.title}</h1>
+                        <p>${service.subtitle}</p>
+                    </div>
+                </section>
+
+                <section class="service-details">
+                    <div class="detail-section">
+                        <h2>Ce Que Nous Offrons</h2>
+                        <div class="detail-grid">
+                            ${service.details.map(detail => `
+                                <div class="detail-card">
+                                    <div class="detail-card-icon">
+                                        <i class="fas ${detail.icon}"></i>
+                                    </div>
+                                    <h3>${detail.title}</h3>
+                                    <p>${detail.description}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h2>Notre Processus</h2>
+                        <div class="process-steps">
+                            ${service.process.map(step => `
+                                <div class="process-step">
+                                    <div class="step-number">${step.step}</div>
+                                    <h3>${step.title}</h3>
+                                    <p>${step.description}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h2>Nos Tarifs</h2>
+                        <div class="pricing-grid">
+                            ${service.pricing.map(pricing => `
+                                <div class="pricing-card ${pricing.featured ? 'featured' : ''}">
+                                    ${pricing.badge ? `<div class="pricing-badge">${pricing.badge}</div>` : ''}
+                                    <h3>${pricing.name}</h3>
+                                    <div class="pricing-price">${pricing.price}<span>${pricing.period}</span></div>
+                                    <ul class="pricing-features">
+                                        ${pricing.features.map(feature => `
+                                            <li><i class="fas fa-check"></i> ${feature}</li>
+                                        `).join('')}
+                                    </ul>
+                                    <a href="mailto:christian.rakoto.pro@gmail.com?subject=Demande de devis - ${service.title} - ${pricing.name}" class="pricing-btn">Choisir ce package</a>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h2>Questions Fréquentes</h2>
+                        <div class="faq-section">
+                            ${service.faq.map((faq, index) => `
+                                <div class="faq-item" onclick="toggleFaq(this)">
+                                    <div class="faq-question">
+                                        <span>${faq.question}</span>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <p>${faq.answer}</p>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <div class="cta" style="margin-top: 4rem; border-radius: 24px;">
+                        <div class="cta-content">
+                            <h2>Prêt à Démarrer ?</h2>
+                            <p>Contactez-nous dès maintenant pour discuter de votre projet et obtenir un devis personnalisé.</p>
+                            <a href="mailto:christian.rakoto.pro@gmail.com?subject=Demande de devis - ${service.title}" class="btn-white">
+                                <i class="fas fa-paper-plane"></i> Contactez-nous
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            `;
+
+            // Afficher la page service
+            servicePage.classList.add('active');
+            
+            // Scroll en haut
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // FONCTION POUR REVENIR À L'ACCUEIL
+        function showHome() {
+            document.getElementById('servicePage').classList.remove('active');
+            document.getElementById('homePage').classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // FONCTION POUR SCROLLER VERS UNE SECTION
+        function scrollToSection(sectionId) {
+            showHome();
+            setTimeout(() => {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
-            });
-        });
+            }, 100);
+        }
 
-        // FONCTION HO AN'NY PORTFOLIO
-        document.querySelectorAll('.portfolio-item').forEach((item, index) => {
-            item.addEventListener('click', function() {
-                const portfolioKeys = ['ecommerce', 'mobile-app', 'branding'];
-                const project = portfolioData[portfolioKeys[index]];
-                
-                if(project) {
-                    const htmlContent = `
-                        <h2>${project.title}</h2>
-                        <img src="${project.image}" alt="${project.title}">
-                        <div>${project.content}</div>
-                    `;
-                    document.getElementById('portfolio-modal-body').innerHTML = htmlContent;
-                    document.getElementById('portfolioModal').style.display = 'block';
-                }
-            });
-        });
-
-        // FANAKATONA NY MODAL
-        document.querySelectorAll('.close-modal').forEach(btn => {
-            btn.addEventListener('click', function() {
-                this.closest('.modal').style.display = 'none';
-            });
-        });
-
-        window.addEventListener('click', function(event) {
-            if(event.target.classList.contains('modal')) {
-                event.target.style.display = 'none';
-            }
-        });
+        // FONCTION POUR TOGGLER FAQ
+        function toggleFaq(element) {
+            element.classList.toggle('active');
+        }
 
         // MOBILE MENU
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const mobileNav = document.createElement('div');
         mobileNav.className = 'mobile-nav';
         mobileNav.innerHTML = `
-            <a href="#accueil">Accueil</a>
-            <a href="#services">Services</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#temoignages">Témoignages</a>
-            <a href="#contact" class="nav-cta" style="display: inline-block; margin-top: 1rem;">Contactez-nous</a>
+            <a href="#" onclick="showHome(); closeMobileMenu(); return false;">Accueil</a>
+            <a href="#" onclick="scrollToSection('services'); closeMobileMenu(); return false;">Services</a>
+            <a href="#" onclick="scrollToSection('portfolio'); closeMobileMenu(); return false;">Portfolio</a>
+            <a href="#" onclick="scrollToSection('temoignages'); closeMobileMenu(); return false;">Témoignages</a>
+            <a href="#" onclick="scrollToSection('contact'); closeMobileMenu(); return false;" class="nav-cta" style="display: inline-block; margin-top: 1rem;">Contactez-nous</a>
         `;
         document.body.appendChild(mobileNav);
 
@@ -1545,13 +1945,10 @@
             }
         });
 
-        // Fermer le menu mobile rehefa misindro link
-        mobileNav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', function() {
-                mobileNav.classList.remove('active');
-                mobileMenuBtn.querySelector('i').className = 'fas fa-bars';
-            });
-        });
+        function closeMobileMenu() {
+            mobileNav.classList.remove('active');
+            mobileMenuBtn.querySelector('i').className = 'fas fa-bars';
+        }
 
         // Animation au scroll
         const observerOptions = {
@@ -1577,23 +1974,6 @@
             } else {
                 header.style.boxShadow = '0 1px 3px rgba(0,0,0,0.1)';
             }
-        });
-
-        // Smooth scroll pour les liens
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if(href !== '#') {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                }
-            });
         });
     </script>
 </body>
