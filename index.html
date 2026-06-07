@@ -3,890 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rakoto Digital Solutions | Agence Web & Marketing Digital Madagascar</title>
-    
-    <!-- SEO META TAGS -->
-    <meta name="description" content="Agence digitale à Madagascar. Création de sites web à partir de 800€, marketing digital, Facebook Ads et graphisme. Devis gratuit WhatsApp: +261 37 94 125 93.">
-    <meta name="keywords" content="agence digitale madagascar, création site web antananarivo, marketing digital madagascar, facebook ads, seo madagascar, rakoto digital">
-    <meta name="author" content="Rakoto Digital Solutions">
-    
-    <!-- OPEN GRAPH -->
-    <meta property="og:title" content="Rakoto Digital | Agence Digitale Madagascar">
-    <meta property="og:description" content="Sites web professionnels dès 800€. Marketing digital et graphisme. Contactez-nous sur WhatsApp: +261 37 94 125 93">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200">
-    <meta property="og:url" content="https://rakoto-digital-agency.vercel.app">
-    <meta property="og:type" content="website">
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <title>Test Blog - Rakoto Digital</title>
     <style>
-        :root {
-            --primary: #4F46E5;
-            --primary-dark: #4338CA;
-            --secondary: #F97316;
-            --dark: #0F172A;
-            --light: #F8FAFC;
-            --gray: #64748B;
-            --gradient: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
-            --whatsapp: #25D366;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--dark); line-height: 1.8; overflow-x: hidden; }
-        h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; line-height: 1.2; }
-
-        /* NAVIGATION */
-        header { position: fixed; top: 0; width: 100%; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); box-shadow: 0 1px 3px rgba(0,0,0,0.1); z-index: 1000; }
-        .header-container { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
-        .logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.75rem; font-weight: 700; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; cursor: pointer; }
-        .logo span { color: var(--secondary); -webkit-text-fill-color: var(--secondary); }
-        nav { display: flex; align-items: center; gap: 2rem; }
-        nav a { text-decoration: none; color: var(--dark); font-weight: 500; transition: color 0.3s; }
-        nav a:hover { color: var(--primary); }
-        .nav-cta { background: var(--gradient); color: white !important; padding: 0.75rem 1.5rem; border-radius: 50px; font-weight: 600; }
-        .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; }
-
-        /* WHATSAPP FLOATING */
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: var(--whatsapp); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4); z-index: 1000; text-decoration: none; animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
-
-        .page { display: none; margin-top: 80px; }
+        body { font-family: Arial, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .blog-card { border: 1px solid #ddd; border-radius: 8px; padding: 20px; cursor: pointer; transition: transform 0.3s; }
+        .blog-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .blog-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 4px; }
+        .blog-category { background: #4F46E5; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; margin: 10px 0; }
+        .blog-card h3 { margin: 10px 0; color: #1e293b; }
+        .read-more { color: #4F46E5; font-weight: bold; text-decoration: none; }
+        .page { display: none; }
         .page.active { display: block; }
-
-        /* ARTICLE STYLES */
-        .blog-article { max-width: 900px; margin: 0 auto; padding: 4rem 2rem; }
-        .article-header { text-align: center; margin-bottom: 3rem; }
-        .article-category { display: inline-block; background: rgba(79, 70, 229, 0.1); color: var(--primary); padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 600; margin-bottom: 1rem; }
-        .article-title { font-size: 2.5rem; color: var(--dark); margin-bottom: 1rem; line-height: 1.2; }
-        .article-meta { display: flex; justify-content: center; gap: 2rem; color: var(--gray); margin-bottom: 2rem; }
-        .article-meta span { display: flex; align-items: center; gap: 0.5rem; }
-        
-        .article-image-main { width: 100%; border-radius: 20px; margin-bottom: 3rem; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
-        .article-content { font-size: 1.125rem; line-height: 2; color: var(--dark); }
-        .article-content h2 { font-size: 2rem; margin: 3rem 0 1.5rem; color: var(--dark); padding-bottom: 0.5rem; border-bottom: 3px solid var(--primary); display: inline-block; }
-        .article-content h3 { font-size: 1.5rem; margin: 2.5rem 0 1rem; color: var(--primary-dark); }
-        .article-content p { margin-bottom: 1.5rem; text-align: justify; }
-        .article-content ul, .article-content ol { margin: 1.5rem 0; padding-left: 2rem; }
-        .article-content li { margin-bottom: 1rem; }
-        .article-content strong { color: var(--primary-dark); }
-        
-        .article-image-inline { width: 100%; border-radius: 16px; margin: 2rem 0; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
-        .image-caption { text-align: center; color: var(--gray); font-size: 0.9rem; margin-top: 0.75rem; font-style: italic; }
-        
-        .info-box { background: linear-gradient(135deg, rgba(79, 70, 229, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%); border-left: 4px solid var(--primary); padding: 2rem; border-radius: 12px; margin: 2.5rem 0; }
-        .info-box h4 { color: var(--primary); margin-bottom: 1rem; font-size: 1.25rem; }
-        .info-box.warning { border-left-color: var(--secondary); background: linear-gradient(135deg, rgba(249, 115, 22, 0.05) 0%, rgba(234, 88, 12, 0.05) 100%); }
-        .info-box.success { border-left-color: #10B981; background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(5, 150, 105, 0.05) 100%); }
-        
-        .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin: 2rem 0; }
-        .stat-card { background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); text-align: center; }
-        .stat-card .number { font-size: 2.5rem; font-weight: 700; color: var(--primary); display: block; }
-        .stat-card .label { color: var(--gray); font-size: 0.9rem; }
-        
-        .cta-box { background: var(--gradient); color: white; padding: 3rem; border-radius: 20px; text-align: center; margin: 3rem 0; }
-        .cta-box h3 { font-size: 2rem; margin-bottom: 1rem; }
-        .cta-box p { font-size: 1.125rem; margin-bottom: 2rem; opacity: 0.95; }
-        .cta-button { display: inline-block; background: white; color: var(--primary); padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 700; transition: transform 0.3s; }
-        .cta-button:hover { transform: translateY(-3px); }
-        
-        .article-tags { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #E2E8F0; flex-wrap: wrap; }
-        .tag { background: var(--light); color: var(--gray); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.875rem; text-decoration: none; transition: all 0.3s; }
-        .tag:hover { background: var(--primary); color: white; }
-        
-        .related-articles { margin-top: 4rem; padding-top: 3rem; border-top: 2px solid #E2E8F0; }
-        .related-articles h3 { font-size: 1.75rem; margin-bottom: 2rem; }
-        
-        .back-btn { position: absolute; top: 2rem; left: 2rem; background: rgba(255,255,255,0.9); color: var(--dark); padding: 0.75rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; backdrop-filter: blur(10px); transition: all 0.3s; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; z-index: 10; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .back-btn:hover { transform: translateX(-5px); background: white; }
-
-        /* BLOG GRID */
-        .blog-section { padding: 6rem 2rem; background: white; }
-        .blog-container { max-width: 1280px; margin: 0 auto; }
-        .section-header { text-align: center; margin-bottom: 4rem; }
-        .section-tag { display: inline-block; background: rgba(79, 70, 229, 0.1); color: var(--primary); padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 600; margin-bottom: 1rem; }
-        .section-title { font-size: 2.5rem; color: var(--dark); margin-bottom: 1rem; }
-        .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
-        .blog-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: all 0.3s; cursor: pointer; }
-        .blog-card:hover { transform: translateY(-10px); box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
-        .blog-image { width: 100%; height: 240px; object-fit: cover; }
-        .blog-content { padding: 2rem; }
-        .blog-category { display: inline-block; background: rgba(79, 70, 229, 0.1); color: var(--primary); padding: 0.25rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600; margin-bottom: 1rem; }
-        .blog-card h3 { font-size: 1.25rem; margin-bottom: 1rem; color: var(--dark); line-height: 1.4; }
-        .blog-excerpt { color: var(--gray); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem; }
-        .blog-meta { display: flex; align-items: center; gap: 1.5rem; font-size: 0.875rem; color: var(--gray); }
-        .read-more { color: var(--primary); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1rem; }
-
-        /* PRICING & OTHER SECTIONS */
-        .pricing-section { padding: 6rem 2rem; background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%); }
-        .pricing-container { max-width: 1280px; margin: 0 auto; }
-        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
-        .pricing-card { background: white; padding: 2.5rem; border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); text-align: center; position: relative; transition: all 0.3s; }
-        .pricing-card.featured { background: var(--gradient); color: white; transform: scale(1.05); }
-        .pricing-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--secondary); color: white; padding: 0.5rem 1.5rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600; }
-        .pricing-price { font-size: 3rem; font-weight: 700; margin: 1rem 0; }
-        .pricing-features { list-style: none; margin: 2rem 0; text-align: left; }
-        .pricing-features li { padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.1); display: flex; align-items: center; gap: 0.75rem; }
-        .pricing-btn { display: inline-block; background: var(--gradient); color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; width: 100%; transition: all 0.3s; }
-        .pricing-card.featured .pricing-btn { background: white; color: var(--primary); }
-
-        .services { padding: 6rem 2rem; max-width: 1280px; margin: 0 auto; }
-        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
-        .service-card { background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: all 0.3s; cursor: pointer; }
-        .service-card:hover { transform: translateY(-10px); box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
-        .service-icon { width: 70px; height: 70px; background: var(--gradient); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white; margin-bottom: 1.5rem; }
-
-        .hero { padding: 8rem 2rem 6rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
-        .hero-container { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-        .hero-content h1 { font-size: 3.5rem; margin-bottom: 1.5rem; }
-        .hero-content h1 span { color: #FBBF24; }
-        .hero-content p { font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.95; }
-        .btn-primary { background: white; color: var(--primary); padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s; margin-right: 1rem; }
-        .btn-secondary { background: rgba(255,255,255,0.1); color: white; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; border: 2px solid rgba(255,255,255,0.3); backdrop-filter: blur(10px); transition: all 0.3s; }
-
-        .stats { background: white; padding: 4rem 2rem; margin-top: -4rem; position: relative; z-index: 10; }
-        .stats-container { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; padding: 3rem; border-radius: 24px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); }
-        .stat-item { text-align: center; }
-        .stat-number { font-size: 3rem; font-weight: 700; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: block; }
-
-        footer { background: var(--dark); color: white; padding: 4rem 2rem 2rem; }
-        .footer-container { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
-        .social-links { display: flex; gap: 1rem; margin-top: 1.5rem; }
-        .social-links a { width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; }
-        .footer-col ul { list-style: none; }
-        .footer-col ul li { margin-bottom: 0.75rem; }
-        .footer-col a { color: rgba(255,255,255,0.7); text-decoration: none; }
-        .footer-col a:hover { color: white; }
-
-        .mobile-nav { display: none; position: fixed; top: 80px; left: 0; width: 100%; background: white; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); z-index: 999; }
-        .mobile-nav.active { display: block; }
-        .mobile-nav a { display: block; padding: 1rem 0; color: var(--dark); text-decoration: none; border-bottom: 1px solid #E2E8F0; }
-
-        @media (max-width: 1024px) {
-            .hero-container, .blog-grid, .pricing-grid, .services-grid, .stats-container, .footer-container { grid-template-columns: repeat(2, 1fr); }
-            .hero-content h1 { font-size: 2.5rem; }
-        }
-        @media (max-width: 768px) {
-            nav { display: none; }
-            .mobile-menu-btn { display: block; }
-            .hero-container, .blog-grid, .pricing-grid, .services-grid, .stats-container, .footer-container { grid-template-columns: 1fr; }
-            .hero-content h1 { font-size: 2rem; }
-            .article-title { font-size: 1.75rem; }
-            .stats-grid { grid-template-columns: 1fr; }
-            .whatsapp-float { width: 50px; height: 50px; font-size: 24px; bottom: 20px; right: 20px; }
-        }
-
-        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s, transform 0.8s; }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .back-btn { background: #4F46E5; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-bottom: 20px; }
+        .article-content { line-height: 1.8; font-size: 16px; }
+        .article-content img { max-width: 100%; height: auto; border-radius: 8px; margin: 20px 0; }
+        .article-content h2 { color: #4F46E5; margin: 30px 0 15px; }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="header-container">
-            <div class="logo" onclick="showHome()">Rakoto<span>Digital</span></div>
-            <nav>
-                <a href="#" onclick="showHome(); return false;">Accueil</a>
-                <a href="#" onclick="scrollToSection('services'); return false;">Services</a>
-                <a href="#" onclick="scrollToSection('tarifs'); return false;">Tarifs</a>
-                <a href="#" onclick="showBlog(); return false;">Blog</a>
-                <a href="https://wa.me/261379412593" class="nav-cta" target="_blank">Contact</a>
-            </nav>
-            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
-        </div>
-    </header>
-
-    <a href="https://wa.me/261379412593?text=Bonjour%20Rakoto%20Digital" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- HOME PAGE -->
-    <div id="homePage" class="page active">
-        <section class="hero">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <h1>Transformez Votre Vision en <span>Réalité Digitale</span></h1>
-                    <p>Nous accompagnons les entreprises malgaches dans leur transformation digitale avec des solutions innovantes et sur mesure.</p>
-                    <div>
-                        <a href="https://wa.me/261379412593" class="btn-primary" target="_blank">Démarrer un projet <i class="fas fa-arrow-right"></i></a>
-                        <a href="#" onclick="showBlog(); return false;" class="btn-secondary">Lire notre blog</a>
-                    </div>
-                </div>
-                <div><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800" alt="Équipe" style="width:100%; border-radius:20px; box-shadow:0 25px 50px rgba(0,0,0,0.3);"></div>
-            </div>
-        </section>
-
-        <section class="stats">
-            <div class="stats-container">
-                <div class="stat-item"><span class="stat-number">150+</span><p>Projets Réussis</p></div>
-                <div class="stat-item"><span class="stat-number">500+</span><p>Clients Satisfaits</p></div>
-                <div class="stat-item"><span class="stat-number">8+</span><p>Années d'Expérience</p></div>
-                <div class="stat-item"><span class="stat-number">98%</span><p>Taux de Satisfaction</p></div>
-            </div>
-        </section>
-
-        <section class="pricing-section" id="tarifs">
-            <div class="pricing-container">
-                <div class="section-header">
-                    <span class="section-tag">Nos Tarifs</span>
-                    <h2 class="section-title">Des Prix Transparents</h2>
-                </div>
-                <div class="pricing-grid">
-                    <div class="pricing-card">
-                        <h3><i class="fas fa-palette"></i> Création Logo</h3>
-                        <div class="pricing-price">150€</div>
-                        <ul class="pricing-features">
-                            <li><i class="fas fa-check"></i> 3 propositions</li>
-                            <li><i class="fas fa-check"></i> Fichiers source</li>
-                            <li><i class="fas fa-check"></i> Livraison 5 jours</li>
-                        </ul>
-                        <a href="https://wa.me/261379412593" class="pricing-btn" target="_blank">Commander</a>
-                    </div>
-                    <div class="pricing-card featured">
-                        <div class="pricing-badge">Populaire</div>
-                        <h3><i class="fas fa-laptop"></i> Site Vitrine</h3>
-                        <div class="pricing-price">800€</div>
-                        <ul class="pricing-features">
-                            <li><i class="fas fa-check"></i> 5 pages</li>
-                            <li><i class="fas fa-check"></i> Design responsive</li>
-                            <li><i class="fas fa-check"></i> Hébergement 1 an</li>
-                            <li><i class="fas fa-check"></i> SEO basique</li>
-                        </ul>
-                        <a href="https://wa.me/261379412593" class="pricing-btn" target="_blank">Commander</a>
-                    </div>
-                    <div class="pricing-card">
-                        <h3><i class="fas fa-bullhorn"></i> Marketing</h3>
-                        <div class="pricing-price">200€<span style="font-size:1rem">/mois</span></div>
-                        <ul class="pricing-features">
-                            <li><i class="fas fa-check"></i> 1 réseau social</li>
-                            <li><i class="fas fa-check"></i> 4 posts/semaine</li>
-                            <li><i class="fas fa-check"></i> Rapport mensuel</li>
-                        </ul>
-                        <a href="https://wa.me/261379412593" class="pricing-btn" target="_blank">S'abonner</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="services" id="services">
-            <div class="section-header">
-                <span class="section-tag">Nos Services</span>
-                <h2 class="section-title">Solutions Digitales Complètes</h2>
-            </div>
-            <div class="services-grid">
-                <div class="service-card" onclick="alert('Page service marketing')">
-                    <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
-                    <h3>Digital Marketing</h3>
-                    <p style="color:var(--gray)">Facebook Ads, Google Ads, SEO et gestion des réseaux sociaux.</p>
-                </div>
-                <div class="service-card" onclick="alert('Page service design')">
-                    <div class="service-icon" style="background:linear-gradient(135deg,#F97316,#EA580C)"><i class="fas fa-palette"></i></div>
-                    <h3>Graphic Design</h3>
-                    <p style="color:var(--gray)">Logos, chartes graphiques, supports de communication.</p>
-                </div>
-                <div class="service-card" onclick="alert('Page service web')">
-                    <div class="service-icon" style="background:linear-gradient(135deg,#10B981,#059669)"><i class="fas fa-code"></i></div>
-                    <h3>Web Development</h3>
-                    <p style="color:var(--gray)">Sites vitrines, e-commerce, applications web.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="blog-section" id="blog">
-            <div class="blog-container">
-                <div class="section-header">
-                    <span class="section-tag">Notre Blog</span>
-                    <h2 class="section-title">Conseils & Actualités</h2>
-                    <p style="color:var(--gray); max-width:600px; margin:0 auto">Restez informé des dernières tendances digitales</p>
-                </div>
-                <div class="blog-grid" id="blogPreview"></div>
-                <div style="text-align:center; margin-top:3rem;">
-                    <button class="btn-primary" onclick="showBlog()">Voir tous les articles <i class="fas fa-arrow-right"></i></button>
-                </div>
-            </div>
-        </section>
+    <div id="blogPage" class="page active">
+        <h1>Nos Articles</h1>
+        <div class="blog-grid" id="blogGrid"></div>
     </div>
 
-    <!-- BLOG PAGE -->
-    <div id="blogPage" class="page">
-        <button class="back-btn" onclick="showHome()"><i class="fas fa-arrow-left"></i> Retour</button>
-        <section class="blog-section" style="padding-top:6rem;">
-            <div class="blog-container">
-                <div class="section-header">
-                    <span class="section-tag">Blog</span>
-                    <h2 class="section-title">Tous nos articles</h2>
-                </div>
-                <div class="blog-grid" id="allBlogPosts"></div>
-            </div>
-        </section>
-    </div>
-
-    <!-- ARTICLE PAGE -->
     <div id="articlePage" class="page">
-        <button class="back-btn" onclick="showBlog()"><i class="fas fa-arrow-left"></i> Retour au blog</button>
-        <article class="blog-article" id="articleContent"></article>
+        <button class="back-btn" onclick="showBlog()">← Retour</button>
+        <article id="articleContent"></article>
     </div>
-
-    <footer>
-        <div class="footer-container">
-            <div>
-                <h3 style="font-size:2rem; margin-bottom:1rem;">Rakoto Digital</h3>
-                <p style="color:rgba(255,255,255,0.7)">Votre partenaire digital à Madagascar</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="#">Marketing Digital</a></li>
-                    <li><a href="#">Web Development</a></li>
-                    <li><a href="#">Graphic Design</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Entreprise</h4>
-                <ul>
-                    <li><a href="#">À Propos</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Blog</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <ul>
-                    <li><a href="mailto:christian.rakoto.pro@gmail.com">christian.rakoto.pro@gmail.com</a></li>
-                    <li><a href="https://wa.me/261379412593" target="_blank">+261 37 94 125 93</a></li>
-                    <li>Antananarivo, Madagascar</li>
-                </ul>
-            </div>
-        </div>
-        <div style="text-align:center; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.5);">
-            <p>&copy; 2026 Rakoto Digital Solutions. Tous droits réservés.</p>
-        </div>
-    </footer>
 
     <script>
         const blogArticles = {
-            'prix-site-web': {
-                category: 'Guide Complet',
-                title: 'Combien coûte un site web à Madagascar en 2026? Guide Complet avec Exemples',
-                date: '7 Juin 2026',
-                readTime: '15 min de lecture',
-                image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200',
-                tags: ['Prix', 'Site Web', 'Madagascar', 'Budget'],
-                content: `
-                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900" class="article-image-main" alt="Prix site web Madagascar">
-                    <p class="image-caption">Le coût d'un site web varie selon la complexité et les fonctionnalités</p>
-                    
-                    <p>Vous souhaitez créer un site web pour votre entreprise à Madagascar? L'une des premières questions qui vient à l'esprit est sans doute: <strong>"Combien ça coûte vraiment?"</strong></p>
-                    
-                    <p>Dans cet article complet, nous allons détailler <strong>les prix réels du marché en 2026</strong>, vous montrer des exemples concrets, et vous aider à comprendre ce qui influence le coût d'un projet web. Que vous soyez une petite entreprise, une startup ou une grande société, ce guide vous aidera à budgétiser correctement votre projet.</p>
-
-                    <div class="info-box">
-                        <h4><i class="fas fa-lightbulb"></i> Ce que vous allez apprendre:</h4>
-                        <ul>
-                            <li>Les prix moyens du marché malgache en 2026</li>
-                            <li>La différence entre un site à 500€ et un site à 5000€</li>
-                            <li>Les coûts cachés à anticiper</li>
-                            <li>Comment obtenir le meilleur rapport qualité-prix</li>
-                        </ul>
-                    </div>
-
-                    <h2>📊 Les Prix du Marché à Madagascar en 2026</h2>
-                    
-                    <p>Le marché du développement web à Madagascar a beaucoup évolué ces dernières années. Voici un aperçu détaillé des tarifs pratiqués:</p>
-
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <span class="number">800€</span>
-                            <span class="label">Site Vitrine Basique</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="number">2000€</span>
-                            <span class="label">Site Professionnel</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="number">3500€</span>
-                            <span class="label">E-commerce Standard</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="number">8000€+</span>
-                            <span class="label">Application Sur Mesure</span>
-                        </div>
-                    </div>
-
-                    <h3>1. Site Vitrine Simple (800€ - 1,500€)</h3>
-                    
-                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=900" class="article-image-inline" alt="Site vitrine exemple">
-                    <p class="image-caption">Exemple de site vitrine professionnel pour une petite entreprise</p>
-
-                    <p><strong>Pour qui?</strong> Les TPE, artisans, consultants indépendants, petites boutiques qui souhaitent avoir une présence en ligne basique.</p>
-
-                    <p><strong>Ce qui est inclus:</strong></p>
-                    <ul>
-                        <li>✅ 3 à 5 pages (Accueil, Services, À propos, Contact, Galerie)</li>
-                        <li>✅ Design responsive (s'adapte aux mobiles et tablettes)</li>
-                        <li>✅ Formulaire de contact fonctionnel</li>
-                        <li>✅ Intégration Google Maps</li>
-                        <li>✅ Optimisation SEO de base (balises meta, structure H1/H2)</li>
-                        <li>✅ Hébergement mutualisé (1 an inclus)</li>
-                        <li>✅ Nom de domaine (.com ou .mg)</li>
-                        <li>✅ Certificat SSL (cadenas vert de sécurité)</li>
-                        <li>✅ Formation basique à l'utilisation</li>
-                    </ul>
-
-                    <div class="info-box warning">
-                        <h4><i class="fas fa-exclamation-triangle"></i> Attention aux prix trop bas!</h4>
-                        <p>Un site à 200€ ou 300€ semble attractif, mais cache souvent:</p>
-                        <ul>
-                            <li>Des templates préfabriqués non personnalisés</li>
-                            <li>Un code non optimisé (site lent)</li>
-                            <li>Aucun support après-vente</li>
-                            <li>Des frais cachés pour les modifications</li>
-                            <li>Un référencement Google inexistant</li>
-                        </ul>
-                    </div>
-
-                    <h3>2. Site Professionnel / Corporate (1,500€ - 4,000€)</h3>
-
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900" class="article-image-inline" alt="Site professionnel">
-                    <p class="image-caption">Site web professionnel avec blog intégré et fonctionnalités avancées</p>
-
-                    <p><strong>Pour qui?</strong> Les PME en croissance, les entreprises qui veulent se démarquer de la concurrence, les sociétés avec plusieurs services.</p>
-
-                    <p><strong>Ce qui est inclus:</strong></p>
-                    <ul>
-                        <li>✅ 10 à 20 pages personnalisées</li>
-                        <li>✅ Design 100% sur mesure (pas de template)</li>
-                        <li>✅ Blog intégré pour le content marketing</li>
-                        <li>✅ Système de gestion de contenu (CMS) facile à utiliser</li>
-                        <li>✅ Optimisation SEO avancée</li>
-                        <li>✅ Intégration réseaux sociaux</li>
-                        <li>✅ Newsletter / Email marketing</li>
-                        <li>✅ Google Analytics et Search Console</li>
-                        <li>✅ Vitesse optimisée (moins de 2 secondes de chargement)</li>
-                        <li>✅ Sécurité renforcée (firewall, backups automatiques)</li>
-                        <li>✅ Support technique 3 à 6 mois</li>
-                    </ul>
-
-                    <h3>3. Site E-commerce / Boutique en Ligne (2,500€ - 8,000€)</h3>
-
-                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900" class="article-image-inline" alt="E-commerce Madagascar">
-                    <p class="image-caption">Boutique en ligne avec paiement Mobile Money intégré</p>
-
-                    <p><strong>Pour qui?</strong> Les commerçants, les marques qui veulent vendre en ligne, les entreprises souhaitant diversifier leurs canaux de vente.</p>
-
-                    <p><strong>Ce qui est inclus:</strong></p>
-                    <ul>
-                        <li>✅ Catalogue produits illimité</li>
-                        <li>✅ Gestion des stocks en temps réel</li>
-                        <li>✅ Panier d'achat et tunnel de conversion optimisé</li>
-                        <li>✅ <strong>Paiement Mobile Money</strong> (MVola, Orange Money, Airtel Money)</li>
-                        <li>✅ Paiement par carte bancaire (si disponible)</li>
-                        <li>✅ Paiement à la livraison</li>
-                        <li>✅ Gestion des commandes et factures</li>
-                        <li>✅ Système d'avis clients</li>
-                        <li>✅ Codes promo et réductions</li>
-                        <li>✅ Calcul automatique des frais de livraison</li>
-                        <li>✅ Tableau de bord administrateur complet</li>
-                        <li>✅ Formation complète à la gestion de la boutique</li>
-                        <li>✅ Support technique 6 mois</li>
-                    </ul>
-
-                    <div class="info-box success">
-                        <h4><i class="fas fa-check-circle"></i> Notre Offre Spéciale Rakoto Digital</h4>
-                        <p>Pour les 10 premiers clients de Juin 2026:</p>
-                        <ul>
-                            <li>🎁 Site vitrine complet: <strong>800€</strong> (au lieu de 1,200€)</li>
-                            <li>🎁 Logo professionnel OFFERT (valeur 150€)</li>
-                            <li>🎁 1 mois de maintenance gratuit (valeur 100€)</li>
-                            <li>🎁 Guide SEO offert pour apparaître sur Google</li>
-                        </ul>
-                        <p style="margin-top:1rem;"><strong>Contactez-nous:</strong> WhatsApp +261 37 94 125 93</p>
-                    </div>
-
-                    <h2>💡 Pourquoi de telles différences de prix?</h2>
-
-                    <p>Vous vous demandez peut-être pourquoi un site peut coûter 800€ chez un prestataire et 5,000€ chez un autre. Voici les facteurs qui expliquent ces écarts:</p>
-
-                    <h3>1. Le Design (30% du prix)</h3>
-                    <ul>
-                        <li><strong>Template préfabriqué:</strong> 100-300€ (déjà fait, peu personnalisé)</li>
-                        <li><strong>Design personnalisé:</strong> 1,000-3,000€ (créé spécialement pour vous)</li>
-                    </ul>
-
-                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=900" class="article-image-inline" alt="Design personnalisé vs template">
-                    <p class="image-caption">À gauche: template standard. À droite: design personnalisé unique</p>
-
-                    <h3>2. Le Développement (40% du prix)</h3>
-                    <ul>
-                        <li><strong>Code basique:</strong> Rapide mais non optimisé</li>
-                        <li><strong>Code professionnel:</strong> Optimisé pour la vitesse, le SEO, la sécurité</li>
-                        <li><strong>Fonctionnalités sur mesure:</strong> Développement spécifique à vos besoins</li>
-                    </ul>
-
-                    <h3>3. Le Contenu (15% du prix)</h3>
-                    <ul>
-                        <li><strong>Vous fournissez le contenu:</strong> Économie de temps et d'argent</li>
-                        <li><strong>Rédaction professionnelle:</strong> 500-2,000€ selon la taille du site</li>
-                        <li><strong>Photos professionnelles:</strong> 300-1,000€</li>
-                    </ul>
-
-                    <h3>4. Le SEO et le Marketing (15% du prix)</h3>
-                    <ul>
-                        <li><strong>SEO basique:</strong> Inclus dans la plupart des offres</li>
-                        <li><strong>SEO avancé:</strong> 1,000-5,000€ (recherche de mots-clés, optimisation technique, backlinks)</li>
-                        <li><strong>Campagnes publicitaires:</strong> Budget séparé (Facebook Ads, Google Ads)</li>
-                    </ul>
-
-                    <h2>📋 Les Coûts Récurrents à Prévoir</h2>
-
-                    <p>Au-delà du prix de création, voici les coûts annuels à anticiper:</p>
-
-                    <table style="width:100%; border-collapse:collapse; margin:2rem 0;">
-                        <thead>
-                            <tr style="background:var(--primary); color:white;">
-                                <th style="padding:1rem; text-align:left;">Poste de dépense</th>
-                                <th style="padding:1rem; text-align:center;">Coût annuel</th>
-                                <th style="padding:1rem; text-align:center;">Inclus chez Rakoto Digital?</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr style="border-bottom:1px solid #E2E8F0;">
-                                <td style="padding:1rem;">Hébergement web</td>
-                                <td style="padding:1rem; text-align:center;">100-300€/an</td>
-                                <td style="padding:1rem; text-align:center; color:#10B981;"><strong>OUI (1ère année)</strong></td>
-                            </tr>
-                            <tr style="border-bottom:1px solid #E2E8F0; background:#F8FAFC;">
-                                <td style="padding:1rem;">Nom de domaine</td>
-                                <td style="padding:1rem; text-align:center;">15-50€/an</td>
-                                <td style="padding:1rem; text-align:center; color:#10B981;"><strong>OUI (1ère année)</strong></td>
-                            </tr>
-                            <tr style="border-bottom:1px solid #E2E8F0;">
-                                <td style="padding:1rem;">Certificat SSL</td>
-                                <td style="padding:1rem; text-align:center;">0-100€/an</td>
-                                <td style="padding:1rem; text-align:center; color:#10B981;"><strong>OUI (gratuit)</strong></td>
-                            </tr>
-                            <tr style="border-bottom:1px solid #E2E8F0; background:#F8FAFC;">
-                                <td style="padding:1rem;">Maintenance</td>
-                                <td style="padding:1rem; text-align:center;">500-2,000€/an</td>
-                                <td style="padding:1rem; text-align:center; color:#F97316;"><strong>Optionnel</strong></td>
-                            </tr>
-                            <tr style="border-bottom:1px solid #E2E8F0;">
-                                <td style="padding:1rem;">Mises à jour de sécurité</td>
-                                <td style="padding:1rem; text-align:center;">Inclus maintenance</td>
-                                <td style="padding:1rem; text-align:center; color:#F97316;"><strong>Optionnel</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <h2>🎯 Comment Choisir le Bon Prestataire?</h2>
-
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=900" class="article-image-inline" alt="Choisir prestataire web">
-                    
-                    <p>Voici les critères essentiels pour ne pas vous tromper:</p>
-
-                    <ol>
-                        <li><strong>Vérifiez le portfolio:</strong> Demandez à voir des sites qu'ils ont déjà créés. Testez-les sur mobile!</li>
-                        <li><strong>Lisez les avis clients:</strong> Google My Business, Facebook, témoignages sur leur site</li>
-                        <li><strong>Posez des questions techniques:</strong> Un bon prestataire saura vous expliquer simplement</li>
-                        <li><strong>Vérifiez le support après-vente:</strong> Que se passe-t-il si votre site plante un dimanche?</li>
-                        <li><strong>Exigez un contrat écrit:</strong> Avec délais, prix, et livrables clairement définis</li>
-                        <li><strong>Méfiez-vous des promesses irréalistes:</strong> "Site en 24h" = qualité douteuse</li>
-                    </ol>
-
-                    <h2>💰 Notre Méthode de Paiement Flexible</h2>
-
-                    <p>Chez <strong>Rakoto Digital</strong>, nous comprenons que le budget est important. C'est pourquoi nous proposons:</p>
-
-                    <div class="info-box">
-                        <h4><i class="fas fa-wallet"></i> Paiement en 2 ou 3 fois sans frais</h4>
-                        <ul>
-                            <li><strong>Option 2 fois:</strong> 50% à la commande, 50% à la livraison</li>
-                            <li><strong>Option 3 fois:</strong> 40% à la commande, 30% à mi-parcours, 30% à la livraison</li>
-                        </ul>
-                    </div>
-
-                    <h2>❓ Questions Fréquentes</h2>
-
-                    <h3>Peut-on payer en Ariary?</h3>
-                    <p>Oui! Nous acceptons les paiements en Ariary au taux de change du jour. Nous acceptons également les virements bancaires, MVola, Orange Money, et les espèces (pour les clients à Antananarivo).</p>
-
-                    <h3>Combien de temps prend la création d'un site?</h3>
-                    <p>Un site vitrine simple prend <strong>2 à 3 semaines</strong>. Un site professionnel avec blog: <strong>4 à 6 semaines</strong>. Un e-commerce: <strong>6 à 10 semaines</strong>. Ces délais dépendent aussi de votre rapidité à fournir les contenus (textes, photos, etc.).</p>
-
-                    <h3>Et si je ne suis pas satisfait du résultat?</h3>
-                    <p>Nous incluons <strong>2 rounds de révisions gratuits</strong> dans tous nos packages. Si après cela vous n'êtes toujours pas satisfait, nous discutons pour trouver une solution. Notre objectif est votre satisfaction à 100%.</p>
-
-                    <h3>Puis-je modifier mon site moi-même après?</h3>
-                    <p>Oui! Nous utilisons des CMS faciles à utiliser (WordPress, Shopify, etc.) et nous vous formons pendant 1 à 2 heures pour que vous puissiez ajouter/modifier du contenu vous-même.</p>
-
-                    <h3>Le site sera-t-il visible sur Google?</h3>
-                    <p>Tous nos sites incluent une <strong>optimisation SEO de base</strong> qui permet d'être indexé par Google. Pour apparaître en première page sur des mots-clés compétitifs, nous proposons des packs SEO avancés (à partir de 500€/mois).</p>
-
-                    <div class="cta-box">
-                        <h3>Prêt à lancer votre projet?</h3>
-                        <p>Ne laissez pas vos concurrents prendre de l'avance. Obtenez un devis gratuit et personnalisé en moins de 24h.</p>
-                        <a href="https://wa.me/261379412593?text=Bonjour,%20je%20souhaite%20un%20devis%20pour%20un%20site%20web" class="cta-button" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Discuter sur WhatsApp
-                        </a>
-                        <p style="margin-top:1rem; font-size:0.9rem; opacity:0.9;">Réponse sous 1 heure en journée</p>
-                    </div>
-
-                    <div class="related-articles">
-                        <h3>📚 Articles qui pourraient vous intéresser:</h3>
-                        <ul style="list-style:none; padding:0;">
-                            <li style="padding:1rem 0; border-bottom:1px solid #E2E8F0;">
-                                <a href="#" onclick="showArticle('pourquoi-site-web'); return false;" style="color:var(--primary); text-decoration:none; font-weight:600;">
-                                    → 5 Raisons Pour lesquelles Votre Entreprise a Besoin d'un Site Web
-                                </a>
-                            </li>
-                            <li style="padding:1rem 0; border-bottom:1px solid #E2E8F0;">
-                                <a href="#" onclick="showArticle('seo-madagascar'); return false;" style="color:var(--primary); text-decoration:none; font-weight:600;">
-                                    → SEO Madagascar: Comment Apparaître en 1ère Page de Google?
-                                </a>
-                            </li>
-                            <li style="padding:1rem 0;">
-                                <a href="#" onclick="showArticle('ecommerce-madagascar'); return false;" style="color:var(--primary); text-decoration:none; font-weight:600;">
-                                    → E-commerce Madagascar: Comment Vendre en Ligne en 2026?
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                `
-            },
-            // Other articles would continue here with similar detailed content...
-            // For brevity, I'll show the structure for 2 more articles
-            'facebook-ads-guide': {
-                category: 'Marketing Digital',
-                title: 'Facebook Ads Madagascar: Guide Complet 2026 (Avec Exemples Concrets et Captures d\'écran)',
-                date: '5 Juin 2026',
-                readTime: '18 min de lecture',
-                image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1200',
-                tags: ['Facebook Ads', 'Marketing', 'Publicité', 'Madagascar'],
-                content: `
-                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=900" class="article-image-main" alt="Facebook Ads Madagascar">
-                    
-                    <p>Facebook compte plus de <strong>3 millions d'utilisateurs actifs</strong> à Madagascar. C'est LE canal publicitaire incontournable pour développer votre business en 2026.</p>
-                    
-                    <p>Dans ce guide ultra-complet, nous allons voir <strong>comment créer vos premières publicités Facebook qui convertissent</strong>, même avec un petit budget de 50€ ou 100€ par mois.</p>
-
-                    <div class="info-box">
-                        <h4><i class="fas fa-chart-line"></i> Ce que vous allez découvrir:</h4>
-                        <ul>
-                            <li>Comment configurer votre Business Manager (étape par étape)</li>
-                            <li>Les 5 types de campagnes et laquelle choisir</li>
-                            <li>Comment cibler précisément votre audience malgache</li>
-                            <li>Créer des visuels qui attirent l'attention</li>
-                            <li>Rédiger des textes qui vendent</li>
-                            <li>Optimiser vos campagnes pour réduire les coûts</li>
-                            <li>Exemples concrets de publicités qui marchent à Madagascar</li>
-                        </ul>
-                    </div>
-
-                    <h2>📱 Pourquoi Facebook Ads à Madagascar?</h2>
-
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <span class="number">3M+</span>
-                            <span class="label">Utilisateurs Facebook à Madagascar</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="number">95%</span>
-                            <span class="label">Des utilisateurs sur mobile</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="number">0.20€</span>
-                            <span class="label">Coût moyen par clic</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="number">300%</span>
-                            <span class="label">ROI moyen pour les e-commerce</span>
-                        </div>
-                    </div>
-
-                    <h2>🎯 Étape 1: Configurer Facebook Business Manager</h2>
-                    
-                    <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=900" class="article-image-inline" alt="Facebook Business Manager">
-                    <p class="image-caption">Interface du Facebook Business Manager</p>
-
-                    <p>Avant de créer votre première publicité, vous devez configurer le Business Manager. Voici comment:</p>
-
-                    <ol>
-                        <li>Rendez-vous sur <strong>business.facebook.com</strong></li>
-                        <li>Cliquez sur "Créer un compte"</li>
-                        <li>Entrez le nom de votre entreprise: "Rakoto Digital" (par exemple)</li>
-                        <li>Ajoutez votre page Facebook existante (ou créez-en une)</li>
-                        <li>Ajoutez votre compte publicitaire (il sera créé automatiquement)</li>
-                        <li>Configurez votre méthode de paiement (carte bancaire ou PayPal)</li>
-                    </ol>
-
-                    <div class="info-box warning">
-                        <h4><i class="fas fa-exclamation-triangle"></i> Important pour Madagascar</h4>
-                        <p>Les cartes bancaires malgaches fonctionnent, mais certaines banques bloquent les paiements internationaux par défaut. Contactez votre banque pour autoriser les transactions Facebook/Meta avant de commencer.</p>
-                    </div>
-
-                    <h2>💰 Étape 2: Choisir Votre Budget</h2>
-
-                    <p>Pour débuter à Madagascar, voici nos recommandations:</p>
-
-                    <ul>
-                        <li><strong>Budget minimum:</strong> 5€/jour (150€/mois)</li>
-                        <li><strong>Budget recommandé:</strong> 10-15€/jour (300-450€/mois)</li>
-                        <li><strong>Budget agressif:</strong> 20-30€/jour (600-900€/mois)</li>
-                    </ul>
-
-                    <p>Avec 5€/jour à Madagascar, vous pouvez atteindre:</p>
-                    <ul>
-                        <li>2,000 - 5,000 personnes par jour</li>
-                        <li>50 - 150 clics vers votre site</li>
-                        <li>5 - 15 messages WhatsApp par semaine</li>
-                    </ul>
-
-                    <div class="cta-box">
-                        <h3>Besoin d'aide pour gérer vos campagnes?</h3>
-                        <p>Nous gérons vos Facebook Ads pour vous à partir de 200€/mois (budget pub non inclus).</p>
-                        <a href="https://wa.me/261379412593" class="cta-button" target="_blank">Nous contacter</a>
-                    </div>
-
-                    <h2>📚 Articles Recommandés:</h2>
-                    <ul>
-                        <li><a href="#" onclick="showArticle('prix-site-web'); return false;" style="color:var(--primary)">→ Combien coûte un site web à Madagascar?</a></li>
-                        <li><a href="#" onclick="showArticle('seo-madagascar'); return false;" style="color:var(--primary)">→ SEO Madagascar: Guide complet</a></li>
-                    </ul>
-                `
-            },
             'seo-madagascar': {
                 category: 'SEO & Référencement',
-                title: 'SEO Madagascar 2026: Comment Apparaître en 1ère Page de Google (Guide Complet)',
-                date: '2 Juin 2026',
-                readTime: '20 min de lecture',
-                image: 'https://images.unsplash.com/photo-1432888622747-4eb9a8f2c293?w=1200',
-                tags: ['SEO', 'Google', 'Référencement', 'Madagascar'],
+                title: 'SEO Madagascar 2026: Comment Apparaître en 1ère Page de Google',
+                date: '7 Juin 2026',
+                image: 'https://images.unsplash.com/photo-1432888622747-4eb9a8f2c293?w=800',
                 content: `
-                    <img src="https://images.unsplash.com/photo-1432888622747-4eb9a8f2c293?w=900" class="article-image-main" alt="SEO Madagascar">
+                    <h1>SEO Madagascar 2026: Guide Complet</h1>
+                    <img src="https://images.unsplash.com/photo-1432888622747-4eb9a8f2c293?w=900" alt="SEO">
+                    
+                    <h2>Introduction</h2>
                     <p>Le SEO (Search Engine Optimization) est LA méthode pour apparaître gratuitement sur Google et attirer des clients qualifiés sans payer de publicité.</p>
-                    <p>Dans ce guide complet de 2,500 mots, nous allons voir toutes les techniques pour optimiser votre site web et apparaître en première page sur Google Madagascar.</p>
-                    <h2>🔍 Qu'est-ce que le SEO?</h2>
-                    <p>Le SEO, c'est l'ensemble des techniques qui permettent d'améliorer le positionnement de votre site dans les résultats naturels de Google.</p>
-                    <div class="info-box success">
-                        <h4>Pourquoi le SEO est crucial à Madagascar?</h4>
-                        <ul>
-                            <li>93% des expériences en ligne commencent par un moteur de recherche</li>
-                            <li>75% des utilisateurs ne dépassent jamais la première page</li>
-                            <li>Le trafic SEO est gratuit (contrairement aux pubs)</li>
-                            <li>Les résultats sont durables (une fois en 1ère page, vous y restez)</li>
-                        </ul>
-                    </div>
-                    <div class="cta-box">
-                        <h3>Besoin d'un site optimisé SEO?</h3>
-                        <p>Tous nos sites web incluent une optimisation SEO de base. Packages SEO avancés disponibles.</p>
-                        <a href="https://wa.me/261379412593" class="cta-button" target="_blank">Demander un devis</a>
+                    
+                    <h2>Pourquoi le SEO est crucial à Madagascar?</h2>
+                    <ul>
+                        <li>93% des expériences en ligne commencent par un moteur de recherche</li>
+                        <li>75% des utilisateurs ne dépassent jamais la première page</li>
+                        <li>Le trafic SEO est gratuit</li>
+                        <li>Les résultats sont durables</li>
+                    </ul>
+                    
+                    <h2>Étape 1: Recherche de Mots-clés</h2>
+                    <p>La première étape pour optimiser votre site est d'identifier les mots-clés que vos clients potentiels utilisent pour rechercher vos produits ou services.</p>
+                    
+                    <h3>Outils recommandés:</h3>
+                    <ul>
+                        <li><strong>Google Keyword Planner</strong> - Gratuit</li>
+                        <li><strong>Ubersuggest</strong> - Version gratuite disponible</li>
+                        <li><strong>Ahrefs</strong> - Payant mais très complet</li>
+                    </ul>
+                    
+                    <h2>Étape 2: Optimisation On-Page</h2>
+                    <p>L'optimisation on-page concerne tous les éléments que vous pouvez contrôler directement sur votre site web.</p>
+                    
+                    <h3>Éléments importants:</h3>
+                    <ol>
+                        <li><strong>Balise Title</strong>: 50-60 caractères maximum</li>
+                        <li><strong>Meta Description</strong>: 150-160 caractères</li>
+                        <li><strong>URL optimisée</strong>: courte et descriptive</li>
+                        <li><strong>Structure H1, H2, H3</strong>: hiérarchie claire</li>
+                        <li><strong>Contenu de qualité</strong>: minimum 1000 mots</li>
+                        <li><strong>Images optimisées</strong>: balises alt descriptives</li>
+                    </ol>
+                    
+                    <h2>Étape 3: Contenu de Qualité</h2>
+                    <p>Google privilégie le contenu utile, original et bien structuré. Voici comment créer du contenu qui plaît à Google et à vos lecteurs:</p>
+                    
+                    <ul>
+                        <li>Répondez aux questions de vos clients</li>
+                        <li>Utilisez un langage clair et accessible</li>
+                        <li>Ajoutez des images et vidéos</li>
+                        <li>Mettez à jour régulièrement votre contenu</li>
+                        <li>Créez du contenu plus complet que vos concurrents</li>
+                    </ul>
+                    
+                    <h2>Étape 4: Vitesse de Chargement</h2>
+                    <p>Un site lent fait fuir les visiteurs et pénalise votre référencement. Objectif: moins de 3 secondes!</p>
+                    
+                    <h3>Comment améliorer la vitesse:</h3>
+                    <ul>
+                        <li>Compressez les images (TinyPNG, Squoosh)</li>
+                        <li>Utilisez un hébergement de qualité</li>
+                        <li>Activez la mise en cache</li>
+                        <li>Minifiez les fichiers CSS et JavaScript</li>
+                        <li>Utilisez un CDN (Content Delivery Network)</li>
+                    </ul>
+                    
+                    <h2>Étape 5: Mobile Friendly</h2>
+                    <p>À Madagascar, plus de 80% des utilisateurs accèdent à Internet via mobile. Google utilise désormais le "mobile-first indexing".</p>
+                    
+                    <h2>Étape 6: Backlinks (Liens Externes)</h2>
+                    <p>Les backlinks sont des liens provenant d'autres sites vers le vôtre. C'est un facteur de ranking très important.</p>
+                    
+                    <h3>Comment obtenir des backlinks:</h3>
+                    <ul>
+                        <li>Créez du contenu de qualité que les autres veulent partager</li>
+                        <li>Participez à des forums et blogs de votre secteur</li>
+                        <li>Collaborez avec d'autres sites</li>
+                        <li>Créez des infographies partageables</li>
+                        <li>Faites du guest blogging</li>
+                    </ul>
+                    
+                    <h2>Étape 7: Google My Business</h2>
+                    <p>Pour les entreprises locales à Madagascar, Google My Business est essentiel pour apparaître dans les résultats locaux.</p>
+                    
+                    <h2>Suivi et Analyse</h2>
+                    <p>Utilisez Google Analytics et Google Search Console pour suivre vos performances et ajuster votre stratégie.</p>
+                    
+                    <div style="background: #4F46E5; color: white; padding: 30px; border-radius: 10px; margin: 30px 0; text-align: center;">
+                        <h2>Besoin d'aide pour votre SEO?</h2>
+                        <p>Nous optimisons votre site pour Google à partir de 500€</p>
+                        <a href="https://wa.me/261379412593" style="background: white; color: #4F46E5; padding: 15px 30px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 10px; font-weight: bold;">
+                            Nous contacter sur WhatsApp
+                        </a>
                     </div>
                 `
-            },
-            'pourquoi-site-web': {
-                category: 'Business Digital',
-                title: '5 Raisons Pour lesquelles Votre Entreprise a ABSOLUMENT Besoin d\'un Site Web en 2026',
-                date: '28 Mai 2026',
-                readTime: '12 min de lecture',
-                image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200',
-                tags: ['Business', 'Site Web', 'Digital', 'Entreprise'],
-                content: '<p>Contenu détaillé sur l\'importance d\'avoir un site web...</p>'
-            },
-            'ecommerce-madagascar': {
-                category: 'E-commerce',
-                title: 'E-commerce Madagascar 2026: Guide Complet pour Vendre en Ligne (Mobile Money, Livraison, Marketing)',
-                date: '20 Mai 2026',
-                readTime: '16 min de lecture',
-                image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200',
-                tags: ['E-commerce', 'Vente en ligne', 'Mobile Money', 'Madagascar'],
-                content: '<p>Guide complet sur le e-commerce à Madagascar...</p>'
-            },
-            'creer-logo-pro': {
-                category: 'Design',
-                title: 'Comment Créer un Logo Professionnel: Guide Complet 2026 (Avec Exemples et Outils)',
-                date: '15 Mai 2026',
-                readTime: '14 min de lecture',
-                image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=1200',
-                tags: ['Logo', 'Design', 'Branding', 'Identité visuelle'],
-                content: '<p>Tout sur la création de logo professionnel...</p>'
-            },
-            'marketing-pme': {
-                category: 'Marketing',
-                title: 'Marketing Digital pour PME: Stratégies Efficaces avec Petit Budget (Moins de 500€/mois)',
-                date: '10 Mai 2026',
-                readTime: '15 min de lecture',
-                image: 'https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=1200',
-                tags: ['PME', 'Marketing', 'Petit budget', 'Stratégie'],
-                content: '<p>Stratégies marketing pour les petites entreprises...</p>'
-            },
-            'reseaux-sociaux': {
-                category: 'Social Media',
-                title: 'Les Réseaux Sociaux pour Business: Quels Choisir et Comment Les Utiliser en 2026?',
-                date: '5 Mai 2026',
-                readTime: '13 min de lecture',
-                image: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=1200',
-                tags: ['Réseaux sociaux', 'Facebook', 'Instagram', 'LinkedIn'],
-                content: '<p>Guide des réseaux sociaux pour les entreprises...</p>'
-            },
-            'email-marketing': {
-                category: 'Marketing',
-                title: 'Email Marketing 2026: Comment Créer des Campagnes qui Convertissent (Templates Inclus)',
-                date: '1 Mai 2026',
-                readTime: '17 min de lecture',
-                image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200',
-                tags: ['Email marketing', 'Newsletter', 'Conversion', 'Automation'],
-                content: '<p>Tout sur l\'email marketing efficace...</p>'
-            },
-            'augmenter-ventes': {
-                category: 'Ventes',
-                title: 'Comment Augmenter ses Ventes en Ligne de 200%: 15 Techniques Prouvées',
-                date: '25 Avril 2026',
-                readTime: '19 min de lecture',
-                image: 'https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=1200',
-                tags: ['Ventes', 'Conversion', 'E-commerce', 'Stratégie'],
-                content: '<p>Techniques pour booster les ventes en ligne...</p>'
             }
         };
 
-        function showHome() {
-            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            document.getElementById('homePage').classList.add('active');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function scrollToSection(id) {
-            showHome();
-            setTimeout(() => {
-                document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-            }, 100);
-        }
-
         function showBlog() {
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            const grid = document.getElementById('allBlogPosts');
-            grid.innerHTML = Object.entries(blogArticles).map(([key, article]) => `
-                <article class="blog-card fade-in" onclick="showArticle('${key}')">
-                    <img src="${article.image}" class="blog-image" alt="${article.title}">
-                    <div class="blog-content">
-                        <span class="blog-category">${article.category}</span>
-                        <h3>${article.title}</h3>
-                        <p class="blog-excerpt">${article.content.substring(0, 150)}...</p>
-                        <div class="blog-meta">
-                            <span><i class="far fa-calendar"></i> ${article.date}</span>
-                            <span><i class="far fa-clock"></i> ${article.readTime}</span>
-                        </div>
-                        <span class="read-more">Lire l'article <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </article>
-            `).join('');
             document.getElementById('blogPage').classList.add('active');
-            setTimeout(initObserver, 100);
+            
+            const grid = document.getElementById('blogGrid');
+            grid.innerHTML = Object.entries(blogArticles).map(([key, article]) => `
+                <div class="blog-card" onclick="showArticle('${key}')">
+                    <img src="${article.image}" alt="${article.title}" onerror="this.src='https://via.placeholder.com/400x200?text=SEO+Madagascar'">
+                    <span class="blog-category">${article.category}</span>
+                    <h3>${article.title}</h3>
+                    <p style="color: #64748b; font-size: 14px;">${article.date}</p>
+                    <span class="read-more">Lire la suite →</span>
+                </div>
+            `).join('');
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function showArticle(key) {
@@ -894,54 +156,17 @@
             if (!article) return;
             
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            
             document.getElementById('articleContent').innerHTML = `
-                <div class="article-header">
-                    <span class="article-category">${article.category}</span>
-                    <h1 class="article-title">${article.title}</h1>
-                    <div class="article-meta">
-                        <span><i class="far fa-calendar"></i> ${article.date}</span>
-                        <span><i class="far fa-clock"></i> ${article.readTime}</span>
-                    </div>
-                </div>
-                <div class="article-content">${article.content}</div>
-                <div class="article-tags">
-                    ${article.tags.map(tag => `<a href="#" class="tag">${tag}</a>`).join('')}
-                </div>
+                ${article.content}
             `;
+            
             document.getElementById('articlePage').classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function initObserver() {
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) entry.target.classList.add('visible');
-                });
-            }, { threshold: 0.1 });
-            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const preview = document.getElementById('blogPreview');
-            if (preview) {
-                preview.innerHTML = Object.entries(blogArticles).slice(0, 3).map(([key, article]) => `
-                    <article class="blog-card fade-in" onclick="showArticle('${key}')">
-                        <img src="${article.image}" class="blog-image" alt="${article.title}">
-                        <div class="blog-content">
-                            <span class="blog-category">${article.category}</span>
-                            <h3>${article.title}</h3>
-                            <p class="blog-excerpt">${article.content.substring(0, 120)}...</p>
-                            <span class="read-more">Lire la suite <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </article>
-                `).join('');
-            }
-            initObserver();
-        });
-
-        document.querySelector('.mobile-menu-btn')?.addEventListener('click', function() {
-            document.querySelector('.mobile-nav').classList.toggle('active');
-        });
+        // Initialize
+        showBlog();
     </script>
 </body>
 </html>
