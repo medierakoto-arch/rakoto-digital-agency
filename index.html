@@ -1,879 +1,393 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rakoto Digital Solutions | Agence Web Madagascar</title>
-    <meta name="description" content="Agence digitale Madagascar - Sites web dès 800€, Marketing Digital, SEO. WhatsApp: +261 37 94 125 93">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #1e293b; }
-        
-        /* Navigation */
-        header { position: fixed; top: 0; width: 100%; background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; }
-        nav { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.5rem; font-weight: bold; color: #4F46E5; cursor: pointer; }
-        .logo span { color: #F97316; }
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
-        .nav-links a { text-decoration: none; color: #1e293b; font-weight: 500; transition: color 0.3s; }
-        .nav-links a:hover { color: #4F46E5; }
-        .btn-contact { background: linear-gradient(135deg, #4F46E5, #7C3AED); color: white !important; padding: 0.5rem 1.5rem; border-radius: 50px; }
-        .mobile-menu { display: none; font-size: 1.5rem; cursor: pointer; }
-        
-        /* Pages */
-        .page { display: none; margin-top: 70px; min-height: 100vh; }
-        .page.active { display: block; }
-        
-        /* Hero Section */
-        .service-hero { 
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
-            color: white; 
-            padding: 5rem 2rem 3rem; 
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .service-hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-        .service-hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
-        .service-icon-large { 
-            width: 100px; 
-            height: 100px; 
-            background: rgba(255,255,255,0.2); 
-            border-radius: 25px; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            font-size: 3rem; 
-            margin: 0 auto 2rem;
-            backdrop-filter: blur(10px);
-        }
-        .service-hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-        .service-hero p { font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.95; }
-        .btn-hero { display: inline-block; background: white; color: #4F46E5; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: bold; transition: transform 0.3s; }
-        .btn-hero:hover { transform: translateY(-3px); }
-        
-        /* Back Button */
-        .back-btn { 
-            background: white; 
-            color: #4F46E5; 
-            border: none; 
-            padding: 0.75rem 1.5rem; 
-            border-radius: 8px; 
-            cursor: pointer; 
-            font-size: 1rem; 
-            margin-bottom: 2rem; 
-            display: inline-flex; 
-            align-items: center; 
-            gap: 0.5rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .back-btn:hover { background: #f1f5f9; }
-        
-        /* Section */
-        .section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
-        .section-title { text-align: center; margin-bottom: 3rem; }
-        .section-title h2 { font-size: 2.5rem; color: #1e293b; margin-bottom: 1rem; }
-        .section-title p { color: #64748b; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
-        
-        /* Content Grid */
-        .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin: 3rem 0; }
-        .content-text { font-size: 1.1rem; line-height: 1.8; color: #334155; }
-        .content-text h3 { font-size: 1.75rem; color: #1e293b; margin: 2rem 0 1rem; }
-        .content-text ul { margin: 1rem 0; padding-left: 2rem; }
-        .content-text li { margin-bottom: 0.75rem; }
-        .content-image { border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
-        .content-image img { width: 100%; height: auto; display: block; }
-        
-        /* Video Section */
-        .video-section { background: #f1f5f9; padding: 4rem 2rem; margin: 3rem 0; border-radius: 20px; }
-        .video-container { max-width: 900px; margin: 2rem auto; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 15px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 15px; }
-        .video-text { text-align: center; max-width: 700px; margin: 0 auto; }
-        .video-text h3 { font-size: 2rem; color: #1e293b; margin-bottom: 1rem; }
-        
-        /* Features */
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 3rem 0; }
-        .feature-card { 
-            background: white; 
-            padding: 2.5rem; 
-            border-radius: 15px; 
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s;
-            border-left: 4px solid #4F46E5;
-        }
-        .feature-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
-        .feature-card h3 { color: #1e293b; margin-bottom: 1rem; font-size: 1.5rem; }
-        .feature-card p { color: #64748b; line-height: 1.7; }
-        .feature-icon { width: 60px; height: 60px; background: linear-gradient(135deg, #4F46E5, #7C3AED); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; margin-bottom: 1.5rem; }
-        
-        /* Stats */
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 3rem 0; }
-        .stat-card { background: white; padding: 2rem; border-radius: 15px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.08); }
-        .stat-number { font-size: 3rem; font-weight: bold; color: #4F46E5; display: block; }
-        .stat-label { color: #64748b; margin-top: 0.5rem; }
-        
-        /* CTA Box */
-        .cta-box { 
-            background: linear-gradient(135deg, #4F46E5, #7C3AED); 
-            color: white; 
-            padding: 4rem 3rem; 
-            border-radius: 20px; 
-            text-align: center; 
-            margin: 4rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-        .cta-box::before {
-            content: '';
-            position: absolute;
-            top: -50%; right: -20%;
-            width: 400px; height: 400px;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-        .cta-box h3 { font-size: 2.5rem; margin-bottom: 1rem; position: relative; z-index: 1; }
-        .cta-box p { font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.95; position: relative; z-index: 1; }
-        .cta-btn { 
-            display: inline-block; 
-            background: white; 
-            color: #4F46E5; 
-            padding: 1.25rem 3rem; 
-            border-radius: 50px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            position: relative;
-            z-index: 1;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-        .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
-        
-        /* Pricing */
-        .pricing-section { background: #f1f5f9; padding: 4rem 2rem; border-radius: 20px; margin: 3rem 0; }
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1000px; margin: 2rem auto 0; }
-        .pricing-card { background: white; padding: 2.5rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: center; transition: all 0.3s; }
-        .pricing-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
-        .pricing-card.featured { background: linear-gradient(135deg, #4F46E5, #7C3AED); color: white; transform: scale(1.05); }
-        .badge { background: #F97316; color: white; padding: 0.25rem 1rem; border-radius: 20px; font-size: 0.875rem; display: inline-block; margin-bottom: 1rem; }
-        .price { font-size: 3rem; font-weight: bold; margin: 1rem 0; }
-        .features { list-style: none; margin: 2rem 0; text-align: left; }
-        .features li { padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0; }
-        .pricing-card.featured .features li { border-bottom-color: rgba(255,255,255,0.2); }
-        .features li i { color: #10B981; margin-right: 0.5rem; }
-        .pricing-card.featured .features li i { color: white; }
-        .btn-pricing { display: block; background: #4F46E5; color: white; padding: 1rem; border-radius: 10px; text-decoration: none; font-weight: bold; transition: all 0.3s; }
-        .pricing-card.featured .btn-pricing { background: white; color: #4F46E5; }
-        
-        /* Testimonials */
-        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 3rem 0; }
-        .testimonial-card { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); }
-        .testimonial-card .stars { color: #FBBF24; margin-bottom: 1rem; }
-        .testimonial-card p { color: #64748b; font-style: italic; margin-bottom: 1.5rem; line-height: 1.7; }
-        .testimonial-author { display: flex; align-items: center; gap: 1rem; }
-        .testimonial-author img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
-        .author-info h4 { color: #1e293b; margin-bottom: 0.25rem; }
-        .author-info p { color: #94a3b8; font-size: 0.875rem; margin: 0; font-style: normal; }
-        
-        /* Info Box */
-        .info-box { 
-            background: #EEF2FF; 
-            border-left: 4px solid #4F46E5; 
-            padding: 2rem; 
-            border-radius: 10px; 
-            margin: 2rem 0;
-        }
-        .info-box.warning { background: #FFF7ED; border-left-color: #F97316; }
-        .info-box.success { background: #ECFDF5; border-left-color: #10B981; }
-        .info-box h4 { color: #1e293b; margin-bottom: 1rem; font-size: 1.25rem; }
-        .info-box ul { margin: 1rem 0; padding-left: 2rem; }
-        .info-box li { margin-bottom: 0.5rem; color: #334155; }
-        
-        /* Footer */
-        footer { background: #0F172A; color: white; padding: 4rem 2rem 2rem; margin-top: 4rem; }
-        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem; }
-        .footer-section h3 { margin-bottom: 1rem; color: #4F46E5; }
-        .footer-section p { color: #94a3b8; margin-bottom: 1.5rem; }
-        .social-links { display: flex; gap: 1rem; }
-        .social-links a { width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all 0.3s; }
-        .social-links a:hover { background: #4F46E5; transform: translateY(-3px); }
-        .footer-section ul { list-style: none; }
-        .footer-section ul li { margin-bottom: 0.75rem; }
-        .footer-section a { color: #94a3b8; text-decoration: none; transition: color 0.3s; }
-        .footer-section a:hover { color: white; }
-        .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid #1e293b; color: #64748b; }
-        
-        /* WhatsApp Float */
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4); cursor: pointer; z-index: 1000; animation: pulse 2s infinite; text-decoration: none; }
-        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .mobile-menu { display: block; }
-            .service-hero h1 { font-size: 1.75rem; }
-            .content-grid { grid-template-columns: 1fr; }
-            .stats-grid, .features-grid, .pricing-grid, .testimonials-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rakoto Digital Solutions | Agence Web & Marketing Digital à Madagascar</title>
+  <meta name="description" content="Agence digitale à Antananarivo : création de sites web dès 800€, marketing digital, SEO et design graphique. Devis gratuit via WhatsApp.">
+  <meta name="theme-color" content="#0f172a">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Rakoto Digital Solutions">
+  <meta property="og:title" content="Rakoto Digital Solutions | Agence Web & Marketing Digital à Madagascar">
+  <meta property="og:description" content="Sites web, marketing digital, SEO et design graphique pour les entreprises à Madagascar. Devis gratuit.">
+  <meta property="og:url" content="https://rakoto-digital-agency.vercel.app/">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f172a'/%3E%3Ctext x='32' y='44' font-size='36' font-family='Arial' font-weight='700' text-anchor='middle' fill='%23f59e0b'%3ER%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Rakoto Digital Solutions",
+    "url": "https://rakoto-digital-agency.vercel.app/",
+    "email": "christian.rakoto.pro@gmail.com",
+    "telephone": "+261379412593",
+    "areaServed": "Madagascar",
+    "address": { "@type": "PostalAddress", "addressLocality": "Antananarivo", "addressCountry": "MG" },
+    "description": "Agence digitale : création de sites web, marketing digital, SEO et design graphique."
+  }
+  </script>
 </head>
 <body>
 
-    <!-- Navigation -->
-    <header>
-        <nav>
-            <div class="logo" onclick="showPage('home')">Rakoto<span>Digital</span></div>
-            <ul class="nav-links">
-                <li><a href="#" onclick="showPage('home')">Accueil</a></li>
-                <li><a href="#" onclick="showPage('services')">Services</a></li>
-                <li><a href="https://wa.me/261379412593" class="btn-contact" target="_blank">Contact</a></li>
-            </ul>
-            <div class="mobile-menu" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></div>
-        </nav>
-    </header>
+<a class="skip" href="#contenu">Aller au contenu</a>
 
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/261379412593?text=Bonjour%20Rakoto%20Digital" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="#accueil" aria-label="Rakoto Digital - Accueil">Rakoto<span>Digital</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">☰</button>
+    <nav id="menu" class="menu" aria-label="Navigation principale">
+      <a href="#services">Services</a>
+      <a href="#tarifs-web">Tarifs</a>
+      <a href="#processus">Processus</a>
+      <a href="#apropos">À propos</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-small" href="https://wa.me/261379412593?text=Bonjour%20Rakoto%20Digital" target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+  </div>
+</header>
 
-    <!-- HOME PAGE -->
-    <div id="home" class="page active">
-        <section class="service-hero">
-            <div class="service-hero-content">
-                <h1>Bienvenue chez <span style="color: #FBBF24;">Rakoto Digital</span></h1>
-                <p>Votre partenaire de confiance pour la transformation digitale à Madagascar</p>
-                <a href="#services" class="btn-hero" onclick="showPage('services'); return false;">Découvrir nos services</a>
-            </div>
-        </section>
+<main id="contenu">
 
-        <section class="section" id="services">
-            <div class="section-title">
-                <h2>Nos Services</h2>
-                <p>Trois expertises pour propulser votre entreprise</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card" onclick="showPage('marketing')" style="cursor: pointer;">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #8B5CF6, #6D28D9);"><i class="fas fa-bullhorn"></i></div>
-                    <h3>Digital Marketing</h3>
-                    <p>Facebook Ads, Google Ads, SEO et gestion des réseaux sociaux pour augmenter votre visibilité et vos ventes.</p>
-                </div>
-                <div class="feature-card" onclick="showPage('design')" style="cursor: pointer;">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #F97316, #EA580C);"><i class="fas fa-palette"></i></div>
-                    <h3>Graphic Design</h3>
-                    <p>Logos, chartes graphiques, supports de communication pour une identité visuelle forte et professionnelle.</p>
-                </div>
-                <div class="feature-card" onclick="showPage('web')" style="cursor: pointer;">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #10B981, #059669);"><i class="fas fa-code"></i></div>
-                    <h3>Web Development</h3>
-                    <p>Sites vitrines, e-commerce, applications web performantes et optimisées pour le référencement.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" style="background: #f1f5f9; border-radius: 20px; margin: 2rem auto;">
-            <div class="section-title">
-                <h2>Pourquoi Nous Choisir?</h2>
-                <p>Des résultats concrets pour votre entreprise</p>
-            </div>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <span class="stat-number">150+</span>
-                    <div class="stat-label">Projets Réussis</div>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">500+</span>
-                    <div class="stat-label">Clients Satisfaits</div>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">8+</span>
-                    <div class="stat-label">Années d'Expérience</div>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">98%</span>
-                    <div class="stat-label">Taux de Satisfaction</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="cta-box">
-                <h3>Prêt à lancer votre projet?</h3>
-                <p>Discutons ensemble de vos besoins et trouvons la solution digitale parfaite pour votre entreprise.</p>
-                <a href="https://wa.me/261379412593" class="cta-btn" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Contactez-nous sur WhatsApp
-                </a>
-            </div>
-        </section>
+  <!-- ACCUEIL -->
+  <section id="accueil" class="hero">
+    <div class="container">
+      <p class="eyebrow">Agence digitale · Antananarivo, Madagascar</p>
+      <h1>Votre présence digitale, <em>claire, moderne et efficace</em></h1>
+      <p class="lead">Sites web, marketing digital et identité visuelle pour les entreprises malgaches qui veulent être vues et choisies en ligne.</p>
+      <div class="actions">
+        <a class="btn" href="https://wa.me/261379412593?text=Bonjour%20Rakoto%20Digital%2C%20je%20souhaite%20un%20devis%20gratuit" target="_blank" rel="noopener">Demander un devis gratuit</a>
+        <a class="btn btn-ghost" href="#services">Découvrir nos services</a>
+      </div>
     </div>
+  </section>
 
-    <!-- MARKETING PAGE -->
-    <div id="marketing" class="page">
-        <section class="service-hero">
-            <div class="service-hero-content">
-                <div class="service-icon-large"><i class="fas fa-bullhorn"></i></div>
-                <h1>Digital Marketing</h1>
-                <p>Augmentez votre visibilité et vos ventes avec des stratégies marketing digitales performantes</p>
-                <a href="https://wa.me/261379412593?text=Je%20suis%20intéressé%20par%20le%20Digital%20Marketing" class="btn-hero" target="_blank">Demander un devis gratuit</a>
-            </div>
-        </section>
-
-        <section class="section">
-            <button class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i> Retour</button>
-            
-            <div class="content-grid">
-                <div class="content-text">
-                    <h3>Pourquoi le Marketing Digital est Essentiel?</h3>
-                    <p>Aujourd'hui, plus de <strong>3 millions de Malgaches</strong> sont actifs sur les réseaux sociaux. Votre entreprise doit être là où se trouvent vos clients!</p>
-                    <p>Le marketing digital n'est plus une option, c'est une nécessité pour rester compétitif. Avec nos stratégies éprouvées, vous pouvez:</p>
-                    <ul>
-                        <li>✅ Atteindre votre audience cible précisément</li>
-                        <li>✅ Augmenter votre chiffre d'affaires de 200%+</li>
-                        <li>✅ Construire une communauté engagée</li>
-                        <li>✅ Mesurer chaque euro investi</li>
-                        <li>✅ Devancer vos concurrents</li>
-                    </ul>
-                </div>
-                <div class="content-image">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800" alt="Digital Marketing Madagascar">
-                </div>
-            </div>
-
-            <div class="video-section">
-                <div class="video-text">
-                    <h3><i class="fas fa-play-circle" style="color: #4F46E5;"></i> Découvrez Comment Nous Transformons les Businesses</h3>
-                    <p>Regardez cette vidéo pour comprendre notre approche et les résultats que nous obtenons pour nos clients.</p>
-                </div>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Digital Marketing Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
-
-            <div class="section-title" style="margin-top: 4rem;">
-                <h2>Nos Services Marketing</h2>
-                <p>Des solutions complètes pour votre croissance</p>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fab fa-facebook-f"></i></div>
-                    <h3>Facebook & Instagram Ads</h3>
-                    <p>Campagnes publicitaires ciblées pour atteindre vos clients idéaux. Nous créons des annonces qui convertissent avec un ROI moyen de 300%.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fab fa-google"></i></div>
-                    <h3>Google Ads (SEA)</h3>
-                    <p>Apparaissez en première position sur Google lorsque vos clients recherchent vos produits ou services. Payez uniquement quand on clique.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-search"></i></div>
-                    <h3>SEO (Référencement Naturel)</h3>
-                    <p>Optimisez votre site pour apparaître gratuitement sur Google. Trafic qualifié et durable sans payer de publicité.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-share-alt"></i></div>
-                    <h3>Gestion des Réseaux Sociaux</h3>
-                    <p>Création de contenu, publication régulière, interaction avec votre communauté. Construisez une marque forte et aimée.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-envelope"></i></div>
-                    <h3>Email Marketing</h3>
-                    <p>Newsletters et automatisations pour fidéliser vos clients et augmenter vos ventes répétées.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
-                    <h3>Analytics & Reporting</h3>
-                    <p>Suivi précis des performances. Rapports mensuels détaillés pour voir exactement ce qui fonctionne.</p>
-                </div>
-            </div>
-
-            <div class="info-box success">
-                <h4><i class="fas fa-trophy"></i> Résultats Garantis</h4>
-                <p>Nos clients obtiennent en moyenne:</p>
-                <ul>
-                    <li>📈 +150% de trafic sur leur site en 3 mois</li>
-                    <li>💰 +200% de leads qualifiés en 6 mois</li>
-                    <li>🛒 +180% de ventes en ligne en 1 an</li>
-                </ul>
-            </div>
-
-            <div class="pricing-section">
-                <div class="section-title">
-                    <h2>Nos Packages Marketing</h2>
-                    <p>Choisissez la formule qui correspond à vos objectifs</p>
-                </div>
-                <div class="pricing-grid">
-                    <div class="pricing-card">
-                        <h3>Starter</h3>
-                        <div class="price">200€<span style="font-size:1rem">/mois</span></div>
-                        <ul class="features">
-                            <li><i class="fas fa-check"></i> Gestion 1 réseau social</li>
-                            <li><i class="fas fa-check"></i> 4 publications/semaine</li>
-                            <li><i class="fas fa-check"></i> Rapport mensuel</li>
-                            <li><i class="fas fa-check"></i> Community management</li>
-                        </ul>
-                        <a href="https://wa.me/261379412593?text=Je%20veux%20le%20pack%20Starter%20Marketing" class="btn-pricing" target="_blank">Choisir</a>
-                    </div>
-                    <div class="pricing-card featured">
-                        <span class="badge">Recommandé</span>
-                        <h3>Business</h3>
-                        <div class="price">500€<span style="font-size:1rem">/mois</span></div>
-                        <ul class="features">
-                            <li><i class="fas fa-check"></i> 3 réseaux sociaux</li>
-                            <li><i class="fas fa-check"></i> Publications quotidiennes</li>
-                            <li><i class="fas fa-check"></i> Campagnes publicitaires</li>
-                            <li><i class="fas fa-check"></i> Rapport hebdomadaire</li>
-                            <li><i class="fas fa-check"></i> Stratégie de contenu</li>
-                        </ul>
-                        <a href="https://wa.me/261379412593?text=Je%20veux%20le%20pack%20Business%20Marketing" class="btn-pricing" target="_blank">Choisir</a>
-                    </div>
-                    <div class="pricing-card">
-                        <h3>Enterprise</h3>
-                        <div class="price">1000€<span style="font-size:1rem">/mois</span></div>
-                        <ul class="features">
-                            <li><i class="fas fa-check"></i> Réseaux sociaux illimités</li>
-                            <li><i class="fas fa-check"></i> Contenu premium</li>
-                            <li><i class="fas fa-check"></i> Publicités avancées</li>
-                            <li><i class="fas fa-check"></i> Account manager dédié</li>
-                            <li><i class="fas fa-check"></i> Support 24/7</li>
-                        </ul>
-                        <a href="https://wa.me/261379412593?text=Je%20veux%20le%20pack%20Enterprise%20Marketing" class="btn-pricing" target="_blank">Choisir</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section-title" style="margin-top: 4rem;">
-                <h2>Ils Nous Font Confiance</h2>
-                <p>Découvrez les témoignages de nos clients satisfaits</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p>"Notre chiffre d'affaires a augmenté de 200% en 6 mois grâce à leur stratégie Facebook Ads. Équipe professionnelle et résultats concrets!"</p>
-                    <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="Client">
-                        <div class="author-info">
-                            <h4>Jean Rakotondrasoa</h4>
-                            <p>CEO, TechMadagascar</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p>"Enfin une agence qui comprend le marché malgache! Nos ventes en ligne ont explosé après leur intervention."</p>
-                    <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="Client">
-                        <div class="author-info">
-                            <h4>Sarah Andriamampianina</h4>
-                            <p>Directrice, Madagascar Art</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="cta-box">
-                <h3>Prêt à Décoller?</h3>
-                <p>Ne laissez pas vos concurrents prendre de l'avance. Obtenez un audit gratuit de votre présence digitale!</p>
-                <a href="https://wa.me/261379412593?text=Je%20veux%20un%20audit%20gratuit%20de%20mon%20marketing" class="cta-btn" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Demander mon audit gratuit
-                </a>
-            </div>
-        </section>
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <div class="container">
+      <h2>Nos services</h2>
+      <p class="section-sub">Trois domaines pour développer votre activité</p>
+      <div class="grid grid-3">
+        <article class="card">
+          <div class="icon" aria-hidden="true">🌐</div>
+          <h3>Création de sites web</h3>
+          <p>Sites vitrines, boutiques en ligne et applications web, responsives et optimisés pour Google.</p>
+          <a class="link" href="#tarifs-web">Voir les tarifs web →</a>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">📣</div>
+          <h3>Marketing digital</h3>
+          <p>Facebook & Instagram Ads, Google Ads, SEO, gestion des réseaux sociaux, email marketing et reporting.</p>
+          <a class="link" href="#tarifs-marketing">Voir les packages →</a>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">🎨</div>
+          <h3>Design graphique</h3>
+          <p>Logo, charte graphique, supports print, packaging, visuels publicitaires et interfaces UI/UX.</p>
+          <a class="link" href="#tarifs-design">Voir les tarifs design →</a>
+        </article>
+      </div>
     </div>
+  </section>
 
-    <!-- DESIGN PAGE -->
-    <div id="design" class="page">
-        <section class="service-hero" style="background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);">
-            <div class="service-hero-content">
-                <div class="service-icon-large"><i class="fas fa-palette"></i></div>
-                <h1>Graphic Design</h1>
-                <p>Créez une identité visuelle unique qui marque les esprits et renforce votre marque</p>
-                <a href="https://wa.me/261379412593?text=Je%20suis%20intéressé%20par%20le%20Graphic%20Design" class="btn-hero" target="_blank">Demander un devis gratuit</a>
-            </div>
-        </section>
+  <!-- WEB -->
+  <section id="tarifs-web" class="section alt">
+    <div class="container">
+      <h2>Sites web</h2>
+      <p class="section-sub">Votre site, disponible 24h/24 pour présenter vos services et recevoir des demandes</p>
 
-        <section class="section">
-            <button class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i> Retour</button>
-            
-            <div class="content-grid">
-                <div class="content-image">
-                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800" alt="Graphic Design">
-                </div>
-                <div class="content-text">
-                    <h3>Une Identité Visuelle qui Vous Ressemble</h3>
-                    <p>Votre logo et votre charte graphique sont le visage de votre entreprise. Ils doivent inspirer confiance et professionnalisme dès le premier regard.</p>
-                    <p>Nous créons des designs sur mesure qui:</p>
-                    <ul>
-                        <li>✅ Reflètent les valeurs de votre entreprise</li>
-                        <li>✅ Se démarquent de la concurrence</li>
-                        <li>✅ Restent gravés dans l'esprit de vos clients</li>
-                        <li>✅ Fonctionnent sur tous les supports</li>
-                        <li>✅ Évoluent avec votre entreprise</li>
-                    </ul>
-                </div>
-            </div>
+      <ul class="features">
+        <li>Rapide et optimisé pour le référencement (SEO)</li>
+        <li>Adapté au mobile, tablette et ordinateur</li>
+        <li>Formulaire de contact et lien WhatsApp</li>
+        <li>E-commerce avec Mobile Money et carte bancaire</li>
+        <li>Sécurité, sauvegardes et maintenance</li>
+      </ul>
 
-            <div class="video-section">
-                <div class="video-text">
-                    <h3><i class="fas fa-play-circle" style="color: #F97316;"></i> Le Processus de Création d'un Logo Professionnel</h3>
-                    <p>Découvrez comment nous transformons votre vision en une identité visuelle mémorable.</p>
-                </div>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Graphic Design Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
-
-            <div class="section-title" style="margin-top: 4rem;">
-                <h2>Nos Services Design</h2>
-                <p>De l'idée à la réalisation, nous nous occupons de tout</p>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #F97316, #EA580C);"><i class="fas fa-pen-nib"></i></div>
-                    <h3>Logo & Identité Visuelle</h3>
-                    <p>Création de logos professionnels et mémorables. Charte graphique complète avec typographies, palette de couleurs et guidelines d'utilisation.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #F97316, #EA580C);"><i class="fas fa-print"></i></div>
-                    <h3>Supports Print</h3>
-                    <p>Cartes de visite, flyers, brochures, affiches, dépliants. Tous vos supports de communication imprimés avec un design professionnel.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #F97316, #EA580C);"><i class="fas fa-box"></i></div>
-                    <h3>Packaging Design</h3>
-                    <p>Design d'emballages attractifs qui se démarquent en rayon et donnent envie d'acheter. Packaging qui raconte votre histoire.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #F97316, #EA580C);"><i class="fas fa-mobile-alt"></i></div>
-                    <h3>UI/UX Design</h3>
-                    <p>Design d'interfaces utilisateur modernes et intuitives pour vos applications web et mobiles. Expérience utilisateur optimale.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #F97316, #EA580C);"><i class="fas fa-ad"></i></div>
-                    <h3>Publicité & Bannières</h3>
-                    <p>Création de visuels publicitaires pour Facebook, Instagram, Google Ads. Designs optimisés pour maximiser les clics et conversions.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #F97316, #EA580C);"><i class="fas fa-book"></i></div>
-                    <h3>Charte Graphique</h3>
-                    <p>Document complet définissant tous les éléments visuels de votre marque pour une cohérence parfaite sur tous les supports.</p>
-                </div>
-            </div>
-
-            <div class="info-box">
-                <h4><i class="fas fa-lightbulb"></i> Pourquoi Investir dans un Design Professionnel?</h4>
-                <ul>
-                    <li><strong>Crédibilité:</strong> 75% des consommateurs jugent la crédibilité d'une entreprise sur son design</li>
-                    <li><strong>Mémorisation:</strong> Les marques avec une identité forte sont 3.5x plus mémorisées</li>
-                    <li><strong>Confiance:</strong> Un design professionnel inspire confiance immédiatement</li>
-                    <li><strong>Différenciation:</strong> Sortez du lot et attirez l'attention de vos clients idéaux</li>
-                </ul>
-            </div>
-
-            <div class="pricing-section">
-                <div class="section-title">
-                    <h2>Nos Tarifs Design</h2>
-                    <p>Des prix transparents pour chaque projet</p>
-                </div>
-                <div class="pricing-grid">
-                    <div class="pricing-card">
-                        <h3>Logo Simple</h3>
-                        <div class="price">150€</div>
-                        <ul class="features">
-                            <li><i class="fas fa-check"></i> 3 propositions initiales</li>
-                            <li><i class="fas fa-check"></i> 2 révisions incluses</li>
-                            <li><i class="fas fa-check"></i> Fichiers source (AI, PSD)</li>
-                            <li><i class="fas fa-check"></i> Formats web (PNG, JPG, SVG)</li>
-                            <li><i class="fas fa-check"></i> Livraison en 5 jours</li>
-                        </ul>
-                        <a href="https://wa.me/261379412593?text=Je%20veux%20le%20pack%20Logo%20Simple" class="btn-pricing" target="_blank">Commander</a>
-                    </div>
-                    <div class="pricing-card featured">
-                        <span class="badge">Recommandé</span>
-                        <h3>Identité Complète</h3>
-                        <div class="price">500€</div>
-                        <ul class="features">
-                            <li><i class="fas fa-check"></i> Logo professionnel</li>
-                            <li><i class="fas fa-check"></i> Charte graphique complète</li>
-                            <li><i class="fas fa-check"></i> Carte de visite</li>
-                            <li><i class="fas fa-check"></i> Papeterie (en-tête, facture)</li>
-                            <li><i class="fas fa-check"></i> Templates réseaux sociaux</li>
-                            <li><i class="fas fa-check"></i> 5 révisions incluses</li>
-                            <li><i class="fas fa-check"></i> Livraison en 10 jours</li>
-                        </ul>
-                        <a href="https://wa.me/261379412593?text=Je%20veux%20le%20pack%20Identité%20Complète" class="btn-pricing" target="_blank">Commander</a>
-                    </div>
-                    <div class="pricing-card">
-                        <h3>Branding Premium</h3>
-                        <div class="price">1200€</div>
-                        <ul class="features">
-                            <li><i class="fas fa-check"></i> Logo + déclinaisons</li>
-                            <li><i class="fas fa-check"></i> Charte graphique étendue</li>
-                            <li><i class="fas fa-check"></i> Tous supports print</li>
-                            <li><i class="fas fa-check"></i> Templates digitaux</li>
-                            <li><i class="fas fa-check"></i> Guide de marque complet</li>
-                            <li><i class="fas fa-check"></i> Révisions illimitées</li>
-                            <li><i class="fas fa-check"></i> Support 3 mois</li>
-                        </ul>
-                        <a href="https://wa.me/261379412593?text=Je%20veux%20le%20pack%20Branding%20Premium" class="btn-pricing" target="_blank">Commander</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="cta-box" style="background: linear-gradient(135deg, #F97316, #EA580C);">
-                <h3>Donnez Vie à Votre Marque</h3>
-                <p>Un design professionnel est le meilleur investissement pour votre entreprise. Obtenez un devis personnalisé gratuit!</p>
-                <a href="https://wa.me/261379412593?text=Je%20veux%20un%20devis%20pour%20un%20projet%20design" class="cta-btn" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Discuter de mon projet
-                </a>
-            </div>
-        </section>
+      <div class="grid grid-3">
+        <article class="price-card">
+          <h3>Site Vitrine</h3>
+          <p class="price">800€</p>
+          <ul>
+            <li>Jusqu'à 5 pages</li>
+            <li>Design responsive</li>
+            <li>Formulaire de contact</li>
+            <li>SEO de base</li>
+            <li>Hébergement 1 an inclus</li>
+            <li>Livraison en 2 semaines</li>
+          </ul>
+          <a class="btn" href="https://wa.me/261379412593?text=Je%20veux%20le%20pack%20Site%20Vitrine" target="_blank" rel="noopener">Commander</a>
+        </article>
+        <article class="price-card featured">
+          <span class="badge">Populaire</span>
+          <h3>Site Pro</h3>
+          <p class="price">2000€</p>
+          <ul>
+            <li>Jusqu'à 15 pages</li>
+            <li>Design sur mesure</li>
+            <li>Blog intégré</li>
+            <li>SEO avancé</li>
+            <li>Google Analytics</li>
+            <li>Formation à l'utilisation</li>
+            <li>Hébergement 1 an inclus</li>
+          </ul>
+          <a class="btn" href="https://wa.me/261379412593?text=Je%20veux%20le%20pack%20Site%20Pro" target="_blank" rel="noopener">Commander</a>
+        </article>
+        <article class="price-card">
+          <h3>E-commerce</h3>
+          <p class="price">3500€</p>
+          <ul>
+            <li>Boutique complète</li>
+            <li>Paiement en ligne</li>
+            <li>Gestion des stocks</li>
+            <li>Tableau de bord admin</li>
+            <li>SEO</li>
+            <li>Formation complète</li>
+            <li>Support 3 mois</li>
+          </ul>
+          <a class="btn" href="https://wa.me/261379412593?text=Je%20veux%20le%20pack%20E-commerce" target="_blank" rel="noopener">Commander</a>
+        </article>
+      </div>
+      <p class="note">Tarifs en euros. Le règlement en Ariary est possible : contactez-nous pour le montant exact.</p>
     </div>
+  </section>
 
-    <!-- WEB DEVELOPMENT PAGE -->
-    <div id="web" class="page">
-        <section class="service-hero" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">
-            <div class="service-hero-content">
-                <div class="service-icon-large"><i class="fas fa-code"></i></div>
-                <h1>Web Development</h1>
-                <p>Des sites web performants, modernes et optimisés qui convertissent vos visiteurs en clients</p>
-                <a href="https://wa.me/261379412593?text=Je%20suis%20intéressé%20par%20le%20Web%20Development" class="btn-hero" target="_blank">Demander un devis gratuit</a>
-            </div>
-        </section>
+  <!-- MARKETING -->
+  <section id="tarifs-marketing" class="section">
+    <div class="container">
+      <h2>Marketing digital</h2>
+      <p class="section-sub">Soyez visible là où se trouvent vos clients</p>
 
-        <section class="section">
-            <button class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i> Retour</button>
-            
-            <div class="content-grid">
-                <div class="content-text">
-                    <h3>Votre Site Web, Votre Meilleur Commercial</h3>
-                    <p>Un site web professionnel travaille pour vous 24h/24 et 7j/7. C'est votre vitrine digitale, votre outil de vente le plus puissant.</p>
-                    <p>Nous créons des sites web qui:</p>
-                    <ul>
-                        <li>✅ Sont rapides et optimisés pour le SEO</li>
-                        <li>✅ Fonctionnent parfaitement sur mobile (80% du trafic)</li>
-                        <li>✅ Convertissent les visiteurs en clients</li>
-                        <li>✅ Sont sécurisés et fiables</li>
-                        <li>✅ Évoluent avec votre entreprise</li>
-                    </ul>
-                </div>
-                <div class="content-image">
-                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800" alt="Web Development">
-                </div>
-            </div>
+      <div class="grid grid-3 small-cards">
+        <article class="card"><h3>Facebook & Instagram Ads</h3><p>Campagnes ciblées pour toucher vos clients idéaux.</p></article>
+        <article class="card"><h3>Google Ads</h3><p>Apparaissez sur Google quand on cherche vos produits ou services.</p></article>
+        <article class="card"><h3>SEO</h3><p>Référencement naturel pour un trafic durable.</p></article>
+        <article class="card"><h3>Réseaux sociaux</h3><p>Création de contenu, publications et animation de communauté.</p></article>
+        <article class="card"><h3>Email marketing</h3><p>Newsletters et automatisations pour fidéliser.</p></article>
+        <article class="card"><h3>Analytics & reporting</h3><p>Suivi des performances et rapports réguliers.</p></article>
+      </div>
 
-            <div class="video-section">
-                <div class="video-text">
-                    <h3><i class="fas fa-play-circle" style="color: #10B981;"></i> Comment Nous Créons Votre Site Web Parfait</h3>
-                    <p>Découvrez notre processus de développement étape par étape pour un site web qui dépasse vos attentes.</p>
-                </div>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Web Development Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
-
-            <div class="section-title" style="margin-top: 4rem;">
-                <h2>Nos Solutions Web</h2>
-                <p>Des sites sur mesure pour chaque besoin</p>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #10B981, #059669);"><i class="fas fa-laptop-code"></i></div>
-                    <h3>Sites Vitrines</h3>
-                    <p>Présentez votre entreprise et vos services avec un site web professionnel. Design moderne, responsive et optimisé pour Google.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #10B981, #059669);"><i class="fas fa-shopping-cart"></i></div>
-                    <h3>E-commerce</h3>
-                    <p>Boutiques en ligne complètes avec gestion des produits, panier, paiement sécurisé (Mobile Money, carte bancaire), tableau de bord admin.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #10B981, #059669);"><i class="fas fa-mobile-alt"></i></div>
-                    <h3>Applications Web</h3>
-                    <p>Développement d'applications web sur mesure avec les dernières technologies (React, Node.js, Python). Solutions adaptées à vos besoins spécifiques.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #10B981, #059669);"><i class="fas fa-chart-line"></i></div>
-                    <h3>SEO & Performance</h3>
-                    <p>Optimisation pour les moteurs de recherche et performances maximales. Votre site rapide, bien référencé et visible sur Google.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #10B981, #059669);"><i class="fas fa-shield-alt"></i></div>
-                    <h3>Sécurité & Maintenance</h3>
-                    <p>Protection contre les piratages, backups automatiques, mises à jour régulières. Votre site en sécurité 24/7.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #10B981, #059669);"><i class="fas fa-paint-brush"></i></div>
-                    <h3>Design UX/UI</h3>
-                    <p>Interfaces intuitives et agréables. Expérience utilisateur optimale pour maximiser la conversion et la satisfaction.</p>
-                </div>
-            </div>
-
-            <div class="info-box success">
-                <h4><i class="fas fa-rocket"></i> Pourquoi Choisir Rakoto Digital pour Votre Site Web?</h4>
-                <ul>
-                    <li><strong>Expertise technique:</strong> 8+ années d'expérience, 150+ sites créés</li>
-                    <li><strong>Technologies modernes:</strong> React, Node.js, WordPress, Shopify</li>
-                    <li><strong>SEO intégré:</strong> Tous nos sites sont optimisés pour Google dès le départ</li>
-                    <li><strong>Mobile-first:</strong> 100% responsive, parfait sur tous les appareils</li>
-                    <li><strong>Support continu:</strong> Nous restons à vos côtés après la livraison</li>
-                </ul>
-            </div>
-
-            <div class="pricing-section">
-                <div class="section-title">
-                    <h2>Nos Tarifs Web</h2>
-                    <p>Des solutions adaptées à tous les budgets</p>
-                </div>
-                <div class="pricing-grid">
-                    <div class="pricing-card">
-                        <h3>Site Vitrine</h3>
-                        <div class="price">800€</div>
-                        <ul class="features">
-                            <li><i class="fas fa-check"></i> Jusqu'à 5 pages</li>
-                            <li><i class="fas fa-check"></i> Design responsive</li>
-                            <li><i class="fas fa-check"></i> Formulaire de contact</li>
-                            <li><i class="fas fa-check"></i> Optimisation SEO basique</li>
-                            <li><i class="fas fa-check"></i> Hébergement 1 an inclus</li>
-                            <li><i class="fas fa-check"></i> Livraison en 2 semaines</li>
-                        </ul>
-                        <a href="https://wa.me/261379412593?text=Je%20veux%20le%20pack%20Site%20Vitrine" class="btn-pricing" target="_blank">Commander</a>
-                    </div>
-                    <div class="pricing-card featured">
-                        <span class="badge">Populaire</span>
-                        <h3>Site Pro</h3>
-                        <div class="price">2000€</div>
-                        <ul class="features">
-                            <li><i class="fas fa-check"></i> Jusqu'à 15 pages</li>
-                            <li><i class="fas fa-check"></i> Design sur mesure</li>
-                            <li><i class="fas fa-check"></i> Blog intégré</li>
-                            <li><i class="fas fa-check"></i> Optimisation SEO avancée</li>
-                            <li><i class="fas fa-check"></i> Google Analytics</li>
-                            <li><i class="fas fa-check"></i> Formation utilisation</li>
-                            <li><i class="fas fa-check"></i> Hébergement 1 an inclus</li>
-                        </ul>
-                        <a href="https://wa.me/261379412593?text=Je%20veux%20le%20pack%20Site%20Pro" class="btn-pricing" target="_blank">Commander</a>
-                    </div>
-                    <div class="pricing-card">
-                        <h3>E-commerce</h3>
-                        <div class="price">3500€</div>
-                        <ul class="features">
-                            <li><i class="fas fa-check"></i> Boutique complète</li>
-                            <li><i class="fas fa-check"></i> Paiement en ligne</li>
-                            <li><i class="fas fa-check"></i> Gestion des stocks</li>
-                            <li><i class="fas fa-check"></i> Dashboard admin</li>
-                            <li><i class="fas fa-check"></i> Optimisation SEO</li>
-                            <li><i class="fas fa-check"></i> Formation complète</li>
-                            <li><i class="fas fa-check"></i> Support 3 mois</li>
-                        </ul>
-                        <a href="https://wa.me/261379412593?text=Je%20veux%20le%20pack%20E-commerce" class="btn-pricing" target="_blank">Commander</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section-title" style="margin-top: 4rem;">
-                <h2>Notre Processus de Développement</h2>
-                <p>Une méthode éprouvée pour un résultat parfait</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #10B981, #059669);"><i class="fas fa-comments"></i></div>
-                    <h3>1. Discovery</h3>
-                    <p>Nous discutons de vos besoins, objectifs et attentes. Analyse de votre marché et de vos concurrents.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #10B981, #059669);"><i class="fas fa-pencil-ruler"></i></div>
-                    <h3>2. Design</h3>
-                    <p>Création des maquettes et prototypes. Validation du design avant développement.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #10B981, #059669);"><i class="fas fa-code"></i></div>
-                    <h3>3. Développement</h3>
-                    <p>Codage du site avec les dernières technologies. Tests réguliers et optimisations.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: linear-gradient(135deg, #10B981, #059669);"><i class="fas fa-rocket"></i></div>
-                    <h3>4. Lancement</h3>
-                    <p>Tests finaux, mise en ligne, formation et support. Votre site est prêt à convertir!</p>
-                </div>
-            </div>
-
-            <div class="cta-box" style="background: linear-gradient(135deg, #10B981, #059669);">
-                <h3>Transformez Votre Présence Digitale</h3>
-                <p>Un site web professionnel est essentiel pour réussir en 2026. Obtenez un devis gratuit et personnalisé!</p>
-                <a href="https://wa.me/261379412593?text=Je%20veux%20un%20devis%20pour%20un%20site%20web" class="cta-btn" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Obtenir mon devis gratuit
-                </a>
-            </div>
-        </section>
+      <div class="grid grid-3 spaced">
+        <article class="price-card">
+          <h3>Starter</h3>
+          <p class="price">200€<small>/mois</small></p>
+          <ul>
+            <li>Gestion d'1 réseau social</li>
+            <li>4 publications / semaine</li>
+            <li>Community management</li>
+            <li>Rapport mensuel</li>
+          </ul>
+          <a class="btn" href="https://wa.me/261379412593?text=Je%20veux%20le%20pack%20Starter%20Marketing" target="_blank" rel="noopener">Choisir</a>
+        </article>
+        <article class="price-card featured">
+          <span class="badge">Recommandé</span>
+          <h3>Business</h3>
+          <p class="price">500€<small>/mois</small></p>
+          <ul>
+            <li>3 réseaux sociaux</li>
+            <li>Publications quotidiennes</li>
+            <li>Campagnes publicitaires</li>
+            <li>Stratégie de contenu</li>
+            <li>Rapport hebdomadaire</li>
+          </ul>
+          <a class="btn" href="https://wa.me/261379412593?text=Je%20veux%20le%20pack%20Business%20Marketing" target="_blank" rel="noopener">Choisir</a>
+        </article>
+        <article class="price-card">
+          <h3>Enterprise</h3>
+          <p class="price">1000€<small>/mois</small></p>
+          <ul>
+            <li>Réseaux sociaux illimités</li>
+            <li>Contenu premium</li>
+            <li>Publicités avancées</li>
+            <li>Interlocuteur dédié</li>
+            <li>Support prioritaire</li>
+          </ul>
+          <a class="btn" href="https://wa.me/261379412593?text=Je%20veux%20le%20pack%20Enterprise%20Marketing" target="_blank" rel="noopener">Choisir</a>
+        </article>
+      </div>
+      <p class="note">Le budget publicitaire (Facebook, Google) est à prévoir en plus des honoraires.</p>
     </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Rakoto Digital</h3>
-                <p>Votre partenaire de confiance pour la transformation digitale à Madagascar.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h3>Services</h3>
-                <ul>
-                    <li><a href="#" onclick="showPage('marketing')">Digital Marketing</a></li>
-                    <li><a href="#" onclick="showPage('design')">Graphic Design</a></li>
-                    <li><a href="#" onclick="showPage('web')">Web Development</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Entreprise</h3>
-                <ul>
-                    <li><a href="#" onclick="showPage('home')">À Propos</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Blog</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <ul>
-                    <li><a href="mailto:christian.rakoto.pro@gmail.com">christian.rakoto.pro@gmail.com</a></li>
-                    <li><a href="https://wa.me/261379412593" target="_blank">+261 37 94 125 93</a></li>
-                    <li>Antananarivo, Madagascar</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Rakoto Digital Solutions. Tous droits réservés.</p>
-        </div>
-    </footer>
+  <!-- DESIGN -->
+  <section id="tarifs-design" class="section alt">
+    <div class="container">
+      <h2>Design graphique</h2>
+      <p class="section-sub">Une identité visuelle qui inspire confiance dès le premier regard</p>
 
-    <script>
-        function showPage(pageName) {
-            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            document.getElementById(pageName).classList.add('active');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+      <ul class="features">
+        <li>Logo et charte graphique</li>
+        <li>Cartes de visite, flyers, brochures, affiches</li>
+        <li>Packaging et visuels publicitaires</li>
+        <li>Interfaces UI/UX web et mobile</li>
+      </ul>
 
-        function toggleMobileMenu() {
-            const nav = document.querySelector('.nav-links');
-            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
-        }
+      <div class="grid grid-3">
+        <article class="price-card">
+          <h3>Logo Simple</h3>
+          <p class="price">150€</p>
+          <ul>
+            <li>3 propositions initiales</li>
+            <li>2 révisions incluses</li>
+            <li>Fichiers source (AI, PSD)</li>
+            <li>Formats web (PNG, JPG, SVG)</li>
+            <li>Livraison en 5 jours</li>
+          </ul>
+          <a class="btn" href="https://wa.me/261379412593?text=Je%20veux%20le%20pack%20Logo%20Simple" target="_blank" rel="noopener">Commander</a>
+        </article>
+        <article class="price-card featured">
+          <span class="badge">Recommandé</span>
+          <h3>Identité Complète</h3>
+          <p class="price">500€</p>
+          <ul>
+            <li>Logo professionnel</li>
+            <li>Charte graphique complète</li>
+            <li>Carte de visite</li>
+            <li>Papeterie (en-tête, facture)</li>
+            <li>Templates réseaux sociaux</li>
+            <li>5 révisions incluses</li>
+            <li>Livraison en 10 jours</li>
+          </ul>
+          <a class="btn" href="https://wa.me/261379412593?text=Je%20veux%20le%20pack%20Identit%C3%A9%20Compl%C3%A8te" target="_blank" rel="noopener">Commander</a>
+        </article>
+        <article class="price-card">
+          <h3>Branding Premium</h3>
+          <p class="price">1200€</p>
+          <ul>
+            <li>Logo + déclinaisons</li>
+            <li>Charte graphique étendue</li>
+            <li>Tous supports print</li>
+            <li>Templates digitaux</li>
+            <li>Guide de marque complet</li>
+            <li>Révisions illimitées</li>
+            <li>Support 3 mois</li>
+          </ul>
+          <a class="btn" href="https://wa.me/261379412593?text=Je%20veux%20le%20pack%20Branding%20Premium" target="_blank" rel="noopener">Commander</a>
+        </article>
+      </div>
+    </div>
+  </section>
 
-        window.onload = function() {
-            showPage('home');
-        };
-    </script>
+  <!-- PROCESSUS -->
+  <section id="processus" class="section">
+    <div class="container">
+      <h2>Comment nous travaillons</h2>
+      <p class="section-sub">Une méthode simple, en 4 étapes</p>
+      <ol class="steps">
+        <li><h3>Discussion</h3><p>Nous échangeons sur vos besoins, vos objectifs et votre marché.</p></li>
+        <li><h3>Design</h3><p>Maquettes et propositions, validées avec vous avant de développer.</p></li>
+        <li><h3>Réalisation</h3><p>Développement, tests réguliers et ajustements selon vos retours.</p></li>
+        <li><h3>Lancement</h3><p>Mise en ligne, prise en main et accompagnement après livraison.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- À PROPOS -->
+  <section id="apropos" class="section alt">
+    <div class="container narrow">
+      <h2>À propos</h2>
+      <p>Rakoto Digital Solutions est une agence digitale basée à Antananarivo. Nous accompagnons les entreprises, commerces et indépendants de Madagascar dans la création de leur site web, de leur identité visuelle et de leur communication en ligne.</p>
+      <p>Notre approche : des solutions adaptées au marché local (WhatsApp, Mobile Money, Facebook), un prix clair annoncé dès le départ, et un suivi après la livraison.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container contact-grid">
+      <div>
+        <h2>Parlons de votre projet</h2>
+        <p class="section-sub left">Devis gratuit et sans engagement. Réponse via WhatsApp.</p>
+        <ul class="contact-list">
+          <li><strong>WhatsApp :</strong> <a href="https://wa.me/261379412593" target="_blank" rel="noopener">+261 37 94 125 93</a></li>
+          <li><strong>Email :</strong> <a href="mailto:christian.rakoto.pro@gmail.com">christian.rakoto.pro@gmail.com</a></li>
+          <li><strong>Lieu :</strong> Antananarivo, Madagascar</li>
+        </ul>
+      </div>
+
+      <form id="contactForm" class="form" novalidate>
+        <label for="nom">Votre nom</label>
+        <input id="nom" name="nom" type="text" autocomplete="name" required>
+
+        <label for="service">Service souhaité</label>
+        <select id="service" name="service">
+          <option>Site web</option>
+          <option>Marketing digital</option>
+          <option>Design graphique</option>
+          <option>Autre</option>
+        </select>
+
+        <label for="message">Votre projet</label>
+        <textarea id="message" name="message" rows="4" placeholder="Décrivez brièvement votre besoin" required></textarea>
+
+        <button class="btn" type="submit">Envoyer via WhatsApp</button>
+        <p class="form-hint">Le bouton ouvre WhatsApp avec votre message prêt à envoyer.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a class="brand" href="#accueil">Rakoto<span>Digital</span></a>
+      <p>Agence digitale à Antananarivo, Madagascar.</p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#tarifs-web">Sites web</a></li>
+        <li><a href="#tarifs-marketing">Marketing digital</a></li>
+        <li><a href="#tarifs-design">Design graphique</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:christian.rakoto.pro@gmail.com">christian.rakoto.pro@gmail.com</a></li>
+        <li><a href="https://wa.me/261379412593" target="_blank" rel="noopener">+261 37 94 125 93</a></li>
+        <li>Antananarivo, Madagascar</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container copy">
+    <span>© 2026 Rakoto Digital Solutions. Tous droits réservés.</span>
+    <a href="mentions-legales.html">Mentions légales</a>
+  </div>
+</footer>
+
+<script>
+  // Menu mobile
+  var btn = document.getElementById('menuBtn');
+  var menu = document.getElementById('menu');
+  btn.addEventListener('click', function () {
+    var open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  menu.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') {
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Formulaire -> WhatsApp
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var nom = document.getElementById('nom').value.trim();
+    var service = document.getElementById('service').value;
+    var message = document.getElementById('message').value.trim();
+    if (!nom || !message) {
+      alert('Merci de renseigner votre nom et votre projet.');
+      return;
+    }
+    var texte = 'Bonjour Rakoto Digital, je m\'appelle ' + nom +
+      '. Service souhaité : ' + service + '. ' + message;
+    window.open('https://wa.me/261379412593?text=' + encodeURIComponent(texte), '_blank', 'noopener');
+  });
+</script>
 </body>
 </html>
